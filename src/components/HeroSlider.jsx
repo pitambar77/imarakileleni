@@ -37,7 +37,7 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-    <section className="relative w-full h-[64vh]">
+    <section className="relative w-full h-[64vh] 2xl:h-[50vh]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}

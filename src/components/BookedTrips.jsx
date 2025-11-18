@@ -121,7 +121,7 @@ const BookedTrips = () => {
         {/* Title + Navigation Buttons */}
         <div className="relative flex items-center justify-center mb-10">
           {/* Centered Title */}
-          <h2 className="text-2xl md:text-3xl text-center font-bold w-full">
+          <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
             Booked while you were scrolling
           </h2>
 
@@ -227,7 +227,7 @@ const BookedTrips = () => {
                       </span>
                     </div>
 
-                    <h3 className=" text-[1rem] mb-6 leading-tight">
+                    <h3 className=" text-xl mb-6 leading-tight">
                       {trip.title}
                     </h3>
 

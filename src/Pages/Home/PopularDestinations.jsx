@@ -18,7 +18,7 @@ const PopularDestinations = () => {
     <section className="w-full py-16 bg-white">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* Title */}
-        <h2 className="text-4xl text-center mb-10">
+        <h2 className="text-3xl text-center mb-10 capitalize">
           Popular destinations
         </h2>
 

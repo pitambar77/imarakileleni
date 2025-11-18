@@ -48,7 +48,7 @@ const TripCard = ({ trip, onQuickView }) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-[1rem] mb-6 leading-tight">{trip.title}</h3>
+        <h3 className="text-xl mb-6 leading-tight">{trip.title}</h3>
 
         {/* Trip Info */}
         <div className="text-sm flex flex-wrap items-center gap-3 mb-3">

@@ -28,12 +28,12 @@ const BookWithConfidence = () => {
       <div className="bg-[#fedec7]"> {/* soft peach background */}
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14">
           {/* Heading centered */}
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-10">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-16 capitalize">
             Book with confidence
           </h2>
 
           {/* Features row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center ">
             {/* Feature 1 */}
             <div className="flex items-start gap-4">
               <div className="flex-none w-14 h-14 rounded-full bg-black flex items-center justify-center">
@@ -84,7 +84,7 @@ const BookWithConfidence = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-16">
             <button
               className="px-8 py-3 rounded-full border-2 border-black text-black font-semibold bg-transparent hover:bg-black hover:text-white transition"
               aria-label="Find out more"
