@@ -110,9 +110,9 @@ const TanzaniaTabsSection = () => {
     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
      
      <div className=" text-center mb-16 px-24 mx-auto text-[#222]">
-       <h3 className="text-[30px] md:text-[36px] font-bold text-[#1a1a1a] mb-4">
+       <h2 className="text-[30px] md:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
           Tanzania’s top safari & holiday destinations
-        </h3>
+        </h2>
 
         {/* Subheading */}
         <p className="text-[18px] text-[#555] mb-10">
@@ -260,10 +260,10 @@ const TanzaniaTabsSection = () => {
 
               <div className="p-5  ">
                 <div>
-                  <h3 className="font-semibold text-[16px] mb-6 leading-tight">
+                  <h3 className="font-semibold text-xl mb-6 leading-tight">
                     {trip.title}
                   </h3>
-                  <p className="text-[15px] text-gray-700 mb-6 line-clamp-3">
+                  <p className="text-[16px] mb-6 line-clamp-3">
                     {trip.description}
                   </p>
                 </div>

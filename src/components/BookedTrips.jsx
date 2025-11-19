@@ -118,7 +118,7 @@ const BookedTrips = () => {
   return (
     <section className="w-full py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto ">
-        {/* Title + Navigation Buttons */}
+       
         <div className="relative flex items-center justify-center mb-10">
           {/* Centered Title */}
           <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">

@@ -51,7 +51,7 @@ const TripCard = ({ trip, onQuickView }) => {
         <h3 className="text-xl mb-6 leading-tight">{trip.title}</h3>
 
         {/* Trip Info */}
-        <div className="text-sm flex flex-wrap items-center gap-3 mb-3">
+        <div className="text-sm flex flex-wrap items-center gap-3 mb-3 text-[16px]">
           <span className="flex items-center gap-1 ">
             <FaCalendarAlt /> <p className=" mt-1">{trip.days}</p>
           </span>
@@ -68,7 +68,7 @@ const TripCard = ({ trip, onQuickView }) => {
         </div>
 
         {/* Description */}
-        <p className="text-[15px] mb-8 line-clamp-3">{trip.description}</p>
+        <p className="text-[16px] mb-8 line-clamp-3">{trip.description}</p>
 
         {/* Price & Button */}
         <div className="flex justify-between items-center">

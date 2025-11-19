@@ -39,7 +39,7 @@ const trips = [
     id: 4,
     image:
       "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
-    title: "Wildlife Budget Cultural Fly in ",
+    title: "Wildlife Budget Cultural Fly  ",
 
     description:
       "The one that gives you the ultimate Greek Island experience exploring Mykonos, Paros, Santorini and Ios This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
@@ -73,8 +73,8 @@ const BookedTrips = () => {
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* Title + Navigation */}
         <div className="relative flex items-center justify-center mb-10">
-          <h2 className="text-2xl md:text-3xl text-center font-bold w-full">
-            Booked while you were scrolling
+          <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
+            Africa & Middle east trip highlights
           </h2>
           <div className="absolute right-0 flex items-center space-x-3">
             <button
@@ -142,11 +142,11 @@ const BookedTrips = () => {
 
                 <div className="p-5 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className=" text-xl mb-3 leading-tight">
+                    <h3 className=" text-xl mb-4 leading-tight">
                       {trip.title}
                     </h3>
 
-                    <p className="text-[14px] line-clamp-8 mb-4">
+                    <p className="text-[15px] line-clamp-6 mb-4">
                       {trip.description}
                     </p>
                   </div>

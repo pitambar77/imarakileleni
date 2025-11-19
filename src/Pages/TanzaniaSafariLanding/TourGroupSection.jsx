@@ -14,7 +14,7 @@ const tourGroups = [
     title: "Custom tours",
     image:
       "https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    description: "Custom tours for your group. You dream it, we create it >",
+    description: "Custom tours for your group. You dream it, we create it very well as it as >",
   },
   {
     id: 2,
@@ -62,7 +62,7 @@ const TourGroupSection = () => {
   return (
     <section className="bg-[#fedec8] py-20 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Header */}
-      <h2 className="text-center text-2xl md:text-3xl font-bold text-[#222] mb-12">
+      <h2 className="text-center capitalize text-2xl md:text-3xl font-bold text-[#222] mb-12">
         Tours by group type
       </h2>
 
@@ -84,7 +84,7 @@ const TourGroupSection = () => {
             </div>
 
             {/* Description */}
-            <p className="text-[#222] text-[15px] mt-3 leading-relaxed">
+            <p className="text-[#222] text-[16px] mt-3 leading-relaxed">
               {tour.description}
             </p>
           </div>
@@ -94,7 +94,7 @@ const TourGroupSection = () => {
 <div className="bg-[#fedec7]"> {/* soft peach background */}
         <div className="max-w-7xl mx-auto px-6 md:px-10 mt-24">
           {/* Heading centered */}
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-10">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-16 capitalize">
             Book with confidence
           </h2>
 
@@ -150,7 +150,7 @@ const TourGroupSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-16">
             <button
               className="px-8 py-3 rounded-full border-2 border-black text-black font-semibold bg-transparent hover:bg-black hover:text-white transition"
               aria-label="Find out more"

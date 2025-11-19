@@ -13,7 +13,7 @@ const slides = [
   {
     id: 1,
     image:
-      "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
+      "https://www.expertafrica.com/images/animal/0863be9189c648fea7ed2f3bb48cddc6.jpg",
     title: "EXPLORE TANZANIA",
     description:
       "More than just another trip, an African safari is the beginning of a love affair with all things wild...",

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
@@ -12,12 +6,12 @@ const GuestReviewSection = () => {
     <section className="py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       <div className="relative">
         {/* 🔶 Orange Background (Half Height Behind the Card) */}
-        <div className="absolute top-0 left-0 w-full h-4/5 bg-[#d87028] z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-4/5 bg-[#d87028] z-0 rounded-md"></div>
 
         {/* ✅ Main Content */}
         <div className="relative z-10">
           {/* Header */}
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-white py-10">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-white py-10 capitalize">
             5 million happy guests and counting
           </h2>
 
@@ -96,7 +90,9 @@ const GuestReviewSection = () => {
                       className="flex items-center text-sm mb-2 whitespace-nowrap"
                     >
                       <span className="w-6 font-semibold mt-1">{r.stars}</span>
-                     <span><FaStar className="text-[#f5b400] text-[10px] mr-2 " /></span> 
+                      <span>
+                        <FaStar className="text-[#f5b400] text-[10px] mr-2 " />
+                      </span>
                       <div className="w-[12rem] bg-gray-200 h-3 rounded-full overflow-hidden">
                         <div
                           className="bg-[#f5b400] h-3"
@@ -153,7 +149,9 @@ const GuestReviewSection = () => {
                       className="flex items-center text-sm mb-2 whitespace-nowrap"
                     >
                       <span className="w-6 mt-1 font-semibold">{r.stars}</span>
-                      <span><FaStar className="text-[#f5b400] text-[10px] mr-2 " /></span> 
+                      <span>
+                        <FaStar className="text-[#f5b400] text-[10px] mr-2 " />
+                      </span>
                       <div className="w-[12rem] bg-gray-200 h-3 rounded-full overflow-hidden">
                         <div
                           className="bg-[#f5b400] h-3"
@@ -176,4 +174,3 @@ const GuestReviewSection = () => {
 };
 
 export default GuestReviewSection;
-

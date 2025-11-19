@@ -18,8 +18,8 @@ const Featured = () => {
   return (
     <section className="w-full bg-white py-16">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto text-center">
-        {/* --- Featured Section --- */}
-        <h2 className="text-lg md:text-xl font-bold mb-8">As featured in</h2>
+       
+        <h2 className="text-xl md:text-3xl font-bold mb-8 capitalize">As featured in</h2>
 {/* 
         <div className="flex justify-center items-center gap-2 mb-16 max-h-[50px]">
           {brands.map((brand) => (

@@ -19,7 +19,7 @@ const SafariInfoSection = () => {
           </h3>
 
           {/* Paragraphs with Auto Column Flow */}
-          <div className="text-sm text-[#333] space-y-4 leading-[1.8] [column-count:2] [column-gap:4rem]">
+          <div className="text-[16px] text-[#333] space-y-4 leading-[1.8] [column-count:2] [column-gap:3rem]">
             <p className="italic text-[#444]">
               “We are seasoned off-the-beaten-track travellers and I marvel
               that everything worked exactly as it was supposed to,” wrote a

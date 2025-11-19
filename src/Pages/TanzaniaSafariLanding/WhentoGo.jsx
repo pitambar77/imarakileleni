@@ -209,9 +209,9 @@ const WhentoGo = () => {
   return (
     <div className=" bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       <div className=" text-center mb-16 px-24 mx-auto text-[#222]">
-        <h3 className="text-[30px] md:text-[36px]  text-[#1a1a1a] mb-4">
+        <h2 className="text-[30px] md:text-[36px]  text-[#1a1a1a] mb-4 capitalize">
           When to go Tanzania safari
-        </h3>
+        </h2>
 
         {/* Subheading */}
         <p className="text-[18px] text-[#555] mb-10">
@@ -357,7 +357,7 @@ const WhentoGo = () => {
             {monthData.highlights.map((item, i) => (
               <div key={i} className="flex items-start gap-2 mb-3">
                 <FaCheckCircle className="text-[#d87028] mt-1" />
-                <p className="text-gray-700 text-[15px]">{item}</p>
+                <p className="text-gray-700 text-[16px]">{item}</p>
               </div>
             ))}
           </div>
@@ -383,7 +383,7 @@ const WhentoGo = () => {
                     
                   ))}
               </div>
-              <p className="ml-3 text-[#222] font-medium text-[15px]">
+              <p className="ml-3 text-[#222] font-medium text-[16px]">
                 {monthData.view}
               </p>
             </div>

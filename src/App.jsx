@@ -15,6 +15,8 @@ import {
 import Layout from "./Layout";
 import Home from "./Pages/Home/Home";
 import SafariLandingPage from "./Pages/TanzaniaSafariLanding/SafariLandingPage";
+import Itinenary from "./Pages/Itinenary/Itinenary";
+import AboutUs from "./Pages/Aboutus/AboutUs";
 
 
 const router = createBrowserRouter(
@@ -24,6 +26,9 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
        <Route path="safari-landing" element={<SafariLandingPage/>}/>
+       <Route path="itinenary" element={<Itinenary/>}/>
+       <Route path="about-us" element={<AboutUs/>}/>
+
        
       </Route>
     </>
