@@ -9,7 +9,7 @@ const Banner = ({ image, title, buttonText, onButtonClick }) => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
 
-      {/* Content */}
+     
       <div className="relative text-center z-10">
         <h2 className="text-3xl md:text-6xl font-extrabold text-white mb-6 tracking-wide drop-shadow-lg">
           {title}

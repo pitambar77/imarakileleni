@@ -162,6 +162,7 @@ const Footer = () => {
               registered in the U.S. and other countries and regions, and is
               being used under license.
             </p>
+           
           </div>
 
           {/* Bottom Section */}

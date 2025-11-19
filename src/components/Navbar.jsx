@@ -22,8 +22,7 @@ const Navbar = () => {
             alt="Imara Kileleni Safaris"
             className="h-12 w-auto"
           />
-       
-
+         
         {/* Center - Navigation Links */}
         <ul className="hidden md:flex space-x-4 font-semibold text-sm text-gray-800">
           <li className="flex items-center cursor-pointer hover:text-orange-600">
