@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaStar, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaStar, FaChevronDown, FaChevronUp, FaMapMarkerAlt } from "react-icons/fa";
 
 const tours = [
   {
@@ -64,7 +64,7 @@ const tours = [
     price: "From $3,150",
   },
   {
-    id: 2,
+    id: 5,
     image: "https://kilimanjarofairdeal.com/wp-content/uploads/2023/12/family-3.jpg",
     badge: "EARLY ACCESS DEAL",
     title: "Sea, Safari, South Africa",
@@ -79,7 +79,7 @@ const tours = [
     price: "From $4,143",
   },
   {
-    id: 3,
+    id: 6,
     image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
     badge: "EARLY ACCESS DEAL",
     title: "Egypt and the Nile",
@@ -198,6 +198,15 @@ const SafariToursSection = () => {
                 )}
               </button>
 
+              {/* Tanzania Destination heading below Region */}
+              {category === "region" && (
+                <div className="flex items-center gap-2 px-4 mb-4 text-[#222] bg-[#d87028] py-1 rounded-md text-white  font-semibold text-[15px]">
+                  {/* <FaMapMarkerAlt className="" /> */}
+                  <img src="https://static.vecteezy.com/system/resources/previews/023/639/560/non_2x/tanzania-map-in-africa-icons-showing-tanzania-location-and-flags-png.png" alt="" className="w-10 h-10" />
+                  <span className=" ">Tanzania Destinations</span>
+                </div>
+              )}
+
               {/* Filter Options */}
               <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${
@@ -210,7 +219,7 @@ const SafariToursSection = () => {
                   {options.map((option) => (
                     <label
                       key={option}
-                      className="flex items-center gap-3 cursor-pointer"
+                      className="flex items-center gap-3 cursor-pointer bg-gray-100 hover:bg-gray-200 p-3 rounded-md"
                     >
                       <input
                         type="checkbox"
