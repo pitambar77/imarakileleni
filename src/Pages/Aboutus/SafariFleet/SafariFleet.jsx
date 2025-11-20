@@ -12,7 +12,7 @@ const SafariFleet = () => {
          <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://tanzania-specialist.com/wp-content/uploads/2024/12/Africa-Safari-jeep-2-1960x800.jpg')`,
+          backgroundImage: `url('https://www.tanzania-experience.com/wp-content/uploads/2025/05/tanzania-in-seven-days.jpg')`,
         }}
       >
         {/* Dark Overlay */}
