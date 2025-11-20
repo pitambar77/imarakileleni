@@ -12,6 +12,11 @@ import BookWithConfidence from "../Home/BookWithConfidence";
 import OnTheRoadSection from "./OnTheRoadSection";
 import OffTheRoadSection from "./OffTheRoadSection";
 import SafariFeatureSection from "./SafariFeatureSection";
+import ContikiCrewSection from "./ContikiCrewSection";
+import WhyVisitTanzania from "./WhyVisitTanzania";
+import ReviewsSection from "./ReviewsSection";
+import SafariFAQSection from "./SafariFAQSection";
+import Featured from "../Home/Featured";
 
 const AboutUs = () => {
   return (
@@ -133,7 +138,14 @@ const AboutUs = () => {
 
       <OnTheRoadSection/>
       <OffTheRoadSection/>
+      <ContikiCrewSection/>
       <SafariFeatureSection/>
+      <WhyVisitTanzania/>
+      <ReviewsSection/>
+      <SafariFAQSection/>
+      <Featured/>
+      
+      
     </>
   );
 };

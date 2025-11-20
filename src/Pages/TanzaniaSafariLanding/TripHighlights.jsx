@@ -64,7 +64,7 @@ const trips = [
   },
 ];
 
-const BookedTrips = () => {
+const TripHighlights = () => {
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
 
@@ -197,4 +197,4 @@ const BookedTrips = () => {
   );
 };
 
-export default BookedTrips;
+export default TripHighlights;

@@ -118,7 +118,6 @@ const BookedTrips = () => {
   return (
     <section className="w-full py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto ">
-       
         <div className="relative flex items-center justify-center mb-10">
           {/* Centered Title */}
           <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
@@ -150,10 +149,10 @@ const BookedTrips = () => {
           // pagination={{ clickable: true }}
 
           pagination={{
-    clickable: true,
-    el: ".custom-pagination",
-    renderBullet: (index, className) =>
-      `<span class="${className}" 
+            clickable: true,
+            el: ".custom-pagination",
+            renderBullet: (index, className) =>
+              `<span class="${className}" 
         style="
           display:inline-block;
           width:8px;
@@ -165,7 +164,7 @@ const BookedTrips = () => {
           
         ">
       </span>`,
-  }}
+          }}
           breakpoints={{
             640: { slidesPerView: 1.5 },
             768: { slidesPerView: 2.5 },
@@ -233,13 +232,17 @@ const BookedTrips = () => {
 
                     <div className="text-sm flex flex-wrap items-center gap-3 mb-3">
                       <span className="flex items-center gap-1 ">
-                        <FaCalendarAlt /> <p className=" mt-1">{trip.days}</p> 
+                        <FaCalendarAlt /> <p className=" mt-1">{trip.days}</p>
                       </span>
                       <span className="flex items-center gap-1">
-                        <FaMapMarkerAlt /><p className=" mt-1"> {trip.places}</p>
+                        <FaMapMarkerAlt />
+                        <p className=" mt-1"> {trip.places}</p>
                       </span>
                       <span className="flex items-center gap-1">
-                        <FaGlobe /> <p className=" mt-1"><u className="">{trip.country}</u></p> 
+                        <FaGlobe />{" "}
+                        <p className=" mt-1">
+                          <u className="">{trip.country}</u>
+                        </p>
                       </span>
                     </div>
 
@@ -251,14 +254,11 @@ const BookedTrips = () => {
                       <div className="text-xs text-gray-600">
                         {trip.standardPrice && (
                           <h3 className="text-xs mb-2">
-                            Standard Price <br/> {trip.standardPrice}
+                            Standard Price <br /> {trip.standardPrice}
                           </h3>
                         )}
                         <h3 className="font-bold text-sm text-black">
-                          From{" "}
-                          <span className="">
-                            {trip.discountedPrice}
-                          </span>
+                          From <span className="">{trip.discountedPrice}</span>
                         </h3>
                       </div>
                       <button className="bg-[#d87028] hover:bg-orange-700 text-white  text-sm px-6 py-2 rounded-full mt-2 w-fit">
@@ -273,18 +273,18 @@ const BookedTrips = () => {
         </Swiper>
 
         {/* ✅ Pagination Dots */}
-<div
-  className="custom-pagination flex justify-center mt-6"
-  style={{
-    position: "relative",
-    bottom: "0px",
-    textAlign: "center",
-  }}
-></div>
+        <div
+          className="custom-pagination flex justify-center mt-6"
+          style={{
+            position: "relative",
+            bottom: "0px",
+            textAlign: "center",
+          }}
+        ></div>
 
-{/* ✅ Inline CSS for active dot + animation */}
-<style>
-{`
+        {/* ✅ Inline CSS for active dot + animation */}
+        <style>
+          {`
   .custom-pagination .swiper-pagination-bullet-active {
     background-color: #4a5464 !important;
     width: 12px !important;
@@ -293,7 +293,7 @@ const BookedTrips = () => {
     transition: all 0.35s ease;
   }
 `}
-</style>
+        </style>
 
         {/* View All Trips Button */}
         <div className="flex justify-center mt-10">
@@ -369,6 +369,3 @@ const BookedTrips = () => {
 };
 
 export default BookedTrips;
-
-
-

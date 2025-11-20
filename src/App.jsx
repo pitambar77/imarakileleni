@@ -17,6 +17,7 @@ import Home from "./Pages/Home/Home";
 import SafariLandingPage from "./Pages/TanzaniaSafariLanding/SafariLandingPage";
 import Itinenary from "./Pages/Itinenary/Itinenary";
 import AboutUs from "./Pages/Aboutus/AboutUs";
+import SafariDestiLanding from "./Pages/SafariDestination/SafariDestiLanding";
 
 
 const router = createBrowserRouter(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
        <Route path="itinenary" element={<Itinenary/>}/>
        <Route path="about-us" element={<AboutUs/>}/>
 
+       <Route path="safari-destination" element={<SafariDestiLanding/>}/>
        
       </Route>
     </>
