@@ -4,7 +4,7 @@ const AdventureTour = ({ title, sections }) => {
   return (
     <section className="text-[#1a1a1a] py-16 px-6 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       
-          {/* Hide ONLY the title if empty */}
+          
       {title && title.trim() !== "" && (
         <h2 className="text-center text-3xl mb-16">{title}</h2>
       )}
