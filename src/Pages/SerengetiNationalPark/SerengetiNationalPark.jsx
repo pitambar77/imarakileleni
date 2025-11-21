@@ -8,6 +8,7 @@ import TravelGuide from "./TravelGuide";
 import SafariFAQSection from "../Aboutus/SafariFAQSection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
+import ActiveTravelDestinations from "../TravelGuideDetails/ActiveTravelDestinations";
 
 const SerengetiNationalPark = () => {
   const monthData = [
@@ -157,6 +158,7 @@ const SerengetiNationalPark = () => {
       />
       <TravelGuide/>
       <SafariFAQSection/>
+      <ActiveTravelDestinations/>
       <BookWithConfidence/>
       <Featured/>
     </div>
