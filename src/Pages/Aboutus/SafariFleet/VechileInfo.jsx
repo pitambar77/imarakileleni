@@ -12,7 +12,7 @@ const VechileInfo = () => {
           </p>
 
           {/* Main Heading */}
-          <h3 className="font-serif text-[30px] md:text-[36px] leading-snug font-bold text-[#111] mb-8">
+          <h3 className=" text-[30px] md:text-[36px] leading-snug font-bold text-[#111] mb-8">
             Our African Safari Vehicles, Types, Price & Destinations
           </h3>
 

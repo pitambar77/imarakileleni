@@ -19,6 +19,7 @@ import Itinenary from "./Pages/Itinenary/Itinenary";
 import AboutUs from "./Pages/Aboutus/AboutUs";
 import SafariDestiLanding from "./Pages/SafariDestination/SafariDestiLanding";
 import SafariFleet from "./Pages/Aboutus/SafariFleet/SafariFleet";
+import SerengetiNationalPark from "./Pages/SerengetiNationalPark/SerengetiNationalPark";
 
 
 const router = createBrowserRouter(
@@ -33,6 +34,8 @@ const router = createBrowserRouter(
 
        <Route path="safari-destination" element={<SafariDestiLanding/>}/>
        <Route path="safari-fleet" element={<SafariFleet/>}/>
+       <Route path="serengeti-national-park" element={<SerengetiNationalPark/>}/>
+
 
        
       </Route>
