@@ -22,6 +22,8 @@ import SafariFleet from "./Pages/Aboutus/SafariFleet/SafariFleet";
 import SerengetiNationalPark from "./Pages/SerengetiNationalPark/SerengetiNationalPark";
 import TravelguidedetailsPage from "./Pages/TravelGuideDetails/TravelguidedetailsPage";
 import TeamPage from "./Pages/Team/TeamPage";
+import ThankYouPage from "./Pages/Thankyou/ThankYouPage";
+import Sustanbility from "./Pages/Sustanbility/Sustanbility";
 
 
 const router = createBrowserRouter(
@@ -39,6 +41,8 @@ const router = createBrowserRouter(
        <Route path="serengeti-national-park" element={<SerengetiNationalPark/>}/>
        <Route path="travel-guide-details" element={<TravelguidedetailsPage/>}/>
        <Route path="team" element={<TeamPage/>}/>
+       <Route path="thank-you" element={<ThankYouPage/>}/>
+      <Route path="sustanbility" element={<Sustanbility/>}/>
              
       </Route>
     </>
