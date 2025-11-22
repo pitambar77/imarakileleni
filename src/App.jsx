@@ -25,6 +25,7 @@ import TeamPage from "./Pages/Team/TeamPage";
 import ThankYouPage from "./Pages/Thankyou/ThankYouPage";
 import Sustanbility from "./Pages/Sustanbility/Sustanbility";
 import KilimanjaroLanding from "./Pages/KilimanjaroLanding/KilimanjaroLanding";
+import TravelGuideLanding from "./Pages/TravelGuideLanding/TravelGuideLanding";
 
 
 const router = createBrowserRouter(
@@ -45,7 +46,7 @@ const router = createBrowserRouter(
        <Route path="thank-you" element={<ThankYouPage/>}/>
       <Route path="sustanbility" element={<Sustanbility/>}/>
       <Route path="kilimanjaro-landing" element={<KilimanjaroLanding/>}/>
-             
+      <Route path="travel-guide-landing" element={<TravelGuideLanding/>}/>
       </Route>
     </>
   )
