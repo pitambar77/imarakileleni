@@ -2,7 +2,7 @@ import React from "react";
 
 const AdventureTour = ({ title, sections }) => {
   return (
-    <section className="text-[#1a1a1a] py-16 px-6 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="text-[#111] py-16 px-6 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       
           
       {title && title.trim() !== "" && (

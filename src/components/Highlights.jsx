@@ -97,7 +97,7 @@ const Highlights = ({ title, trips }) => {
                     {trip.title}
                   </h3>
 
-                  <p className="text-[15px] line-clamp-6 mb-4">
+                  <p className="text-[16px] text-center mb-4">
                     {trip.description}
                   </p>
                 </div>

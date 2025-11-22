@@ -48,7 +48,7 @@ const WhyJoinSection = () => {
 const Benefit = ({ text }) => (
   <div className="flex items-start gap-4">
     <FaCheckCircle className="text-[#d87328] text-xl flex-shrink-0" />
-    <p className="text-[16px] text-[#111] font-medium leading-relaxed">
+    <p className="text-[16px] text-[#111]  leading-relaxed">
       {text}
     </p>
   </div>
