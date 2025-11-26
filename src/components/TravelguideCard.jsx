@@ -3,7 +3,7 @@ import React from "react";
 
 const TravelguideCard = ({ title, subtitle1, subtitle2, items }) => {
   return (
-    <section className="py-16 px-4 md:px-16 lg:px-18 2xl:px-40 bg-white">
+    <section className="py-16 px-4 md:px-16 lg:px-18  2xl:px-40 bg-white">
 
       {/* Title */}
       {title && (

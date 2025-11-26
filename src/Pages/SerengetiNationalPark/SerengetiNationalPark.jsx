@@ -2,13 +2,15 @@ import React from "react";
 import SerengetiTabsSection from "./SerengetiTabsSection";
 import ChoosingSafariSection from "./ChoosingSafariSection";
 import SerengetiMigrationTabs from "./SerengetiMigrationTabs";
-import TripHighlights from "../TanzaniaSafariLanding/TripHighlights";
+import TripHighlights from "../../components/TripHighlights";
 import BestTimeToVisitSection from "./BestTimeToVisitSection";
 import TravelGuide from "./TravelGuide";
 import SafariFAQSection from "../Aboutus/SafariFAQSection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
 import ActiveTravelDestinations from "../TravelGuideDetails/ActiveTravelDestinations";
+import AdventureTour from "../../components/AdventureTour";
+import FAQSection from "../../components/FAQSection";
 
 const SerengetiNationalPark = () => {
   const monthData = [
@@ -132,6 +134,139 @@ const SerengetiNationalPark = () => {
     },
   ];
 
+  const trips = [
+  {
+    id: 1,
+    image:
+      "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
+    title: "Tanzania Safari Adventure With Enjoy",
+
+    description:
+      "The one that sees you swish through the scenic south island kicking off in Christchurch The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+  {
+    id: 2,
+    image:
+      "https://www.greatadventuresafaris.com/wp-content/uploads/Family-safari-holidays-in-Africa-1200x675.jpg",
+    title: "Tanzania Family Safaris",
+
+    description:
+      "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+    title: "Big Drop. Low Prices.",
+    description:
+      "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+  {
+    id: 4,
+    image:
+      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
+    title: "Wildlife Budget Cultural Fly  ",
+
+    description:
+      "The one that gives you the ultimate Greek Island experience exploring Mykonos, Paros, Santorini and Ios This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+  {
+    id: 5,
+    image:
+      "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
+    title: "Tanzania Safari Adventure",
+
+    description:
+      "The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+  {
+    id: 6,
+    image:
+      "https://www.greatadventuresafaris.com/wp-content/uploads/Family-safari-holidays-in-Africa-1200x675.jpg",
+    title: "Tanzania Family Safaris",
+
+    description:
+      "This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+  },
+];
+
+const teamData = [
+    
+        {
+            image:
+              "https://www.contiki.com/media/wcxfjs4s/south-america-peru.jpg",
+            heading:
+              "Whether it’s backpacking, camping or sailing, a Contiki adventure tour will totally redefine your idea of broadening your mind.",
+            subheading:"When we founded Timbuktu in 2014, we knew exactly what we wanted to do: make planning extraordinary trips to the far-flung corners of the world as easy and fun as the adventures themselves. make planning extraordinary trips to the far-flung corners of the world as easy",
+            description:
+              "You’ll traverse Norway in search of Arctic whales and the Northern Lights. You’ll kayak along Vietnam’s majestic Nho Que River. You’ll ride a horse on the jawdropping plains of Patagonia. Adventure travel is all about unleashing a new side of yourself and discovering what you’re capable of, and that’s exactly what you’ll do on these trips - whether you’re trekking Peru’s Inca Trail or swimming in the Great Barrier Reef.",
+              
+          },
+          {
+            image:
+              "https://www.contiki.com/media/jqah4mlo/bungy-jumping-in-new-zealand.jpg",
+            heading:
+              "Adventure travel is all about the unbelievable people you meet, the new foods you try and the activities you embark on.",
+            description:
+              "What comes to mind when you hear the word ‘adventure’? Exploring cultural hotspots in historical cities, jumping out of planes over the gobsmacking landscapes of New Zealand or exploring the plains of Africa on a wildlife safari? Whatever you’re looking for on your adventure tour, it’s ready and waiting with Contiki.",
+          },
+    
+]
+
+    const FaqsData = [
+  {
+    question: "How long does an African safari take?",
+    answerBlocks: [
+      {
+        type: "paragraph",
+        text: [
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "For a deeper experience, 2 weeks is ideal.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Recommended Duration:",
+      },
+      {
+        type: "list",
+        items: [
+          "Short Safaris: 3–5 days",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "Full Safari Experience: 12–14 days",
+          "Extended Adventure: 21+ days",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you want the full wildlife experience, 2 weeks is ideal.",
+      },
+    ],
+  },
+
+  {
+    question: "What is the best month to go on safari?",
+    answerBlocks: [
+      {
+        type: "paragraph",
+        text: [
+          "June to October is considered the dry season.",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Why Dry Season?",
+      },
+      {
+        type: "paragraph",
+        text: "Animals gather around water sources, making sightings easier.",
+      },
+    ],
+  },
+];
+
   return (
     <div>
       <div
@@ -149,15 +284,26 @@ const SerengetiNationalPark = () => {
       <SerengetiTabsSection />
       <ChoosingSafariSection />
       <SerengetiMigrationTabs />
-      <TripHighlights />
+      {/* <TripHighlights /> */}
+          <TripHighlights
+        title=" Africa & Middle east trip highlights"
+        data={trips}
+      />
       {/* ✅ Best Time to Visit Section */}
       <BestTimeToVisitSection
         title={`Best Time to visit serengeti`}
         subtitle=""
         staticMonths={monthData}
       />
-      <TravelGuide/>
-      <SafariFAQSection/>
+      {/* <TravelGuide/> */}
+      <AdventureTour 
+     sections={teamData}
+      />
+      {/* <SafariFAQSection/> */}
+      <FAQSection 
+      title={"What do travellers ask about our African safari tours?"}
+      faqs={FaqsData}
+      />
       <ActiveTravelDestinations/>
       <BookWithConfidence/>
       <Featured/>

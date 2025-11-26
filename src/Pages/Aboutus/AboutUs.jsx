@@ -8,19 +8,104 @@ import {
   FaWallet,
 } from "react-icons/fa";
 import AboutInfoSection from "./AboutInfoSection";
-import BookWithConfidence from "../Home/BookWithConfidence";
 import OnTheRoadSection from "./OnTheRoadSection";
 import OffTheRoadSection from "./OffTheRoadSection";
 import SafariFeatureSection from "./SafariFeatureSection";
 import ContikiCrewSection from "./ContikiCrewSection";
-import WhyVisitTanzania from "./WhyVisitTanzania";
+
 import ReviewsSection from "./ReviewsSection";
-import SafariFAQSection from "./SafariFAQSection";
+
 import Featured from "../Home/Featured";
+import WhyVisitSection from "../../components/WhyVisitSection";
+import FAQSection from "../../components/FAQSection";
+import OverviewSections from "../../components/OverviewSections";
 
 const AboutUs = () => {
+
+
+    const data = [
+    {
+      id: 1,
+      image:
+        "https://tanzania-specialist.com/wp-content/uploads/2025/06/Tanzania-vacation-scaled.jpg",
+      title: "Go further than you’d go alone",
+      text: "On these Africa & the Middle East trips for 18–35s, you’ll travel with friendly people, plus an expert Trip Manager and local guides. Perfect for giving you confidence and bringing the fun vibes!",
+    },
+    {
+      id: 2,
+      image:
+        "https://www.nkuringosafaris.com/wp-content/uploads/2024/05/African_safari_woman_sunset__-jpg.webp",
+      title: "Seriously special stays",
+      text: "Camping under the stars in Kruger. Luxury cruising on the Nile. Waterfront stays in Zambia. Our Africa & the Middle East trips are studded with stays that’ll make you wanna stay forever.",
+    },
+    {
+      id: 3,
+      image:
+        "https://www.serengetiheroes.com/wp-content/uploads/2024/03/women-safari-1290x737.webp",
+      title: "Experiences that count",
+      text: "Support rescued elephants, meet Maasai people, and even visit a Women’s Collective in Morocco’s Dades Valley. These experiences aren’t just good for you – they’re good for people, planet & wildlife too!",
+    },
+  ];
+
+  const safariFaqs = [
+  {
+    question: "How long does an African safari take?",
+    answerBlocks: [
+      {
+        type: "paragraph",
+        text: [
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "For a deeper experience, 2 weeks is ideal.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Recommended Duration:",
+      },
+      {
+        type: "list",
+        items: [
+          "Short Safaris: 3–5 days",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+          "Full Safari Experience: 12–14 days",
+          "Extended Adventure: 21+ days",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you want the full wildlife experience, 2 weeks is ideal.",
+      },
+    ],
+  },
+
+  {
+    question: "What is the best month to go on safari?",
+    answerBlocks: [
+      {
+        type: "paragraph",
+        text: [
+          "June to October is considered the dry season.",
+          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Why Dry Season?",
+      },
+      {
+        type: "paragraph",
+        text: "Animals gather around water sources, making sightings easier.",
+      },
+    ],
+  },
+];
+
+
   return (
     <>
+   
+    
       <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
@@ -61,7 +146,34 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <AboutInfoSection />
+      {/* <AboutInfoSection /> */}
+      <OverviewSections 
+       label="Tanzania Safaris"
+      title="In Kilimanjaro's footprint, Tanzania mesmerizes with the great wildebeest migration wildlife"
+      image="https://images.squarespace-cdn.com/content/v1/5f1ab4309bd4b45e29ec3e4b/1688629973354-NWWQV5E0GV2KDOY12YSU/South-Africa-Ngala-Safari-Lodge-andBeyonder-butlers-_3_-Collections-3000w.jpg"
+      imagePosition="right"
+      bg="#fcfcfc"
+      paragraphs={[
+        {
+          italic:true,
+          content:
+            "We are seasoned off-the-beaten-track travellers and I marvel that everything worked exactly as it was supposed to, wrote a recent traveller of his Expert Africa safari. “Here we were, in the middle of central Tanzania, waiting for a 10:05 flight. Guess what? At 10:03, there was the plane, buzzing animals off the grass runway, then touching down to pick us up. It happened every time. Dazzling!",
+        },
+        {
+          content:
+            "The same traveller went on to describe visceral wildlife encounters: “Having a leopard on your tent porch is not something I will soon forget. This is not Disneyland.”",
+        },
+        {
+          content:
+            "Tanzania’s tropical coast, sun-dappled beaches and scattering of islands are equally fascinating. Here cosmopolitan towns date back centuries to early trade routes and secluded Indian Ocean islands lie surrounded by white-sand beaches and colourful coral reefs."
+          },
+        {
+          italic: true,
+          content:
+           "Our eyes were wide with wonder from the moment we left the airstrip,” sighed a couple returning to Tanzania for the first time since their honeymoon 30 years earlier: “We had the most mind-blowing, amazing experience.”"
+        },
+      ]}
+      />
       <div className="bg-[#fedec7]">
         {" "}
         {/* soft peach background */}
@@ -140,9 +252,16 @@ const AboutUs = () => {
       <OffTheRoadSection/>
       <ContikiCrewSection/>
       <SafariFeatureSection/>
-      <WhyVisitTanzania/>
+      {/* <WhyVisitTanzania/> */}
+      <WhyVisitSection 
+      title={" Why visit Tanzania with Imara Kileleni Safaris?"}
+      cards={data}
+      />
       <ReviewsSection/>
-      <SafariFAQSection/>
+      
+      <FAQSection 
+      title=" What do travellers ask about our African safari tours?" faqs={safariFaqs}
+      />
       <Featured/>
       
       

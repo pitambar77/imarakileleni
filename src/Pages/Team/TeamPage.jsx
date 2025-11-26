@@ -47,6 +47,7 @@ const TeamPage = () => {
       {/* <AdventureTour/> */}
       <AdventureTour
       title={"Why go on an adventure tour with contiki?"}
+      
      sections={teamData}
      />
       <BookWithConfidence/>

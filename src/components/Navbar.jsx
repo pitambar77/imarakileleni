@@ -4,7 +4,7 @@ import imaralogo from '../assets/imaralogo.png'
 
 const Navbar = () => {
   return (
-    <header className="w-full bg-white">
+    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
       {/* Top Bar */}
       <div className="flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
         <a href="#" className="hover:underline">Contact us</a>

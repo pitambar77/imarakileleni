@@ -4,7 +4,7 @@ const WhyVisitSection = ({ title, cards }) => {
   return (
     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
 
-      {/* Render title only if provided */}
+     
       {title && (
         <h2 className="text-[28px] md:text-3xl capitalize font-bold text-center text-[#111] mb-12">
           {title}

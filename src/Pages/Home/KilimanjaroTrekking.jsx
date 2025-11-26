@@ -12,7 +12,7 @@ const trips = [
     rating: 4.6,
     days: "8 Days",
     places: "3 Places",
-    countries: "1 Country",
+    country: "1 Country",
     standardPrice: "$1,235",
     discountedPrice: "$1,050",
     description:
@@ -25,7 +25,7 @@ const trips = [
     rating: 4.7,
     days: "19 Days",
     places: "6 Places",
-    countries: "8 Countries",
+    country: "8 Countries",
     discountedPrice: "$3,425",
     description:
       "The one that combines urban parties, ancient history and mountain beauty in 19 days",
@@ -37,7 +37,7 @@ const trips = [
     rating: 4.5,
     days: "8 Days",
     places: "6 Places",
-    countries: "1 Country",
+    country: "1 Country",
     standardPrice: "$1,765",
     discountedPrice: "$1,616",
     description:
@@ -51,7 +51,7 @@ const trips = [
     rating: 4.8,
     days: "18 Days",
     places: "31 Places",
-    countries: "5 Countries",
+    country: "5 Countries",
     discountedPrice: "$3,832",
     description:
       "The one that shows you Britain’s best hotspots, topped off with The Emerald Isles",
