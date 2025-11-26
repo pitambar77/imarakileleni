@@ -29,12 +29,15 @@ const AdventureTour = ({ title, sections }) => {
 
             {/* TEXT BLOCK */}
             <div
-              className={`space-y-6 text-center px-12 leading-relaxed
+              className={`space-y-6  px-12 leading-relaxed
                 ${index % 2 !== 0 ? "md:order-1" : "md:order-2"}
               `}
             >
-              <h3 className="text-[22px] text-[#111] leading-snug mb-4">
+               {/* <h2 className="text-[22px] text-[#111] leading-snug mb-8 text-center">
                 {item.heading}
+              </h2> */}
+              <h3 className="text-[22px] text-[#111] leading-snug mb-4">
+                {item.subheading}
               </h3>
 
               <p className="text-gray-700 text-[16px] leading-relaxed">

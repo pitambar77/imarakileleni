@@ -20,7 +20,7 @@ const ChoosingSafariSection = () => {
       rating: 4.6,
       days: "8 Days",
       places: "3 Places",
-      countries: "1 Country",
+      country: "1 Country",
       standardPrice: "$1,235",
       discountedPrice: "$1,050",
       description:
@@ -34,7 +34,7 @@ const ChoosingSafariSection = () => {
       rating: 4.7,
       days: "19 Days",
       places: "6 Places",
-      countries: "8 Countries",
+      country: "8 Countries",
       discountedPrice: "$3,425",
       description:
         "The one that combines urban parties, ancient history and mountain beauty in 19 days",
@@ -46,7 +46,7 @@ const ChoosingSafariSection = () => {
       rating: 4.5,
       days: "8 Days",
       places: "6 Places",
-      countries: "1 Country",
+      country: "1 Country",
       standardPrice: "$1,765",
       discountedPrice: "$1,616",
       description:
@@ -61,7 +61,7 @@ const ChoosingSafariSection = () => {
       rating: 4.8,
       days: "18 Days",
       places: "31 Places",
-      countries: "5 Countries",
+      country: "5 Countries",
       discountedPrice: "$3,832",
       description:
         "The one that shows you Britain’s best hotspots, topped off with The Emerald Isles",
@@ -73,9 +73,9 @@ const ChoosingSafariSection = () => {
   const closeModal = () => setSelectedTrip(null);
 
   return (
-    <section className="bg-[#fde6d5] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center">
+    <section className="bg-[#fde6d5] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Heading */}
-      <div className="mb-12 max-w-5xl mx-auto">
+      <div className="mb-12 max-w-5xl mx-auto text-center">
         <h2 className="text-[28px] md:text-3xl capitalize font-extrabold text-[#111] mb-4">
           Choosing a safari in the Serengeti
         </h2>
@@ -200,12 +200,11 @@ const ChoosingSafariSection = () => {
         )}
       </div>
 
-      <div className=" mt-10">
- <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-[15px] px-6 py-3 rounded-full transition">
-        SEE ALL TRIPS
-      </button>
+      <div className=" mt-10 text-center">
+        <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-[15px] px-6 py-3 rounded-full transition">
+          SEE ALL TRIPS
+        </button>
       </div>
-     
     </section>
   );
 };

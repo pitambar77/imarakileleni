@@ -23,7 +23,7 @@ const TripDetailsSection = () => {
         {/* LEFT SIDE - Image */}
         <div className="relative">
           {/* Label */}
-          <div className="absolute bg-[#c8e29b] text-[#1a1a1a] text-xs font-semibold px-3 py-2 ">
+          <div className="absolute bg-[#f9d7b9] text-[#1a1a1a] text-xs font-semibold px-3 py-2 ">
             PREVIOUSLY TASTE OF TANZANIA
           </div>
 

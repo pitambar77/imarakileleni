@@ -142,18 +142,18 @@ const tabs = [
   },
 ];
 
-const SerengetiMigrationTabs = () => {
+const ThingsToDo = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-48">
       {/* TOP SECTION */}
       <div className="text-center mx-auto mb-12">
         <h4 className="tracking-widest text-sm text-gray-500 font-semibold mb-4">
-          SERENGETI MIGRATION AREA: IN DETAIL
+          Zanzibar : IN DETAIL
         </h4>
         <h2 className="text-[32px] font-extrabold text-[#111] mb-8 capitalize">
-          Serengeti Migration Area
+          Things to do
         </h2>
         <p className="text-gray-700 leading-relaxed text-[15px] mb-8">
           The journey for the key players in the Great Migration, the roughly
@@ -178,14 +178,14 @@ const SerengetiMigrationTabs = () => {
       <div className="grid grid-cols-1 lg:grid-cols-9 gap-10 items-start">
         {/* LEFT SIDE — 40% */}
         <div className="lg:col-span-3">
-          <h3 className="font-bold text-2xl mb-4">Serengeti Migration Area</h3>
+          <h3 className="font-bold text-2xl mb-4">Things to do in Zanzibar</h3>
 
           <div className="space-y-3">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center justify-between p-4 rounded-lg font-semibold text-left transition border
+                className={`w-full flex items-center justify-between p-4 rounded-lg font-semibold text-left  transition border
                 ${
                   activeTab === tab.id
                     ? "bg-black text-white "
@@ -193,7 +193,9 @@ const SerengetiMigrationTabs = () => {
                 }`}
               >
                 <span className="flex items-center gap-3 text-[15px]">
-                  <span className="text-xl">{tab.icon}</span>
+                  <span className={`text-2xl ${
+            activeTab === tab.id ? "text-[#d87028]" : "text-black"
+          }`}>{tab.icon}</span>
                   {tab.title}
                 </span>
                 <span className="text-xl">›</span>
@@ -213,4 +215,5 @@ const SerengetiMigrationTabs = () => {
   );
 };
 
-export default SerengetiMigrationTabs;
+
+export default ThingsToDo

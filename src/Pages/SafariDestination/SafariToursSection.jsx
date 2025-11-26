@@ -200,7 +200,7 @@ const SafariToursSection = () => {
 
               {/* Tanzania Destination heading below Region */}
               {category === "region" && (
-                <div className="flex items-center gap-2 px-4 mb-4 text-[#222] bg-[#d87028] py-1 rounded-md text-white  font-semibold text-[15px]">
+                <div className="flex items-center gap-2 px-4 mb-4 bg-[#222] py-1 rounded-md text-[#d87028]  font-semibold text-[16px]">
                   {/* <FaMapMarkerAlt className="" /> */}
                   <img src="https://static.vecteezy.com/system/resources/previews/023/639/560/non_2x/tanzania-map-in-africa-icons-showing-tanzania-location-and-flags-png.png" alt="" className="w-10 h-10" />
                   <span className=" ">Tanzania Destinations</span>

@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import {
   createBrowserRouter,
@@ -9,7 +6,6 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
-
 
 // 🌍 Main site imports
 import Layout from "./Layout";
@@ -26,7 +22,8 @@ import ThankYouPage from "./Pages/Thankyou/ThankYouPage";
 import Sustanbility from "./Pages/Sustanbility/Sustanbility";
 import KilimanjaroLanding from "./Pages/KilimanjaroLanding/KilimanjaroLanding";
 import TravelGuideLanding from "./Pages/TravelGuideLanding/TravelGuideLanding";
-
+import TanzaniaFamilySafari from "./Pages/TanzaniaFamilySafari/TanzaniaFamilySafari";
+import ZanzibarLanding from "./Pages/ZanzibarLandingPage/ZanzibarLanding";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,19 +31,29 @@ const router = createBrowserRouter(
       {/* 🌍 Main Website Routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-       <Route path="safari-landing" element={<SafariLandingPage/>}/>
-       <Route path="itinenary" element={<Itinenary/>}/>
-       <Route path="about-us" element={<AboutUs/>}/>
+        <Route path="safari-landing" element={<SafariLandingPage />} />
+        <Route path="itinenary" element={<Itinenary />} />
+        <Route path="about-us" element={<AboutUs />} />
 
-       <Route path="safari-destination" element={<SafariDestiLanding/>}/>
-       <Route path="safari-fleet" element={<SafariFleet/>}/>
-       <Route path="serengeti-national-park" element={<SerengetiNationalPark/>}/>
-       <Route path="travel-guide-details" element={<TravelguidedetailsPage/>}/>
-       <Route path="team" element={<TeamPage/>}/>
-       <Route path="thank-you" element={<ThankYouPage/>}/>
-      <Route path="sustanbility" element={<Sustanbility/>}/>
-      <Route path="kilimanjaro-landing" element={<KilimanjaroLanding/>}/>
-      <Route path="travel-guide-landing" element={<TravelGuideLanding/>}/>
+        <Route path="safari-destination" element={<SafariDestiLanding />} />
+        <Route path="safari-fleet" element={<SafariFleet />} />
+        <Route
+          path="serengeti-national-park"
+          element={<SerengetiNationalPark />}
+        />
+        <Route
+          path="travel-guide-details"
+          element={<TravelguidedetailsPage />}
+        />
+        <Route path="team" element={<TeamPage />} />
+        <Route path="thank-you" element={<ThankYouPage />} />
+        <Route path="sustanbility" element={<Sustanbility />} />
+        <Route path="kilimanjaro-landing" element={<KilimanjaroLanding />} />
+        <Route path="travel-guide-landing" element={<TravelGuideLanding />} />
+        <Route path="tanzania-family-safari" element={<TanzaniaFamilySafari />} />
+        <Route path="zanzibar-landing" element={<ZanzibarLanding/>} />
+
+
       </Route>
     </>
   )
@@ -55,7 +62,6 @@ const router = createBrowserRouter(
 const App = () => (
   <>
     <RouterProvider router={router} />
-    
   </>
 );
 

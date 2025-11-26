@@ -47,6 +47,7 @@ const VechileInfo = () => {
               time since their honeymoon 30 years earlier: “We had the most
               mind-blowing, amazing experience.”
             </p>
+            
           </div>
         </div>
 

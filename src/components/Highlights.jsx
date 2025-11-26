@@ -93,7 +93,7 @@ const Highlights = ({ title, trips }) => {
 
                 {/* Content */}
                 <div className="p-5 flex flex-col justify-between flex-1">
-                  <h3 className="text-xl mb-4 leading-tight">
+                  <h3 className="text-xl mb-4 text-center leading-tight">
                     {trip.title}
                   </h3>
 
