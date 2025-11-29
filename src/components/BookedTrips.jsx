@@ -1,8 +1,15 @@
 import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { FaStar, FaCalendarAlt, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+import {
+  FaStar,
+  FaSearchPlus,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaGlobe,
+} from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
+import { MdOutlineSavedSearch } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -26,7 +33,7 @@ const trips = [
   {
     id: 2,
     image:
-      "https://kilimanjarofairdeal.com/wp-content/uploads/2023/12/family-3.jpg",
+      "https://tanzania-horizon.com/wp-content/uploads/2021/09/2020-01-23-Mathias-Pfauwadel-Pictures-165-1-1024x719.jpg",
     title: "Tanzania Family Safaris",
     days: "8 Days",
     places: "3 Places",
@@ -40,7 +47,7 @@ const trips = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      "https://wildrhythmsafaris.com/wp-content/uploads/2025/05/Wildrhytms-Safaris-265.webp",
     title: "Big Drop. Low Prices.",
     promo: true,
   },
@@ -74,7 +81,7 @@ const trips = [
   {
     id: 2,
     image:
-      "https://ntandusafaris.com/wp-content/uploads/2024/12/Lion-Banner.webp",
+      "https://wildrhythmsafaris.com/wp-content/uploads/2025/05/Wildrhytms-Safaris-265.webp",
     title: "Tanzania Family Safaris",
     days: "8 Days",
     places: "3 Places",
@@ -88,7 +95,7 @@ const trips = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      "https://naturetravelafrica.com/wp-content/uploads/2020/04/Tanzania.jpg",
     title: "Big Drop. Low Prices.",
     promo: true,
   },
@@ -192,9 +199,16 @@ const BookedTrips = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 flex flex-col justify-center  items-center text-black">
-                    <h3 className="font-bold text-lg mb-2 text-white ">
+                    <img
+                      src="https://www.contiki.com/media/5iwe4eo4/lockup_black_friday.svg?width=426&height=139&mode=max"
+                      alt=""
+                    />
+                    {/* <h3 className="font-bold text-lg mb-2 text-white ">
                       Big Drop. Low Prices.
-                    </h3>
+                    </h3> */}
+                    <p className="text-lg mb-2 text-white">
+                      Book today for the best price (tomorrow won’t be cheaper)
+                    </p>
                     <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full mt-2 shadow">
                       BOOK NOW
                     </button>
@@ -210,9 +224,10 @@ const BookedTrips = () => {
                     />
                     <button
                       onClick={() => openModal(trip)}
-                      className="absolute bottom-3 left-3 bg-white text-xs font-semibold px-3 py-1 rounded shadow-sm hover:bg-gray-100 transition"
+                      className="absolute bottom-3 left-3 bg-white text-xs px-2 py-1 rounded shadow-sm hover:bg-gray-100 transition"
                     >
-                      🔍 QUICK VIEW
+                      <span className=" flex items-center font-semibold gap-0.5"><MdOutlineSavedSearch className=" text-xl "/>QUICK VIEW</span>
+                     
                     </button>
                   </div>
 

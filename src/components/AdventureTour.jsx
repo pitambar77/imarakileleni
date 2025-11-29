@@ -2,7 +2,7 @@ import React from "react";
 
 const AdventureTour = ({ title, sections }) => {
   return (
-    <section className="text-[#111] py-16 px-6 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="adventure" className="text-[#111] py-16 px-6 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       
           
       {title && title.trim() !== "" && (
@@ -33,10 +33,10 @@ const AdventureTour = ({ title, sections }) => {
                 ${index % 2 !== 0 ? "md:order-1" : "md:order-2"}
               `}
             >
-               {/* <h2 className="text-[22px] text-[#111] leading-snug mb-8 text-center">
+               <h2 className="text-3xl text-[#111] leading-snug mb-6 capitalize ">
                 {item.heading}
-              </h2> */}
-              <h3 className="text-[22px] text-[#111] leading-snug mb-4">
+              </h2>
+              <h3 className="text-[18px] text-[#111] leading-snug mb-4">
                 {item.subheading}
               </h3>
 

@@ -11,6 +11,9 @@ import Featured from "../Home/Featured";
 import ActiveTravelDestinations from "../TravelGuideDetails/ActiveTravelDestinations";
 import AdventureTour from "../../components/AdventureTour";
 import FAQSection from "../../components/FAQSection";
+import OverviewSections from "../../components/OverviewSections";
+import TabLink from "./TabLink";
+
 
 const SerengetiNationalPark = () => {
   const monthData = [
@@ -196,8 +199,8 @@ const teamData = [
             image:
               "https://www.contiki.com/media/wcxfjs4s/south-america-peru.jpg",
             heading:
-              "Whether it’s backpacking, camping or sailing, a Contiki adventure tour will totally redefine your idea of broadening your mind.",
-            subheading:"When we founded Timbuktu in 2014, we knew exactly what we wanted to do: make planning extraordinary trips to the far-flung corners of the world as easy and fun as the adventures themselves. make planning extraordinary trips to the far-flung corners of the world as easy",
+              " Contiki adventure tour",
+            subheading:"When we founded Timbuktu in 2014, we knew exactly what we wanted to do: ",
             description:
               "You’ll traverse Norway in search of Arctic whales and the Northern Lights. You’ll kayak along Vietnam’s majestic Nho Que River. You’ll ride a horse on the jawdropping plains of Patagonia. Adventure travel is all about unleashing a new side of yourself and discovering what you’re capable of, and that’s exactly what you’ll do on these trips - whether you’re trekking Peru’s Inca Trail or swimming in the Great Barrier Reef.",
               
@@ -205,7 +208,8 @@ const teamData = [
           {
             image:
               "https://www.contiki.com/media/jqah4mlo/bungy-jumping-in-new-zealand.jpg",
-            heading:
+              heading:"Adventure travel is all ",
+            subheading:
               "Adventure travel is all about the unbelievable people you meet, the new foods you try and the activities you embark on.",
             description:
               "What comes to mind when you hear the word ‘adventure’? Exploring cultural hotspots in historical cities, jumping out of planes over the gobsmacking landscapes of New Zealand or exploring the plains of Africa on a wildlife safari? Whatever you’re looking for on your adventure tour, it’s ready and waiting with Contiki.",
@@ -281,7 +285,33 @@ const teamData = [
           Serengeti natonal park
         </h2>
       </div>
-      <SerengetiTabsSection />
+      <TabLink/>
+      <OverviewSections 
+       label="Explore Serengeti National Park"
+      title="The Serengeti's endless, open plains, scattered with rocky kopjes quantities of wildlife."
+      image="https://www.tanzaniatourism.com/images/uploads/Nakupenda_Sandbank_Zanzibar.jpg"
+      imagePosition="right"
+      bg="#fcfcfc"
+      paragraphs={[
+        {
+          content:
+            "Situated in the heart of East Africa, Tanzania has earned a distinguished reputation as a top-tier safari spot, showcasing a breathtaking variety of wildlife, diverse landscapes, and rich cultural heritage. With an increasing appeal for family-centric travel adventures, driven by the allure of unspoiled wilderness, Tanzania has emerged as a prime choice for family safaris.",
+        },
+        {
+          content:
+            "Join us on this exploration as we navigate the wonders of Tanzania’s wildlife, landscapes, and cultural heritage through the lens of a family safari. the wonders of Tanzania’s wildlife",
+        },
+        {
+          content:
+            "Opting for a Tanzania family safari guarantees a distinctive and enriching journey that caters to the diverse interests and requirements of each family member. The nation’s abundant biodiversity, showcasing iconic wildlife and conservation havens like the Serengeti National Park and Ngorongoro Crater, sets a unique stage for witnessing the annual Great Migration. ",
+        },
+        {
+          italic: true,
+          content:
+            "“Our eyes were wide with wonder from the moment we left the airstrip...”",
+        },
+      ]}
+      />
       <ChoosingSafariSection />
       <SerengetiMigrationTabs />
       {/* <TripHighlights /> */}

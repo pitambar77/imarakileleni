@@ -35,7 +35,7 @@ const BestTimeToVisitSection = ({
   }, [staticMonths]);
 
   return (
-    <section className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 py-16 text-[#2e2c2d] ">
+    <section id="besttime" className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 py-16 text-[#2e2c2d] ">
       {/* Header */}
     
        

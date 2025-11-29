@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -8,6 +5,7 @@ import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import PrimaryButton from "./PrimaryButton";
 
 const slides = [
   {
@@ -20,7 +18,8 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://yellowzebrasafaris.com/media/46270/wildlife-experiences-on-a-tanzania-safari.jpg?rxy=0.36666666666666664%2C0.41423948220064727&width=2048&height=1024&format=jpg&v=1da5e0fa5e13090",
+    image:
+      "https://images.goway.com/production/featured_images/gt_africa_cheetah_iStock-532180152%20copy.jpg?VersionId=CEfF267IuT89Oh5tPMSpbvFE1beoOI9G",
     title: "DISCOVER KENYA",
     description:
       "Experience the heart of Africa with breathtaking landscapes and wildlife.",
@@ -28,7 +27,7 @@ const slides = [
   {
     id: 3,
     image:
-      "https://africanscenicsafaris.com/blog/wp-content/uploads/2025/05/off-the-beaten-path-tanzania-safari-packages-you-need-to-experience-banner-scaled.webp",
+      "https://thewanderers.travel/wp-content/uploads/2024/07/10-days-southern-tanzania-safari-banner.webp",
     title: "SAFARI ADVENTURES",
     description:
       "Step into the wild and let nature's beauty take your breath away.",
@@ -40,7 +39,10 @@ const HeroSlider = () => {
     <section className="relative w-full h-[64vh] 2xl:h-[50vh]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop
@@ -57,15 +59,14 @@ const HeroSlider = () => {
 
               {/* Text Content */}
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
-                <h2 className="text-4xl md:text-6xl  mb-4">
-                  {slide.title}
-                </h2>
+                <h2 className="text-4xl md:text-6xl  mb-4">{slide.title}</h2>
                 <p className="text-lg md:text-xl mb-6 max-w-2xl">
                   {slide.description}
                 </p>
                 <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
+                
               </div>
             </div>
           </SwiperSlide>

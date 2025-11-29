@@ -25,24 +25,7 @@ const OverViewSection = () => {
       image:
         "https://www.tanzaniatourism.com/images/uploads/Nakupenda_Sandbank_Zanzibar.jpg",
     },
-    safaris: {
-      heading: "Explore Safaris in the Serengeti National Park.",
-      leftText1:
-        "The Serengeti offers a wide variety of safari options, from luxurious lodges to authentic tented camps. Each safari brings you closer to the rhythm of nature and the breathtaking migration of wildlife across vast plains.",
-      leftText2:
-        "Morning and evening game drives reveal dramatic encounters between predators and prey, while balloon safaris offer an unforgettable bird’s-eye view of the savannah.",
-      image:
-        "https://cdn.sanity.io/images/cctd4ker/production/1deba868a4bfe107d598a51e0798df77c9a77e05-1920x1080.jpg",
-    },
-    stay: {
-      heading: "Stay in the heart of nature at Serengeti’s finest lodges.",
-      leftText1:
-        "Serengeti offers accommodations that blend comfort with wilderness. Choose from luxury lodges, mid-range tented camps, and budget-friendly eco-stays.",
-      leftText2:
-        "Many lodges are designed with sustainability in mind, allowing you to enjoy panoramic views while minimizing your environmental footprint.",
-      image:
-        "https://www.andbeyond.com/wp-content/uploads/sites/5/serengeti-safari-lodge-1.jpg",
-    },
+
   };
 
   const current = tabContent[activeTab] || tabContent["overview"];

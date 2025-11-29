@@ -64,7 +64,7 @@ const Navbar = () => {
           </button>
 
           {/* View Trips Button */}
-          <button className="bg-[#d87028] text-white px-[21px] py-3 border border-gray-200 rounded-[200px] font-semibold hover:bg-orange-700">
+          <button className="bg-[#d87028] text-white px-[21px] py-3 border border-gray-200 rounded-full font-semibold hover:bg-orange-700">
             VIEW TRIPS
           </button>
         </div>

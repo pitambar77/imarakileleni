@@ -9,7 +9,7 @@ const OverviewSections = ({
   bg = "#fcfcfc",
 }) => {
   return (
-    <section style={{ backgroundColor: bg }} className="py-16">
+    <section id="overview" style={{ backgroundColor: bg }} className="py-16">
       <div
         className={`grid grid-cols-1 lg:grid-cols-[62%_38%] px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto ${
           imagePosition === "left" ? "lg:grid-cols-[38%_62%]" : ""
@@ -53,7 +53,7 @@ const OverviewSections = ({
           <img
             src={image}
             alt={title}
-            className="rounded-md w-full max-w-[460px] object-cover shadow-sm"
+            className="rounded-md w-full max-w-[420px] h-[520px] object-cover shadow-sm"
           />
         </div>
       </div>

@@ -146,7 +146,7 @@ const ThingsToDo = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-48">
+    <section id="thingstodo" className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-48">
       {/* TOP SECTION */}
       <div className="text-center mx-auto mb-12">
         <h4 className="tracking-widest text-sm text-gray-500 font-semibold mb-4">

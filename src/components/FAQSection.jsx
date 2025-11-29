@@ -101,7 +101,7 @@ const FAQSection = ({ title, faqs }) => {
   };
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="faq" className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
 
       {/* Title */}
       {title && (

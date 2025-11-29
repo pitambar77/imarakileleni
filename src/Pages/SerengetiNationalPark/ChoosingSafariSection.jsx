@@ -73,7 +73,7 @@ const ChoosingSafariSection = () => {
   const closeModal = () => setSelectedTrip(null);
 
   return (
-    <section className="bg-[#fde6d5] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="packages" className="bg-[#fde6d5] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Heading */}
       <div className="mb-12 max-w-5xl mx-auto text-center">
         <h2 className="text-[28px] md:text-3xl capitalize font-extrabold text-[#111] mb-4">

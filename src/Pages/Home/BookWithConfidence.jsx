@@ -9,7 +9,7 @@ import {
 
 const BookWithConfidence = () => {
   return (
-    <section className="w-full">
+    <section id="more" className="w-full">
       {/* Thin top rating bar */}
       <div className="w-full bg-[#d76e28]">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white text-xs md:text-sm font-semibold">
