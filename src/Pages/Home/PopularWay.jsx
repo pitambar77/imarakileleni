@@ -14,7 +14,7 @@ const destinations = [
 
 const PopularWay = () => {
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-8 md:py-16 bg-white">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-bold text-center capitalize mb-10">

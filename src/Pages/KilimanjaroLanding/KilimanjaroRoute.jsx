@@ -26,7 +26,7 @@ const KilimanjaroRoute = () => {
         <img
           src="https://www.kilimanjarobrothers.com/wp-content/uploads/2023/12/Artboard-1.png"
           alt="Mount Kilimanjaro Map"
-          className="w-full max-w-4xl h-[600px] object-cover rounded-md shadow-sm"
+          className="w-full max-w-4xl h-auto md:h-[600px] object-cover rounded-md shadow-sm"
         />
       </div>
     </section>

@@ -288,7 +288,7 @@ const KilimanjaroLanding = () => {
   return (
     <>
       <div
-        className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url('https://yellowzebrasafaris.com/media/47967/game-drive-march-in-tanzania-safari-africa.jpg?width=1900&height=920&format=jpg&v=1da5e0f615dab60')`,
         }}

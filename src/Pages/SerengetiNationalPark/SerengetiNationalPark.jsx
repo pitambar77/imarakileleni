@@ -277,9 +277,10 @@ const teamData = [
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url('https://media.audleytravel.com/-/media/images/home/africa/tanzania/places/istock_19471790_cheetah_serengeti_national_park_3000x1000.jpg?q=79&w=1920&h=685')`,
+
         }}
       >
-        {/* Dark Overlay */}
+      
         <div className="absolute inset-0 bg-black/30"></div>
         <h2 className=" text-xl md:text-5xl text-white uppercase z-10 ">
           Serengeti natonal park

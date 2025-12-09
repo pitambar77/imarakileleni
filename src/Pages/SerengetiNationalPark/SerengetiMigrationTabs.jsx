@@ -178,7 +178,7 @@ const SerengetiMigrationTabs = () => {
       <div className="grid grid-cols-1 lg:grid-cols-9 gap-10 items-start">
         {/* LEFT SIDE — 40% */}
         <div className="lg:col-span-3">
-          <h3 className="font-bold text-2xl mb-4">Serengeti Migration Area</h3>
+          {/* <h3 className="font-bold text-2xl mb-4">Serengeti Migration Area</h3> */}
 
           <div className="space-y-3">
             {tabs.map((tab) => (

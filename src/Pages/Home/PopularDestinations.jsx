@@ -15,7 +15,7 @@ const destinations = [
 
 const PopularDestinations = () => {
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-8 md:py-16 bg-white">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* Title */}
         <h2 className="text-3xl text-center mb-10 capitalize">

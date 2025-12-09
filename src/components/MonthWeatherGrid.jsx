@@ -3,7 +3,7 @@ import { IoSunny,IoRainyOutline } from "react-icons/io5";
 
 const MonthWeatherGrid = ({ data }) => {
   return (
-    <div className="w-full px-4 md:px-10 lg:px-18 2xl:px-28 pb-16">
+    <div className=" hidden md:block w-full px-4 md:px-10 lg:px-18 2xl:px-28 pb-16">
       {/* HEADER ROW */}
       <div className="grid grid-cols-12 text-center">
         {data.map((item, index) => (
@@ -48,3 +48,5 @@ const MonthWeatherGrid = ({ data }) => {
 };
 
 export default MonthWeatherGrid;
+
+

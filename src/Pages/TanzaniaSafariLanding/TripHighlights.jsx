@@ -76,7 +76,7 @@ const TripHighlights = () => {
           <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
             Africa & Middle east trip highlights
           </h2>
-          <div className="absolute right-0 flex items-center space-x-3">
+          <div className=" hidden md:block absolute right-0 flex items-center space-x-3">
             <button
               ref={swiperNavPrevRef}
               className="swiper-button-prev-custom bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"
@@ -114,7 +114,7 @@ const TripHighlights = () => {
               </span>`,
           }}
           breakpoints={{
-            640: { slidesPerView: 1.5 },
+            640: { slidesPerView: 2 },
             768: { slidesPerView: 2.5 },
             1024: { slidesPerView: 4 },
           }}

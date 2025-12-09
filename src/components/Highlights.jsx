@@ -27,7 +27,7 @@ const Highlights = ({ title, trips }) => {
           )}
 
           {/* Navigation Arrows */}
-          <div className="absolute right-0 flex items-center space-x-3">
+          <div className=" hidden md:block absolute right-0 flex items-center space-x-3">
             <button
               ref={swiperNavPrevRef}
               className="swiper-button-prev-custom bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"

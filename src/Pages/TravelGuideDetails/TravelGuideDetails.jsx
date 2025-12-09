@@ -12,7 +12,7 @@ const TravelGuideDetails = () => {
         <p className=" mb-6 text-center">Travel Trips</p>
         <img
           className=" w-full h-56 md:h-[480px] rounded-md shadow-md object-cover mb-8"
-          src="https://www.asiliaafrica.com/wp-content/uploads/2024/04/Zebras-grazing-in-Ngorongoro-Tanzania.jpg"
+          src="https://www.divergenttravelers.com/wp-content/uploads/2018/07/edit-9246-compressor-2080x1387.jpg"
           alt=""
         />
 

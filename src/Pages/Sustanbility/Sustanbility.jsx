@@ -44,9 +44,9 @@ const Sustanbility = () => {
           TRAVEL WITH PURPOSE
         </h2>
       </div>
-      <div className=" py-16 bg-[#fedec7] ">
+      <div className=" py-16 bg-[#fedec7] px-4">
         <div className="max-w-4xl mx-auto text-center ">
-          <h3 className=" text-3xl mb-4">
+          <h3 className=" text-3xl mb-4 ">
             We empower crucial wilderness areas in East Africa, benefitting
             People and Nature alike.
           </h3>

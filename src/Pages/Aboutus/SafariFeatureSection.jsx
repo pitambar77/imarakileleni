@@ -101,7 +101,7 @@ const SafariIntroSection = () => {
           <img
             src="https://bookaweb.s3.eu-central-1.amazonaws.com/assets/6374a44250b1e.jpg"
             alt="Safari Team"
-            className=" w-full h-[320px] md:h-[420px] object-cover rounded-lg"
+            className=" w-full h-auto md:h-[420px] object-cover rounded-lg"
           />
         </div>
 
@@ -127,7 +127,7 @@ const SafariIntroSection = () => {
         
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left">
+        <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left order-2 md:order-1">
           <p className="text-sm text-gray-700 mb-2">Behind the scenes</p>
           <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
             Our Safari Fleet
@@ -140,11 +140,11 @@ const SafariIntroSection = () => {
           </button>
         </div>
         {/* Left Image */}
-        <div className="w-full md:w-3/5">
+        <div className="w-full md:w-3/5 order-1 md:order-2">
           <img
             src="https://bookaweb.s3.eu-central-1.amazonaws.com/assets/6374a44250b1e.jpg"
             alt="Safari Team"
-            className=" w-full h-[320px] md:h-[460px] object-cover rounded-lg"
+            className=" w-full h-auto md:h-[460px] object-cover rounded-lg"
           />
         </div>
       </div>
@@ -155,7 +155,7 @@ const SafariIntroSection = () => {
           <img
             src="https://bookaweb.s3.eu-central-1.amazonaws.com/assets/6374a44250b1e.jpg"
             alt="Safari Team"
-            className=" w-full h-[320px] md:h-[420px] object-cover rounded-lg"
+            className=" w-full h-auto md:h-[420px] object-cover rounded-lg"
           />
         </div>
 

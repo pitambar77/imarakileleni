@@ -107,49 +107,207 @@ const TanzaniaTabsSection = () => {
   const [activeTab, setActiveTab] = useState("south");
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+    // <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
      
-     <div className=" text-center mb-16 px-24 mx-auto text-[#222]">
-       <h2 className="text-[30px] md:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
+    //  <div className=" text-center mb-16 px-24 mx-auto text-[#222]">
+    //    <h2 className="text-[30px] md:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
+    //       Tanzania’s top safari & holiday destinations
+    //     </h2>
+
+    //     {/* Subheading */}
+    //     <p className="text-[18px] text-[#555] mb-10">
+    //       Tanzania’s safari and beach areas fall naturally into four broad
+    //       groups.
+    //     </p>
+
+    //     {/* Content Paragraphs */}
+    //     <div className=" px-16 text-[17px] leading-[1.9] space-y-6 text-[#333]">
+    //       <p>
+    //         <span className="font-semibold">Tanzania’s ‘Northern Circuit’</span>{" "}
+    //         is the term which defines the areas of the sprawling{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Serengeti
+    //         </a>
+    //         , the stunning landscape of the{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Ngorongoro Crater
+    //         </a>
+    //         ,{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Tarangire
+    //         </a>{" "}
+    //         and{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Lake Manyara
+    //         </a>{" "}
+    //         national parks – the most famous safaris areas in Tanzania.
+    //       </p>
+
+    //       <p>
+    //         For a quieter experience,{" "}
+    //         <span className="font-semibold">Tanzania’s southern parks</span> offer
+    //         unspoiled wilderness areas dotted with a smaller number of safari
+    //         camps. The lakes and waterways of{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Nyerere National Park
+    //         </a>{" "}
+    //         (formerly Selous) offer magical boating safaris, while{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Ruaha
+    //         </a>
+    //         ’s rugged terrain is excellent for walking safaris and is home to a
+    //         very strong population of lions.
+    //       </p>
+
+    //       <p>
+    //         Nearer to Africa’s heart,{" "}
+    //         <span className="font-semibold">Western Tanzania</span> is harder to
+    //         reach, so few visitors come, but two parks are amazing.{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Katavi National Park
+    //         </a>{" "}
+    //         protects a vast plain: the battleground for buffalo and lion, whilst
+    //         an hour’s flight away, the spectacular{" "}
+    //         <a
+    //           href="#"
+    //           className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
+    //         >
+    //           Mahale Mountains
+    //         </a>
+    //         rise sheer from the shores of Lake Tanganyika – providing probably
+    //         the best place to track wild chimpanzees in Africa.
+    //       </p>
+
+    //       <p>
+    //         Lush and tropical,{" "}
+    //         <span className="font-semibold">Tanzania’s coast & islands</span> are
+    //         the venue for simple beach retreats to luxurious lodges – with the
+    //         odd private island included.
+    //       </p>
+    //     </div>
+    //  </div>
+    //   <div className="">
+    //     {/* Tabs */}
+    //     <div className="flex justify-center mb-10 space-x-4">
+    //       <button
+    //         onClick={() => setActiveTab("south")}
+    //         className={`px-6 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
+    //           activeTab === "south"
+    //             ? "bg-[#d87028] text-white border-[#d87028]"
+    //             : "border-black text-black hover:bg-gray-100"
+    //         }`}
+    //       >
+    //         Southern Tanzania
+    //       </button>
+
+    //       <button
+    //         onClick={() => setActiveTab("north")}
+    //         className={`px-6 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
+    //           activeTab === "north"
+    //             ? "bg-[#d87028] text-white border-[#d87028]"
+    //             : "border-black text-black hover:bg-gray-100"
+    //         }`}
+    //       >
+    //         Northern Tanzania
+    //       </button>
+    //     </div>
+
+    //     {/* Cards */}
+    //     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    //       {tripsData[activeTab].map((trip) => (
+    //         <div
+    //           key={trip.id}
+    //           className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-lg transition duration-300"
+    //         >
+    //           <div className="relative">
+    //             <img
+    //               src={trip.image}
+    //               alt={trip.title}
+    //               className="w-full h-40 object-cover"
+    //             />
+
+    //             {/* QUICK VIEW Button */}
+    //             <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
+    //               🔍 QUICK VIEW
+    //             </button>
+
+    //             {/* EARLY ACCESS DEAL */}
+    //             <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
+    //               EARLY ACCESS DEAL
+    //             </span>
+    //           </div>
+
+    //           <div className="p-5  ">
+    //             <div>
+    //               <h3 className="font-semibold text-xl mb-6 leading-tight">
+    //                 {trip.title}
+    //               </h3>
+    //               <p className="text-[16px] mb-6 line-clamp-3">
+    //                 {trip.description}
+    //               </p>
+    //             </div>
+
+    //             <div className=" flex justify-end mb-4">
+    //               <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition ">
+    //                 VIEW TRIP
+    //               </button>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </section>
+    <section className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+      {/* Title + Description */}
+      <div className="text-center mb-16 max-w-5xl mx-auto text-[#222]">
+        <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
           Tanzania’s top safari & holiday destinations
         </h2>
 
-        {/* Subheading */}
-        <p className="text-[18px] text-[#555] mb-10">
-          Tanzania’s safari and beach areas fall naturally into four broad
-          groups.
+        <p className="text-[16px] md:text-[18px] text-[#555] mb-10">
+          Tanzania’s safari and beach areas fall naturally into four broad groups.
         </p>
 
-        {/* Content Paragraphs */}
-        <div className=" px-16 text-[17px] leading-[1.9] space-y-6 text-[#333]">
+        {/* Main paragraph block */}
+        <div className="text-[15px] md:text-[17px] leading-[1.8] space-y-6 text-[#333] px-2 md:px-10">
           <p>
             <span className="font-semibold">Tanzania’s ‘Northern Circuit’</span>{" "}
-            is the term which defines the areas of the sprawling{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
+            is the term which defines the areas of the sprawling
+            <a href="#" className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition">
               Serengeti
             </a>
-            , the stunning landscape of the{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
+            , the stunning landscape of the
+            <a href="#" className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition">
               Ngorongoro Crater
             </a>
-            ,{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
+            ,
+            <a href="#" className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition">
               Tarangire
-            </a>{" "}
-            and{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
+            </a>
+            and
+            <a href="#" className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition">
               Lake Manyara
             </a>{" "}
             national parks – the most famous safaris areas in Tanzania.
@@ -157,127 +315,89 @@ const TanzaniaTabsSection = () => {
 
           <p>
             For a quieter experience,{" "}
-            <span className="font-semibold">Tanzania’s southern parks</span> offer
-            unspoiled wilderness areas dotted with a smaller number of safari
-            camps. The lakes and waterways of{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
-              Nyerere National Park
-            </a>{" "}
-            (formerly Selous) offer magical boating safaris, while{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
-              Ruaha
-            </a>
-            ’s rugged terrain is excellent for walking safaris and is home to a
-            very strong population of lions.
+            <span className="font-semibold">Tanzania’s southern parks</span> offer unspoiled wilderness areas...
           </p>
 
           <p>
-            Nearer to Africa’s heart,{" "}
-            <span className="font-semibold">Western Tanzania</span> is harder to
-            reach, so few visitors come, but two parks are amazing.{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
-              Katavi National Park
-            </a>{" "}
-            protects a vast plain: the battleground for buffalo and lion, whilst
-            an hour’s flight away, the spectacular{" "}
-            <a
-              href="#"
-              className="text-[#1c3e94] underline font-medium hover:text-[#d87028] transition"
-            >
-              Mahale Mountains
-            </a>
-            rise sheer from the shores of Lake Tanganyika – providing probably
-            the best place to track wild chimpanzees in Africa.
+            Nearer to Africa’s heart,
+            <span className="font-semibold mx-1">Western Tanzania</span> is harder to reach, so few visitors come...
           </p>
 
           <p>
-            Lush and tropical,{" "}
-            <span className="font-semibold">Tanzania’s coast & islands</span> are
-            the venue for simple beach retreats to luxurious lodges – with the
-            odd private island included.
+            Lush and tropical,
+            <span className="font-semibold mx-1">Tanzania’s coast & islands</span> are the venue for simple beach retreats...
           </p>
-        </div>
-     </div>
-      <div className="">
-        {/* Tabs */}
-        <div className="flex justify-center mb-10 space-x-4">
-          <button
-            onClick={() => setActiveTab("south")}
-            className={`px-6 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
-              activeTab === "south"
-                ? "bg-[#d87028] text-white border-[#d87028]"
-                : "border-black text-black hover:bg-gray-100"
-            }`}
-          >
-            Southern Tanzania
-          </button>
-
-          <button
-            onClick={() => setActiveTab("north")}
-            className={`px-6 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
-              activeTab === "north"
-                ? "bg-[#d87028] text-white border-[#d87028]"
-                : "border-black text-black hover:bg-gray-100"
-            }`}
-          >
-            Northern Tanzania
-          </button>
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tripsData[activeTab].map((trip) => (
-            <div
-              key={trip.id}
-              className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-lg transition duration-300"
-            >
-              <div className="relative">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-40 object-cover"
-                />
-
-                {/* QUICK VIEW Button */}
-                <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
-                  🔍 QUICK VIEW
-                </button>
-
-                {/* EARLY ACCESS DEAL */}
-                <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
-                  EARLY ACCESS DEAL
-                </span>
-              </div>
-
-              <div className="p-5  ">
-                <div>
-                  <h3 className="font-semibold text-xl mb-6 leading-tight">
-                    {trip.title}
-                  </h3>
-                  <p className="text-[16px] mb-6 line-clamp-3">
-                    {trip.description}
-                  </p>
-                </div>
-
-                <div className=" flex justify-end mb-4">
-                  <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition ">
-                    VIEW TRIP
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
+
+      {/* Tabs */}
+      <div className="flex justify-center mb-10 overflow-x-auto space-x-3 scrollbar-hide">
+        <button
+          onClick={() => setActiveTab("south")}
+          className={`whitespace-nowrap px-5 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
+            activeTab === "south"
+              ? "bg-[#d87028] text-white border-[#d87028]"
+              : "border-black text-black hover:bg-gray-100"
+          }`}
+        >
+          Southern Tanzania
+        </button>
+
+        <button
+          onClick={() => setActiveTab("north")}
+          className={`whitespace-nowrap px-5 py-2.5 rounded-full text-base font-semibold border transition-all duration-300 ${
+            activeTab === "north"
+              ? "bg-[#d87028] text-white border-[#d87028]"
+              : "border-black text-black hover:bg-gray-100"
+          }`}
+        >
+          Northern Tanzania
+        </button>
+      </div>
+
+      {/* Cards section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {tripsData[activeTab].map((trip) => (
+          <div
+            key={trip.id}
+            className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div className="relative">
+              <img
+                src={trip.image}
+                alt={trip.title}
+                className="w-full h-44 object-cover"
+              />
+
+              {/* QUICK VIEW Button */}
+              <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
+                🔍 QUICK VIEW
+              </button>
+
+              {/* EARLY ACCESS DEAL */}
+              <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
+                EARLY ACCESS DEAL
+              </span>
+            </div>
+
+            <div className="p-5">
+              <h3 className="font-semibold text-lg md:text-xl mb-4 leading-tight">
+                {trip.title}
+              </h3>
+              <p className="text-[14px] md:text-[15px] mb-6 line-clamp-3">
+                {trip.description}
+              </p>
+
+              <div className="flex justify-end">
+                <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition">
+                  VIEW TRIP
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 };

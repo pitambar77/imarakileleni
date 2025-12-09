@@ -30,7 +30,7 @@ const handleTabClick = (id) => {
   };
 
   return (
-    <div className="bg-white pt-12 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 sticky top-28 z-50 bg-white">
+    <div className=" hidden md:block bg-white pt-12 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 sticky top-28 z-50 bg-white">
       <div className="flex flex-wrap items-center gap-8 border-b border-gray-200 pb-3">
         {tabs.map((tab) => (
           <button

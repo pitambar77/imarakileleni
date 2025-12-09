@@ -114,6 +114,9 @@ const AboutUs = () => {
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
+       <h2 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
+          About Us
+        </h2>
       </div>
       <div className="w-full bg-[#d76e28]">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white text-xs md:text-sm font-semibold">
@@ -130,7 +133,7 @@ const AboutUs = () => {
           </span>
         </div>
       </div>
-      <div className=" w-full bg-[#fedec7] py-16 ">
+      <div className=" w-full bg-[#fedec7] py-16 px-4 ">
         <div className=" text-center max-w-3xl mx-auto  space-y-3 ">
           <h2 className=" text-xl md:text-3xl capitalize text-center">
             About Us

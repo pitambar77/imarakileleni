@@ -13,7 +13,7 @@ const TripHighlights = ({ title, data }) => {
   const swiperNavNextRef = useRef(null);
 
   return (
-    <section id="highlight" className="w-full py-16 bg-white relative">
+    <section id="highlight" className="w-full py-4 md:py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
 
         {/* Title + Navigation */}
@@ -22,7 +22,7 @@ const TripHighlights = ({ title, data }) => {
             {title}
           </h2>
 
-          <div className="absolute right-0 flex items-center space-x-3">
+          <div className=" hidden md:block absolute right-0 flex items-center space-x-3">
             <button
               ref={swiperNavPrevRef}
               className="swiper-button-prev-custom bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"

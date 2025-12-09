@@ -208,7 +208,7 @@ const WhentoGo = () => {
   const monthData = monthsData.find((m) => m.month === activeMonth);
   return (
     <div className=" bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
-      <div className=" text-center mb-16 px-24 mx-auto text-[#222]">
+      <div className=" text-center mb-16 px-0 md:px-24 mx-auto text-[#222]">
         <h2 className="text-[30px] md:text-[36px]  text-[#1a1a1a] mb-4 capitalize">
           When to go Tanzania safari
         </h2>
@@ -220,7 +220,7 @@ const WhentoGo = () => {
         </p>
 
         {/* Content Paragraphs */}
-        <div className=" px-16 text-[17px] leading-[1.9] space-y-6 text-[#333]">
+        <div className="  text-[17px] leading-[1.9] space-y-6 text-[#333] ">
           <p>
             <span className="font-semibold">Tanzania’s ‘Northern Circuit’</span>{" "}
             is the term which defines the areas of the sprawling{" "}
@@ -367,7 +367,7 @@ const WhentoGo = () => {
         <div className="border-t border-dotted border-gray-300 mx-8 my-4"></div>
 
         {/* --- Footer Section --- */}
-        <div className=" grid grid-cols-2 gap-8 items-center px-8 pb-8">
+        <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-8 pb-8">
           {/* Our View */}
           <div className="flex flex-col">
             <p className="uppercase text-gray-500 text-sm font-semibold mb-4 ">
@@ -405,3 +405,6 @@ const WhentoGo = () => {
 };
 
 export default WhentoGo;
+
+
+

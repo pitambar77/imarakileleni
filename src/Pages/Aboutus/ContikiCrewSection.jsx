@@ -10,12 +10,12 @@ const ContikiCrewSection = () => {
           <img
             src="https://cheetahsafaris.com/wp-content/uploads/2022/10/best-time-to-visit-tanzania-for-safari-tourist-guide-cheetah-safaris-2.jpg" // replace with your image
             alt="Contiki Crew"
-            className="rounded-md w-full h-[400px] object-cover"
+            className="rounded-md w-full h-auto md:h-[400px] object-cover"
           />
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 text-center px-16  text-black">
+        <div className="w-full md:w-1/2 text-center px-4 md:px-16  text-black">
           <h2 className="text-[24px] md:text-[28px] font-extrabold mb-4">
             And best of all... your Contiki crew
           </h2>

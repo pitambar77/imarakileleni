@@ -53,7 +53,7 @@ const AsSeenIn = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-16 lg:px-18 2xl:px-28 bg-white">
+    <section className=" py-8 md:py-16 px-4 md:px-16 lg:px-18 2xl:px-28 bg-white">
       <h2 className="text-center text-2xl md:text-3xl capitalize font-bold mb-4">
         As seen in
       </h2>
