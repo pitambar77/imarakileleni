@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://101.53.148.53:8000";
 
 const SECTION_TYPES = [
   { type: "h1", label: "Heading (H1)" },
