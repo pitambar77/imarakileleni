@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import axios from "axios";
 import { useNavigate , useParams} from "react-router-dom";
 import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 
 
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
@@ -28,7 +30,8 @@ function slugify(str = "") {
 }
 
 function newSection(type) {
-  const base = { id: crypto.randomUUID(), type };
+  // const base = { id: crypto.randomUUID(), type };
+  const base = { id: uuidv4(), type };
   switch (type) {
     case "h1":
     case "h2":

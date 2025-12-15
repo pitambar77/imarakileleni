@@ -41,6 +41,7 @@ import TravelgroupDetails from "./Pages/Travelgroup/TravelgroupDetails";
 import TravelgroupCategoryList from "./Pages/Travelgroup/TravelgroupCategoryList";
 import BlogCategoryPage from "./Pages/Travelguide/BlogCategoryPage";
 import BlogDetail from "./Pages/Travelguide/BlogDetail";
+import DashboardLayout from "./components/DashboardLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -111,6 +112,31 @@ const router = createBrowserRouter(
 {/* Blog Detail Page */}
 <Route path="/travel-guide/:slug" element={<BlogDetail />} />
 
+      </Route>
+      {/* 🧭 Admin Dashboard Routes */}
+      <Route path="/dashboard" element={<DashboardLayout />}>
+        {/* <Route index element={<Navigate to="/dashboard/create-travelguide" />} /> */}
+        <Route path="create-travelguide" element={<BlogForm />} />
+        <Route path="create-package" element={<CreatePackage />} />
+        <Route
+          path="create-destination-details"
+          element={<CreateDestinationDetails />}
+        />
+        <Route
+          path="create-destination-landing"
+          element={<CreateDestinationLanding />}
+        />
+        <Route path="create-travel-group" element={<CreateTravelgroup />} />
+        <Route path="create-sustanbility" element={<CreateSustanbility />} />
+        <Route path="create-team" element={<CreateTeam />} />
+        <Route path="team-list" element={<TeamList />} />
+        <Route path="edit/:id" element={<EditTeam />} />
+        <Route path="create-about" element={<CreateAbout />} />
+        <Route path="create-fleet" element={<CreateFleet />} />
+        <Route
+          path="create-kilimanjarolanding"
+          element={<CreateKilimanjaroLanding />}
+        />
       </Route>
     </>
   )
