@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://imara.safarimarketingpro.com:8000";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://imarabackend.safarimarketingpro.com";
 
 const SECTION_TYPES = [
   { type: "h1", label: "Heading (H1)" },
