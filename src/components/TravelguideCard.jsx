@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TravelguideCard = ({ title, subtitle1, subtitle2, items }) => {
   return (
@@ -48,11 +49,21 @@ const TravelguideCard = ({ title, subtitle1, subtitle2, items }) => {
                 {item.text}
               </p>
 
-              {/* Button stays at bottom always */}
+              {/* Button stays at bottom always
               {item.link && (
                 <button className="font-semibold underline mt-auto pb-1">
                   {item.link}
                 </button>
+              )} */}
+
+              {/* ✅ REAL NAVIGATION */}
+              {item.link && (
+                <Link
+                  to={item.link}
+                  className="font-semibold underline mt-auto pb-1"
+                >
+                  Find out more →
+                </Link>
               )}
             </div>
 

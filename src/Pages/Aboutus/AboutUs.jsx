@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Banner from "../../components/Banner";
 import {
   FaCalendarAlt,
@@ -47,60 +48,94 @@ const AboutUs = () => {
     },
   ];
 
-  const safariFaqs = [
-  {
-    question: "How long does an African safari take?",
-    answerBlocks: [
-      {
-        type: "paragraph",
-        text: [
-          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-          "For a deeper experience, 2 weeks is ideal.",
-        ],
-      },
-      {
-        type: "heading",
-        text: "Recommended Duration:",
-      },
-      {
-        type: "list",
-        items: [
-          "Short Safaris: 3–5 days",
-          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-          "Full Safari Experience: 12–14 days",
-          "Extended Adventure: 21+ days",
-        ],
-      },
-      {
-        type: "paragraph",
-        text: "If you want the full wildlife experience, 2 weeks is ideal.",
-      },
-    ],
-  },
+//   const safariFaqs = [
+//   {
+//     question: "How long does an African safari take?",
+//     answerBlocks: [
+//       {
+//         type: "paragraph",
+//         text: [
+//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+//           "For a deeper experience, 2 weeks is ideal.",
+//         ],
+//       },
+//       {
+//         type: "heading",
+//         text: "Recommended Duration:",
+//       },
+//       {
+//         type: "list",
+//         items: [
+//           "Short Safaris: 3–5 days",
+//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+//           "Full Safari Experience: 12–14 days",
+//           "Extended Adventure: 21+ days",
+//         ],
+//       },
+//       {
+//         type: "paragraph",
+//         text: "If you want the full wildlife experience, 2 weeks is ideal.",
+//       },
+//     ],
+//   },
 
-  {
-    question: "What is the best month to go on safari?",
-    answerBlocks: [
-      {
-        type: "paragraph",
-        text: [
-          "June to October is considered the dry season.",
-          "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-        ],
-      },
-      {
-        type: "heading",
-        text: "Why Dry Season?",
-      },
-      {
-        type: "paragraph",
-        text: "Animals gather around water sources, making sightings easier.",
-      },
-    ],
-  },
-];
+//   {
+//     question: "What is the best month to go on safari?",
+//     answerBlocks: [
+//       {
+//         type: "paragraph",
+//         text: [
+//           "June to October is considered the dry season.",
+//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+//         ],
+//       },
+//       {
+//         type: "heading",
+//         text: "Why Dry Season?",
+//       },
+//       {
+//         type: "paragraph",
+//         text: "Animals gather around water sources, making sightings easier.",
+//       },
+//     ],
+//   },
+// ];
 
+const [aboutData, setAboutData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("https://imarabackend.safarimarketingpro.com/api/about")
+      .then((res) => {
+        // API returns array → take first item
+        setAboutData(res.data[0]);
+      })
+      .catch((err) => console.error("About API error:", err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <p className="p-6">Loading...</p>;
+  if (!aboutData) return <p className="p-6">No data found</p>;
+
+    const {
+    title,
+    subtitle,
+    image,
+    overview,
+    overviewinfo,
+    adventure,
+    faq=[],
+  } = aboutData;
+
+    const safariFaqs = faq.map((item) => ({
+    question: item.question,
+    answerBlocks: item.answer.map((a) => ({
+      type: a.type,
+      text: a.content,
+    })),
+  }));
 
   return (
     <>
@@ -109,13 +144,13 @@ const AboutUs = () => {
       <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://b-cdn.springnest.com/media/img/xz/ruaha_foxes_caseypratt_loveafrica-5126f577635.jpg?crop=6048%2C2419%2C0%2C1605&width=3000')`,
+          backgroundImage: `url(${image})`,
         }}
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
        <h2 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
-          About Us
+          {title}
         </h2>
       </div>
       <div className="w-full bg-[#d76e28]">
@@ -150,7 +185,7 @@ const AboutUs = () => {
       </div>
 
       {/* <AboutInfoSection /> */}
-      <OverviewSections 
+      {/* <OverviewSections 
        label="Tanzania Safaris"
       title="In Kilimanjaro's footprint, Tanzania mesmerizes with the great wildebeest migration wildlife"
       image="https://images.squarespace-cdn.com/content/v1/5f1ab4309bd4b45e29ec3e4b/1688629973354-NWWQV5E0GV2KDOY12YSU/South-Africa-Ngala-Safari-Lodge-andBeyonder-butlers-_3_-Collections-3000w.jpg"
@@ -176,7 +211,25 @@ const AboutUs = () => {
            "Our eyes were wide with wonder from the moment we left the airstrip,” sighed a couple returning to Tanzania for the first time since their honeymoon 30 years earlier: “We had the most mind-blowing, amazing experience.”"
         },
       ]}
-      />
+      /> */}
+
+
+{overviewinfo.map((item, index) => (
+        <OverviewSections
+          key={index}
+          label={item.subtitle}
+          title={item.title}
+          image={image}
+          imagePosition="right"
+          bg="#fcfcfc"
+          paragraphs={item.description.map((d) => ({
+            content: d.content,
+          }))}
+        />
+      ))}
+
+
+
       <div className="bg-[#fedec7]">
         {" "}
         {/* soft peach background */}
