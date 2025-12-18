@@ -106,7 +106,6 @@
 //               className="w-full h-56 object-cover rounded-md"
 //             />
 //             </div>
-            
 
 //             <div className="bg-[#d76e28] text-white text-center py-3  font-semibold">
 //               EXCLUSIVELY FOR 18–35 YEAR OLDS
@@ -132,7 +131,6 @@
 //               className="w-full h-56 object-cover rounded-md"
 //             />
 //             </div>
-            
 
 //             <div className="bg-[#d76e28] text-white text-center py-3  font-semibold">
 //               EXCLUSIVELY FOR 18–35 YEAR OLDS
@@ -206,37 +204,137 @@
 
 // export default TravelGuideDetails;
 
+// import React from "react";
+
+// const TravelGuideDetails = ({ blog }) => {
+//   if (!blog) return null;
+
+//   const sections = blog.sections || [];
+
+//   // helpers
+//   const getFirst = (type) =>
+//     sections.find((s) => s.type === type);
+
+//   const getAll = (type) =>
+//     sections.filter((s) => s.type === type);
+
+//   const firstImage = getFirst("image");
+//   const paragraphs = getAll("paragraph");
+//   const headings = getAll("h2");
+//   const lists = getAll("list");
+
+//   return (
+//     <section className="bg-[#F8E6D5] py-16">
+//       <div className="px-4 max-w-4xl mx-auto">
+
+//         {/* ===== MAIN HEADING ===== */}
+//         <h3 className="text-[28px] md:text-3xl text-center font-bold text-[#111] mb-4">
+//           {blog.title}
+//         </h3>
+
+//         <p className="mb-6 text-center">
+//           {blog.subtitle || "Travel Trips"}
+//         </p>
+
+//         {/* ===== HERO IMAGE ===== */}
+//         {blog.thumbnail && (
+//           <img
+//             className="w-full h-56 md:h-[480px] rounded-md shadow-md object-cover mb-8"
+//             src={blog.thumbnail}
+//             alt={blog.title}
+//           />
+//         )}
+
+//         {/* ===== CONTENT BLOCKS ===== */}
+//         {sections.map((s, i) => (
+//           <div key={i} className="mb-6">
+//             {s.type === "h2" && (
+//               <h3 className="text-[28px] md:text-3xl font-bold text-[#111] mb-4">
+//                 {s.text}
+//               </h3>
+//             )}
+
+//             {s.type === "paragraph" && (
+//               <p className="text-[16px] text-[#444] leading-relaxed mb-4">
+//                 {s.text}
+//               </p>
+//             )}
+
+//             {s.type === "image" && (
+//               <img
+//                 src={s.imageUrl}
+//                 alt={s.imageAlt || ""}
+//                 className="w-full h-56 md:h-[480px] rounded-md shadow-md object-cover mb-8"
+//               />
+//             )}
+
+//             {s.type === "list" && (
+//               <ul className="text-[16px] text-[#444] leading-relaxed space-y-2 mb-8">
+//                 {s.items.map((item, idx) => (
+//                   <li key={idx} className="flex items-center gap-3">
+//                     <span className="w-8 border-t border-gray-600"></span>
+//                     {item}
+//                   </li>
+//                 ))}
+//               </ul>
+//             )}
+//           </div>
+//         ))}
+
+//         {/* ===== CTA (STATIC – KEEP AS IS) ===== */}
+//         <div className="bg-[#d76e28] py-8 rounded-md text-center mt-12">
+//           <h3 className="text-3xl mb-4">Still Searching?</h3>
+//           <p className="mb-4">
+//             Browse more travel styles with 200+ trips worldwide
+//           </p>
+//           <button className="py-2 px-5 border rounded-full font-bold uppercase">
+//             Find out more
+//           </button>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default TravelGuideDetails;
+
 import React from "react";
+
+/* 🔹 Recursive list renderer */
+const RenderList = ({ items }) => {
+  if (!Array.isArray(items) || !items.length) return null;
+
+  return (
+    <ul className="ml-6 space-y-2">
+      {items.map((item) => (
+        <li key={item.id} className="flex gap-3">
+          <span className="w-6 border-t border-gray-600 mt-3"></span>
+
+          <div>
+            <span className="text-[16px] text-[#444]">{item.text}</span>
+
+            {item.children?.length > 0 && <RenderList items={item.children} />}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const TravelGuideDetails = ({ blog }) => {
   if (!blog) return null;
 
   const sections = blog.sections || [];
 
-  // helpers
-  const getFirst = (type) =>
-    sections.find((s) => s.type === type);
-
-  const getAll = (type) =>
-    sections.filter((s) => s.type === type);
-
-  const firstImage = getFirst("image");
-  const paragraphs = getAll("paragraph");
-  const headings = getAll("h2");
-  const lists = getAll("list");
-
   return (
     <section className="bg-[#F8E6D5] py-16">
       <div className="px-4 max-w-4xl mx-auto">
-
         {/* ===== MAIN HEADING ===== */}
         <h3 className="text-[28px] md:text-3xl text-center font-bold text-[#111] mb-4">
           {blog.title}
         </h3>
 
-        <p className="mb-6 text-center">
-          {blog.category || "Travel Trips"}
-        </p>
+        <p className="mb-6 text-center">{blog.subtitle || "Travel Trips"}</p>
 
         {/* ===== HERO IMAGE ===== */}
         {blog.thumbnail && (
@@ -248,8 +346,8 @@ const TravelGuideDetails = ({ blog }) => {
         )}
 
         {/* ===== CONTENT BLOCKS ===== */}
-        {sections.map((s, i) => (
-          <div key={i} className="mb-6">
+        {sections.map((s) => (
+          <div key={s.id || Math.random()} className="mb-6">
             {s.type === "h2" && (
               <h3 className="text-[28px] md:text-3xl font-bold text-[#111] mb-4">
                 {s.text}
@@ -262,7 +360,7 @@ const TravelGuideDetails = ({ blog }) => {
               </p>
             )}
 
-            {s.type === "image" && (
+            {s.type === "image" && s.imageUrl && (
               <img
                 src={s.imageUrl}
                 alt={s.imageAlt || ""}
@@ -271,20 +369,27 @@ const TravelGuideDetails = ({ blog }) => {
             )}
 
             {s.type === "list" && (
-              <ul className="text-[16px] text-[#444] leading-relaxed space-y-2 mb-8">
-                {s.items.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <span className="w-8 border-t border-gray-600"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-8">
+                <RenderList items={s.items} />
+              </div>
+            )}
+            {s.type === "cta" && (
+              <div className="bg-[#d76e28] py-10 rounded-md text-center mb-10">
+                <h3 className="text-3xl capitalize mb-4">{s.text}</h3>
+                <p className="mb-4">{s.ctaTitle}</p>
+                <a
+                  href={s.ctaHref || "#"}
+                  className="inline-block   py-2 px-5 border rounded-full font-bold uppercase"
+                >
+                  {s.ctaText || "Learn More"}
+                </a>
+              </div>
             )}
           </div>
         ))}
 
         {/* ===== CTA (STATIC – KEEP AS IS) ===== */}
-        <div className="bg-[#d76e28] py-8 rounded-md text-center mt-12">
+        {/* <div className="bg-[#d76e28] py-8 rounded-md text-center mt-12">
           <h3 className="text-3xl mb-4">Still Searching?</h3>
           <p className="mb-4">
             Browse more travel styles with 200+ trips worldwide
@@ -292,11 +397,10 @@ const TravelGuideDetails = ({ blog }) => {
           <button className="py-2 px-5 border rounded-full font-bold uppercase">
             Find out more
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
 };
 
 export default TravelGuideDetails;
-

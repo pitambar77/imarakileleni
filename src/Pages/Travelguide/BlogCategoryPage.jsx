@@ -64,8 +64,7 @@ import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE ||
-  "https://imarabackend.safarimarketingpro.com";
+  import.meta.env.VITE_API_BASE || "https://imarabackend.safarimarketingpro.com";
 
 const BlogCategoryPage = ({ category }) => {
   const [asSeenItems, setAsSeenItems] = useState([]);
@@ -87,6 +86,7 @@ const BlogCategoryPage = ({ category }) => {
           id: blog._id || index,
           image: blog.thumbnail,
           title: blog.title,
+          subtitle:blog.subtitle,
           text:
             blog.sections?.[0]?.text ||
             blog.sections?.[0]?.content ||

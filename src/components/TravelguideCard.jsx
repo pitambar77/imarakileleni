@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TravelguideCard = ({ title, subtitle1, subtitle2, items }) => {
+const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
   return (
     <section className="py-16 px-4 md:px-16 lg:px-18  2xl:px-40 bg-white">
 
@@ -10,6 +10,12 @@ const TravelguideCard = ({ title, subtitle1, subtitle2, items }) => {
       {title && (
         <h2 className="text-center text-2xl md:text-3xl capitalize font-bold mb-4">
           {title}
+        </h2>
+      )}
+
+      {subtitle && (
+        <h2 className="text-center text-2xl md:text-3xl capitalize font-bold mb-4">
+          {subtitle}
         </h2>
       )}
 

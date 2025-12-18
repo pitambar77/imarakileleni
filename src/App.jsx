@@ -42,6 +42,8 @@ import TravelgroupCategoryList from "./Pages/Travelgroup/TravelgroupCategoryList
 import BlogCategoryPage from "./Pages/Travelguide/BlogCategoryPage";
 import BlogDetail from "./Pages/Travelguide/BlogDetail";
 import DashboardLayout from "./components/DashboardLayout";
+import BlogList from "./Pages/Travelguide/BlogList";
+import EditTravelgroup from "./Pages/Travelgroup/EditTravelgroup";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -76,6 +78,11 @@ const router = createBrowserRouter(
         <Route path="zanzibar-landing" element={<ZanzibarLanding />} />
 
         <Route path="create-travelguide" element={<BlogForm />} />
+
+<Route path="blog" element={<BlogList/>} />
+<Route path="/blog/create" element={<BlogForm />} />
+<Route path="/blog/edit/:id" element={<BlogForm />} />
+
         <Route path="create-package" element={<CreatePackage />} />
         <Route
           path="create-destination-details"
@@ -97,7 +104,7 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
 
-        <Route path="/travelgroup" element={<TravelgroupList />} />
+        {/* <Route path="/travelgroup" element={<TravelgroupList />} /> */}
         <Route path="/travelgroup/:slug" element={<TravelgroupDetails />} />
 
         {/* Category filter page */}
@@ -105,6 +112,12 @@ const router = createBrowserRouter(
           path="/travelgroup/category/:category"
           element={<TravelgroupCategoryList />}
         />
+
+        <Route
+  path="/travelgroup/edit/:id"
+  element={<EditTravelgroup />}
+/>
+
 
 <Route path="/kilimanjaro-travel-guide" element={<BlogCategoryPage category="Kilimanjaro Travel Guide" />} />
 <Route path="/tanzania-travel-guide" element={<BlogCategoryPage category="Tanzania Travel Guide" />} />
