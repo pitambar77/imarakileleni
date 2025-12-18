@@ -925,7 +925,7 @@ export default function BlogForm() {
         )}
 
         {/* Add section toolbar */}
-        <div className="mt-8">
+        <div className="mt-8 sticky top-20 z-30 bg-gray-50">
           <h2 className="text-lg font-semibold text-gray-800 mb-3">
             Add Section
           </h2>
@@ -942,6 +942,10 @@ export default function BlogForm() {
             ))}
           </div>
         </div>
+
+        {/* Add section toolbar (STICKY) */}
+
+
 
         {/* Category */}
         {/* <div className=" mt-8">
