@@ -575,7 +575,7 @@ function newSection(type) {
       return {
         ...base,
         text: "",
-        ctaTitle:"",
+        ctaTitle: "",
         ctaText: "Contact Us Today!",
         ctaHref: "/contact",
       };
@@ -718,7 +718,15 @@ export default function BlogForm() {
         setSlug(b.slug);
         setCategory(b.category);
         setKeywords(b.keywords.join(", "));
-        setSections(b.sections || []);
+        // setSections(b.sections || []);
+        setSections(
+          (b.sections || []).map((section) => ({
+            id: uuidv4(), // 🔥 critical fix
+            ...section,
+            items: section.items || [],
+          }))
+        );
+
         // if (b.thumbnail) setThumbnailPreview(`${API_BASE}${b.thumbnail}`);
       })
       .catch((err) => console.error("Failed to load blog:", err));
@@ -882,9 +890,9 @@ export default function BlogForm() {
             />
           </div>
 
-           <div>
+          <div>
             <label className="block text-sm font-medium text-gray-700">
-             sub Title
+              sub Title
             </label>
             <input
               value={subtitle}
@@ -1179,9 +1187,9 @@ export default function BlogForm() {
                         />
                       </div>
 
-<div>
+                      <div>
                         <label className="block text-sm text-gray-700">
-                           CTA Content
+                          CTA Content
                         </label>
                         <input
                           value={s.ctaTitle || ""}
@@ -1304,9 +1312,7 @@ export function Preview({ title, slug, sections }) {
                 <p className="text-gray-800 text-lg md:text-xl mb-6">
                   {s.text}
                 </p>
-                <p className="text-gray-800 text-lg  mb-6">
-                  {s.ctaTitle}
-                </p>
+                <p className="text-gray-800 text-lg  mb-6">{s.ctaTitle}</p>
                 <a
                   href={s.ctaHref || "#"}
                   className="bg-purple-600 text-white text-lg font-semibold px-8 py-3 rounded-lg hover:bg-purple-700 transition"
