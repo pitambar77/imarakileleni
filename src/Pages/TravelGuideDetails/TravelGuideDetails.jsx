@@ -348,8 +348,13 @@ const TravelGuideDetails = ({ blog }) => {
         {/* ===== CONTENT BLOCKS ===== */}
         {sections.map((s) => (
           <div key={s.id || Math.random()} className="mb-6">
+               {s.type === "h1" && (
+              <h3 className="text-[30px] md:text-3xl font-bold text-[#111] mb-4">
+                {s.text}
+              </h3>
+            )}
             {s.type === "h2" && (
-              <h3 className="text-[28px] md:text-3xl font-bold text-[#111] mb-4">
+              <h3 className="text-[26px] md:text-3xl font-bold text-[#111] mb-4">
                 {s.text}
               </h3>
             )}
