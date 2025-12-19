@@ -48,7 +48,7 @@ const EditTravelgroup = () => {
       {data ? (
         <TravelgroupForm
           editData={data}
-          onSuccess={() => window.location.href = "/travelgroup"}
+          onSuccess={() => window.location.href = "/"}
         />
       ) : (
         <p>Loading...</p>
