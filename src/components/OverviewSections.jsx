@@ -130,7 +130,7 @@ const OverviewSections = ({
             alt={title}
             className="
               rounded-md w-full max-w-[420px]
-              h-auto md:h-[420px] lg:h-[520px]
+              h-auto md:h-[420px] lg:h-[560px]
               object-cover shadow-sm
             "
           />

@@ -134,8 +134,8 @@ const TravelgroupDetails = () => {
       {item.overviewinfo.map((o) => (
         <OverviewSections
           key={o._id}
-          label={item.title}
-          title={o.title}
+          label={o.title}
+          title={o.subtitle}
           image={o.image}
           imagePosition="right"
           bg="#fcfcfc"

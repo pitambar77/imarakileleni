@@ -70,7 +70,7 @@ const router = createBrowserRouter(
         <Route path="thank-you" element={<ThankYouPage />} />
         <Route path="sustanbility" element={<Sustanbility />} />
         <Route path="kilimanjaro-landing" element={<KilimanjaroLanding />} />
-        
+
         <Route
           path="tanzania-travel-safari"
           element={<TanzaniaFamilySafari />}
@@ -79,9 +79,9 @@ const router = createBrowserRouter(
 
         <Route path="create-travelguide" element={<BlogForm />} />
 
-<Route path="blog" element={<BlogList/>} />
-<Route path="/blog/create" element={<BlogForm />} />
-<Route path="/blog/edit/:id" element={<BlogForm />} />
+        <Route path="blog" element={<BlogList />} />
+        <Route path="/blog/create" element={<BlogForm />} />
+        <Route path="/blog/edit/:id" element={<BlogForm />} />
 
         <Route path="create-package" element={<CreatePackage />} />
         <Route
@@ -113,18 +113,19 @@ const router = createBrowserRouter(
           element={<TravelgroupCategoryList />}
         />
 
+        <Route path="/travelgroup/edit/:id" element={<EditTravelgroup />} />
+
         <Route
-  path="/travelgroup/edit/:id"
-  element={<EditTravelgroup />}
-/>
+          path="/kilimanjaro-travel-guide"
+          element={<BlogCategoryPage category="Kilimanjaro Travel Guide" />}
+        />
+        <Route
+          path="/tanzania-travel-guide"
+          element={<BlogCategoryPage category="Tanzania Travel Guide" />}
+        />
 
-
-<Route path="/kilimanjaro-travel-guide" element={<BlogCategoryPage category="Kilimanjaro Travel Guide" />} />
-<Route path="/tanzania-travel-guide" element={<BlogCategoryPage category="Tanzania Travel Guide" />} />
-
-{/* Blog Detail Page */}
-<Route path="/travel-guide/:slug" element={<BlogDetail />} />
-
+        {/* Blog Detail Page */}
+        <Route path="/travel-guide/:slug" element={<BlogDetail />} />
       </Route>
       {/* 🧭 Admin Dashboard Routes */}
       <Route path="/dashboard" element={<DashboardLayout />}>

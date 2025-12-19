@@ -330,9 +330,9 @@ const Navbar = () => {
         { label:"Tanzania Family Safari", path:"/travelgroup/category/Tanzania Family Safari" },
         { label:"Tanzania Luxury Safari", path:"/travelgroup/category/Tanzania Luxury Safari" },
         { label:"Tanzania Private Safari", path:"/travelgroup/category/Tanzania Private Safari" },
-        { label:"Tanzania Wildlife Safari", path:"/" },
-        { label:"Tanzania Midrange Safari", path:"/" },
-        { label:"Tanzania Honeymoon Safari", path:"/" }
+        { label:"Tanzania Wildlife Safari", path:"/travelgroup/category/Tanzania Wildlife Safari" },
+        { label:"Tanzania Midrange Safari", path:"/travelgroup/category/Tanzania Midrange Safari" },
+        { label:"Tanzania Honeymoon Safari", path:"/travelgroup/category/Tanzania Honeymoon Safari" }
       ],
     },
     {
