@@ -774,105 +774,12 @@ const handleBesttimeSectionChange = (i, j, e) => {
 
 
       {/* =============================================================== */}
-      {/* ================= HIGHLIGHT SECTION =========================== */}
-      {/* =============================================================== */}
-   
-
-      <section className="col-span-2 mt-6">
-  <div className="flex justify-between items-center">
-    <h3 className="text-xl font-semibold">Highlights</h3>
-    <button
-      type="button"
-      onClick={addHighlight}
-      className="bg-green-600 text-white px-4 py-1 rounded"
-    >
-      + Add Highlight
-    </button>
-  </div>
-
-  {highlight.map((h, i) => (
-    <div key={i} className="border p-4 bg-gray-50 rounded mt-4">
-
-      {/* Heading */}
-      <input
-        className="border p-2 w-full mb-3"
-        placeholder="Highlight Heading"
-        value={h.heading}
-        onChange={(e) => handleHighlightHeading(i, e)}
-      />
-
-      {/* Sections */}
-      {h.section.map((s, j) => (
-        <div key={j} className="border p-3 bg-white rounded mb-3">
-
-          <input
-            className="border p-2 w-full mb-2"
-            name="title"
-            placeholder="Title"
-            value={s.title}
-            onChange={(e) => handleHighlightSectionChange(i, j, e)}
-          />
-
-          <textarea
-            className="border p-2 w-full mb-2"
-            name="description"
-            placeholder="Description"
-            value={s.description}
-            onChange={(e) => handleHighlightSectionChange(i, j, e)}
-          />
-
-          <input
-            type="file"
-            onChange={(e) => handleHighlightImage(i, j, e)}
-          />
-
-          {s.imagePreview && (
-            <img
-              src={s.imagePreview}
-              alt="preview"
-              className="w-32 mt-2 rounded"
-            />
-          )}
-
-          <button
-            type="button"
-            onClick={() => removeHighlightSection(i, j)}
-            className="bg-red-600 text-white px-3 py-1 rounded mt-2"
-          >
-            Remove Section
-          </button>
-        </div>
-      ))}
-
-      <div className="flex gap-3">
-        <button
-          type="button"
-          onClick={() => addHighlightSection(i)}
-          className="bg-blue-600 text-white px-4 py-1 rounded"
-        >
-          + Add Section
-        </button>
-
-        <button
-          type="button"
-          onClick={() => removeHighlight(i)}
-          className="bg-red-700 text-white px-4 py-1 rounded"
-        >
-          Remove Highlight
-        </button>
-      </div>
-    </div>
-  ))}
-</section>
-
-
-      {/* =============================================================== */}
-      {/* ================= MIGRATION SECTION =========================== */}
+      {/* ================= Details section =========================== */}
       {/* =============================================================== */}
       
 <section className="col-span-2 mt-6">
   <div className="flex justify-between">
-    <h3 className="text-xl font-semibold">Migration</h3>
+    <h3 className="text-xl font-semibold">Details section</h3>
     <button
       type="button"
       onClick={addMigration}
@@ -1043,65 +950,98 @@ const handleBesttimeSectionChange = (i, j, e) => {
   ))}
 </section>
 
+      {/* =============================================================== */}
+      {/* ================= Things to do =========================== */}
+      {/* =============================================================== */}
+   
 
-      {/* =============================================================== */}
-      {/* ================= ADVENTURE SECTION =========================== */}
-      {/* =============================================================== */}
       <section className="col-span-2 mt-6">
-        <div className="flex justify-between">
-          <h3 className="text-xl font-semibold">Adventure</h3>
+  <div className="flex justify-between items-center">
+    <h3 className="text-xl font-semibold">Things to do</h3>
+    <button
+      type="button"
+      onClick={addHighlight}
+      className="bg-green-600 text-white px-4 py-1 rounded"
+    >
+      + Add Highlight
+    </button>
+  </div>
+
+  {highlight.map((h, i) => (
+    <div key={i} className="border p-4 bg-gray-50 rounded mt-4">
+
+      {/* Heading */}
+      <input
+        className="border p-2 w-full mb-3"
+        placeholder="Highlight Heading"
+        value={h.heading}
+        onChange={(e) => handleHighlightHeading(i, e)}
+      />
+
+      {/* Sections */}
+      {h.section.map((s, j) => (
+        <div key={j} className="border p-3 bg-white rounded mb-3">
+
+          <input
+            className="border p-2 w-full mb-2"
+            name="title"
+            placeholder="Title"
+            value={s.title}
+            onChange={(e) => handleHighlightSectionChange(i, j, e)}
+          />
+
+          <textarea
+            className="border p-2 w-full mb-2"
+            name="description"
+            placeholder="Description"
+            value={s.description}
+            onChange={(e) => handleHighlightSectionChange(i, j, e)}
+          />
+
+          <input
+            type="file"
+            onChange={(e) => handleHighlightImage(i, j, e)}
+          />
+
+          {s.imagePreview && (
+            <img
+              src={s.imagePreview}
+              alt="preview"
+              className="w-32 mt-2 rounded"
+            />
+          )}
+
           <button
             type="button"
-            className="bg-green-600 text-white px-4 py-1 rounded"
-            onClick={addAdventure}
+            onClick={() => removeHighlightSection(i, j)}
+            className="bg-red-600 text-white px-3 py-1 rounded mt-2"
           >
-            + Add
+            Remove Section
           </button>
         </div>
+      ))}
 
-        {adventure.map((item, i) => (
-          <div key={i} className="border p-4 bg-gray-50 rounded mt-3">
-            <input
-              className="border p-2 w-full mb-2"
-              name="title"
-              placeholder="Title"
-              value={item.title}
-              onChange={(e) => handleAdventureChange(i, e)}
-            />
-            <input
-              className="border p-2 w-full mb-2"
-              name="subtitle"
-              placeholder="Subtitle"
-              value={item.subtitle}
-              onChange={(e) => handleAdventureChange(i, e)}
-            />
-            <textarea
-              className="border p-2 w-full mb-2"
-              name="description"
-              placeholder="Description"
-              value={item.description}
-              onChange={(e) => handleAdventureChange(i, e)}
-            ></textarea>
+      <div className="flex gap-3">
+        <button
+          type="button"
+          onClick={() => addHighlightSection(i)}
+          className="bg-blue-600 text-white px-4 py-1 rounded"
+        >
+          + Add Section
+        </button>
 
-            <input
-              type="file"
-              className="border p-2"
-              onChange={(e) => handleAdventureImage(i, e)}
-            />
-            {item.imagePreview && (
-              <img src={item.imagePreview} className="w-32 rounded" />
-            )}
+        <button
+          type="button"
+          onClick={() => removeHighlight(i)}
+          className="bg-red-700 text-white px-4 py-1 rounded"
+        >
+          Remove Highlight
+        </button>
+      </div>
+    </div>
+  ))}
+</section>
 
-            <button
-              type="button"
-              onClick={() => removeAdventure(i)}
-              className="bg-red-600 text-white px-3 py-1 rounded mt-2"
-            >
-              Remove
-            </button>
-          </div>
-        ))}
-      </section>
 
       {/* =============================================================== */}
       {/* ================= BEST TIME SECTION =========================== */}
@@ -1180,6 +1120,64 @@ const handleBesttimeSectionChange = (i, j, e) => {
   ))}
 </section>
 
+   {/* =============================================================== */}
+      {/* ================= Experience Section =========================== */}
+      {/* =============================================================== */}
+      <section className="col-span-2 mt-6">
+        <div className="flex justify-between">
+          <h3 className="text-xl font-semibold">Experience Section</h3>
+          <button
+            type="button"
+            className="bg-green-600 text-white px-4 py-1 rounded"
+            onClick={addAdventure}
+          >
+            + Add
+          </button>
+        </div>
+
+        {adventure.map((item, i) => (
+          <div key={i} className="border p-4 bg-gray-50 rounded mt-3">
+            <input
+              className="border p-2 w-full mb-2"
+              name="title"
+              placeholder="Title"
+              value={item.title}
+              onChange={(e) => handleAdventureChange(i, e)}
+            />
+            <input
+              className="border p-2 w-full mb-2"
+              name="subtitle"
+              placeholder="Subtitle"
+              value={item.subtitle}
+              onChange={(e) => handleAdventureChange(i, e)}
+            />
+            <textarea
+              className="border p-2 w-full mb-2"
+              name="description"
+              placeholder="Description"
+              value={item.description}
+              onChange={(e) => handleAdventureChange(i, e)}
+            ></textarea>
+
+            <input
+              type="file"
+              className="border p-2"
+              onChange={(e) => handleAdventureImage(i, e)}
+            />
+            {item.imagePreview && (
+              <img src={item.imagePreview} className="w-32 rounded" />
+            )}
+
+            <button
+              type="button"
+              onClick={() => removeAdventure(i)}
+              className="bg-red-600 text-white px-3 py-1 rounded mt-2"
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+      </section>
 
       {/* =============================================================== */}
       {/* ================= Q&A SECTION =========================== */}

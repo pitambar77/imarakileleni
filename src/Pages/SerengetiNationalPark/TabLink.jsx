@@ -6,10 +6,10 @@ const TabLink = () => {
   const tabs = [
     { id: "overview", label: "Overview" },
     { id: "packages", label: "Packages" },
-    { id: "thingstodo", label: "Things To Do" },
-    { id: "highlight", label: "Trip Highlights" },
+    { id: "thingstodo", label: "Details" },
+    { id: "highlight", label: "Things to do" },
     { id: "besttime", label: "Best Time" },
-    { id: "adventure", label: "Adventure" },
+    { id: "adventure", label: "Experience" },
     { id: "faq", label: "FAQ" },
     { id: "more", label: "More Info" },
   ];
