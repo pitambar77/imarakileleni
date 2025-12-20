@@ -344,13 +344,172 @@
 
 // export default SerengetiNationalPark;
 
+// below code is correct
+
+// import React, { useEffect, useState } from "react";
+// import axios from "axios";
+
+// import SerengetiTabsSection from "./SerengetiTabsSection";
+// import ChoosingSafariSection from "./ChoosingSafariSection";
+// import SerengetiMigrationTabs from "./SerengetiMigrationTabs";
+// import TripHighlights from "../../components/TripHighlights";
+// import BestTimeToVisitSection from "./BestTimeToVisitSection";
+// import BookWithConfidence from "../Home/BookWithConfidence";
+// import Featured from "../Home/Featured";
+// import ActiveTravelDestinations from "../TravelGuideDetails/ActiveTravelDestinations";
+// import AdventureTour from "../../components/AdventureTour";
+// import FAQSection from "../../components/FAQSection";
+// import OverviewSections from "../../components/OverviewSections";
+// import TabLink from "./TabLink";
+
+// const SerengetiNationalPark = () => {
+//   const [data, setData] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     axios
+//       .get("https://imarabackend.safarimarketingpro.com/api/destinationdetails")
+//       .then((res) => {
+//         // API returns array
+//         setData(res.data[0]);
+//       })
+//       .catch((err) => console.error("Destination API error:", err))
+//       .finally(() => setLoading(false));
+//   }, []);
+
+//   if (loading) return <p className="p-10 text-center">Loading...</p>;
+//   if (!data) return <p className="p-10 text-center">No data found</p>;
+
+//   const {
+//     title,
+//     subtitle,
+//     destination,
+//     image,
+//     overviewinfo = [],
+//     highlight = [],
+//     besttime = [],
+//     migration = [],
+//     adventure = [],
+//     aboutBooking = [],
+//   } = data;
+
+//   /* ================= FAQ TRANSFORM ================= */
+//   const faqs = aboutBooking.map((item) => ({
+//     question: item.question,
+//     answerBlocks: item.answer.map((a) => ({
+//       type: a.type,
+//       text: a.content,
+//     })),
+//   }));
+
+//   /* ================= BEST TIME TRANSFORM ================= */
+//   const monthData = besttime.map((item) => ({
+//     name: item.month,
+//     season: item.title,
+//     rating: "Excellent",
+//     color: "bg-[#A5D6A7]",
+//     description: [item.content],
+//   }));
+
+//   /* ================= TRIP HIGHLIGHTS ================= */
+//   const trips = highlight.map((item, index) => ({
+//     id: index + 1,
+//     image: item.image,
+//     title: item.title,
+//     description: item.description,
+//   }));
+
+//   /* ================= ADVENTURE TOUR ================= */
+//   const adventureSections = adventure.map((item) => ({
+//     image: item.image,
+//     heading: item.title,
+//     subheading: item.subtitle,
+//     description: item.description,
+//   }));
+
+//   return (
+//     <div>
+//       {/* ================= HERO ================= */}
+//       <div
+//         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+//         style={{ backgroundImage: `url(${image})` }}
+//       >
+//         <div className="absolute inset-0 bg-black/30"></div>
+//         <h2 className="text-xl md:text-5xl text-white uppercase z-10">
+//           {title}
+//         </h2>
+//       </div>
+
+//       <TabLink />
+
+//       {/* ================= OVERVIEW ================= */}
+//       {overviewinfo.map((item) => (
+//         <OverviewSections
+//           key={item._id}
+//           label={`Explore ${title}`}
+//           title={item.title}
+//           image={item.image}
+//           imagePosition="right"
+//           bg="#fcfcfc"
+//           paragraphs={[
+//             { content: item.description },
+//           ]}
+//         />
+//       ))}
+
+//       <ChoosingSafariSection />
+
+//       {/* ================= MIGRATION ================= */}
+//       {migration.length > 0 && (
+//         <SerengetiMigrationTabs data={migration} />
+//       )}
+
+//       {/* ================= HIGHLIGHTS ================= */}
+//       {trips.length > 0 && (
+//         <TripHighlights
+//           title={`${destination} Trip Highlights`}
+//           data={trips}
+//         />
+//       )}
+
+//       {/* ================= BEST TIME ================= */}
+//       {monthData.length > 0 && (
+//         <BestTimeToVisitSection
+//           title={`Best time to visit ${title}`}
+//           subtitle=""
+//           staticMonths={monthData}
+//         />
+//       )}
+
+//       {/* ================= ADVENTURE ================= */}
+//       {adventureSections.length > 0 && (
+//         <AdventureTour sections={adventureSections} />
+//       )}
+
+//       {/* ================= FAQ ================= */}
+//       {faqs.length > 0 && (
+//         <FAQSection
+//           title="What do travellers ask about our African safari tours?"
+//           faqs={faqs}
+//         />
+//       )}
+
+//       <ActiveTravelDestinations />
+//       <BookWithConfidence />
+//       <Featured />
+//     </div>
+//   );
+// };
+
+// export default SerengetiNationalPark;
+
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useParams } from "react-router-dom";
+import API from "../../api/axios";
 
-import SerengetiTabsSection from "./SerengetiTabsSection";
-import ChoosingSafariSection from "./ChoosingSafariSection";
 import SerengetiMigrationTabs from "./SerengetiMigrationTabs";
+import ChoosingSafariSection from "./ChoosingSafariSection";
 import TripHighlights from "../../components/TripHighlights";
 import BestTimeToVisitSection from "./BestTimeToVisitSection";
 import BookWithConfidence from "../Home/BookWithConfidence";
@@ -362,19 +521,16 @@ import OverviewSections from "../../components/OverviewSections";
 import TabLink from "./TabLink";
 
 const SerengetiNationalPark = () => {
+  const { id } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://imarabackend.safarimarketingpro.com/api/destinationdetails")
-      .then((res) => {
-        // API returns array
-        setData(res.data[0]);
-      })
-      .catch((err) => console.error("Destination API error:", err))
+    API.get(`/destinationdetails/${id}`)
+      .then((res) => setData(res.data))
+      .catch((err) => console.error("Destination error:", err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [id]);
 
   if (loading) return <p className="p-10 text-center">Loading...</p>;
   if (!data) return <p className="p-10 text-center">No data found</p>;
@@ -392,7 +548,7 @@ const SerengetiNationalPark = () => {
     aboutBooking = [],
   } = data;
 
-  /* ================= FAQ TRANSFORM ================= */
+  /* ================= FAQ ================= */
   const faqs = aboutBooking.map((item) => ({
     question: item.question,
     answerBlocks: item.answer.map((a) => ({
@@ -401,24 +557,36 @@ const SerengetiNationalPark = () => {
     })),
   }));
 
-  /* ================= BEST TIME TRANSFORM ================= */
-  const monthData = besttime.map((item) => ({
-    name: item.month,
-    season: item.title,
-    rating: "Excellent",
-    color: "bg-[#A5D6A7]",
-    description: [item.content],
-  }));
+  // /* ================= BEST TIME ================= */
+  // const monthData = besttime.map((item) => ({
+  //   name: item.month,
+  //   season: item.title,
+  //   rating: "Excellent",
+  //   description: [item.content],
+  // }));
+
+
+  const monthData = besttime.flatMap((bt) =>
+  (bt.section || []).map((m) => ({
+    name: m.month,                // ✅ month name
+    season: bt.title,             // ✅ group title
+    rating: "Excellent",          // optional (UI only)
+    description: [m.content],     // ✅ must be ARRAY
+  }))
+);
+
 
   /* ================= TRIP HIGHLIGHTS ================= */
-  const trips = highlight.map((item, index) => ({
-    id: index + 1,
+const trips = highlight.flatMap((group, groupIndex) =>
+  (group.section || []).map((item, index) => ({
+    id: `${groupIndex}-${index}`,
     image: item.image,
     title: item.title,
     description: item.description,
-  }));
+  }))
+);
 
-  /* ================= ADVENTURE TOUR ================= */
+  /* ================= ADVENTURE ================= */
   const adventureSections = adventure.map((item) => ({
     image: item.image,
     heading: item.title,
@@ -426,14 +594,15 @@ const SerengetiNationalPark = () => {
     description: item.description,
   }));
 
+
   return (
     <div>
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <h2 className="text-xl md:text-5xl text-white uppercase z-10">
           {title}
         </h2>
@@ -441,7 +610,7 @@ const SerengetiNationalPark = () => {
 
       <TabLink />
 
-      {/* ================= OVERVIEW ================= */}
+      {/* OVERVIEW */}
       {overviewinfo.map((item) => (
         <OverviewSections
           key={item._id}
@@ -450,45 +619,48 @@ const SerengetiNationalPark = () => {
           image={item.image}
           imagePosition="right"
           bg="#fcfcfc"
-          paragraphs={[
-            { content: item.description },
-          ]}
+          paragraphs={item.description}
         />
       ))}
 
       <ChoosingSafariSection />
 
-      {/* ================= MIGRATION ================= */}
-      {migration.length > 0 && (
-        <SerengetiMigrationTabs data={migration} />
-      )}
+      {/* MIGRATION */}
+     {migration.length > 0 && (
+  <SerengetiMigrationTabs data={migration} />
+)}
 
-      {/* ================= HIGHLIGHTS ================= */}
       {trips.length > 0 && (
-        <TripHighlights
-          title={`${destination} Trip Highlights`}
-          data={trips}
-        />
-      )}
+  <TripHighlights
+    title={`${destination} Trip Highlights`}
+    data={trips}
+  />
+)}
 
-      {/* ================= BEST TIME ================= */}
-      {monthData.length > 0 && (
+      {/* BEST TIME */}
+      {/* {monthData.length > 0 && (
         <BestTimeToVisitSection
           title={`Best time to visit ${title}`}
-          subtitle=""
           staticMonths={monthData}
         />
-      )}
+      )} */}
 
-      {/* ================= ADVENTURE ================= */}
+{monthData.length > 0 && (
+  <BestTimeToVisitSection
+    title={`Best time to visit ${title}`}
+    staticMonths={monthData}
+  />
+)}
+
+      {/* ADVENTURE */}
       {adventureSections.length > 0 && (
         <AdventureTour sections={adventureSections} />
       )}
 
-      {/* ================= FAQ ================= */}
+      {/* FAQ */}
       {faqs.length > 0 && (
         <FAQSection
-          title="What do travellers ask about our African safari tours?"
+          title="What travellers ask about our safari tours?"
           faqs={faqs}
         />
       )}

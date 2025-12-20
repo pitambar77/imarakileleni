@@ -44,6 +44,10 @@ import BlogDetail from "./Pages/Travelguide/BlogDetail";
 import DashboardLayout from "./components/DashboardLayout";
 import BlogList from "./Pages/Travelguide/BlogList";
 import EditTravelgroup from "./Pages/Travelgroup/EditTravelgroup";
+import DestinationDetailsList from "./Pages/Destination/DestinationDetailsList";
+import DestinationDetailsForm from "./components/Destination/DestinationDetailsForm";
+import EditDestinationDetails from "./Pages/Destination/EditDestinationDetails";
+import DestinationDetailsPage from "./Pages/Destination/DestinationDetailsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -123,6 +127,16 @@ const router = createBrowserRouter(
           path="/tanzania-travel-guide"
           element={<BlogCategoryPage category="Tanzania Travel Guide" />}
         />
+
+
+
+<Route path="/dashboard/destination-details" element={<DestinationDetailsList />} />
+<Route path="/dashboard/create-destination-details" element={<DestinationDetailsForm />} />
+<Route path="/dashboard/edit-destination-details/:id" element={<EditDestinationDetails />} />
+<Route path="/destination-details/:id" element={<SerengetiNationalPark />} />
+
+
+
 
         {/* Blog Detail Page */}
         <Route path="/travel-guide/:slug" element={<BlogDetail />} />
