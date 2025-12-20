@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   FaMapMarkerAlt,
@@ -12,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { TbWorldSearch } from "react-icons/tb";
 
-const TripDetailsSection = () => {
+const TripDetailsSection = ({ trip }) => {
   const [readMore, setReadMore] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [showNotIncluded, setShowNotIncluded] = useState(false);
@@ -28,9 +27,15 @@ const TripDetailsSection = () => {
           </div>
 
           {/* Image */}
-          <img
+          {/* <img
             src="https://www.nkuringosafaris.com/wp-content/uploads/2024/01/tanzania_ngorongoro__wildebeest-migration.jpg"
             alt="Tanzania Safari"
+            className="rounded-md w-full object-cover h-[500px]"
+          /> */}
+
+          <img
+            src={trip.image}
+            alt={trip.title}
             className="rounded-md w-full object-cover h-[500px]"
           />
 
@@ -39,8 +44,10 @@ const TripDetailsSection = () => {
             onClick={() => setShowMap(true)}
             className="absolute flex gap-1 top-4 right-4 bg-[#f9d7b9] text-[#222] text-xs font-semibold px-2 py-2 rounded-full shadow-sm border border-gray-200 hover:bg-gray-100 transition"
           >
-            <span><TbWorldSearch /></span>
-             MAP
+            <span>
+              <TbWorldSearch />
+            </span>
+            MAP
           </button>
 
           {/* Highlight Box */}
@@ -53,11 +60,10 @@ const TripDetailsSection = () => {
               wondrous wildlife
             </p>
             <div className=" text-center">
-<button className="mt-2 text-[14px] font-semibold text-[#222] underline hover:text-[#d87028] transition">
-              GO TO ITINERARY 
-            </button>
+              <button className="mt-2 text-[14px] font-semibold text-[#222] underline hover:text-[#d87028] transition">
+                GO TO ITINERARY
+              </button>
             </div>
-            
           </div>
         </div>
 
@@ -66,14 +72,14 @@ const TripDetailsSection = () => {
           <div>
             {/* Title */}
             <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-10">
-              Tanzania Safari
+              {trip.title}
             </h2>
 
             {/* Price + Button */}
             <div className="flex items-center mb-8 gap-x-24">
               <div>
                 <p className="uppercase text-sm text-gray-500">From</p>
-                <p className="text-2xl font-bold">$4,546</p>
+                <p className="text-2xl font-bold">${trip.price}</p>
               </div>
               <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-sm px-6 py-3 rounded-full transition">
                 VIEW DATES AND PRICES
@@ -81,35 +87,35 @@ const TripDetailsSection = () => {
             </div>
 
             {/* Trip Info Icons */}
-            <div className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-[#333] mb-6">
-              <span className="flex items-center gap-1">
-                <FaMapMarkerAlt /> START: ARUSHA
+            <div className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-[#333] mb-6 uppercase">
+              <span className="flex items-center gap-1 uppercase">
+                <FaMapMarkerAlt /> START: {trip.startLocation}
               </span>
-              <span className="flex items-center gap-1">
-                <FaMapMarkerAlt /> END: ARUSHA
+              <span className="flex items-center gap-1 uppercase">
+                <FaMapMarkerAlt /> END: {trip.endLocation}
               </span>
-              <span className="flex items-center gap-1">
-                <FaBus /> SAFARI VEHICLES
+              <span className="flex items-center gap-1 ">
+                <FaBus /> {trip.transport}
               </span>
             </div>
 
             {/* Stays */}
             <div className="flex flex-wrap items-center gap-3 mb-6 text-[15px]">
               <span className="flex items-center gap-1">
-                <FaUsers /> MAXIMUM 20 PEOPLE
+                <FaUsers /> {trip.maxpeople}
               </span>
               <span className="flex items-center gap-2 bg-[#f9d7b9] px-3 py-2 rounded-full text-[15px] font-semibold">
-                <FaBed /> 1 NIGHT IN HOTEL
+                <FaBed /> {trip.accomoDay}
               </span>
               <span className="flex items-center gap-2 bg-[#f9d7b9] px-3 py-2 rounded-full text-[15px] font-semibold text-[#222]">
-                <FaSuitcase /> 2 NIGHTS IN SPECIAL STAY
+                <FaSuitcase />{trip.accomoNight}
               </span>
             </div>
 
             {/* Description */}
             <div className="text-[16px] text-[#333] leading-relaxed mb-4">
               <p>
-                You can reel off the names of the Big 5, you've imagined
+                {/* You can reel off the names of the Big 5, you've imagined
                 yourself driving through the Serengeti in an open-top vehicle,
                 and you've dreamed of going on safari since you first learnt how
                 to say 'Hakuna Matata'.
@@ -122,7 +128,8 @@ const TripDetailsSection = () => {
                     Serengeti plains? Now this is the Africa trip you've been
                     waiting for.
                   </>
-                )}
+                )} */}
+                {trip.description}
               </p>
               <div className="mt-4 text-center">
                 <button
@@ -179,10 +186,26 @@ const TripDetailsSection = () => {
 
               {showNotIncluded && (
                 <ul className="mt-3 text-[15px] text-gray-700 list-disc pl-6 space-y-1">
-                  <li className=" flex items-center gap-2"> <FaGlobe />International flights</li>
-                  <li className=" flex items-center gap-2"> <FaGlobe />Travel insurance</li>
-                  <li className=" flex items-center gap-2"> <FaGlobe />Personal expenses (souvenirs, drinks, etc.)</li>
-                  <li className=" flex items-center gap-2"> <FaGlobe />Tips for guides and drivers</li>
+                  <li className=" flex items-center gap-2">
+                    {" "}
+                    <FaGlobe />
+                    International flights
+                  </li>
+                  <li className=" flex items-center gap-2">
+                    {" "}
+                    <FaGlobe />
+                    Travel insurance
+                  </li>
+                  <li className=" flex items-center gap-2">
+                    {" "}
+                    <FaGlobe />
+                    Personal expenses (souvenirs, drinks, etc.)
+                  </li>
+                  <li className=" flex items-center gap-2">
+                    {" "}
+                    <FaGlobe />
+                    Tips for guides and drivers
+                  </li>
                 </ul>
               )}
             </div>

@@ -326,7 +326,7 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
   if (!sections.length) return null;
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="details" className=" bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* HEADER */}
       <div className="text-center mx-auto mb-12 max-w-4xl">
         <h4 className="tracking-widest text-sm text-gray-500 font-semibold mb-4 uppercase">
@@ -337,13 +337,10 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
         </h2>
 
         {migration.description?.map((d, i) => (
-    <p
-      key={i}
-      className="text-gray-700 leading-relaxed text-[15px] mb-4"
-    >
-      {d.content}
-    </p>
-  ))}
+          <p key={i} className="text-gray-700 leading-relaxed text-[15px] mb-4">
+            {d.content}
+          </p>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-9 gap-10">
@@ -371,6 +368,9 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
 
         {/* RIGHT */}
         <div className="lg:col-span-6">
+          <h3 className="text-2xl font-bold mb-6 text-[#111]">
+            {sections[activeTab]?.nationalpark}
+          </h3>
           {sections[activeTab]?.details?.map((d, i) => (
             <p
               key={i}
@@ -393,6 +393,4 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
   );
 };
 
-
 export default SerengetiMigrationTabs;
-

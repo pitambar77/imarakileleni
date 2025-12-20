@@ -48,6 +48,14 @@ import DestinationDetailsList from "./Pages/Destination/DestinationDetailsList";
 import DestinationDetailsForm from "./components/Destination/DestinationDetailsForm";
 import EditDestinationDetails from "./Pages/Destination/EditDestinationDetails";
 import DestinationDetailsPage from "./Pages/Destination/DestinationDetailsPage";
+import KilimanjaroLandingList from "./Pages/KilimanjaroLanding/KilimanjaroLandingList";
+import KilimanjarolandingForm from "./components/KilimanjarolandingForm/KilimanjarolandingForm";
+import KilimanjaroLandingDetails from "./Pages/KilimanjaroLanding/KilimanjaroLandingDetails";
+import KilimanjaroLandingEdit from "./Pages/KilimanjaroLanding/KilimanjaroLandingEdit";
+import ItinaryDetails from "./Pages/Itinenary/ItinaryDetails";
+import PackageList from "./Pages/Itinenary/PackageList";
+import EditPackage from "./Pages/Itinenary/EditPackage";
+// import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -128,6 +136,14 @@ const router = createBrowserRouter(
           element={<BlogCategoryPage category="Tanzania Travel Guide" />}
         />
 
+{/* <Route path="/itinenary-details" element={<ItinaryDetails/>}/> */}
+
+<Route path="/admin/packages" element={<PackageList />} />
+<Route path="/admin/packages/create" element={<CreatePackage />} />
+<Route path="/admin/packages/edit/:id" element={<EditPackage />} />
+
+<Route path="/package/:id" element={<ItinaryDetails />} />
+
 
 
 <Route path="/dashboard/destination-details" element={<DestinationDetailsList />} />
@@ -135,6 +151,12 @@ const router = createBrowserRouter(
 <Route path="/dashboard/edit-destination-details/:id" element={<EditDestinationDetails />} />
 <Route path="/destination-details/:id" element={<SerengetiNationalPark />} />
 
+<Route path="/dashboard/kilimanjaro" element={<KilimanjaroLandingList />} />
+<Route path="/dashboard/kilimanjaro/create" element={<KilimanjarolandingForm />} />
+<Route path="/dashboard/kilimanjaro/:id" element={<KilimanjaroLandingDetails />} />
+<Route path="/dashboard/kilimanjaro/edit/:id" element={<KilimanjaroLandingEdit />} />
+
+{/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
 
 
 

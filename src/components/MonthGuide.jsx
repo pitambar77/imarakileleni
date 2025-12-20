@@ -1,11 +1,14 @@
-
-
-
 import React, { useState } from "react";
 import { GoDotFill } from "react-icons/go";
 
 const MonthGuide = ({ title, tabs }) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].id);
+  // const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const [activeTab, setActiveTab] = useState(tabs?.[0]?.id || null);
+
+if (!tabs || tabs.length === 0) {
+  return null;
+}
+
 
   const activeContent = tabs.find((t) => t.id === activeTab);
 
@@ -29,14 +32,10 @@ const MonthGuide = ({ title, tabs }) => {
             onClick={() => setActiveTab(tab.id)}
             className={`px-5 py-3 rounded-md cursor-pointer
                text-sm uppercase transition ${
-                activeTab === tab.id
-                  ? ""
-                  :"bg-[#d87028] text-white "
-              }`}
+                 activeTab === tab.id ? "" : "bg-[#d87028] text-white "
+               }`}
           >
-           <h3 className="">
-            {tab.label}
-            </h3> 
+            <h3 className="">{tab.label}</h3>
           </button>
         ))}
       </div>
@@ -87,50 +86,71 @@ const MonthGuide = ({ title, tabs }) => {
           />
         </div>
       </div> */}
-{/* CONTENT SECTION */}
-<div className="bg-[#f7d8c1] p-6 md:p-8 rounded-md flex flex-col lg:flex-row gap-6 lg:gap-10 items-start justify-between">
+      {/* CONTENT SECTION */}
+      <div className="bg-[#f7d8c1] p-6 md:p-8 rounded-md flex flex-col lg:flex-row gap-6 lg:gap-10 items-start justify-between">
+        {/* LEFT TEXT */}
+        <div className="w-full lg:w-[60%] order-2 md:order-1">
+          <h3 className="font-bold mb-4 text-2xl">
+            {activeContent.contentTitle}
+          </h3>
 
-  {/* LEFT TEXT */}
-  <div className="w-full lg:w-[60%] order-2 md:order-1">
-    <h3 className="font-bold mb-4 text-2xl">{activeContent.contentTitle}</h3>
+          {/* Dynamic Paragraphs */}
+          <div className="space-y-3 mb-4">
+            {descriptionArray.map((para, index) => (
+              <p
+                key={index}
+                className="text-[#444] text-[16px] leading-relaxed"
+              >
+                {para}
+              </p>
+            ))}
+          </div>
 
-    {/* Dynamic Paragraphs */}
-    <div className="space-y-3 mb-4">
-      {descriptionArray.map((para, index) => (
-        <p key={index} className="text-[#444] text-[16px] leading-relaxed">
-          {para}
-        </p>
+          {/* Bullet List */}
+          <div className="mt-4">
+            <h3 className="font-semibold text-xl mb-4">Events & Festivals</h3>
+            <ul className="space-y-2">
+              {/* {activeContent.events.map((item, index) => (
+                <li key={index} className="flex items-start gap-2 ml-2 md:ml-4">
+                  <span className="text-[#d87028] text-lg mt-0.5">
+                    <GoDotFill />
+                  </span>
+                  <p className="text-[#444] text-[16px] leading-relaxed">
+                    {item}
+                  </p>
+                </li>
+              ))} */}
+              {activeContent.events?.length > 0 && (
+  <div className="mt-4">
+    <h3 className="font-semibold text-xl mb-4">Events & Festivals</h3>
+    <ul className="space-y-2">
+      {activeContent.events.map((item, index) => (
+        <li key={index} className="flex items-start gap-2 ml-2 md:ml-4">
+          <span className="text-[#d87028] text-lg mt-0.5">
+            <GoDotFill />
+          </span>
+          <p className="text-[#444] text-[16px] leading-relaxed">
+            {item}
+          </p>
+        </li>
       ))}
-    </div>
-
-    {/* Bullet List */}
-    <div className="mt-4">
-      <h3 className="font-semibold text-xl mb-4">Events & Festivals</h3>
-      <ul className="space-y-2">
-        {activeContent.events.map((item, index) => (
-          <li key={index} className="flex items-start gap-2 ml-2 md:ml-4">
-            <span className="text-[#d87028] text-lg mt-0.5">
-              <GoDotFill />
-            </span>
-            <p className="text-[#444] text-[16px] leading-relaxed">{item}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </ul>
   </div>
+)}
 
-  {/* RIGHT IMAGE */}
-  <div className="w-full lg:w-[35%] order-1">
-    <img
-      src={activeContent.image}
-      alt="Section Visual"
-      className="w-full h-[250px] md:h-[300px] object-cover rounded"
-    />
-  </div>
-</div>
+            </ul>
+          </div>
+        </div>
 
-
-
+        {/* RIGHT IMAGE */}
+        <div className="w-full lg:w-[35%] order-1">
+          <img
+            src={activeContent.image}
+            alt="Section Visual"
+            className="w-full h-[250px] md:h-[300px] object-cover rounded"
+          />
+        </div>
+      </div>
     </section>
   );
 };

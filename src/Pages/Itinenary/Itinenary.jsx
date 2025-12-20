@@ -2,7 +2,6 @@ import React from 'react'
 import TripDetailsSection from './TripDetailsSection'
 import ReviewBanner from './ReviewBanner'
 import TripMomentsSection from './TripMomentsSection'
-import TripExperiencesSection from './TripExperiencesSection'
 import MapItinerarySection from './MapItinerarySection'
 import BookWithConfidence from '../Home/BookWithConfidence'
 import BookedTrips from '../../components/BookedTrips'
@@ -14,7 +13,7 @@ const Itinenary = () => {
         <TripDetailsSection/>
         <ReviewBanner/>
         <TripMomentsSection/>
-        <TripExperiencesSection/>
+        {/* <TripExperiencesSection/> */}
         <MapItinerarySection/>
         <BookWithConfidence/>
         <BookedTrips/>

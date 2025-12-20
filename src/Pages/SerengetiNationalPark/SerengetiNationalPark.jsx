@@ -614,7 +614,7 @@ const trips = highlight.flatMap((group, groupIndex) =>
       {overviewinfo.map((item) => (
         <OverviewSections
           key={item._id}
-          label={`Explore ${title}`}
+          label={item.subtitle}
           title={item.title}
           image={item.image}
           imagePosition="right"

@@ -6,7 +6,7 @@ const TabLink = () => {
   const tabs = [
     { id: "overview", label: "Overview" },
     { id: "packages", label: "Packages" },
-    { id: "thingstodo", label: "Details" },
+    { id: "details", label: "Details" },
     { id: "highlight", label: "Things to do" },
     { id: "besttime", label: "Best Time" },
     { id: "adventure", label: "Experience" },
