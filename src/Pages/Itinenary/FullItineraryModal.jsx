@@ -25,15 +25,15 @@ const FullItineraryModal = ({ days, onClose }) => {
         </div>
 
         {/* DAYS */}
-        <div className="space-y-10">
+        <div className="space-y-10 ">
           {days.map((day, index) => (
             <div
               key={day._id}
               className="bg-white rounded-lg shadow-sm flex"
             >
               {/* DAY STRIP */}
-              <div className="bg-[#d87028] text-white w-24 flex flex-col items-center justify-center rounded-l-lg">
-                <span className="uppercase text-sm">Day</span>
+              <div className="bg-[#d87028] text-white w-24 flex flex-col items-center rounded-l-lg">
+                <span className="uppercase mt-8 text-lg">Day</span>
                 <span className="text-3xl font-bold">{index + 1}</span>
               </div>
 
@@ -53,7 +53,7 @@ const FullItineraryModal = ({ days, onClose }) => {
                 ))}
 
                 <div className="mt-4 text-gray-600">
-                  🍽 {day.meals || "Breakfast, Lunch, Dinner"}
+                  🍽 {day.startpoint || ""}
                 </div>
 
                 <p className="mt-2 text-[#d87028] font-semibold">

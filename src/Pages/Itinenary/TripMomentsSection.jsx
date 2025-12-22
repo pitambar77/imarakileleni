@@ -319,12 +319,16 @@ import {
 const TripMomentsSection = ({ experience = [] }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+
+   const { heading, subheading } = experience[0];
+
   /* ================= BUILD MOMENTS FROM API ================= */
   const moments = experience.flatMap((exp) =>
     exp.section.map((sec, index) => ({
       id: `${exp._id}-${index}`,
       image: sec.image,
       caption: sec.description,
+      title:sec.title,
     }))
   );
 
@@ -349,10 +353,10 @@ const TripMomentsSection = ({ experience = [] }) => {
   return (
     <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center">
       <h2 className="text-[24px] md:text-3xl font-extrabold mb-1 text-[#111]">
-        Trip Moments
+        {heading}
       </h2>
       <p className="text-[16px] text-[#444] mb-12">
-        Real moments from this journey
+        {subheading}
       </p>
 
       {/* GRID */}
@@ -375,9 +379,9 @@ const TripMomentsSection = ({ experience = [] }) => {
               <FaExpand className="text-white text-[14px]" />
             </div>
 
-            <div className="absolute  bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white px-4 py-3 text-[14px]">
-              <p className=" pb-4">
-                {moment.caption}
+            <div className="absolute  bottom-0 w-full bg-gradient-to-t from-black/100 to-transparent text-white px-4 py-3 text-[14px]">
+              <p className=" text-lg pb-4">
+                {moment.title}
                 </p>
             </div>
           </div>
@@ -401,6 +405,7 @@ const TripMomentsSection = ({ experience = [] }) => {
             />
 
             <div className="flex-1 p-6 text-left">
+              <h3 className=" text-2xl mb-4">{moments[activeIndex].title}</h3>
               <p className="text-[15px]">{moments[activeIndex].caption}</p>
             </div>
           </div>

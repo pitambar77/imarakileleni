@@ -16,6 +16,9 @@ const TripDetailsSection = ({ trip }) => {
   const [showMap, setShowMap] = useState(false);
   const [showNotIncluded, setShowNotIncluded] = useState(false);
 
+  const mapIframe = trip?.itinerary?.[0]?.map;
+
+
   return (
     <section className="bg-white py-12 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-[#222]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -23,15 +26,9 @@ const TripDetailsSection = ({ trip }) => {
         <div className="relative">
           {/* Label */}
           <div className="absolute bg-[#f9d7b9] text-[#1a1a1a] text-xs font-semibold px-3 py-2 ">
-            PREVIOUSLY TASTE OF TANZANIA
+            {trip.add}
           </div>
 
-          {/* Image */}
-          {/* <img
-            src="https://www.nkuringosafaris.com/wp-content/uploads/2024/01/tanzania_ngorongoro__wildebeest-migration.jpg"
-            alt="Tanzania Safari"
-            className="rounded-md w-full object-cover h-[500px]"
-          /> */}
 
           <img
             src={trip.image}
@@ -56,8 +53,7 @@ const TripDetailsSection = ({ trip }) => {
               What makes this trip special...
             </h4>
             <p className="text-[16px] text-[#333] leading-relaxed">
-              The one that will see you safari your way around Tanzania’s
-              wondrous wildlife
+             Every day brings new sights and quiet surprises from Tanzania’s open spaces.
             </p>
             <div className=" text-center">
               <button className="mt-2 text-[14px] font-semibold text-[#222] underline hover:text-[#d87028] transition">
@@ -221,10 +217,10 @@ const TripDetailsSection = ({ trip }) => {
       </div>
 
       {/* MAP MODAL */}
-      {showMap && (
+      {/* {showMap && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
           <div className="bg-white rounded-lg overflow-hidden w-full max-w-3xl shadow-lg relative">
-            {/* Close Button */}
+        
             <button
               onClick={() => setShowMap(false)}
               className="absolute top-3 right-3 text-gray-600 hover:text-black"
@@ -232,7 +228,7 @@ const TripDetailsSection = ({ trip }) => {
               <FaTimes size={20} />
             </button>
 
-            {/* Google Map Embed */}
+        
             <iframe
               title="Tanzania Safari Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15948977.457119478!2d28.77636437936594!3d-6.369028456049016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c443cf37a6e17%3A0xf9a0a7cf8c44e7da!2sTanzania!5e0!3m2!1sen!2sin!4v1699634189844!5m2!1sen!2sin"
@@ -244,7 +240,35 @@ const TripDetailsSection = ({ trip }) => {
             ></iframe>
           </div>
         </div>
+      )} */}
+      {/* MAP MODAL */}
+{showMap && (
+  <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
+    <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl shadow-lg relative">
+      
+      {/* Close Button */}
+      <button
+        onClick={() => setShowMap(false)}
+        className="absolute top-3 right-3 text-gray-600 hover:text-black z-10"
+      >
+        <FaTimes size={20} />
+      </button>
+
+      {/* MAP CONTENT */}
+      {mapIframe ? (
+        <div
+          className="w-full h-[500px]"
+          dangerouslySetInnerHTML={{ __html: mapIframe }}
+        />
+      ) : (
+        <div className="h-[300px] flex items-center justify-center text-gray-500">
+          Map not available
+        </div>
       )}
+    </div>
+  </div>
+)}
+
     </section>
   );
 };

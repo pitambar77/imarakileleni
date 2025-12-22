@@ -960,7 +960,7 @@ const PackageForm = ({ editData }) => {
 
                     <input
                       name="startpoint"
-                      placeholder="Start Point"
+                      placeholder="Meals"
                       className="border p-2"
                       value={day.startpoint}
                       onChange={(e) => handleDayChange(i, j, e)}
