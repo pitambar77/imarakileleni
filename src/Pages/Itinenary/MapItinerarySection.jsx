@@ -292,6 +292,7 @@ import {
 } from "react-icons/fa";
 import { jsPDF } from "jspdf";
 import "leaflet/dist/leaflet.css";
+import FullItineraryModal from './FullItineraryModal'
 
 /* ================= STATIC COORDINATES (OPTIONAL) ================= */
 const locations = {
@@ -357,110 +358,194 @@ const MapItinerarySection = ({ itinerary = [] }) => {
   };
 
   return (
-    <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
-      <h2 className="text-3xl font-extrabold text-center mb-10">
-        Map & Itinerary
-      </h2>
+    // <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    //   <h2 className="text-3xl font-extrabold text-center mb-10">
+    //     Map & Itinerary
+    //   </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* ================= MAP ================= */}
-        <div className="relative h-[480px] rounded-lg overflow-hidden shadow-md">
-          <MapContainer
-            center={[-3.5, 35.5]}
-            zoom={7}
-            style={{ height: "100%", width: "100%" }}
-            scrollWheelZoom={false}
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="© OpenStreetMap"
-            />
+    //   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    //     {/* ================= MAP ================= */}
+    //     <div className="relative h-[480px] rounded-lg overflow-hidden shadow-md">
+    //       <MapContainer
+    //         center={[-3.5, 35.5]}
+    //         zoom={7}
+    //         style={{ height: "100%", width: "100%" }}
+    //         scrollWheelZoom={false}
+    //       >
+    //         <TileLayer
+    //           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    //           attribution="© OpenStreetMap"
+    //         />
 
-            {routeCoordinates.length > 1 && (
-              <Polyline positions={routeCoordinates} color="black" />
-            )}
+    //         {routeCoordinates.length > 1 && (
+    //           <Polyline positions={routeCoordinates} color="black" />
+    //         )}
 
-            {routeCoordinates.map((pos, i) => (
-              <Marker key={i} position={pos}>
-                <Popup>Stop {i + 1}</Popup>
-              </Marker>
-            ))}
-          </MapContainer>
+    //         {routeCoordinates.map((pos, i) => (
+    //           <Marker key={i} position={pos}>
+    //             <Popup>Stop {i + 1}</Popup>
+    //           </Marker>
+    //         ))}
+    //       </MapContainer>
 
-          <button
-            onClick={handleDownloadPDF}
-            className="absolute bottom-4 left-4 flex items-center gap-2 text-sm font-semibold"
-          >
-            <FaDownload /> Download Itinerary
-          </button>
-        </div>
+    //       <button
+    //         onClick={handleDownloadPDF}
+    //         className="absolute bottom-4 left-4 flex items-center gap-2 text-sm font-semibold"
+    //       >
+    //         <FaDownload /> Download Itinerary
+    //       </button>
+    //     </div>
 
-        {/* ================= LIST ================= */}
-        <div className="bg-[#fde6d5] rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-6">Itinerary</h3>
+    //     {/* ================= LIST ================= */}
+    //     <div className="bg-[#fde6d5] rounded-lg p-8">
+    //       <h3 className="text-2xl font-bold mb-6">Itinerary</h3>
 
-          <ul className="space-y-5">
-            {days.map((day, index) => (
-              <li
-                key={day._id}
-                className="flex justify-between cursor-pointer"
-                onClick={() => openModal(day)}
-              >
-                <div>
-                  <p className="font-bold">{day.day}</p>
-                  <p className="flex items-center gap-2">
-                    {index === days.length - 1 ? (
-                      <FaFlag />
-                    ) : (
-                      <FaMapMarkerAlt />
-                    )}
-                    {day.route}
-                  </p>
-                </div>
-                <FaArrowRight />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    //       <ul className="space-y-5">
+    //         {days.map((day, index) => (
+    //           <li
+    //             key={day._id}
+    //             className="flex justify-between cursor-pointer"
+    //             onClick={() => openModal(day)}
+    //           >
+    //             <div>
+    //               <p className="font-bold">{day.day}</p>
+    //               <p className="flex items-center gap-2">
+    //                 {index === days.length - 1 ? (
+    //                   <FaFlag />
+    //                 ) : (
+    //                   <FaMapMarkerAlt />
+    //                 )}
+    //                 {day.route}
+    //               </p>
+    //             </div>
+    //             <FaArrowRight />
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     </div>
+    //   </div>
 
-      {/* ================= MODAL ================= */}
-      {modalOpen && selectedDay && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center">
-          <div className="bg-white max-w-5xl w-[95%] h-[90vh] overflow-y-auto relative p-6 rounded-lg">
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4"
-            >
-              <FaTimes size={22} />
-            </button>
+    //   {/* ================= MODAL ================= */}
+    //   {modalOpen && selectedDay && (
+    //     <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center">
+    //       <div className="bg-white max-w-5xl w-[95%] h-[90vh] overflow-y-auto relative p-6 rounded-lg">
+    //         <button
+    //           onClick={closeModal}
+    //           className="absolute top-4 right-4"
+    //         >
+    //           <FaTimes size={22} />
+    //         </button>
 
-            <h3 className="font-bold text-lg mb-2">{selectedDay.day}</h3>
-            <h2 className="text-2xl font-extrabold mb-4">
-              {selectedDay.title}
-            </h2>
+    //         <h3 className="font-bold text-lg mb-2">{selectedDay.day}</h3>
+    //         <h2 className="text-2xl font-extrabold mb-4">
+    //           {selectedDay.title}
+    //         </h2>
 
-            {selectedDay.description?.map((d, i) => (
-              <p key={i} className="mb-3 text-gray-700">
-                {d.content}
-              </p>
-            ))}
+    //         {selectedDay.description?.map((d, i) => (
+    //           <p key={i} className="mb-3 text-gray-700">
+    //             {d.content}
+    //           </p>
+    //         ))}
 
-            {selectedDay.image && (
-              <img
-                src={selectedDay.image}
-                className="rounded-lg mt-4 w-full h-[300px] object-cover"
-                alt=""
-              />
-            )}
+    //         {selectedDay.image && (
+    //           <img
+    //             src={selectedDay.image}
+    //             className="rounded-lg mt-4 w-full h-[300px] object-cover"
+    //             alt=""
+    //           />
+    //         )}
 
-            <p className="mt-4 font-semibold">
-              Stay: {selectedDay.accommodationName}
+    //         <p className="mt-4 font-semibold">
+    //           Stay: {selectedDay.accommodationName}
+    //         </p>
+    //       </div>
+    //     </div>
+    //   )}
+    // </section>
+    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
+  <h2 className="text-3xl font-extrabold text-center mb-10">
+    Map & Itinerary
+  </h2>
+
+  {/* ===== Toggle ===== */}
+  <div className="flex justify-center mb-10">
+    <div className="flex border rounded-full overflow-hidden shadow-sm">
+      <button className="px-6 py-2 bg-[#d87028] text-white flex items-center gap-2">
+        📍 Map View
+      </button>
+      <button
+        onClick={() => setModalOpen(true)}
+        className="px-6 py-2 bg-white text-gray-700 flex items-center gap-2"
+      >
+        ☰ View Full Itinerary
+      </button>
+    </div>
+  </div>
+
+  {/* ===== Layout ===== */}
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    
+    {/* ===== MAP ===== */}
+    <div className="h-[500px] rounded-lg overflow-hidden z-0 border shadow-sm">
+      <MapContainer
+        center={[-3.5, 35.5]}
+        zoom={7}
+        style={{ height: "100%", width: "100%" }}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {routeCoordinates.length > 1 && (
+          <Polyline positions={routeCoordinates} color="#6B8E23" />
+        )}
+
+        {routeCoordinates.map((pos, i) => (
+          <Marker key={i} position={pos} />
+        ))}
+      </MapContainer>
+    </div>
+
+    {/* ===== ITINERARY LIST ===== */}
+    <div className="space-y-6">
+      {days.map((day, index) => (
+        <div
+          key={day._id}
+          onClick={() => openModal(day)}
+          className="flex cursor-pointer border rounded-lg shadow-sm hover:shadow-md transition"
+        >
+          {/* DAY STRIP */}
+          <div className="bg-[#d87028] text-white w-20 flex flex-col items-center justify-center rounded-l-lg">
+            <span className="text-xs uppercase">Day</span>
+            <span className="text-2xl font-bold">{index + 1}</span>
+          </div>
+
+          {/* CONTENT */}
+          <div className="p-6 flex-1">
+            <h3 className="text-xl font-semibold mb-2">
+              {day.title}
+            </h3>
+
+            <div className="text-gray-600 flex items-center gap-2 mb-2">
+              🍽 {day.meals || "Breakfast, Lunch, Dinner"}
+            </div>
+
+            <p className="text-[#d87028] font-semibold">
+              🛏 {day.accommodationName} →
             </p>
           </div>
         </div>
-      )}
-    </section>
+      ))}
+    </div>
+  </div>
+
+  {/* ===== MODAL ===== */}
+  {modalOpen && (
+    <FullItineraryModal days={days} onClose={closeModal} />
+  )}
+</section>
+
   );
 };
 

@@ -55,6 +55,13 @@ import KilimanjaroLandingEdit from "./Pages/KilimanjaroLanding/KilimanjaroLandin
 import ItinaryDetails from "./Pages/Itinenary/ItinaryDetails";
 import PackageList from "./Pages/Itinenary/PackageList";
 import EditPackage from "./Pages/Itinenary/EditPackage";
+import ZanzibarDetailsList from "./Pages/ZanzibarLandingPage/ZanzibarDetailsList";
+import CreateZanzibar from "./Pages/ZanzibarLandingPage/CreateZanzibar";
+import EditZanzibar from "./Pages/ZanzibarLandingPage/EditZanzibar";
+import ZanzibarDetailsPage from "./Pages/ZanzibarLandingPage/ZanzibarDetailsPage";
+import EditDestinationLanding from "./Pages/Destination/EditDestinationLanding";
+import DestinationLandingDetails from "./Pages/Destination/DestinationLandingDetails";
+import DestinationLandingList from "./Pages/Destination/DestinationLandingList";
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
 const router = createBrowserRouter(
@@ -136,29 +143,83 @@ const router = createBrowserRouter(
           element={<BlogCategoryPage category="Tanzania Travel Guide" />}
         />
 
-{/* <Route path="/itinenary-details" element={<ItinaryDetails/>}/> */}
+        {/* <Route path="/itinenary-details" element={<ItinaryDetails/>}/> */}
 
-<Route path="/admin/packages" element={<PackageList />} />
-<Route path="/admin/packages/create" element={<CreatePackage />} />
-<Route path="/admin/packages/edit/:id" element={<EditPackage />} />
+        <Route path="/admin/packages" element={<PackageList />} />
+        <Route path="/admin/packages/create" element={<CreatePackage />} />
+        <Route path="/admin/packages/edit/:id" element={<EditPackage />} />
 
-<Route path="/package/:id" element={<ItinaryDetails />} />
+        <Route path="/package/:id" element={<ItinaryDetails />} />
+
+        <Route
+          path="/dashboard/destination-details"
+          element={<DestinationDetailsList />}
+        />
+        <Route
+          path="/dashboard/create-destination-details"
+          element={<DestinationDetailsForm />}
+        />
+        <Route
+          path="/dashboard/edit-destination-details/:id"
+          element={<EditDestinationDetails />}
+        />
+        <Route
+          path="/destination-details/:id"
+          element={<SerengetiNationalPark />}
+        />
+
+        {/* CREATE */}
+        <Route
+          path="/dashboard/destination-landing/create"
+          element={<CreateDestinationLanding />}
+        />
+
+        <Route
+  path="/dashboard/destination-landing"
+  element={<DestinationLandingList />}
+/>
 
 
+        {/* EDIT */}
+        <Route
+          path="/dashboard/destination-landing/edit/:id"
+          element={<EditDestinationLanding />}
+        />
 
-<Route path="/dashboard/destination-details" element={<DestinationDetailsList />} />
-<Route path="/dashboard/create-destination-details" element={<DestinationDetailsForm />} />
-<Route path="/dashboard/edit-destination-details/:id" element={<EditDestinationDetails />} />
-<Route path="/destination-details/:id" element={<SerengetiNationalPark />} />
+        {/* ================= FRONTEND ROUTES ================= */}
 
-<Route path="/dashboard/kilimanjaro" element={<KilimanjaroLandingList />} />
-<Route path="/dashboard/kilimanjaro/create" element={<KilimanjarolandingForm />} />
-<Route path="/dashboard/kilimanjaro/:id" element={<KilimanjaroLandingDetails />} />
-<Route path="/dashboard/kilimanjaro/edit/:id" element={<KilimanjaroLandingEdit />} />
+        {/* DETAILS / VIEW */}
+        <Route
+          path="/destination-landing/:id"
+          element={<DestinationLandingDetails />}
+        />
 
-{/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
+        <Route
+          path="/dashboard/zanibar-details"
+          element={<ZanzibarDetailsList />}
+        />
+        <Route path="/dashboard/create-zanzibar" element={<CreateZanzibar />} />
+        <Route path="/dashboard/edit-zanzibar/:id" element={<EditZanzibar />} />
+        <Route path="/zanzibar-details/:id" element={<ZanzibarDetailsPage />} />
 
+        <Route
+          path="/dashboard/kilimanjaro"
+          element={<KilimanjaroLandingList />}
+        />
+        <Route
+          path="/dashboard/kilimanjaro/create"
+          element={<KilimanjarolandingForm />}
+        />
+        <Route
+          path="/dashboard/kilimanjaro/:id"
+          element={<KilimanjaroLandingDetails />}
+        />
+        <Route
+          path="/dashboard/kilimanjaro/edit/:id"
+          element={<KilimanjaroLandingEdit />}
+        />
 
+        {/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
 
         {/* Blog Detail Page */}
         <Route path="/travel-guide/:slug" element={<BlogDetail />} />

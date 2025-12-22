@@ -365,7 +365,7 @@ const TripMomentsSection = ({ experience = [] }) => {
             <img
               src={moment.image}
               alt="Moment"
-              className="w-full h-[450px] object-cover rounded-md group-hover:scale-105 transition"
+              className="w-full h-[500px] object-cover rounded-md group-hover:scale-105 transition"
             />
 
             <div
@@ -375,8 +375,10 @@ const TripMomentsSection = ({ experience = [] }) => {
               <FaExpand className="text-white text-[14px]" />
             </div>
 
-            <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white px-4 py-3 text-[14px]">
-              {moment.caption}
+            <div className="absolute  bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white px-4 py-3 text-[14px]">
+              <p className=" pb-4">
+                {moment.caption}
+                </p>
             </div>
           </div>
         ))}

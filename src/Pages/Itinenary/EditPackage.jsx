@@ -15,7 +15,11 @@ const EditPackage = () => {
 
   if (!editData) return <p className="p-6">Loading...</p>;
 
-  return <PackageForm editData={editData} />;
+  return (
+    <div className=" p-6">
+      <PackageForm editData={editData} />;
+    </div>
+  );
 };
 
 export default EditPackage;
