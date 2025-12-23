@@ -101,12 +101,37 @@ import axios from "axios";
 
 import AdventureTour from "../../components/AdventureTour";
 import AllyshipCommitment from "./AllyshipCommitment";
-import WhyVisitSection from "../../components/WhyVisitSection";
+// import WhyVisitSection from "../../components/WhyVisitSection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
+import WhyVisitTanzania from "../Aboutus/WhyVisitTanzania";
 
 const API_URL =
   "https://imarabackend.safarimarketingpro.com/api/sustanbility";
+
+//   const cards = [
+//   {
+//     id: 1,
+//     image:
+//       "https://tanzania-specialist.com/wp-content/uploads/2025/06/Tanzania-vacation-scaled.jpg",
+//     title: "Go further than you’d go alone",
+//     text: "It’s one thing to visit somewhere new. But when you travel with awesome new people, all aged between 18 and 35, you take the adventure to a whole new level - not to mention the fun!",
+//   },
+//   {
+//     id: 2,
+//     image:
+//       "https://www.nkuringosafaris.com/wp-content/uploads/2024/05/African_safari_woman_sunset__-jpg.webp",
+//     title: "Seriously special stays",
+//     text: "We’ll take care of your stays, local transport, breakfasts and entry to the most sought-after sites – so you’re free to enjoy your adventure travel experience without the stress of planning.",
+//   },
+//   {
+//     id: 3,
+//     image:
+//       "https://www.serengetiheroes.com/wp-content/uploads/2024/03/women-safari-1290x737.webp",
+//     title: "Experiences that count",
+//     text: "Adventure with Contiki is about more than hiking and scenery. Whether you’re learning to be a safari guide in Kruger or chatting to the Warrior Women of Jasper, you’ll exercise your brain as well as your body!",
+//   },
+// ];
 
 const Sustanbility = () => {
   const [data, setData] = useState(null);
@@ -133,6 +158,7 @@ const Sustanbility = () => {
     overviewinfo,
     adventure,
     whyvisit,
+    effective,
   } = data;
 
   return (
@@ -169,24 +195,27 @@ const Sustanbility = () => {
       <AdventureTour
         sections={adventure?.map((item) => ({
           image: item.image,
-          heading: item.title,
+          subtitle: item.title,
           description: item.description,
         }))}
       />
 
       {/* ================= ALLYSHIP ================= */}
-      <AllyshipCommitment />
+      <AllyshipCommitment data={effective} />
 
       {/* ================= WHY VISIT ================= */}
-      <WhyVisitSection
+      {/* <WhyVisitSection
         title="Why visit Tanzania with Imara Kileleni Safaris?"
-        cards={whyvisit?.map((item, index) => ({
-          id: index,
-          image: item.image,
-          title: item.title,
-          text: item.description,
-        }))}
-      />
+        // cards={whyvisit?.map((item, index) => ({
+        //   id: index,
+        //   image: item.image,
+        //   title: item.title,
+        //   text: item.description,
+        // }))}
+        cards={cards}
+      /> */}
+
+      <WhyVisitTanzania/>
 
       <BookWithConfidence />
       <Featured />

@@ -62,11 +62,14 @@ import ZanzibarDetailsPage from "./Pages/ZanzibarLandingPage/ZanzibarDetailsPage
 import EditDestinationLanding from "./Pages/Destination/EditDestinationLanding";
 import DestinationLandingDetails from "./Pages/Destination/DestinationLandingDetails";
 import DestinationLandingList from "./Pages/Destination/DestinationLandingList";
+import FleetList from "./Pages/Aboutus/SafariFleet/FleetList";
+
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+    
       {/* 🌍 Main Website Routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -76,6 +79,8 @@ const router = createBrowserRouter(
 
         <Route path="safari-landing" element={<SafariDestiLanding />} />
         <Route path="safari-fleet" element={<SafariFleet />} />
+        <Route path="fleet" element={<FleetList />} />
+
         <Route
           path="serengeti-national-park"
           element={<SerengetiNationalPark />}
@@ -149,7 +154,7 @@ const router = createBrowserRouter(
         <Route path="/admin/packages/create" element={<CreatePackage />} />
         <Route path="/admin/packages/edit/:id" element={<EditPackage />} />
 
-        <Route path="/package/:id" element={<ItinaryDetails />} />
+        <Route path="/package/:slug" element={<ItinaryDetails />} />
 
         <Route
           path="/dashboard/destination-details"

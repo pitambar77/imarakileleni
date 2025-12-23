@@ -6,22 +6,22 @@ const WhyVisitTanzania = () => {
       id: 1,
       image:
         "https://tanzania-specialist.com/wp-content/uploads/2025/06/Tanzania-vacation-scaled.jpg",
-      title: "Go further than you’d go alone",
-      text: "On these Africa & the Middle East trips for 18–35s, you’ll travel with friendly people, plus an expert Trip Manager and local guides. Perfect for giving you confidence and bringing the fun vibes!",
+      title: "Locally Led Adventures",
+      text: "Our roots here run deep, and that changes the way you experience each place. You’re not just following a route—you’re discovering quiet corners, real stories, and moments only locals know how to reveal.",
     },
     {
       id: 2,
       image:
         "https://www.nkuringosafaris.com/wp-content/uploads/2024/05/African_safari_woman_sunset__-jpg.webp",
-      title: "Seriously special stays",
-      text: "Camping under the stars in Kruger. Luxury cruising on the Nile. Waterfront stays in Zambia. Our Africa & the Middle East trips are studded with stays that’ll make you wanna stay forever.",
+      title: "Tailored Safari Journeys",
+      text: "We listen closely to what excites you and what doesn’t. Then we build an itinerary shaped around your rhythm, your comfort, and your style, so the whole journey feels naturally made for you.",
     },
     {
       id: 3,
       image:
         "https://www.serengetiheroes.com/wp-content/uploads/2024/03/women-safari-1290x737.webp",
-      title: "Experiences that count",
-      text: "Support rescued elephants, meet Maasai people, and even visit a Women’s Collective in Morocco’s Dades Valley. These experiences aren’t just good for you – they’re good for people, planet & wildlife too!",
+      title: "Ethical Travel Choices",
+      text: "Your safari supports local livelihoods and protects the wilderness you came to see. We prioritise fair work, community involvement, and gentle travel practices that genuinely make a difference on the ground.",
     },
   ];
 
@@ -29,7 +29,7 @@ const WhyVisitTanzania = () => {
     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Title */}
       <h2 className="text-[28px] md:text-3xl capitalize font-bold text-center text-[#111] mb-12">
-        Why visit Tanzania with Imara Kileleni Safaris?
+        Start exploring Tanzania’s most iconic safaris
       </h2>
 
       {/* Cards Grid */}

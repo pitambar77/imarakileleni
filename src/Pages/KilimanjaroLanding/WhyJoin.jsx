@@ -6,8 +6,8 @@ const WhyJoinSection = () => {
     <section className="w-full bg-[#ffffff] py-16 px-4 md:px-10 lg:px-18 2xl:px-28">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl capitalize text-[#111]">Why join?</h2>
-        <p className="text-[#333] text-[16px] mt-2">Program benefits</p>
+        <h2 className="text-3xl capitalize text-[#111]">Why Climb with Us</h2>
+        <p className="text-[#333] text-[16px] mt-2">Because You Matter</p>
       </div>
 
       {/* BOX */}
@@ -16,26 +16,29 @@ const WhyJoinSection = () => {
 
           {/* LEFT COLUMN */}
           <div className="space-y-6">
-            <Benefit text="It’s free!" />
+            <Benefit text="Our mountain crew treats every climber like family, not another booking." />
 
-            <Benefit text="Easy and simple to get started" />
+            <Benefit text="Your Kilimanjaro rhythm sets our pace; we never rush anyone." />
 
-            <Benefit text="We’re the worldwide leader in tours for 18–35s…experts, some might say" />
+            <Benefit text="Every route is planned with care so your body adjusts gently." />
 
-            <Benefit text="We offer over 350 trips across 6 continents… impressive huh?" />
+            <Benefit text="Our guides read the mountain’s moods long before clouds change direction." />
 
-            <Benefit text="Our dedicated affiliate management team is available to help you maximise your potential as an affiliate partner and troubleshoot any problems along the way" />
+            <Benefit text="Hot meals taste better when cooked by people who actually care." />
+             <Benefit text="Safety talks feel calm and honest, never loud or intimidating." />
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="space-y-6">
-            <Benefit text="Earn 5% minimum commission for each confirmed online booking completed. We will reward our most lucrative publishers with higher commission rates" />
+            <Benefit text="You sleep easier knowing our porters protect you through unpredictable nights." />
 
-            <Benefit text="Access to Contiki’s amazing creatives including banners, skyscrapers and text links" />
+           
 
-            <Benefit text="90-day referral cookie period" />
+            <Benefit text="We adjust plans quietly when weather surprises us without stressing you." />
 
-            <Benefit text="Real-time tracking & reporting" />
+            <Benefit text="You feel supported even on days when altitude makes everything harder." />
+            <Benefit text="You feel supported even on days when altitude makes everything harder.The summit moment feels deeper because the journey never felt lonely." />
+
           </div>
 
         </div>

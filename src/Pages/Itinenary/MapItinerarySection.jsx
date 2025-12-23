@@ -1,563 +1,15 @@
-// import React, { useState } from "react";
-// import {
-//   MapContainer,
-//   TileLayer,
-//   Marker,
-//   Polyline,
-//   Popup,
-// } from "react-leaflet";
-// import {
-//   FaDownload,
-//   FaArrowRight,
-//   FaMapMarkerAlt,
-//   FaFlag,
-//   FaTimes,
-// } from "react-icons/fa";
-// import { jsPDF } from "jspdf";
-// import "leaflet/dist/leaflet.css";
-
-// const itinerary = [
-//   {
-//     day: "Day 1",
-//     route: "Arusha → Tarangire National Park",
-//     title: "Tarangire National Park",
-//     description:
-//       "Your safari begins as you travel from Arusha to Tarangire National Park, known for its majestic baobab trees and large elephant herds. Enjoy your first game drive and experience Tanzania’s natural beauty.",
-//     highlights: [
-//       {
-//         image:
-//           "https://d2g6byanrj0o4m.cloudfront.net/images/67754/rhino2__medium.jpg",
-//         title: "Evening Game Drive",
-//         text: "Spot elephants and zebras during a magical African sunset. ",
-//       },
-//     ],
-//   },
-//   {
-//     day: "Day 2",
-//     route: "Tarangire National Park → Serengeti",
-//     title: "Serengeti National Park",
-//     description:
-//       "Tanzania offers a variety of family safaris, with popular destinations including the Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara National Parks. These trips can be customized to fit different ages and interests, with options for luxury or mid-range accommodations and activities like game drives, cultural experiences with Maasai communities, and time at a beach in Zanzibar. Tours are available for a range of durations, from short 5-day trips to longer 10-day or more adventures. Key destinations and activities Serengeti National Park: Famous for the Great Migration and abundant wildlife like lions, giraffes, and zebras. Some camps are mobile and follow the migration, while others offer more permanent, family-friendly facilities.Ngorongoro Crater: A UNESCO World Heritage site that is home to the Big Five (elephant, lion, rhino, buffalo, and leopard) and offers a chance to see endangered black rhinos. Tarangire National Park: Known for its large elephant herds and baobab trees. Some lodges have family suites and swimming pools, making it a great stop for families. Lake Manyara National Park: Home to tree-climbing lions and a variety of birds. A good option for families who want a mix of game viewing and a chance for children to enjoy resort pools.Zanzibar: A popular extension to a safari for beach relaxation, with options for activities like snorkeling and swimming.",
-//     highlights: [
-//       {
-//         image:
-//           "https://cdn.kimkim.com/files/a/images/90d9d2c22b11587c636e52608b07c2b56ca696e8/big-703f0a51836fc4df32008c707cde3b32.jpg",
-//         title: "Sunset Over the Serengeti",
-//         text: "Capture breathtaking views as the sun sets over the plains.",
-//       },
-//     ],
-//   },
-//   {
-//     day: "Day 3",
-//     route: "Tarangire National Park → Serengeti",
-//     title: "Serengeti National Park",
-//     description:
-//       "Journey through the Duration: A 5 to 9-day safari often strikes a good balance for families, allowing for sufficient wildlife viewing without being overly exhausting for younger travelers. Great Rift Valley to the Serengeti — the land of endless plains and home to the Big Five. Enjoy a breathtaking safari adventure.",
-//     highlights: [
-//       {
-//         image:
-//           "https://tanzania-specialist.com/wp-content/uploads/2023/07/10-Days-Tanzania-safari-all-northern-parks-in-1-trip-wildebeest-migration.jpg",
-//         title: "Sunset Over the Serengeti",
-//         text: "Capture breathtaking views as the sun sets over the plains.",
-//       },
-//     ],
-//   },
-// ];
-
-// // Map coordinates (approximate)
-// const locations = {
-//   Arusha: [-3.3869, 36.6829],
-//   Tarangire: [-3.984, 36.061],
-//   Serengeti: [-2.3333, 34.8333],
-//   Ngorongoro: [-3.1616, 35.5877],
-//   LakeManyara: [-3.542, 35.8219],
-// };
-
-// // Paths connecting locations
-// const routeCoordinates = [
-//   locations.Arusha,
-//   locations.Tarangire,
-//   locations.Serengeti,
-//   locations.Ngorongoro,
-//   locations.LakeManyara,
-//   locations.Arusha,
-// ];
-
-// const MapItinerarySection = () => {
-//   const [modalOpen, setModalOpen] = useState(false);
-//   const [selectedDay, setSelectedDay] = useState(null);
-
-//   // ✅ Generate PDF function
-//   const handleDownloadPDF = () => {
-//     const doc = new jsPDF();
-//     doc.setFont("helvetica", "bold");
-//     doc.setFontSize(20);
-//     doc.text("Tanzania Safari - Itinerary", 20, 20);
-//     doc.setFontSize(12);
-//     doc.setFont("helvetica", "normal");
-//     doc.text("Day-by-day travel plan overview", 20, 30);
-//     doc.line(20, 35, 190, 35);
-
-//     let yPos = 45;
-//     itinerary.forEach((item, index) => {
-//       doc.setFont("helvetica", "bold");
-//       doc.text(`${item.day}`, 20, yPos);
-//       doc.setFont("helvetica", "normal");
-//       doc.text(item.route, 40, yPos);
-//       yPos += 10;
-//       if (yPos > 270) {
-//         doc.addPage();
-//         yPos = 30;
-//       }
-//     });
-
-//     doc.setFontSize(10);
-//     doc.text("Generated by Tanzania Safari Planner", 20, 285);
-//     doc.save("Tanzania_Itinerary.pdf");
-//   };
-
-//   const openModal = (day) => {
-//     setSelectedDay(day);
-//     setModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setModalOpen(false);
-//     setSelectedDay(null);
-//   };
-
-//   return (
-//     <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
-//       <h2 className="text-[28px] md:text-3xl font-extrabold text-[#111] text-center mb-10 capitalize">
-//         Map & Itinerary
-//       </h2>
-
-//       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-//         {/* Map Section */}
-//         <div className="relative h-[480px] rounded-lg overflow-hidden shadow-md">
-//           <MapContainer
-//             center={[-3.5, 35.5]}
-//             zoom={7}
-//             style={{ height: "100%", width: "100%" }}
-//             scrollWheelZoom={false}
-//           >
-//             <TileLayer
-//               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//               attribution="© OpenStreetMap contributors"
-//             />
-//             <Polyline
-//               positions={routeCoordinates}
-//               color="black"
-//               weight={2}
-//               dashArray="6 4"
-//             />
-//             {Object.entries(locations).map(([name, pos], i) => (
-//               <Marker key={i} position={pos}>
-//                 <Popup>{name}</Popup>
-//               </Marker>
-//             ))}
-//           </MapContainer>
-
-//           {/* ✅ Download itinerary button */}
-//           <button
-//             onClick={handleDownloadPDF}
-//             className="mt-4 flex items-center gap-2 text-sm text-gray-700 font-medium hover:text-[#d87028] transition"
-//           >
-//             <FaDownload />
-//             <span>Download Itinerary</span>
-//           </button>
-//         </div>
-
-//         {/* Itinerary Section */}
-//         <div className="bg-[#fde6d5] rounded-lg p-8 shadow-sm text-left">
-//           <div className="flex justify-between items-center mb-6">
-//             <h3 className="text-2xl font-bold text-[#111]">Itinerary</h3>
-//             <button
-//               onClick={() => openModal(itinerary[0])}
-//               className="text-sm font-semibold underline text-[#222] hover:text-[#d87028]"
-//             >
-//               View full itinerary
-//             </button>
-//           </div>
-
-//           {/* Day-by-day itinerary */}
-//           <ul className="space-y-5">
-//             {itinerary.map((item, index) => (
-//               <li
-//                 key={index}
-//                 className="flex items-center justify-between cursor-pointer"
-//                 onClick={() => openModal(item)}
-//               >
-//                 <div>
-//                   <p className="font-bold text-[16px] text-[#111] mb-1">
-//                     {item.day}
-//                   </p>
-//                   <p className="text-[15px] text-[#333] flex items-center gap-2">
-//                     {index === itinerary.length - 1 ? (
-//                       <FaFlag className="text-[#d87028]" />
-//                     ) : (
-//                       <FaMapMarkerAlt className="text-[#d87028]" />
-//                     )}
-//                     {item.route}
-//                   </p>
-//                 </div>
-//                 <FaArrowRight className="text-[#d87028]" />
-//               </li>
-//             ))}
-//           </ul>
-
-//           {/* Full itinerary button */}
-//           <div className="mt-10 text-center">
-//             <button
-//               onClick={() => openModal(itinerary[0])}
-//               className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-full transition"
-//             >
-//               FULL ITINERARY
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* === MODAL SECTION === */}
-//       {modalOpen && selectedDay && (
-//         <div className="fixed inset-0 bg-[#b8d9ff] flex justify-center items-center z-50">
-//           <div className="relative flex flex-col md:flex-row   max-w-7xl w-[95%] h-[90vh] overflow-hidden">
-//             {/* Close Button */}
-//             <button
-//               onClick={closeModal}
-//               className="absolute top-4 right-4 text-gray-700 hover:text-black z-10"
-//             >
-//               <FaTimes size={22} />
-//             </button>
-
-//             {/* Left Map */}
-//             <div className="w-full md:w-1/2 h-[50vh] md:h-full"></div>
-
-//             {/* Right Details */}
-//             <div className="w-full md:w-1/2 overflow-y-auto bg-[#f6ffd1] p-6 text-left">
-//               <div className="mb-4">
-//                 <h3 className="text-[#222] font-extrabold text-lg mb-2 bg-[#fdf48a] p-2 rounded inline-block">
-//                   {selectedDay.day}
-//                 </h3>
-//                 <h2 className="text-[22px] font-bold mb-2">
-//                   {selectedDay.title}
-//                 </h2>
-//                 <p className="text-[15px] leading-relaxed text-[#333]">
-//                   {selectedDay.description}
-//                 </p>
-//               </div>
-
-//               <div className="mt-6">
-//                 <h4 className="font-bold mb-3">Day Highlights</h4>
-//                 {selectedDay.highlights.map((h, idx) => (
-//                   <div key={idx} className="mb-5">
-//                     <img
-//                       src={h.image}
-//                       alt={h.title}
-//                       className="rounded-lg w-full h-[300px] object-cover mb-2"
-//                     />
-//                     <h5 className="font-semibold text-[#222] mb-1">
-//                       {h.title}
-//                     </h5>
-//                     <p className="text-[14px] text-[#333] leading-relaxed">
-//                       {h.text}
-//                     </p>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </section>
-//   );
-// };
-
-// export default MapItinerarySection;
-
-// import React, { useState } from "react";
-// import {
-//   MapContainer,
-//   TileLayer,
-//   Marker,
-//   Polyline,
-//   Popup,
-// } from "react-leaflet";
-// import {
-//   FaDownload,
-//   FaArrowRight,
-//   FaMapMarkerAlt,
-//   FaFlag,
-//   FaTimes,
-// } from "react-icons/fa";
-// import { jsPDF } from "jspdf";
-// import "leaflet/dist/leaflet.css";
-// import FullItineraryModal from './FullItineraryModal'
-
-// /* ================= STATIC COORDINATES (OPTIONAL) ================= */
-// const locations = {
-//   arusha: [-3.3869, 36.6829],
-//   serengeti: [-2.3333, 34.8333],
-//   ngorongoro: [-3.1616, 35.5877],
-//   tarangire: [-3.984, 36.061],
-// };
-
-// /* ================= COMPONENT ================= */
-// const MapItinerarySection = ({ itinerary = [] }) => {
-//   const [modalOpen, setModalOpen] = useState(false);
-//   const [selectedDay, setSelectedDay] = useState(null);
-
-//   /* ================= FLATTEN BACKEND DATA ================= */
-//   const days = itinerary.flatMap((it) =>
-//     it.section.map((sec) => ({
-//       ...sec,
-//       route: `${sec.startpoint} → ${sec.endpoint}`,
-//     }))
-//   );
-
-//   if (!days.length) return null;
-
-//   /* ================= MAP ROUTE ================= */
-//   const routeCoordinates = days
-//     .map((d) => locations[d.startpoint?.toLowerCase()])
-//     .filter(Boolean);
-
-//   /* ================= PDF DOWNLOAD ================= */
-//   const handleDownloadPDF = () => {
-//     const doc = new jsPDF();
-//     doc.setFont("helvetica", "bold");
-//     doc.setFontSize(20);
-//     doc.text("Safari Itinerary", 20, 20);
-
-//     let y = 40;
-//     days.forEach((day) => {
-//       doc.setFontSize(12);
-//       doc.text(day.day, 20, y);
-//       y += 6;
-//       doc.setFont("helvetica", "normal");
-//       doc.text(day.route, 30, y);
-//       y += 10;
-//       if (y > 270) {
-//         doc.addPage();
-//         y = 20;
-//       }
-//     });
-
-//     doc.save("Safari_Itinerary.pdf");
-//   };
-
-//   /* ================= MODAL ================= */
-//   const openModal = (day) => {
-//     setSelectedDay(day);
-//     setModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setSelectedDay(null);
-//     setModalOpen(false);
-//   };
-
-//   return (
-//     // <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
-//     //   <h2 className="text-3xl font-extrabold text-center mb-10">
-//     //     Map & Itinerary
-//     //   </h2>
-
-//     //   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-//     //     {/* ================= MAP ================= */}
-//     //     <div className="relative h-[480px] rounded-lg overflow-hidden shadow-md">
-//     //       <MapContainer
-//     //         center={[-3.5, 35.5]}
-//     //         zoom={7}
-//     //         style={{ height: "100%", width: "100%" }}
-//     //         scrollWheelZoom={false}
-//     //       >
-//     //         <TileLayer
-//     //           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//     //           attribution="© OpenStreetMap"
-//     //         />
-
-//     //         {routeCoordinates.length > 1 && (
-//     //           <Polyline positions={routeCoordinates} color="black" />
-//     //         )}
-
-//     //         {routeCoordinates.map((pos, i) => (
-//     //           <Marker key={i} position={pos}>
-//     //             <Popup>Stop {i + 1}</Popup>
-//     //           </Marker>
-//     //         ))}
-//     //       </MapContainer>
-
-//     //       <button
-//     //         onClick={handleDownloadPDF}
-//     //         className="absolute bottom-4 left-4 flex items-center gap-2 text-sm font-semibold"
-//     //       >
-//     //         <FaDownload /> Download Itinerary
-//     //       </button>
-//     //     </div>
-
-//     //     {/* ================= LIST ================= */}
-//     //     <div className="bg-[#fde6d5] rounded-lg p-8">
-//     //       <h3 className="text-2xl font-bold mb-6">Itinerary</h3>
-
-//     //       <ul className="space-y-5">
-//     //         {days.map((day, index) => (
-//     //           <li
-//     //             key={day._id}
-//     //             className="flex justify-between cursor-pointer"
-//     //             onClick={() => openModal(day)}
-//     //           >
-//     //             <div>
-//     //               <p className="font-bold">{day.day}</p>
-//     //               <p className="flex items-center gap-2">
-//     //                 {index === days.length - 1 ? (
-//     //                   <FaFlag />
-//     //                 ) : (
-//     //                   <FaMapMarkerAlt />
-//     //                 )}
-//     //                 {day.route}
-//     //               </p>
-//     //             </div>
-//     //             <FaArrowRight />
-//     //           </li>
-//     //         ))}
-//     //       </ul>
-//     //     </div>
-//     //   </div>
-
-//     //   {/* ================= MODAL ================= */}
-//     //   {modalOpen && selectedDay && (
-//     //     <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center">
-//     //       <div className="bg-white max-w-5xl w-[95%] h-[90vh] overflow-y-auto relative p-6 rounded-lg">
-//     //         <button
-//     //           onClick={closeModal}
-//     //           className="absolute top-4 right-4"
-//     //         >
-//     //           <FaTimes size={22} />
-//     //         </button>
-
-//     //         <h3 className="font-bold text-lg mb-2">{selectedDay.day}</h3>
-//     //         <h2 className="text-2xl font-extrabold mb-4">
-//     //           {selectedDay.title}
-//     //         </h2>
-
-//     //         {selectedDay.description?.map((d, i) => (
-//     //           <p key={i} className="mb-3 text-gray-700">
-//     //             {d.content}
-//     //           </p>
-//     //         ))}
-
-//     //         {selectedDay.image && (
-//     //           <img
-//     //             src={selectedDay.image}
-//     //             className="rounded-lg mt-4 w-full h-[300px] object-cover"
-//     //             alt=""
-//     //           />
-//     //         )}
-
-//     //         <p className="mt-4 font-semibold">
-//     //           Stay: {selectedDay.accommodationName}
-//     //         </p>
-//     //       </div>
-//     //     </div>
-//     //   )}
-//     // </section>
-//     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
-//   <h2 className="text-3xl font-extrabold text-center mb-10">
-//     Map & Itinerary
-//   </h2>
-
-//   {/* ===== Toggle ===== */}
-//   <div className="flex justify-center mb-10">
-//     <div className="flex border rounded-full overflow-hidden shadow-sm">
-//       <button className="px-6 py-2 bg-[#d87028] text-white flex items-center gap-2">
-//         📍 Map View
-//       </button>
-//       <button
-//         onClick={() => setModalOpen(true)}
-//         className="px-6 py-2 bg-white text-gray-700 flex items-center gap-2"
-//       >
-//         ☰ View Full Itinerary
-//       </button>
-//     </div>
-//   </div>
-
-//   {/* ===== Layout ===== */}
-//   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-    
-//     {/* ===== MAP ===== */}
-//     <div className="h-[500px] rounded-lg overflow-hidden z-0 border shadow-sm">
-//       {/* <MapContainer
-//         center={[-3.5, 35.5]}
-//         zoom={7}
-//         style={{ height: "100%", width: "100%" }}
-//         scrollWheelZoom={false}
-//       >
-//         <TileLayer
-//           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//         />
-
-//         {routeCoordinates.length > 1 && (
-//           <Polyline positions={routeCoordinates} color="#6B8E23" />
-//         )}
-
-//         {routeCoordinates.map((pos, i) => (
-//           <Marker key={i} position={pos} />
-//         ))}
-//       </MapContainer> */}
-//       {}
-//     </div>
-
-//     {/* ===== ITINERARY LIST ===== */}
-//     <div className="space-y-6">
-//       {days.map((day, index) => (
-//         <div
-//           key={day._id}
-//           onClick={() => openModal(day)}
-//           className="flex cursor-pointer border rounded-lg shadow-sm hover:shadow-md transition"
-//         >
-//           {/* DAY STRIP */}
-//           <div className="bg-[#d87028] text-white w-20 flex flex-col items-center justify-center rounded-l-lg">
-//             <span className="text-xs uppercase">Day</span>
-//             <span className="text-2xl font-bold">{index + 1}</span>
-//           </div>
-
-//           {/* CONTENT */}
-//           <div className="p-6 flex-1">
-//             <h3 className="text-xl font-semibold mb-2">
-//               {day.title}
-//             </h3>
-
-//             <div className="text-gray-600 flex items-center gap-2 mb-2">
-//               🍽 {day.meals || "Breakfast, Lunch, Dinner"}
-//             </div>
-
-//             <p className="text-[#d87028] font-semibold">
-//               🛏 {day.accommodationName} →
-//             </p>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-
-//   {/* ===== MODAL ===== */}
-//   {modalOpen && (
-//     <FullItineraryModal days={days} onClose={closeModal} />
-//   )}
-// </section>
-
-//   );
-// };
-
-// export default MapItinerarySection;
-
-
 import React, { useState } from "react";
 import FullItineraryModal from "./FullItineraryModal";
+import { IoLocation } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
 
 const MapItinerarySection = ({ itinerary = [] }) => {
   const [modalOpen, setModalOpen] = useState(false);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const [modalMode, setModalMode] = useState("full"); // "single" | "full"
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   if (!itinerary.length) return null;
 
@@ -574,10 +26,17 @@ const MapItinerarySection = ({ itinerary = [] }) => {
       <div className="flex justify-center mb-10">
         <div className="flex border border-gray-400 rounded-full overflow-hidden shadow-sm">
           <button className="px-6 py-2 bg-[#d87028] text-white">
-            📍 Map View
+            <span className="flex items-center gap-1">
+              <IoLocation />
+              <span>Map View</span>
+            </span>
           </button>
+
           <button
-            onClick={() => setModalOpen(true)}
+            onClick={() => {
+              setModalMode("full");
+              setModalOpen(true);
+            }}
             className="px-6 py-2 bg-white text-gray-700"
           >
             ☰ View Full Itinerary
@@ -585,54 +44,96 @@ const MapItinerarySection = ({ itinerary = [] }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2  bg-amber-50">
-        {/* ===== MAP ===== */}
-        <div className="h-[500px] overflow-hidden rounded-sm shadow-sm">
-          {mapIframe ? (
-            <div
-              className="w-full h-full"
-              dangerouslySetInnerHTML={{ __html: mapIframe }}
-            />
-          ) : (
-            <p className="text-center mt-20 text-gray-500">
-              Map not available
-            </p>
-          )}
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-amber-50 ">
+        {/* ================= MAP (STICKY) ================= */}
+        <div className="relative">
+          <div className="sticky top-24 h-[500px] overflow-hidden rounded-sm shadow-sm">
+            {mapIframe ? (
+              <div
+                className="w-full h-full"
+                dangerouslySetInnerHTML={{ __html: mapIframe }}
+              />
+            ) : (
+              <p className="text-center mt-20 text-gray-500">
+                Map not available
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* ===== ITINERARY LIST ===== */}
-        <div className="space-y-6 p-8 ">
-          {days.map((day, index) => (
-            <div
-              key={day._id}
-              onClick={() => setModalOpen(true)}
-              className="flex cursor-pointer bg-white rounded-sm shadow-sm hover:shadow-md transition"
-            >
-              <div className="bg-[#d87028] text-white w-20 flex flex-col items-center justify-center rounded-l-lg">
-                <span className="text-lg uppercase">Day</span>
-                <span className="text-2xl font-bold">{index + 1}</span>
-              </div>
+        {/* ================= ITINERARY (SCROLL ONLY HERE) ================= */}
+        <div className="h-[500px] overflow-y-auto p-8">
+          <div className="space-y-6">
+            {days.map((day, index) => {
+              const isActive = index === activeIndex;
 
-              <div className="p-6 flex-1">
-                <h3 className="text-xl font-semibold mb-2">
-                  {day.title}
-                </h3>
+              return (
+                <div
+                  key={day._id}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    setSelectedIndex(index);
+                    setModalMode("single");
+                    setModalOpen(true);
+                  }}
+                  className="flex cursor-pointer bg-white rounded-sm shadow-sm transition group"
+                >
+                  {/* ===== DAY STRIP ===== */}
+                  <div
+                    className={`
+          w-20 flex flex-col items-center justify-center rounded-l-sm
+          transition-colors duration-200
+          ${
+            isActive
+              ? "bg-[#d87028] text-white"
+              : " border-r border-gray-300 text-gray-700 group-hover:bg-[#d87028] group-hover:text-white"
+          }
+        `}
+                  >
+                    <span className="text-sm uppercase">Day</span>
+                    <span className="text-xl font-bold">
+                      {day.day.replace(/day\s*/i, "")}
+                    </span>
+                  </div>
 
-                <p className="text-[#d87028] font-semibold">
-                  🛏 {day.accommodationName}
-                </p>
-              </div>
-            </div>
-          ))}
+                  {/* ===== CONTENT ===== */}
+                  <div className="p-6 flex-1">
+                    <h3 className="text-xl font-semibold mb-2">{day.title}</h3>
+
+                    {/* {day.accommodationName?.trim() && (
+                      <p className="text-[#d87028] font-semibold flex items-center gap-2">
+                      <FaHome />
+                        
+
+                        {day.accommodationName}
+                      </p>
+                    )} */}
+                    {day.accommodationName?.trim() && (
+                      <p className="text-[#d87028] font-semibold flex items-center gap-2">
+                        <FaHome className=" text-lg relative -top-[2px]" />
+                        {day.accommodationName}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      {modalOpen && (
+      {/* {modalOpen && (
         <FullItineraryModal days={days} onClose={() => setModalOpen(false)} />
+      )} */}
+      {modalOpen && (
+        <FullItineraryModal
+          days={modalMode === "single" ? [days[selectedIndex]] : days}
+          mode={modalMode}
+          onClose={() => setModalOpen(false)}
+        />
       )}
     </section>
   );
 };
 
 export default MapItinerarySection;
-

@@ -75,7 +75,7 @@ const TripDetailsSection = ({ trip }) => {
             <div className="flex items-center mb-8 gap-x-24">
               <div>
                 <p className="uppercase text-sm text-gray-500">From</p>
-                <p className="text-2xl font-bold">${trip.price}</p>
+                <p className="text-2xl font-bold">{trip.price}</p>
               </div>
               <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-sm px-6 py-3 rounded-full transition">
                 VIEW DATES AND PRICES

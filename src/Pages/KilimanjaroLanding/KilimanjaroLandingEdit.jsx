@@ -17,10 +17,13 @@ const KilimanjaroLandingEdit = () => {
   if (!editData) return <p className="p-6">Loading...</p>;
 
   return (
-    <KilimanjarolandingForm
-      editData={editData}
-      onSuccess={() => navigate("/dashboard/kilimanjaro")}
-    />
+    <div className="p-8
+    ">
+      <KilimanjarolandingForm
+        editData={editData}
+        onSuccess={() => navigate("/dashboard/kilimanjaro")}
+      />
+    </div>
   );
 };
 

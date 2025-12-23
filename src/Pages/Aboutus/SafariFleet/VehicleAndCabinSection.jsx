@@ -1,5 +1,7 @@
 import React from "react";
 import { BiSolidUser } from "react-icons/bi";
+import left from "../../../assets/safari-fleet-2.webp";
+import right from "../../../assets/safari-fleet-3.webp";
 
 const VehicleAndCabinSection = () => {
   return (
@@ -7,12 +9,12 @@ const VehicleAndCabinSection = () => {
       {/* Top Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <img
-          src="https://altezzatravel.com/upload/medialibrary/1b0/pi56rsk6w3lpo3akbfty965bpdf06qd2.webp"
+          src={left}
           alt="Safari Vehicle 1"
           className="w-full h-[420px] object-cover rounded-lg shadow-sm"
         />
         <img
-          src="https://wildfrontiersuganda.com/wp-content/uploads/2022/02/vehicle-fleet.jpg"
+          src={right}
           alt="Safari Vehicle 2"
           className="w-full h-[420px] object-cover rounded-lg shadow-sm"
         />
@@ -21,12 +23,12 @@ const VehicleAndCabinSection = () => {
       {/* Title */}
       <div className="text-left  mb-16">
         <h3 className="text-[28px] md:text-[32px] font-semibold text-[#1a1a1a] mb-3">
-          Classic Antarctica Air-Cruise
+          Vehicle Configuration
         </h3>
         <p className="text-gray-600 text-[16px] max-w-2xl ">
-          The cabin availability below will refresh every 30 minutes. Note that
-          selecting a cabin is for informational purposes only and does not
-          reserve or block the space.
+          Our vehicles balance durability, comfort, and visibility, giving
+          travellers a steady ride on rough terrain and clear viewing angles
+          during every part of the safari.
         </p>
       </div>
 
@@ -129,12 +131,12 @@ const VehicleAndCabinSection = () => {
           {/* Info Note */}
           <div className=" bg-[#fedec7] p-8 rounded-md">
             <p className=" mb-8">
-              Is your cabin unavailable? Try another date.
+             Start planning your Tanzania safari with a team that guides you confidently.
             </p>
 
             {/* Button */}
-            <button className="bg-[#d76e28] hover:bg-[#fcd1b6] text-white border border-[#d87028] rounded-md px-5 py-3 w-fit text-sm font-semibold transition">
-              ← Back to Expedition Selection
+            <button className="bg-[#d76e28] hover:bg-[#fcd1b6] text-white hover:text-black/80 border border-[#d87028] rounded-md px-5 py-3 w-fit text-sm font-semibold transition">
+              ← Book Your Safari Today
             </button>
           </div>
         </div>

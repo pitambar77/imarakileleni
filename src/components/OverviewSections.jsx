@@ -73,7 +73,7 @@ const OverviewSections = ({
   title,
   paragraphs,
   image,
-  imagePosition = "right", // left or right
+  imagePosition = "right",
   bg = "#fcfcfc",
 }) => {
   return (

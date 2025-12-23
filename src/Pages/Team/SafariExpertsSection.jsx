@@ -51,13 +51,11 @@ const SafariExpertsSection = () => {
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-xl md:text-3xl font-extrabold text-black">
-          Meet Your Safari Experts
+         Meet the People Behind
         </h2>
         <p className="text-gray-600 text-[16px] leading-relaxed mt-3">
-          Head out in the company of Tanzania’s most knowledgeable, skillful and
-          passionate guides. We owe so much to this talented team, who pour a
-          lifetime of insight into ensuring guests spend their safaris utterly
-          spellbound.
+          These faces represent the skill and spirit of Imara Kileleni Safaris. Each team member brings their own story, strengths, and field knowledge, helping you feel comfortable, informed, and welcomed throughout your safari or climb in Tanzania.
+
         </p>
       </div>
 

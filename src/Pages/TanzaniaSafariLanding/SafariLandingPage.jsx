@@ -68,6 +68,9 @@ const SafariLandingPage = () => {
 
   if (!data) return null; // or loader
 
+
+
+
   return (
     <div>
         <Banner
@@ -77,7 +80,7 @@ const SafariLandingPage = () => {
         onButtonClick={() => alert("Redirecting to Tanzania Trips...")}
       />
       <SafariInfoSection overview={data.overviewinfo?.[0]}/>
-      <TanzaniaTabsSection/>
+      <TanzaniaTabsSection />
       <GuestReviewSection/>
       <SafariTour/>
       <TourGroupSection/>

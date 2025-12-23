@@ -8,10 +8,11 @@ const TanzaniaExpertCTA = () => {
           {/* LEFT TEXT AREA */}
           <div className="text-center">
             <h3 className="text-3xl font-bold text-[#0b1a2b]">
-              Speak to a Tanzania expert today
+              Reach out now and let us craft
+
             </h3>
             <p className="text-[18px] text-gray-700 mt-2">
-              and start planning your tailor-made holiday
+              your perfect Kilimanjaro climbing experience.
             </p>
 
             {/* CALL & BUTTON */}

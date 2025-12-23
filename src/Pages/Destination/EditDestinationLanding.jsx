@@ -45,7 +45,7 @@ const EditDestinationLanding = () => {
   if (!data) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className=" px-6">
       <h1 className="text-2xl font-bold mb-6">
         Edit Destination Landing
       </h1>

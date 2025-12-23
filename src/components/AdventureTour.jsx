@@ -60,6 +60,7 @@
 import React from "react";
 
 const AdventureTour = ({ title, sections }) => {
+
   return (
     <section
       id="adventure"
@@ -94,11 +95,11 @@ const AdventureTour = ({ title, sections }) => {
               }`}
             >
               <h2 className="text-2xl md:text-3xl text-[#111] leading-snug mb-4 md:mb-6 capitalize">
-                {item.heading}
+                {item.title}
               </h2>
 
               <h3 className="text-[17px] md:text-[18px] text-[#111] leading-snug mb-3">
-                {item.subheading}
+                {item.subtitle}
               </h3>
 
               <p className="text-gray-700 text-[15px] md:text-[16px] leading-relaxed">

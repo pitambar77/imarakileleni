@@ -21,6 +21,8 @@ import WhyVisitSection from "../../components/WhyVisitSection";
 import FAQSection from "../../components/FAQSection";
 import OverviewSections from "../../components/OverviewSections";
 
+
+
 const AboutUs = () => {
 
 
@@ -174,20 +176,18 @@ const [aboutData, setAboutData] = useState(null);
             About Us
           </h2>
           <h3 className=" font-extrabold">
-            From personsl passion to award-winning,bespoke tour operator
+            Local experts crafting Tanzania adventures with clarity, care, and honest guidance.
           </h3>
           <p>
-            Grown from a deep love of the African contient and its people,
-            Expert Africa is a dedicated team of travel specialists crafting
-            high-quality, tailore-made trips to Sourthern and East Africa.
+            We design personalised Tanzania Safaris and Kilimanjaro Climbs that balance excitement with thoughtful planning. Our team listens, adjusts, and builds trips around your comfort, interests, and expectations, making travel feel simple, flexible, and genuinely rewarding.
           </p>
         </div>
       </div>
 
       {/* <AboutInfoSection /> */}
-      {/* <OverviewSections 
-       label="Tanzania Safaris"
-      title="In Kilimanjaro's footprint, Tanzania mesmerizes with the great wildebeest migration wildlife"
+      <OverviewSections 
+       label="OUR STORY"
+      title="Local knowledge guiding meaningful safaris built from lived experience & Tanzania’s spirit."
       image="https://images.squarespace-cdn.com/content/v1/5f1ab4309bd4b45e29ec3e4b/1688629973354-NWWQV5E0GV2KDOY12YSU/South-Africa-Ngala-Safari-Lodge-andBeyonder-butlers-_3_-Collections-3000w.jpg"
       imagePosition="right"
       bg="#fcfcfc"
@@ -195,25 +195,25 @@ const [aboutData, setAboutData] = useState(null);
         {
           italic:true,
           content:
-            "We are seasoned off-the-beaten-track travellers and I marvel that everything worked exactly as it was supposed to, wrote a recent traveller of his Expert Africa safari. “Here we were, in the middle of central Tanzania, waiting for a 10:05 flight. Guess what? At 10:03, there was the plane, buzzing animals off the grass runway, then touching down to pick us up. It happened every time. Dazzling!",
+            "Imara Kileleni Safaris began at the base of Mount Kilimanjaro, where our team first realised how profoundly travel connects people to a place. We are a locally owned company committed to creating safari and adventure experiences across Tanzania’s most remarkable destinations, from the sweeping Serengeti plains to the quiet waters of Lake Manyara.",
         },
         {
           content:
-            "The same traveller went on to describe visceral wildlife encounters: “Having a leopard on your tent porch is not something I will soon forget. This is not Disneyland.”",
+            "Our guides, planners, and local partners combine years of experience with a deep understanding of wildlife, landscapes, and culture. Every itinerary—whether a wildlife safari, a cultural visit, or a mountain trek—is shaped around your interests, comfort, and travel style.",
         },
         {
           content:
-            "Tanzania’s tropical coast, sun-dappled beaches and scattering of islands are equally fascinating. Here cosmopolitan towns date back centuries to early trade routes and secluded Indian Ocean islands lie surrounded by white-sand beaches and colourful coral reefs."
+            "We see travel as a connection. It brings together nature, communities, and the stories that make Tanzania unforgettable. Sustainability and community support guide our approach, ensuring tourism strengthens the places and people who welcome our guests."
           },
         {
           italic: true,
           content:
-           "Our eyes were wide with wonder from the moment we left the airstrip,” sighed a couple returning to Tanzania for the first time since their honeymoon 30 years earlier: “We had the most mind-blowing, amazing experience.”"
+           "Imara Kileleni Safaris is built on a long-standing love for Tanzania. Our founder’s connection to the land inspired a team of outdoor enthusiasts and travel professionals to share the country’s hidden treasures with explorers worldwide."
         },
       ]}
-      /> */}
+      />
 
-
+{/* 
 {overviewinfo.map((item, index) => (
         <OverviewSections
           key={index}
@@ -226,7 +226,7 @@ const [aboutData, setAboutData] = useState(null);
             content: d.content,
           }))}
         />
-      ))}
+      ))} */}
 
 
 

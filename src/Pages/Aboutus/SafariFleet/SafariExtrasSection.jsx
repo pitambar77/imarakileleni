@@ -8,23 +8,23 @@ const SafariExtrasSection = () => {
       id: 1,
       icon: <FaHandHolding className="text-[#d87028] text-4xl" />,
       number: "60",
-      title: "Pop Up Roof",
+      title: "Designed for Viewing",
       description:
-        "Contiki is tried and tested by millions of travellers worldwide. Travel OGs since 1962? That’s right. Learned a few tricks along the way, to help us provide the best all-round travel experience? You bet.",
+        "Built so travellers get wide visibility, stable movement, and uninterrupted time to observe animals across open plains and woodland areas.",
     },
     {
       id: 2,
       icon: <FaHandHoldingHeart className="text-[#d87028] text-4xl" />,
-      title: "Wild Life Books and Maps",
+      title: "Comfort for Long Drives",
       description:
-        "Arrive solo, with your partner or with mates. Either way, you’ll travel the world with friendly new people from all around the world (and you might just meet a few new friends for life).",
+        "Seats, spacing, and ventilation systems help reduce fatigue during full-day drives. You stay comfortable even as the terrain shifts from smooth stretches to rugged tracks across famous parks and hidden pockets of wilderness.",
     },
     {
       id: 3,
       icon: <FaHandHoldingHeart className="text-[#d87028] text-4xl" />,
-      title: "Power Inverters",
+      title: "Reliable on Tough Roads",
       description:
-        "Think: Trip Managers to guide you and Drivers to... drive you. Plus on-site masterchefs, expert local guides and dedicated support teams – on hand 24/7 to answer any Qs.",
+        "Vehicles maintain grip, balance, and control on uneven surfaces that are common in national parks. This reliability allows travellers to enjoy the scenery without worrying about the challenges of unpredictable road conditions.",
     },
   ];
 
@@ -32,7 +32,7 @@ const SafariExtrasSection = () => {
     <section className="bg-[#fedec7] py-16 px-6 md:px-12 lg:px-20 text-center">
       {/* Heading */}
       <h2 className="text-[22px] md:text-3xl capitalize font-extrabold text-[#111] mb-12">
-        Plus the things you can’t put a price on...
+        Tanzania Safari Vehicle Features
       </h2>
 
       {/* Cards */}

@@ -1,7 +1,13 @@
 import React from "react";
 import { FaStar, FaCalendarAlt, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "../utils/slugify.js";
 
 const TripCard = ({ trip, onQuickView }) => {
+
+  const navigate = useNavigate();
+
+
   if (trip.promo) {
     return (
       <div className="rounded-sm overflow-hidden bg-white shadow-md flex flex-col justify-center items-center text-center h-[480px] relative">
@@ -21,7 +27,7 @@ const TripCard = ({ trip, onQuickView }) => {
   }
 
   return (
-    <div className="rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-lg transition duration-300 mb-4 h-[480px]">
+    <div className="rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-lg transition duration-300 mb-4 h-[460px]">
       {/* Image */}
       <div className="relative">
         <img
@@ -40,12 +46,12 @@ const TripCard = ({ trip, onQuickView }) => {
       {/* Content */}
       <div className="p-5">
         {/* Rating */}
-        <div className="flex items-center text-yellow-500 mb-1">
+        {/* <div className="flex items-center text-yellow-500 mb-1">
           {Array.from({ length: 5 }).map((_, i) => (
             <FaStar key={i} size={14} />
           ))}
           <span className="text-black ml-2 font-semibold">{trip.rating}</span>
-        </div>
+        </div> */}
 
         {/* Title */}
         <h3 className="text-xl mb-6 leading-tight">{trip.title}</h3>
@@ -83,7 +89,9 @@ const TripCard = ({ trip, onQuickView }) => {
             </h3>
           </div>
 
-          <button className="bg-[#d87028] hover:bg-orange-700 text-white text-sm px-6 py-2 rounded-full w-fit">
+          <button
+          onClick={() => navigate(`/package/${slugify(trip.title)}-${trip.id}`)}
+          className="bg-[#d87028] hover:bg-orange-700 text-white text-sm px-6 py-2 rounded-full w-fit">
             VIEW TRIP
           </button>
         </div>

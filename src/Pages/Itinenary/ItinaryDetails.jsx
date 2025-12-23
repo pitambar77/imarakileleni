@@ -56,7 +56,12 @@ import MapItinerarySection from "./MapItinerarySection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 
 const ItinaryDetails = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
+  const { slug } = useParams();
+
+// extract Mongo ID from end
+const id = slug.split("-").pop();
+
   const [trip, setTrip] = useState(null);
 
   useEffect(() => {

@@ -327,12 +327,12 @@ const Navbar = () => {
     {
       title: "TRAVEL STYLES",
       links: [
-        { label:"Tanzania Family Safari", path:"/travelgroup/category/Tanzania Family Safari" },
-        { label:"Tanzania Luxury Safari", path:"/travelgroup/category/Tanzania Luxury Safari" },
-        { label:"Tanzania Private Safari", path:"/travelgroup/category/Tanzania Private Safari" },
-        { label:"Tanzania Wildlife Safari", path:"/travelgroup/category/Tanzania Wildlife Safari" },
-        { label:"Tanzania Midrange Safari", path:"/travelgroup/category/Tanzania Midrange Safari" },
-        { label:"Tanzania Honeymoon Safari", path:"/travelgroup/category/Tanzania Honeymoon Safari" }
+        { label:"Tanzania Family Safari", path:"/travelgroup/tanzania-family-safari" },
+        { label:"Tanzania Luxury Safari", path:"/travelgroup/tanzania-luxury-safari" },
+        { label:"Tanzania Private Safari", path:"/travelgroup/tanzania-private-safari" },
+        { label:"Tanzania Wildlife Safari", path:"/travelgroup/tanzania-wildlife-safari" },
+        { label:"Tanzania Midrange Safari", path:"/travelgroup/tanzania-midrange-safari" },
+        { label:"Tanzania Honeymoon Safari", path:"/travelgroup/tanzania-honeymoon-safari" }
       ],
     },
     {

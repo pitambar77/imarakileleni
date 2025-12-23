@@ -61,8 +61,6 @@
 //   );
 // };
 
-
-
 import React, { useEffect, useState } from "react";
 import API from "../../api/axios.js";
 
@@ -82,8 +80,6 @@ import ContactForm from "./ContactForm";
 import WhyVisitSection from "../../components/WhyVisitSection";
 import ReviewsSection from "../Aboutus/ReviewsSection";
 import Featured from "../Home/Featured";
-
-
 
 const jobData = [
   {
@@ -160,20 +156,19 @@ const KilimanjaroLandingDetails = () => {
       block.section.map((s) => ({
         image: s.image,
         heading: block.heading,
-        subheading: s.title,
+        title: s.title,
+        subtitle:s.subtitle,
         description: s.description,
       }))
     ) || [];
 
-
-    const highlightTrips =
-  page.route?.map((r, index) => ({
-    id: r._id || index,
-    image: r.image,
-    title: r.title,
-    description: r.description,
-  })) || [];
-
+  const highlightTrips =
+    page.route?.map((r, index) => ({
+      id: r._id || index,
+      image: r.image,
+      title: r.title,
+      description: r.description,
+    })) || [];
 
   /* FAQ */
   const faqs =
@@ -188,20 +183,19 @@ const KilimanjaroLandingDetails = () => {
     })) || [];
 
   /* MONTH GUIDE */
-const monthTabs =
-  page.whenvisit?.flatMap((w, wi) =>
-    w.months.map((m, mi) => ({
-      id: `${wi}-${mi}`,
-      label: m.monthname || `Month ${mi + 1}`,
-      contentTitle: m.title || "",
-      description: Array.isArray(m.description)
-        ? m.description.map((d) => d.content)
-        : [],
-      image: m.image || "",
-      events: [], // 👈 REQUIRED by UI (empty for now)
-    }))
-  ) || [];
-
+  const monthTabs =
+    page.whenvisit?.flatMap((w, wi) =>
+      w.months.map((m, mi) => ({
+        id: `${wi}-${mi}`,
+        label: m.monthname || `Month ${mi + 1}`,
+        contentTitle: m.title || "",
+        description: Array.isArray(m.description)
+          ? m.description.map((d) => d.content)
+          : [],
+        image: m.image || "",
+        events: [], // 👈 REQUIRED by UI (empty for now)
+      }))
+    ) || [];
 
   /* WHY VISIT */
   const whyVisitCards =
@@ -230,24 +224,15 @@ const monthTabs =
 
       <KilimanjaroRoute overview={page.overviewinfo} />
 
-
-     <AdventureTour
-  title="Adventure Tours"
-  sections={adventureSections}
-/>
-
+      <AdventureTour title="Adventure Tours" sections={adventureSections} />
 
       <TanzaniaExpertCTA />
 
       <WhyJoin />
 
-      <Highlights
-  title="As Route"
-  trips={highlightTrips}
-/>
+      <Highlights title="As Route" trips={highlightTrips} />
 
-
-     <PositionsSection
+      <PositionsSection
         title="Positions available"
         subtitle="Wanna work with awesome people in awesome places? Check out our latest vacancies below."
         positions={jobData}
@@ -258,9 +243,7 @@ const monthTabs =
         tabs={monthTabs}
       />
 
-      <MonthWeatherGrid
-        data={weatherData}
-      />
+      <MonthWeatherGrid data={weatherData} />
 
       <AsSeenIn />
 
@@ -283,4 +266,3 @@ const monthTabs =
 };
 
 export default KilimanjaroLandingDetails;
-
