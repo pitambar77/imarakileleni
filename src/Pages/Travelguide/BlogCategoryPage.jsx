@@ -62,6 +62,8 @@ import axios from "axios";
 import TravelguideCard from "../../components/TravelguideCard";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
+import tabanner from '../../assets/imara-home-banner-2.webp'
+import kabanner from '../../assets/kabanner.webp'
 
 const API_BASE =
   import.meta.env.VITE_API_BASE || "https://imarabackend.safarimarketingpro.com";
@@ -100,13 +102,19 @@ const BlogCategoryPage = ({ category }) => {
       .finally(() => setLoading(false));
   }, [category]);
 
+
+  const isKilimanjaroCategory =
+  category?.toLowerCase().includes("kilimanjaro");
+
+const bannerImage = isKilimanjaroCategory ? kabanner : tabanner;
+
   return (
     <div>
       {/* ================= HERO ================= */}
       <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://greenedventures.com/wp-content/uploads/2024/06/Africa-Tanzania-Serengeti-Safari-Tour.jpg')`,
+          backgroundImage: `url(${bannerImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/30"></div>

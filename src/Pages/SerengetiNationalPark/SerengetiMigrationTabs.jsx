@@ -333,7 +333,8 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
           {migration.subtitle}
         </h4>
         <h2 className="text-[32px] font-extrabold text-[#111] mb-8 capitalize">
-          {migration.title}
+          {migration.title?.toLowerCase()
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}
         </h2>
 
         {migration.description?.map((d, i) => (

@@ -16,7 +16,7 @@ const Home = () => {
 <BookWithConfidence/>
 <KilimanjaroTrekking/>
 <PopularWay/>
-    {/* <Featured/> */}
+    <Featured/>
     </div>
   )
 }

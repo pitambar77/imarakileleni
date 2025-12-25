@@ -44,7 +44,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-amber-50 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#fedec647] ">
         {/* ================= MAP (STICKY) ================= */}
         <div className="relative">
           <div className="sticky top-24 h-[500px] overflow-hidden rounded-sm shadow-sm">

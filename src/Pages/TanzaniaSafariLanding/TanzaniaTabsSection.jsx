@@ -1,10 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import API from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "../../utils/slugify.js";
 
 const TanzaniaTabsSection = () => {
   const [destinations, setDestinations] = useState([]);
   const [activeTab, setActiveTab] = useState("Northern");
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDestinations = async () => {
@@ -48,43 +52,9 @@ const TanzaniaTabsSection = () => {
 
         {/* Main paragraph block */}
         <div className="text-[15px] md:text-[17px] leading-[1.8] space-y-6 text-[#333] px-2 md:px-10">
-          {/* <p>
-            <span className="font-semibold">Tanzania’s ‘Northern Circuit’</span>{" "}
-            is the term which defines the areas of the sprawling
-            <a
-              href="#"
-              className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition"
-            >
-              Serengeti
-            </a>
-            , the stunning landscape of the
-            <a
-              href="#"
-              className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition"
-            >
-              Ngorongoro Crater
-            </a>
-            ,
-            <a
-              href="#"
-              className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition"
-            >
-              Tarangire
-            </a>
-            and
-            <a
-              href="#"
-              className="text-[#1c3e94] underline mx-1 hover:text-[#d87028] transition"
-            >
-              Lake Manyara
-            </a>{" "}
-            national parks – the most famous safaris areas in Tanzania.
-          </p> */}
           <p>
             The{" "}
-            <span className=" font-bold">
-              Tanzania Northern Safari Circuit
-            </span>{" "}
+            <span className=" font-bold">Tanzania Northern Safari Circuit</span>{" "}
             is the route most people picture first, and honestly, it deserves
             that attention.{" "}
             <span className="font-semibold">Arusha National Park </span> offers
@@ -116,7 +86,8 @@ const TanzaniaTabsSection = () => {
 
           <p>
             For travelers drawn to quieter places, Mkomazi offers dry-country
-            wildlife and a rhythm that feels untouched. <span className="font-semibold">Lake Natron</span>  glows with
+            wildlife and a rhythm that feels untouched.{" "}
+            <span className="font-semibold">Lake Natron</span> glows with
             minerals and flamingos. Further south, Nyerere, Ruaha, Mikumi, and
             Udzungwa create a different Tanzania—wide rivers, deep wilderness,
             and parks where human presence feels wonderfully small.
@@ -150,16 +121,7 @@ const TanzaniaTabsSection = () => {
       </div> */}
 
       <div className="flex justify-center mb-10 space-x-3">
-        <button
-          onClick={() => setActiveTab("Southern")}
-          className={`px-5 py-2.5 rounded-full font-semibold border ${
-            activeTab === "Southern"
-              ? "bg-[#d87028] text-white border-[#d87028] active"
-              : "border-black text-black"
-          }`}
-        >
-          Southern Tanzania
-        </button>
+        
 
         <button
           onClick={() => setActiveTab("Northern")}
@@ -171,6 +133,16 @@ const TanzaniaTabsSection = () => {
         >
           Northern Tanzania
         </button>
+        <button
+          onClick={() => setActiveTab("Southern")}
+          className={`px-5 py-2.5 rounded-full font-semibold border ${
+            activeTab === "Southern"
+              ? "bg-[#d87028] text-white border-[#d87028] active"
+              : "border-black text-black"
+          }`}
+        >
+          Southern Tanzania
+        </button>
       </div>
       {/* Empty state */}
       {filteredDestinations.length === 0 && (
@@ -179,10 +151,46 @@ const TanzaniaTabsSection = () => {
       {/* Cards section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredDestinations.map((trip) => (
+          // <div
+          //   key={trip.id}
+          //   className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+          // >
+          //   <div className="relative">
+          //     <img
+          //       src={trip.image}
+          //       alt={trip.title}
+          //       className="w-full h-44 object-cover"
+          //     />
+
+          //     <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
+          //       🔍 QUICK VIEW
+          //     </button>
+
+          //     {/* <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
+          //       EARLY ACCESS DEAL
+          //     </span> */}
+          //   </div>
+
+          //   <div className="p-5">
+          //     <h3 className="font-semibold text-lg md:text-xl mb-4  leading-tight">
+          //       {trip.title}
+          //     </h3>
+          //     <p className="text-[14px] md:text-[15px] mb-6 line-clamp-3">
+          //       {trip.overviewinfo?.[0]?.description?.[0]?.content}
+          //     </p>
+
+          //     <div className="flex justify-end">
+          //       <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition">
+          //         VIEW TRIP
+          //       </button>
+          //     </div>
+          //   </div>
+          // </div>
           <div
-            key={trip.id}
-            className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            key={trip._id}
+            className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-[400px] flex flex-col"
           >
+            {/* IMAGE */}
             <div className="relative">
               <img
                 src={trip.image}
@@ -190,25 +198,38 @@ const TanzaniaTabsSection = () => {
                 className="w-full h-44 object-cover"
               />
 
-              <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
+              {/* <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
                 🔍 QUICK VIEW
-              </button>
-
-              {/* <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
-                EARLY ACCESS DEAL
-              </span> */}
+              </button> */}
             </div>
 
-            <div className="p-5">
-              <h3 className="font-semibold text-lg md:text-xl mb-4 leading-tight">
-                {trip.title}
+            {/* CONTENT */}
+            <div className="p-5 flex flex-col flex-1">
+              {/* Title */}
+              <h3 className="font-semibold text-lg md:text-xl mb-3 leading-tight capitalize">
+                {trip.title
+                  ?.toLowerCase()
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}
               </h3>
-              <p className="text-[14px] md:text-[15px] mb-6 line-clamp-3">
-                descriptions
+
+              {/* Description (CLAMP WORKS) */}
+              <p className="text-[14px] md:text-[15px] line-clamp-3">
+                {trip.overviewinfo?.[0]?.description?.[0]?.content}
               </p>
 
-              <div className="flex justify-end">
-                <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition">
+              {/* SPACER → pushes button down */}
+              <div className="flex-grow" />
+
+              {/* Button (FIXED BOTTOM) */}
+              <div className="flex justify-end pt-4">
+                <button
+                  onClick={() =>
+                    navigate(`/tanzania-destinations/${slugify(trip.title)}`, {
+                      state: { prefetchedData: trip },
+                    })
+                  }
+                  className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition"
+                >
                   VIEW TRIP
                 </button>
               </div>

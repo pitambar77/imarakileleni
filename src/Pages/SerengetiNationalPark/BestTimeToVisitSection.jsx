@@ -164,7 +164,8 @@ const BestTimeToVisitSection = ({
     >
       {/* TITLE */}
       <h2 className="text-xl md:text-3xl mb-10 capitalize text-center font-bold">
-        {title}
+        {title?.toLowerCase()
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}
       </h2>
 
       {/* LEGEND */}

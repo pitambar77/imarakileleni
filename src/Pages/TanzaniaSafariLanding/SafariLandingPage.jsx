@@ -86,7 +86,7 @@ const SafariLandingPage = () => {
       <TourGroupSection/>
       <WhentoGo/>
       <TripHighlights/>
-       {/* <Featured/> */}
+       <Featured/>
     </div>
   )
 }

@@ -1,25 +1,89 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import arusha from "../../assets/Arusha.webp";
+import Serengeti from "../../assets/Serengeti.webp";
+import Tarangire from "../../assets/tarangire.webp";
+import Ngorongoro from "../../assets/Ngorongoro.webp";
+import Manyara from "../../assets/Manayara.webp";
+import Kilimanjaro from "../../assets/kili.webp";
+import Udzungwa from "../../assets/udzunga.webp";
+import mikumi from "../../assets/mikumi.webp";
+import Ruaha from "../../assets/ruaha.webp";
+
+import Nyerere from "../../assets/nyerere.webp";
 
 const destinations = [
-  { id: 1, name: "Serengeti", image: "https://www.andbeyond.com/wp-content/uploads/sites/5/Serengeti-Balloon-Safari-andBeyond-Experience.jpg" },
-  { id: 2, name: "Gombe", image: "https://www.tripsavvy.com/thmb/uYv5JdnC9tiUWVp_ykK_ARpiKzw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-170954436-3d102c9ab69f47cfa81dad173d24f3a2.jpg" },
-  { id: 3, name: "Zanzibar", image: "https://littlewanderbook.com/wp-content/uploads/2024/12/Zanzibar-tips-en-highlights-29-van-40-scaled.jpg" },
-  { id: 4, name: "Tarengire", image: "https://www.andbeyond.com/wp-content/uploads/sites/5/boabab-tarangire-national-park.jpg" },
-  { id: 5, name: "Manyara", image: "https://www.asiliaafrica.com/wp-content/uploads/2024/04/A-Hippo-in-Lake-Manyara-Arusha-Tanzania.jpg" },
-  { id: 6, name: "Serengeti", image: "https://www.leopard-tours.com/wp-content/uploads/2015/07/manyara-national-park-5-1024x680.jpg" },
-  { id: 7, name: "Gombe", image: "https://www.andbeyond.com/wp-content/uploads/sites/5/Lion-in-a-tree-in-Lake-Manyara-National-Park.jpg" },
-  { id: 8, name: "Zanzibar", image: "https://www.asiliaafrica.com/wp-content/uploads/2024/04/Elephants-grazing-among-the-trees-in-Tarangire-Tanzania.jpg" },
-  { id: 9, name: "Tarengire", image: "https://tanzania-specialist.com/wp-content/uploads/2023/07/Lion-Serengeti.jpg" },
-  { id: 10, name: "Manyara", image: "https://tanzania-specialist.com/wp-content/uploads/2023/07/Jonge-leeuw-Serengeti.jpg" },
+  {
+    id: 1,
+    name: "Arusha",
+    image: arusha,
+    link: "/tanzania-destinations/arusha-national-park",
+  },
+  {
+    id: 2,
+    name: "Serengeti",
+    image: Serengeti,
+    link: "/tanzania-destinations/serengeti-national-park",
+  },
+  {
+    id: 3,
+    name: "Tarangire",
+    image: Tarangire,
+    link: "/tanzania-destinations/tarangire-national-park",
+  },
+  {
+    id: 4,
+    name: "Ngorongoro",
+    image: Ngorongoro,
+    link: "/tanzania-destinations/ngorongoro-crater",
+  },
+  {
+    id: 5,
+    name: "Manyara",
+    image: Manyara,
+    link: "/tanzania-destinations/lake-manyara-national-park",
+  },
+  {
+    id: 6,
+    name: "Kilimanjaro",
+    image: Kilimanjaro,
+    link: "/tanzania-destinations/kilimanjaro-national-park",
+  },
+  {
+    id: 7,
+    name: "Udzungwa",
+    image: Udzungwa,
+    link: "/tanzania-destinations/udzungwa-mountains-national-park",
+  },
+  {
+    id: 8,
+    name: "Mikumi",
+    image: mikumi,
+    link: "/tanzania-destinations/mikumi-national-park",
+  },
+  {
+    id: 9,
+    name: "Ruaha",
+    image: Ruaha,
+    link: "/tanzania-destinations/ruaha-national-park",
+  },
+  {
+    id: 10,
+    name: "Nyerere",
+    image: Nyerere,
+    link: "/tanzania-destinations/nyerere-national-park",
+  },
 ];
 
 const PopularDestinations = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="w-full py-8 md:py-16 bg-white">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* Title */}
         <h2 className="text-3xl text-center mb-10 capitalize">
-          Popular destinations
+          Tanzania’s Most Popular Destinations
         </h2>
 
         {/* Destination Grid */}
@@ -27,7 +91,8 @@ const PopularDestinations = () => {
           {destinations.map((dest) => (
             <div
               key={dest.id}
-              className="relative w-full h-56 md:h-64 rounded-md overflow-hidden group"
+              onClick={() => navigate(dest.link)}
+              className="relative w-full h-56 md:h-64 rounded-md overflow-hidden group cursor-pointer"
             >
               <img
                 src={dest.image}
@@ -46,8 +111,11 @@ const PopularDestinations = () => {
 
         {/* View All Trips Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-base px-8 py-3 rounded-full transition shadow">
-            VIEW ALL TRIPS
+          <button
+            onClick={() => navigate("/tanzania-destinations")}
+            className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-base px-8 py-3 rounded-full transition shadow"
+          >
+            VIEW ALL
           </button>
         </div>
       </div>

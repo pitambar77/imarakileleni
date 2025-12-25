@@ -310,19 +310,19 @@ const Navbar = () => {
   const menuItems = [
     {
       title: "DESTINATIONS",
-      path: "/destination-landing",
+      path: "/tanzania-destinations",
     },
     {
       title: "Safari",
-      path: "/safari-landing",
+      path: "/tanzania-safaris",
     },
     {
       title: "kilimanjaro",
-      path: "/kilimanjaro-landing",
+      path: "/mount-kilimanjaro",
     },
     {
       title: "Zanzibar",
-      path: "/zanzibar-landing",
+      path: "/zanzibar-beach",
     },
     {
       title: "TRAVEL STYLES",

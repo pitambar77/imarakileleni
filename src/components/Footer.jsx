@@ -9,9 +9,11 @@ import {
   FaCcAmex,
   FaCcDiscover,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiChevronDown } from "react-icons/fi";
 import { FaFlagUsa } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa6";
+import { IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [open, setOpen] = useState({
@@ -85,22 +87,70 @@ const Footer = () => {
               </button>
 
               {/* Desktop Header */}
-              <h3 className="hidden md:block font-bold text-lg mb-4">
-                Help & Info
+              <h3 className="hidden md:block font-bold text-lg mb-4 capitalize">
+                Quick link
               </h3>
 
+              {/* List */}
               {/* List */}
               <ul
                 className={`space-y-2 text-gray-700 ${
                   open.help ? "block" : "hidden md:block"
                 }`}
               >
-                <li>Who We Are</li>
-                <li>WE MAKE TRAVEL MATTER®</li>
-                <li>Become an Affiliate</li>
-                <li>Frequently Asked Questions</li>
-                <li>Travel Updates</li>
-                <li>Contact Us</li>
+                <li>
+                  <Link
+                    to="/about-us"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    About Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/tanzania-destinations"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Tanzania Destinations
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/tanzania-safaris"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Tanzania Safaris
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/mount-kilimanjaro"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Mount Kilimanjaro
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/zanzibar-beach"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Zanzibar Beach
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/kilimanjaro-travel-guide"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Kilimanjaro Travel Guide
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -119,7 +169,7 @@ const Footer = () => {
               </button>
 
               <h3 className="hidden md:block font-bold text-lg mb-4">
-                Travel Planning
+                Travel Style
               </h3>
 
               <ul
@@ -127,11 +177,59 @@ const Footer = () => {
                   open.plan1 ? "block" : "hidden md:block"
                 }`}
               >
-                <li>Get Your Free Brochure</li>
-                <li>Travel Insurance</li>
-                <li>Booking Conditions</li>
-                <li>Trip Deposit Level</li>
-                <li>Recommendations</li>
+                <li>
+                  <Link
+                    to="travelgroup/tanzania-family-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Family Safari
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link
+                    to="/travelgroup/tanzania-luxury-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Luxury Safari
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link
+                    to="/travelgroup/tanzania-private-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Private Safari
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link
+                    to="/travelgroup/tanzania-wildlife-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Wildlife Safari
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link
+                    to="/travelgroup/tanzania-midrange-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Midrange Safari
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link
+                    to="/travelgroup/tanzania-honeymoon-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Honeymoon Safari
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -150,19 +248,62 @@ const Footer = () => {
               </button>
 
               <h3 className="hidden md:block font-bold text-lg mb-4">
-                Travel Planning
+                Tanzania Travel Guide
               </h3>
 
               <ul
-                className={`space-y-2 text-gray-700 ${
+                className={`space-y-2 text-gray-700 capitalize ${
                   open.plan2 ? "block" : "hidden md:block"
                 }`}
               >
-                <li>Get Your Free Brochure</li>
-                <li>Travel Insurance</li>
-                <li>Booking Conditions</li>
-                <li>Trip Deposit Level</li>
-                <li>Recommendations</li>
+                <li>
+                  <Link
+                    to="/travel-guide/when-is-the-best-time-to-visit-tanzania"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Best Time to Visit
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/travel-guide/what-to-pack-for-a-tanzania-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    what to pack
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/travel-guide/what-to-eat-on-a-tanzania-safari"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Tanzania food
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/travel-guide/what-are-the-requirements-for-a-tanzania-visa"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    Tanzania visa
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/travel-guide/how-much-does-it-cost-to-visit-tanzania"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    tanzania cost
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/travel-guide/how-safe-is-a-safari-in-tanzania"
+                    className="hover:text-[#d87028] transition"
+                  >
+                    travel safety
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -185,7 +326,6 @@ const Footer = () => {
               {/* Form */}
               <form className="space-y-4">
                 <div className="flex gap-2">
-             
                   <input
                     type="text"
                     placeholder="First Name *"
@@ -220,7 +360,7 @@ const Footer = () => {
                     type="submit"
                     className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full transition text-sm mt-4"
                   >
-                    VIEW ALL TRIPS
+                    Submit
                   </button>
                 </div>
               </form>
@@ -238,7 +378,7 @@ const Footer = () => {
             portfolio of brands.
             <br /># Imara Kileleni Safaris
             <br />
-            Travel House, Rue du Manoir St Peter Port, Guernsey, GY1 2JH
+            CCM Mkoa Moshi Kilimanjaro
           </p>
         </div>
       </div>
@@ -307,60 +447,112 @@ const Footer = () => {
       </div> */}
 
       <div className="bg-[#f9e1d7] py-4">
-  <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Region Selector */}
+          <div className="flex items-center gap-3 justify-center md:justify-start">
+            <IoLocationSharp className="text-3xl" />
+            <div className="text-center md:text-left">
+              <p className="text-xs text-gray-600">Selected Region</p>
+              <p className="font-semibold text-black">Tanzania</p>
+            </div>
+          </div>
 
-    {/* Region Selector */}
-    <div className="flex items-center gap-3 justify-center md:justify-start">
-      <FaFlagUsa className="text-3xl" />
-      <div className="text-center md:text-left">
-        <p className="text-xs text-gray-600">Selected Region</p>
-        <p className="font-semibold text-black">United States</p>
+          {/* Payment Icons */}
+          <div className="text-center text-[10px] font-semibold flex flex-col items-center">
+            <div className="flex items-center justify-center gap-4 text-3xl text-gray-600 mb-6">
+              <FaCcVisa />
+              <FaCcMastercard />
+              <FaCcAmex />
+              <FaCcDiscover />
+              <FaCcMastercard />
+            </div>
+            <p className="text-[12px] leading-5 px-2">
+              Copyright 2026 Imara Kileleni Safaris. All rights reserved.
+              <br />
+             <a href="https://safarimarketingpro.com/">SAFARI MARKETING PRO® </a> 
+            </p>
+            {/* <p>is a trademark of The TreadRight Foundation,
+              registered in the U.S. and other countries and regions, and is
+              being used under license.</p> */}
+          </div>
+
+          {/* Social & Links */}
+          <div className="text-sm text-gray-700 space-y-3 text-center md:text-right">
+            <div className="flex justify-center md:justify-end gap-4 text-xl">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/imarakileleni/?_rdc=1&_rdr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-[#d87028] hover:bg-[#c35f22] transition"
+                aria-label="Facebook"
+              >
+                <FaFacebookF className="text-white" />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/imarakileleni/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-[#d87028] hover:bg-[#c35f22] transition"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="text-white" />
+              </a>
+
+              {/* Pinterest */}
+              <a
+                href="https://x.com/imarakileleni/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-[#d87028] hover:bg-[#c35f22] transition"
+                aria-label="Pinterest"
+              >
+                <FaXTwitter className="text-white" />
+              </a>
+
+              {/* YouTube */}
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-[#d87028] hover:bg-[#c35f22] transition"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="text-white" />
+              </a>
+            </div>
+
+            {/* <div className="flex justify-center md:justify-end gap-4 text-gray-800 text-xl">
+              <div className="p-2 rounded-full bg-[#d87028] cursor-pointer">
+                <FaFacebookF className="text-white" />
+              </div>
+              <div className="p-2 rounded-full bg-[#d87028] cursor-pointer">
+                <FaInstagram className="text-white" />
+              </div>
+              <div className="p-2 rounded-full bg-[#d87028] cursor-pointer">
+                <FaPinterestP className="text-white" />
+              </div>
+              <div className="p-2 rounded-full bg-[#d87028] cursor-pointer">
+                <FaYoutube className="text-white" />
+              </div>
+            </div> */}
+
+            <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
+              <a href="#">Accessibility</a>
+              <a href="#">Cookie Policy</a>
+              <a href="#">Sitemap</a>
+            </div>
+
+            <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Booking Conditions</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* Payment Icons */}
-    <div className="text-center text-[10px] font-semibold flex flex-col items-center">
-      <div className="flex items-center justify-center gap-4 text-3xl text-gray-600 mb-6">
-        <FaCcVisa />
-        <FaCcMastercard />
-        <FaCcAmex />
-        <FaCcDiscover />
-        <FaCcMastercard />
-      </div>
-      <p className="text-[11px] leading-5 px-2">
-        Copyright 2025 Imara Kileleni Safaris. All rights reserved.
-        <br />
-        SAFARI MARKETING PRO® is a trademark of The TreadRight Foundation,
-        registered in the U.S. and other countries and regions, and is
-        being used under license.
-      </p>
-    </div>
-
-    {/* Social & Links */}
-    <div className="text-sm text-gray-700 space-y-3 text-center md:text-right">
-      <div className="flex justify-center md:justify-end gap-4 text-gray-800 text-xl">
-        <div className="p-2 rounded-full bg-[#d87028] cursor-pointer"><FaFacebookF className="text-white" /></div>
-        <div className="p-2 rounded-full bg-[#d87028] cursor-pointer"><FaInstagram className="text-white" /></div>
-        <div className="p-2 rounded-full bg-[#d87028] cursor-pointer"><FaPinterestP className="text-white" /></div>
-        <div className="p-2 rounded-full bg-[#d87028] cursor-pointer"><FaYoutube className="text-white" /></div>
-      </div>
-
-      <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-        <a href="#">Accessibility</a>
-        <a href="#">Cookie Policy</a>
-        <a href="#">Sitemap</a>
-      </div>
-
-      <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Booking Conditions</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
       {/* Bottom orange strip */}
       <div className="bg-[#d87028] py-3 w-full ">
@@ -397,147 +589,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// import React, { useState } from "react";
-// import {
-//   FaFacebookF,
-//   FaInstagram,
-//   FaPinterestP,
-//   FaYoutube,
-//   FaCcVisa,
-//   FaCcMastercard,
-//   FaCcAmex,
-//   FaCcDiscover,
-// } from "react-icons/fa";
-// import { FaFlagUsa } from "react-icons/fa6";
-// import { FiChevronDown } from "react-icons/fi";
-
-// const Footer = () => {
-//   const [open, setOpen] = useState({
-//     help: false,
-//     plan1: false,
-//     plan2: false,
-//   });
-
-//   const toggle = (section) => {
-//     setOpen((prev) => ({ ...prev, [section]: !prev[section] }));
-//   };
-
-//   return (
-//     <footer className="w-full">
-//       <div className="py-3 bg-[#fff8f2]" />
-
-//       {/* Top section */}
-//       <div className="bg-white pt-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
-//         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-
-//           {/* Column 1 */}
-//           <div>
-//             {/* Mobile Header */}
-//             <button
-//               className="flex md:hidden justify-between w-full font-bold text-lg mb-2"
-//               onClick={() => toggle("help")}
-//             >
-//               Help & Info
-//               <FiChevronDown className={`transition ${open.help ? "rotate-180" : ""}`} />
-//             </button>
-
-//             {/* Desktop Title */}
-//             <h3 className="hidden md:block font-bold text-lg mb-4">Help & Info</h3>
-
-//             <ul
-//               className={`space-y-2 text-gray-700 ${
-//                 open.help ? "block" : "hidden md:block"
-//               }`}
-//             >
-//               <li>Who We Are</li>
-//               <li>WE MAKE TRAVEL MATTER®</li>
-//               <li>Become an Affiliate</li>
-//               <li>Frequently Asked Questions</li>
-//               <li>Travel Updates</li>
-//               <li>Contact Us</li>
-//             </ul>
-//           </div>
-
-//           {/* Column 2 */}
-//           <div>
-//             <button
-//               className="flex md:hidden justify-between w-full font-bold text-lg mb-2"
-//               onClick={() => toggle("plan1")}
-//             >
-//               Travel Planning
-//               <FiChevronDown className={`transition ${open.plan1 ? "rotate-180" : ""}`} />
-//             </button>
-
-//             <h3 className="hidden md:block font-bold text-lg mb-4">Travel Planning</h3>
-
-//             <ul
-//               className={`space-y-2 text-gray-700 ${
-//                 open.plan1 ? "block" : "hidden md:block"
-//               }`}
-//             >
-//               <li>Get Your Free Brochure</li>
-//               <li>Travel Insurance</li>
-//               <li>Booking Conditions</li>
-//               <li>Trip Deposit Level</li>
-//               <li>Recommendations</li>
-//             </ul>
-//           </div>
-
-//           {/* Column 3 */}
-//           <div>
-//             <button
-//               className="flex md:hidden justify-between w-full font-bold text-lg mb-2"
-//               onClick={() => toggle("plan2")}
-//             >
-//               Travel Planning
-//               <FiChevronDown className={`transition ${open.plan2 ? "rotate-180" : ""}`} />
-//             </button>
-
-//             <h3 className="hidden md:block font-bold text-lg mb-4">Travel Planning</h3>
-
-//             <ul
-//               className={`space-y-2 text-gray-700 ${
-//                 open.plan2 ? "block" : "hidden md:block"
-//               }`}
-//             >
-//               <li>Get Your Free Brochure</li>
-//               <li>Travel Insurance</li>
-//               <li>Booking Conditions</li>
-//               <li>Trip Deposit Level</li>
-//               <li>Recommendations</li>
-//             </ul>
-//           </div>
-
-//           {/* Newsletter desktop right stays same */}
-//           <div className="hidden md:block w-2/3 md:w-full">
-//             <h3 className="font-bold text-lg mb-2">Save up to $2,034*!</h3>
-//             <p className="text-gray-700 mb-2">
-//               Plus receive latest offers, travel inspiration, and discover how
-//               your travels will make a positive impact. Together, WE MAKE TRAVEL MATTER®.
-//             </p>
-//             <a className="text-sm text-[#d87028] font-semibold underline block mb-4">
-//               Offer Terms
-//             </a>
-
-//             <form className="space-y-4">
-//               <input className="w-full border p-2 rounded-md" placeholder="Email *" />
-//               <button className="bg-[#d87028] text-white px-8 py-3 rounded-full text-sm">
-//                 VIEW ALL TRIPS
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-
-//         {/* Disclaimer */}
-//         <div className="my-8 text-sm text-gray-700 text-center md:text-left">
-//           Imara Kileleni Safaris is a proud member of The Travel Corporation.
-//         </div>
-//       </div>
-
-//       {/* Region Selector and bottom sections remain unchanged */}
-//     </footer>
-//   );
-// };
-
-// export default Footer;

@@ -65,6 +65,7 @@ import DestinationLandingList from "./Pages/Destination/DestinationLandingList";
 import FleetList from "./Pages/Aboutus/SafariFleet/FleetList";
 import AboutList from "./Pages/Aboutus/AboutList";
 import AboutEdit from "./Pages/Aboutus/AboutEdit";
+import ContactUs from "./Pages/Contactus/ContactUs";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -74,11 +75,11 @@ const router = createBrowserRouter(
       {/* 🌍 Main Website Routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="destination-landing" element={<SafariLandingPage />} />
+        <Route path="tanzania-destinations" element={<SafariLandingPage />} />
         <Route path="itinenary" element={<Itinenary />} />
         <Route path="about-us" element={<AboutUs />} />
 
-        <Route path="safari-landing" element={<SafariDestiLanding />} />
+        <Route path="tanzania-safaris" element={<SafariDestiLanding />} />
         <Route path="safari-fleet" element={<SafariFleet />} />
         <Route path="fleet" element={<FleetList />} />
 
@@ -94,13 +95,13 @@ const router = createBrowserRouter(
         <Route path="team" element={<TeamPage />} />
         <Route path="thank-you" element={<ThankYouPage />} />
         <Route path="sustanbility" element={<Sustanbility />} />
-        <Route path="kilimanjaro-landing" element={<KilimanjaroLanding />} />
+        <Route path="mount-kilimanjaro" element={<KilimanjaroLanding />} />
 
         <Route
           path="tanzania-travel-safari"
           element={<TanzaniaFamilySafari />}
         />
-        <Route path="zanzibar-landing" element={<ZanzibarLanding />} />
+        <Route path="zanzibar-beach" element={<ZanzibarLanding />} />
 
         <Route path="create-travelguide" element={<BlogForm />} />
 
@@ -170,7 +171,7 @@ const router = createBrowserRouter(
           element={<EditDestinationDetails />}
         />
         <Route
-          path="/destination-details/:id"
+          path="/tanzania-destinations/:slug"
           element={<SerengetiNationalPark />}
         />
 
@@ -229,6 +230,8 @@ const router = createBrowserRouter(
         <Route path="/admin/about/edit/:id" element={<AboutEdit />} />
 
         {/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
+
+        <Route path="contact" element={<ContactUs/>}/>
 
         {/* Blog Detail Page */}
         <Route path="/travel-guide/:slug" element={<BlogDetail />} />

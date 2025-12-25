@@ -27,7 +27,7 @@ const TripCard = ({ trip, onQuickView }) => {
   }
 
   return (
-    <div className="rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-lg transition duration-300 mb-4 h-[460px]">
+    <div className="rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-lg transition duration-300 mb-4 h-[480px] flex flex-col">
       {/* Image */}
       <div className="relative">
         <img
@@ -44,7 +44,7 @@ const TripCard = ({ trip, onQuickView }) => {
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         {/* Rating */}
         {/* <div className="flex items-center text-yellow-500 mb-1">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -74,10 +74,10 @@ const TripCard = ({ trip, onQuickView }) => {
         </div>
 
         {/* Description */}
-        <p className="text-[16px] mb-8 line-clamp-3">{trip.description}</p>
+        <p className="text-gray-700 line-clamp-3">{trip.description}</p>
 
         {/* Price & Button */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-auto pb-2">
           <div className="text-xs text-gray-600">
             {trip.standardPrice && (
               <h3 className="mb-2">
@@ -85,7 +85,7 @@ const TripCard = ({ trip, onQuickView }) => {
               </h3>
             )}
             <h3 className="font-bold text-sm text-black">
-              From {trip.discountedPrice}
+              {trip.discountedPrice}
             </h3>
           </div>
 
@@ -97,7 +97,11 @@ const TripCard = ({ trip, onQuickView }) => {
         </div>
       </div>
     </div>
-  );
+   
+
+);
+
+
 };
 
 export default TripCard;

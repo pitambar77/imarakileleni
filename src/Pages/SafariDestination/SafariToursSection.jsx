@@ -1,6 +1,4 @@
 
-
-
 import React, { useEffect, useMemo, useState } from "react";
 import TripCard from "../../components/TripCard";
 import { IoClose } from "react-icons/io5";

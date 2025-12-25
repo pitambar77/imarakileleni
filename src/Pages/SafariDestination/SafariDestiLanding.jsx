@@ -7,6 +7,7 @@ import TourGroupSection from "../TanzaniaSafariLanding/TourGroupSection";
 import TripHighlights from "../TanzaniaSafariLanding/TripHighlights";
 import Featured from "../Home/Featured";
 import SafariTour from "../TanzaniaSafariLanding/SafariTour";
+import banner from "../../assets/imara-home-banner-3.webp"
 
 const SafariDestiLanding = () => {
 
@@ -16,13 +17,13 @@ const SafariDestiLanding = () => {
       <div
         className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://travcoholidays.com/wp-content/uploads/2025/10/African-safari-scaled.jpg')`,
+          backgroundImage: `url(${banner})`,
         }}
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
         <h2 className=" text-xl md:text-5xl text-white uppercase z-10 ">
-          All About tanzania safari
+          TANZANIA SAFARI TOURS COLLECTION
         </h2>
       </div>
       <SafariTour/>
