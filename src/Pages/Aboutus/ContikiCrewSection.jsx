@@ -17,12 +17,11 @@ const ContikiCrewSection = () => {
         {/* Right Content */}
         <div className="w-full md:w-1/2 text-center px-4 md:px-16  text-black">
           <h2 className="text-[24px] md:text-[28px] font-extrabold mb-4">
-            And best of all... your Contiki crew
+            Plan Your Tanzania Adventure with Confidence
           </h2>
           <p className="text-[17px] leading-relaxed font-medium text-[#111] ">
-            Join solo or with friends. Either way, you’ll travel with{" "}
-            <span className="font-bold">awesome 18–35s from around the world</span> – 
-            and you might just make a few friends for life.
+            Travel solo, with friends, or alongside family, our team supports you from the first message to the final farewell. Every itinerary is crafted with care, clarity, and the goal of giving you a meaningful experience.
+
           </p>
         </div>
 

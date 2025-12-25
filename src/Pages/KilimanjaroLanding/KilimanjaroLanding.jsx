@@ -323,9 +323,9 @@ const [page, setPage] = useState(null);
     page.adventure?.flatMap((block) =>
       block.section.map((s) => ({
         image: s.image,
-        heading: block.heading,
-        title: s.title,
-        subtitle:s.subtitle,
+        title: block.heading,
+        heading: s.title,
+        subheading:s.subtitle,
         description: s.description,
       }))
     ) || [];

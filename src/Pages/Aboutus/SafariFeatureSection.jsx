@@ -90,8 +90,14 @@
 
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import sustanabilityImg from "../../assets/sustanability-about.webp"
+import safariVchilceImage from "../../assets/safari-vechile.webp"
 
 const SafariIntroSection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 space-y-8">
       <div className=" bg-[#fde6d5] rounded-md overflow-hidden shadow-sm flex flex-col md:flex-row items-center p-4">
@@ -107,16 +113,16 @@ const SafariIntroSection = () => {
 
         {/* Right Content */}
         <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left">
-          <p className="text-sm text-gray-700 mb-2">Behind the scenes</p>
+          <p className="text-sm text-gray-700 mb-2">Meet the Team</p>
           <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
-            The secret to <br/> spectacular safari
+            Experts Who Guide Your Adventures
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
-            Our skilled team at Antarctica21 brings together experts in polar
-            travel and hospitality to create safe, enriching, and sustainable
-            Antarctic adventures.
+           Our team blends local insight, field experience, and genuine warmth to create safe and memorable journeys across Tanzania’s parks, mountains, and cultural landscapes.
           </p>
-          <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+          <button
+          onClick={() => navigate("/team")}
+           className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
             See Team Directory
           </button>
         </div>
@@ -128,21 +134,23 @@ const SafariIntroSection = () => {
 
         {/* Right Content */}
         <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left order-2 md:order-1">
-          <p className="text-sm text-gray-700 mb-2">Behind the scenes</p>
+          <p className="text-sm text-gray-700 mb-2">Our Sustainability Commitment</p>
           <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
-            Our Safari Fleet
+           Tourism That Supports Local Communities
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
-           Explorers House is Antarctica21’s new expedition center in Punta Arenas, Chile. It is more than a starting point for expeditions; it’s a gateway to the Antarctic experience.
+           We prioritise responsible practices, partner with local communities, and ensure every journey respects wildlife, protects ecosystems, and contributes positively to Tanzania’s long-term wellbeing.
           </p>
-          <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
-            See Team Directory
+          <button
+          onClick={() => navigate("/sustanbility")}
+           className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+            See Sustainability Directory
           </button>
         </div>
         {/* Left Image */}
         <div className="w-full md:w-3/5 order-1 md:order-2">
           <img
-            src="https://bookaweb.s3.eu-central-1.amazonaws.com/assets/6374a44250b1e.jpg"
+            src={sustanabilityImg}
             alt="Safari Team"
             className=" w-full h-auto md:h-[460px] object-cover rounded-lg"
           />
@@ -153,7 +161,7 @@ const SafariIntroSection = () => {
         {/* Left Image */}
         <div className="w-full md:w-2/5">
           <img
-            src="https://bookaweb.s3.eu-central-1.amazonaws.com/assets/6374a44250b1e.jpg"
+            src={safariVchilceImage}
             alt="Safari Team"
             className=" w-full h-auto md:h-[420px] object-cover rounded-lg"
           />
@@ -161,15 +169,17 @@ const SafariIntroSection = () => {
 
         {/* Right Content */}
         <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left">
-          <p className="text-sm text-gray-700 mb-2">Behind the scenes</p>
+          <p className="text-sm text-gray-700 mb-2">Safari Vehicles</p>
           <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
-            Sustainable Exploration
+            Comfortable Rides Built For Exploration
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
-            Join us in our mission to experience Antarctica’s wonders while preserving them for future generations.
+            Our customised 4x4 vehicles offer comfort, reliability, and excellent wildlife viewing, ensuring smooth travel across varied terrain throughout your safari experience.
           </p>
-          <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
-            See Team Directory
+          <button
+          onClick={() => navigate("/safari-fleet")}
+          className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+            See Vehicles Directory
           </button>
         </div>
       </div>

@@ -185,7 +185,7 @@ const [aboutData, setAboutData] = useState(null);
       </div>
 
       {/* <AboutInfoSection /> */}
-      <OverviewSections 
+      {/* <OverviewSections 
        label="OUR STORY"
       title="Local knowledge guiding meaningful safaris built from lived experience & Tanzania’s spirit."
       image="https://images.squarespace-cdn.com/content/v1/5f1ab4309bd4b45e29ec3e4b/1688629973354-NWWQV5E0GV2KDOY12YSU/South-Africa-Ngala-Safari-Lodge-andBeyonder-butlers-_3_-Collections-3000w.jpg"
@@ -211,22 +211,22 @@ const [aboutData, setAboutData] = useState(null);
            "Imara Kileleni Safaris is built on a long-standing love for Tanzania. Our founder’s connection to the land inspired a team of outdoor enthusiasts and travel professionals to share the country’s hidden treasures with explorers worldwide."
         },
       ]}
-      />
+      /> */}
 
-{/* 
+
 {overviewinfo.map((item, index) => (
         <OverviewSections
           key={index}
           label={item.subtitle}
           title={item.title}
-          image={image}
+          image={item.image}
           imagePosition="right"
           bg="#fcfcfc"
           paragraphs={item.description.map((d) => ({
             content: d.content,
           }))}
         />
-      ))} */}
+      ))}
 
 
 
@@ -304,7 +304,7 @@ const [aboutData, setAboutData] = useState(null);
         </div>
       </div>
 
-      <OnTheRoadSection/>
+      <OnTheRoadSection adventure={adventure}/>
       <OffTheRoadSection/>
       <ContikiCrewSection/>
       <SafariFeatureSection/>
@@ -316,7 +316,7 @@ const [aboutData, setAboutData] = useState(null);
       <ReviewsSection/>
       
       <FAQSection 
-      title=" What do travellers ask about our African safari tours?" faqs={safariFaqs}
+      title=" What do travellers ask about our Tanzania safari tours?" faqs={safariFaqs}
       />
       <Featured/>
       

@@ -63,13 +63,14 @@ import EditDestinationLanding from "./Pages/Destination/EditDestinationLanding";
 import DestinationLandingDetails from "./Pages/Destination/DestinationLandingDetails";
 import DestinationLandingList from "./Pages/Destination/DestinationLandingList";
 import FleetList from "./Pages/Aboutus/SafariFleet/FleetList";
+import AboutList from "./Pages/Aboutus/AboutList";
+import AboutEdit from "./Pages/Aboutus/AboutEdit";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-    
       {/* 🌍 Main Website Routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -180,10 +181,9 @@ const router = createBrowserRouter(
         />
 
         <Route
-  path="/dashboard/destination-landing"
-  element={<DestinationLandingList />}
-/>
-
+          path="/dashboard/destination-landing"
+          element={<DestinationLandingList />}
+        />
 
         {/* EDIT */}
         <Route
@@ -204,7 +204,7 @@ const router = createBrowserRouter(
           element={<ZanzibarDetailsList />}
         />
         <Route path="/dashboard/create-zanzibar" element={<CreateZanzibar />} />
-        <Route path="/dashboard/edit-zanzibar/:id" element={<EditZanzibar />} />
+        <Route path="/dashboard/edit-zanzibar-details/:id" element={<EditZanzibar />} />
         <Route path="/zanzibar-details/:id" element={<ZanzibarDetailsPage />} />
 
         <Route
@@ -223,6 +223,10 @@ const router = createBrowserRouter(
           path="/dashboard/kilimanjaro/edit/:id"
           element={<KilimanjaroLandingEdit />}
         />
+
+        <Route path="/admin/aboutlist" element={<AboutList />} />
+
+        <Route path="/admin/about/edit/:id" element={<AboutEdit />} />
 
         {/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
 
@@ -248,6 +252,7 @@ const router = createBrowserRouter(
         <Route path="team-list" element={<TeamList />} />
         <Route path="edit/:id" element={<EditTeam />} />
         <Route path="create-about" element={<CreateAbout />} />
+
         <Route path="create-fleet" element={<CreateFleet />} />
         <Route
           path="create-kilimanjarolanding"

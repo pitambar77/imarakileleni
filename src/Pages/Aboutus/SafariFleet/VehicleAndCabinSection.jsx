@@ -46,14 +46,16 @@ const VehicleAndCabinSection = () => {
         {/* Right Side - Cabin Categories */}
         <div className="flex flex-col gap-5">
           <h3 className="text-[20px] font-semibold capitalize text-[#111] pb-2">
-            Cabin Categories
+            Vehicle Part
+
           </h3>
 
           <ul className="grid grid-cols-2 gap-x-16 gap-y-3 text-[15px] text-gray-800">
             <li className="flex items-center justify-between  pb-2">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-                Suite
+                Pop-up viewing roof
+
               </div>
               <div className=" flex gap-1 items-center bg-gray-200 py-1 px-2 rounded-md">
                 <BiSolidUser className="" />
