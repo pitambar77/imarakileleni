@@ -137,7 +137,7 @@ import overviewimage from '../../../assets/safari-fleet-1.webp'
 
 
 const API_URL =
-  "https://imarabackend.safarimarketingpro.com/api/fleet"; 
+  "https://imarabackend.imarakilelenisafaris.com/api/fleet"; 
 // ⬆️ replace if your endpoint is different
 
 const SafariFleet = () => {
