@@ -99,6 +99,7 @@ import "swiper/css/pagination";
 import banner1 from "../assets/imara-home-banner-1.webp"
 import banner2 from "../assets/kilimanjaro-imara-home.webp"
 import banner3 from "../assets/zanzibar-imara-home.webp"
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -125,6 +126,9 @@ const slides = [
 ];
 
 const HeroSlider = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className="relative w-full h-[64vh] 2xl:h-[50vh]">
       <Swiper
@@ -155,7 +159,9 @@ const HeroSlider = () => {
                 <p className="text-lg md:text-xl mb-6 max-w-2xl">
                   {slide.description}
                 </p>
-                <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
+                <button
+                onClick={()=>navigate('/contact-us')}
+                 className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
               </div>

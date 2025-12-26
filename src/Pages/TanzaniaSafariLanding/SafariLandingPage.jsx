@@ -47,10 +47,11 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 
 import API from "../../api/axios";
+import { useNavigate } from 'react-router-dom'
 
 const SafariLandingPage = () => {
 
-
+const navigate = useNavigate();
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const SafariLandingPage = () => {
         image={data.image}
         title={data.title}
         buttonText="VIEW TRIPS"
-        onButtonClick={() => alert("Redirecting to Tanzania Trips...")}
+        onButtonClick={()=>navigate('/tanzania-safaris')}
       />
       <SafariInfoSection overview={data.overviewinfo?.[0]}/>
       <TanzaniaTabsSection />

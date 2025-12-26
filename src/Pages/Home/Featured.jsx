@@ -128,6 +128,7 @@ import { IoIosArrowDropupCircle } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { useNavigate } from "react-router-dom";
 
 const brands = [
   {
@@ -158,6 +159,9 @@ const brands = [
 ];
 
 const Featured = () => {
+
+  const navigate = useNavigate();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -225,7 +229,9 @@ const Featured = () => {
             <h3 className="text-xl md:text-3xl  font-bold mb-16">
               Our Promise to our Esteemed Clients<sup>®</sup>
             </h3>
-            <button className="px-6 py-2 border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition">
+            <button
+            onClick={()=>navigate('/contact-us')}
+             className="px-6 py-2 border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition">
               TELL ME MORE
             </button>
           </div>
