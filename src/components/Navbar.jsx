@@ -350,7 +350,7 @@ const Navbar = () => {
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 ">
       {/* Top Bar */}
       <div className="hidden md:flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
-        <a href="#" className="hover:underline">Contact us</a>
+        <Link to={'/contact-us'} className="hover:underline">Contact us</Link>
         <Link className="hover:underline" to={"/tanzania-travel-guide"}>Tanzania Travel Guide</Link>
         <Link className="hover:underline" to={"/kilimanjaro-travel-guide"}>Kilimanjaro Guide</Link>
         

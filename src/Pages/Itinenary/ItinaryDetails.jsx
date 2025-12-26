@@ -55,6 +55,7 @@ import TripMomentsSection from "./TripMomentsSection";
 import MapItinerarySection from "./MapItinerarySection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import ReviewBanner from "./ReviewBanner";
+import ContactUs from "../Contactus/ContactUs";
 
 const ItinaryDetails = () => {
   // const { id } = useParams();
@@ -78,6 +79,7 @@ const id = slug.split("-").pop();
       <TripMomentsSection experience={trip.experience} />
       <MapItinerarySection itinerary={trip.itinerary} />
       <BookWithConfidence />
+      <ContactUs/>
     </>
   );
 };

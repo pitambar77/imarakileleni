@@ -66,6 +66,7 @@ import FleetList from "./Pages/Aboutus/SafariFleet/FleetList";
 import AboutList from "./Pages/Aboutus/AboutList";
 import AboutEdit from "./Pages/Aboutus/AboutEdit";
 import ContactUs from "./Pages/Contactus/ContactUs";
+import ContactusPage from "./Pages/Contactus/ContactusPage";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -78,6 +79,7 @@ const router = createBrowserRouter(
         <Route path="tanzania-destinations" element={<SafariLandingPage />} />
         <Route path="itinenary" element={<Itinenary />} />
         <Route path="about-us" element={<AboutUs />} />
+        <Route path="contact-us" element={<ContactusPage/>} />
 
         <Route path="tanzania-safaris" element={<SafariDestiLanding />} />
         <Route path="safari-fleet" element={<SafariFleet />} />
