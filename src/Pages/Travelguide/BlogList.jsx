@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE || "https://imarabackend.safarimarketingpro.com";
+  import.meta.env.VITE_API_BASE || "https://imarabackend.imarakilelenisafaris.com";
 
 export default function BlogList() {
   const [blogs, setBlogs] = useState([]);

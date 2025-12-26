@@ -191,7 +191,7 @@
 
 import React, { useState } from "react";
 
-const API_URL = "https://imarabackend.safarimarketingpro.com/api/contactformkili"; // change if deployed
+const API_URL = "https://imarabackend.imarakilelenisafaris.com/api/contactformkili"; // change if deployed
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

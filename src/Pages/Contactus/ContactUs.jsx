@@ -118,7 +118,7 @@ const ContactUs = () => {
       totalDays,
     };
 
-    const res = await fetch("https://imarabackend.safarimarketingpro.com/api/contact", {
+    const res = await fetch("https://imarabackend.imarakilelenisafaris.com/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

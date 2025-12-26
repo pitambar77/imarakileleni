@@ -18,7 +18,7 @@ export default defineConfig({
   server: {
     host: true, // important for domain / subdomain access
     allowedHosts: [
-      'imara.safarimarketingpro.com'
+      'imarakilelenisafaris.com'
     ]
   }
 })

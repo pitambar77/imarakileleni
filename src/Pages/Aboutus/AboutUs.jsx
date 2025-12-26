@@ -109,7 +109,7 @@ const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
     axios
-      .get("https://imarabackend.safarimarketingpro.com/api/about")
+      .get("https://imarabackend.imarakilelenisafaris.com/api/about")
       .then((res) => {
         // API returns array → take first item
         setAboutData(res.data[0]);

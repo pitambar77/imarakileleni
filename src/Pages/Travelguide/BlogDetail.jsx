@@ -83,7 +83,7 @@ import Featured from "../Home/Featured";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE ||
-  "https://imarabackend.safarimarketingpro.com";
+  "https://imarabackend.imarakilelenisafaris.com";
 
 
   const trips = [

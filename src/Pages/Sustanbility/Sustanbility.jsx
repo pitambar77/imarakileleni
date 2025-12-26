@@ -107,7 +107,7 @@ import Featured from "../Home/Featured";
 import WhyVisitTanzania from "../Aboutus/WhyVisitTanzania";
 
 const API_URL =
-  "https://imarabackend.safarimarketingpro.com/api/sustanbility";
+  "https://imarabackend.imarakilelenisafaris.com/api/sustanbility";
 
 //   const cards = [
 //   {

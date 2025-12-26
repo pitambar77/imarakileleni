@@ -66,7 +66,7 @@ import tabanner from '../../assets/imara-home-banner-2.webp'
 import kabanner from '../../assets/kabanner.webp'
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE || "https://imarabackend.safarimarketingpro.com";
+  import.meta.env.VITE_API_BASE || "https://imarabackend.imarakilelenisafaris.com";
 
 const BlogCategoryPage = ({ category }) => {
   const [asSeenItems, setAsSeenItems] = useState([]);

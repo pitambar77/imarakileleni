@@ -5,7 +5,7 @@ import API from "../../api/axios.js";
 
 
 const API_BASE =
-  import.meta.env.VITE_API_BASE || "http://localhost:8000";
+  import.meta.env.VITE_API_BASE || "https://imarabackend.imarakilelenisafaris.com";
 
 const getImageUrl = (url) => {
   if (!url) return null;
