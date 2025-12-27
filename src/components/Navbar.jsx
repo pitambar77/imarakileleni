@@ -1,5 +1,3 @@
-
-
 // import React, { useState } from "react";
 // import { FiChevronDown, FiSearch, FiMessageCircle } from "react-icons/fi";
 // import imaralogo from "../assets/imaralogo.png";
@@ -184,7 +182,7 @@
 //         { label: "Rwanda", path: "/rwanda" },
 //       ],
 //     },
-    
+
 //   ];
 
 //   return (
@@ -296,16 +294,17 @@
 
 // export default Navbar;
 
-
 import React, { useState } from "react";
 import { FiChevronDown, FiMessageCircle, FiMenu, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import imaralogo from "../assets/imaralogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   const menuItems = [
     {
@@ -313,7 +312,7 @@ const Navbar = () => {
       path: "/tanzania-destinations",
     },
     {
-      title: "Safari",
+      title: "SAFARI",
       path: "/tanzania-safaris",
     },
     {
@@ -327,12 +326,30 @@ const Navbar = () => {
     {
       title: "TRAVEL STYLES",
       links: [
-        { label:"Tanzania Family Safari", path:"/travelgroup/tanzania-family-safari" },
-        { label:"Tanzania Luxury Safari", path:"/travelgroup/tanzania-luxury-safari" },
-        { label:"Tanzania Private Safari", path:"/travelgroup/tanzania-private-safari" },
-        { label:"Tanzania Wildlife Safari", path:"/travelgroup/tanzania-wildlife-safari" },
-        { label:"Tanzania Midrange Safari", path:"/travelgroup/tanzania-midrange-safari" },
-        { label:"Tanzania Honeymoon Safari", path:"/travelgroup/tanzania-honeymoon-safari" }
+        {
+          label: "Tanzania Family Safari",
+          path: "/travelgroup/tanzania-family-safari",
+        },
+        {
+          label: "Tanzania Luxury Safari",
+          path: "/travelgroup/tanzania-luxury-safari",
+        },
+        {
+          label: "Tanzania Private Safari",
+          path: "/travelgroup/tanzania-private-safari",
+        },
+        {
+          label: "Tanzania Wildlife Safari",
+          path: "/travelgroup/tanzania-wildlife-safari",
+        },
+        {
+          label: "Tanzania Midrange Safari",
+          path: "/travelgroup/tanzania-midrange-safari",
+        },
+        {
+          label: "Tanzania Honeymoon Safari",
+          path: "/travelgroup/tanzania-honeymoon-safari",
+        },
       ],
     },
     {
@@ -350,17 +367,26 @@ const Navbar = () => {
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 ">
       {/* Top Bar */}
       <div className="hidden md:flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
-        <Link to={'/contact-us'} className="hover:underline">Contact us</Link>
-        <Link className="hover:underline" to={"/tanzania-travel-guide"}>Tanzania Travel Guide</Link>
-        <Link className="hover:underline" to={"/kilimanjaro-travel-guide"}>Kilimanjaro Guide</Link>
-        
+        <Link to={"/contact-us"} className="hover:underline">
+          Contact us
+        </Link>
+        <Link className="hover:underline" to={"/tanzania-travel-guide"}>
+          Tanzania Travel Guide
+        </Link>
+        <Link className="hover:underline" to={"/kilimanjaro-travel-guide"}>
+          Kilimanjaro Guide
+        </Link>
       </div>
 
       {/* Main Navbar */}
       <nav className="flex items-center justify-between px-4 md:px-8 py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-4">
-          <img src={imaralogo} alt="Imara Kileleni Safaris" className="h-12 w-auto" />
+          <img
+            src={imaralogo}
+            alt="Imara Kileleni Safaris"
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -375,19 +401,31 @@ const Navbar = () => {
               onMouseLeave={() => setOpenMenu(null)}
             >
               <div className="flex items-center uppercase">
-                {item.path ? <Link to={item.path} className=" uppercase">{item.title}</Link> : item.title}
+                {item.path ? (
+                  <Link to={item.path} className=" uppercase">
+                    {item.title}
+                  </Link>
+                ) : (
+                  item.title
+                )}
                 {item.links && <FiChevronDown className="ml-1" />}
               </div>
 
               {/* Desktop Dropdown */}
               {item.links && openMenu === index && (
-                <ul className="absolute top-5 left-0 bg-white shadow-lg rounded-md py-2 w-56 text-gray-700 animate-fade-in">
+                <ul className="absolute top-5 left-0 bg-white shadow-lg  rounded-md py-2 w-56 text-gray-700 animate-fade-in">
                   {item.links.map((link, idx) => (
                     <li
                       key={idx}
                       className="px-4 py-2 hover:bg-orange-50 hover:text-orange-600 text-[13px]"
                     >
-                      {typeof link === "string" ? link : <Link to={link.path} className=" uppercase">{link.label}</Link>}
+                      {typeof link === "string" ? (
+                        link
+                      ) : (
+                        <Link to={link.path} className=" uppercase">
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -398,38 +436,33 @@ const Navbar = () => {
 
         {/* Desktop Right */}
         <div className="hidden md:flex items-center space-x-4">
-          {/* <div className="flex items-center border rounded-full overflow-hidden px-1 py-1 w-[300px]">
-            <input
-              type="text"
-              placeholder="18-35? Find and book your adventure"
-              className="flex-1 text-[12px] outline-none placeholder-black px-3"
-            />
-            <button className="bg-[#d87028] text-white font-semibold rounded-full p-2">
-              <FiSearch size={20} />
-            </button>
-          </div> */}
-
           <button className="border rounded-full p-2">
             <FaWhatsapp size={22} />
           </button>
 
-          <button className="bg-[#d87028] text-white px-[21px] py-3 rounded-full font-semibold hover:bg-orange-700">
+          <button
+            onClick={() => navigate("/tanzania-safaris")}
+            className="bg-[#d87028] text-white px-[21px] py-3 rounded-full font-semibold hover:bg-orange-700 cursor-pointer"
+          >
             VIEW TRIPS
           </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          className="md:hidden text-2xl"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           {mobileOpen ? <FiX /> : <FiMenu />}
         </button>
       </nav>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white w-full px-4 py-4 shadow-lg animate-slide-down">
+        <div className="md:hidden bg-white w-full uppercase px-4 py-4 shadow-lg animate-slide-down">
           {menuItems.map((item, index) => (
             <div key={index} className="border-b py-2">
-              <button
+              {/* <button
                 onClick={() =>
                   item.links ? setOpenMenu(openMenu === index ? null : index) : setMobileOpen(false)
                 }
@@ -437,16 +470,44 @@ const Navbar = () => {
               >
                 {item.path ? <Link to={item.path}>{item.title}</Link> : item.title}
                 {item.links && <FiChevronDown />}
-              </button>
+              </button> */}
+              <div className="flex justify-between items-center">
+                {item.links ? (
+                  <button
+                    onClick={() =>
+                      setOpenMenu(openMenu === index ? null : index)
+                    }
+                    className="w-full text-left font-semibold flex justify-between items-center"
+                  >
+                    {item.title}
+                    <FiChevronDown
+                      className={`transition-transform ${
+                        openMenu === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileOpen(false)}
+                    className="w-full font-semibold text-gray-800"
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </div>
 
               {item.links && openMenu === index && (
-                <ul className="pl-4 text-gray-600 pb-2 space-y-2 mt-2">
+                <ul className="pl-4 font-semibold  pb-2 space-y-2 mt-2 uppercase">
                   {item.links.map((link, idx) => (
                     <li key={idx} className="hover:text-orange-600">
                       {typeof link === "string" ? (
                         link
                       ) : (
-                        <Link to={link.path} onClick={() => setMobileOpen(false)}>
+                        <Link
+                          to={link.path}
+                          onClick={() => setMobileOpen(false)}
+                        >
                           {link.label}
                         </Link>
                       )}
@@ -457,7 +518,12 @@ const Navbar = () => {
             </div>
           ))}
 
-          <button className="w-full bg-[#d87028] text-white py-3 rounded-full mt-4 font-semibold">
+          <button
+            onClick={() => navigate("/tanzania-safaris")
+              
+            }
+            className="w-full bg-[#d87028] text-white py-3 rounded-full mt-4 font-semibold cursor-pointer"
+          >
             VIEW TRIPS
           </button>
         </div>

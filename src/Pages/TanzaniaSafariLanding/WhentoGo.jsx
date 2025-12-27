@@ -499,14 +499,15 @@ const WhentoGo = () => {
             <button
               key={m.month}
               onClick={() => setActiveMonth(m.month)}
-              className={`flex flex-col items-center py-4 text-sm font-medium transition-all ${
+              className={`flex flex-col items-center  py-4 text-sm font-medium transition-all ${
                 activeMonth === m.month
                   ? "text-[#d87028] border-b-[3px] border-[#d87028] bg-white"
                   : "text-gray-400 hover:text-[#d87028]"
               }`}
             >
-              <div className="text-2xl">{m.icon}</div>
-              <span className="text-[13px] font-semibold mt-1">{m.month}</span>
+              <div className="text-2xl cursor-pointer">{m.icon}</div>
+              <span className="text-[13px] font-semibold mt-1 cursor-pointer">{m.month ?.toLowerCase()
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}</span>
               <div className="flex justify-center mt-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <FaStar
@@ -526,7 +527,8 @@ const WhentoGo = () => {
         <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-xl font-semibold text-[#222] mb-4">
-              Tanzania in {monthData.month}
+              Tanzania in {monthData.month ?.toLowerCase()
+                  .replace(/\b\w/g, (c) => c.toUpperCase())}
             </h3>
             <p className="text-gray-700 mb-4 leading-relaxed">
               {monthData.description1}

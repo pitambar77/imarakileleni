@@ -119,7 +119,7 @@ const FAQSection = ({ title, faqs }) => {
             {/* Question */}
             <button
               onClick={() => toggleFAQ(index)}
-              className={`w-full flex justify-between items-center text-left text-[18px] font-semibold py-5 px-4 transition-all duration-300 ${
+              className={`w-full flex justify-between cursor-pointer items-center text-left text-[18px] font-semibold py-5 px-4 transition-all duration-300 ${
                 openIndex === index
                   ? "bg-[#fde6d5] text-[#111]"
                   : "hover:bg-[#f7f7f7] text-[#111]"

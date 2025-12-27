@@ -226,11 +226,7 @@ import {
 
 /* Optional icon mapping (can extend later) */
 const icons = [
-  <FaGlobeAfrica />,
-  <FaMapMarkerAlt />,
-  <FaPaw />,
-  <FaTree />,
-  <FaHiking />,
+  <FaGlobeAfrica />
 ];
 
 // const SerengetiMigrationTabs = ({ data = [] }) => {
@@ -338,20 +334,20 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
         </h2>
 
         {migration.description?.map((d, i) => (
-          <p key={i} className="text-gray-700 leading-relaxed text-[15px] mb-4">
+          <p key={i} className=" text-[15px] text-[#333] space-y-4 leading-[1.8] mb-4">
             {d.content}
           </p>
         ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-9 gap-10">
-        {/* LEFT */}
+        
         <div className="lg:col-span-3 space-y-3">
           {sections.map((tab, index) => (
             <button
               key={tab._id}
               onClick={() => setActiveTab(index)}
-              className={`w-full flex justify-between items-center p-4 rounded-lg font-semibold border
+              className={`w-full flex justify-between cursor-pointer items-center p-4 rounded-lg font-semibold border
                 ${
                   activeTab === index
                     ? "bg-black text-white"
@@ -367,7 +363,10 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
           ))}
         </div>
 
-        {/* RIGHT */}
+
+
+
+       
         <div className="lg:col-span-6">
           <h3 className="text-2xl font-bold mb-6 text-[#111]">
             {sections[activeTab]?.nationalpark}

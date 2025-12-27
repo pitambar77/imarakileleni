@@ -144,6 +144,7 @@ const getSeasonType = (monthName) => {
   return "high";
 };
 
+
 const BestTimeToVisitSection = ({
   title = "Best time to visit",
   staticMonths = [],

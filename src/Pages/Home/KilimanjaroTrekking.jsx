@@ -229,7 +229,7 @@ const kilimanjaroTrips = useMemo(() => {
 
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-          Trekking Packages for Every Climber
+          Trekking Packages For Every Climber
         </h2>
 
         {/* Empty State */}
@@ -240,7 +240,7 @@ const kilimanjaroTrips = useMemo(() => {
         )}
 
         {/* Trips Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 md:gap-6">
           {kilimanjaroTrips.map((trip) => (
             <TripCard
               key={trip._id}
@@ -248,7 +248,7 @@ const kilimanjaroTrips = useMemo(() => {
                 id: trip._id,
                 image: trip.image,
                 title: trip.title,
-                days: `${trip.accomoDay} Days`,
+                days: `${trip.accomoDay}`,
                 places: trip.itinerary?.length
                   ? `${trip.itinerary.length} Routes`
                   : "Multiple Routes",
@@ -265,7 +265,7 @@ const kilimanjaroTrips = useMemo(() => {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => navigate("/mount-kilimanjaro")}
-            className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full transition shadow"
+            className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold px-8 py-3 rounded-full transition shadow"
           >
             EXPLORE KILIMANJARO
           </button>
@@ -329,7 +329,7 @@ const kilimanjaroTrips = useMemo(() => {
                         `/package/${slugify(selectedTrip.title)}-${selectedTrip._id}`
                       )
                     }
-                    className="bg-[#d87028] text-white px-6 py-2 rounded-full"
+                    className="bg-[#d87028] text-white px-6 py-2 cursor-pointer rounded-full"
                   >
                     VIEW TRIP
                   </button>

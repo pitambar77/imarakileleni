@@ -2,11 +2,10 @@ import React from "react";
 import { FaStar, FaCalendarAlt, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { slugify } from "../utils/slugify.js";
+import { MdOutlineSavedSearch } from "react-icons/md";
 
 const TripCard = ({ trip, onQuickView }) => {
-
   const navigate = useNavigate();
-
 
   if (trip.promo) {
     return (
@@ -18,7 +17,7 @@ const TripCard = ({ trip, onQuickView }) => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black/20">
           <h3 className="font-bold text-lg mb-2">Big Drop. Low Prices.</h3>
-          <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full mt-2 shadow">
+          <button className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold text-sm px-6 py-2 rounded-full mt-2 shadow">
             BOOK NOW
           </button>
         </div>
@@ -37,9 +36,12 @@ const TripCard = ({ trip, onQuickView }) => {
         />
         <button
           onClick={() => onQuickView(trip)}
-          className="absolute bottom-3 left-3 bg-white text-xs font-semibold px-3 py-1 rounded shadow-sm hover:bg-gray-100 transition"
+          className="absolute bottom-3 left-3 cursor-pointer bg-white text-xs font-semibold px-3 py-1 rounded shadow-sm hover:bg-gray-100 transition"
         >
-          🔍 QUICK VIEW
+          <span className="flex items-center cursor-pointer font-semibold gap-1">
+            <MdOutlineSavedSearch className="text-lg" />
+            QUICK VIEW
+          </span>
         </button>
       </div>
 
@@ -90,18 +92,17 @@ const TripCard = ({ trip, onQuickView }) => {
           </div>
 
           <button
-          onClick={() => navigate(`/package/${slugify(trip.title)}-${trip.id}`)}
-          className="bg-[#d87028] hover:bg-orange-700 text-white text-sm px-6 py-2 rounded-full w-fit">
+            onClick={() =>
+              navigate(`/package/${slugify(trip.title)}`)
+            }
+            className="bg-[#d87028] hover:bg-orange-700 text-white text-sm px-6 py-2 cursor-pointer rounded-full w-fit"
+          >
             VIEW TRIP
           </button>
         </div>
       </div>
     </div>
-   
-
-);
-
-
+  );
 };
 
 export default TripCard;

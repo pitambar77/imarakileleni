@@ -2,8 +2,12 @@ import React from "react";
 import { BiSolidUser } from "react-icons/bi";
 import left from "../../../assets/safari-fleet-2.webp";
 import right from "../../../assets/safari-fleet-3.webp";
+import { useNavigate } from "react-router-dom";
 
 const VehicleAndCabinSection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Top Images */}
@@ -137,7 +141,9 @@ const VehicleAndCabinSection = () => {
             </p>
 
             {/* Button */}
-            <button className="bg-[#d76e28] hover:bg-[#fcd1b6] text-white hover:text-black/80 border border-[#d87028] rounded-md px-5 py-3 w-fit text-sm font-semibold transition">
+            <button
+            onClick={()=>navigate('/contact-us')}
+             className="bg-[#d76e28] cursor-pointer hover:bg-[#d86720] text-white hover:text-black/80 border border-[#d87028] rounded-md px-5 py-3 w-fit text-sm font-semibold transition">
               ← Book Your Safari Today
             </button>
           </div>

@@ -122,7 +122,7 @@ const SafariIntroSection = () => {
           </p>
           <button
           onClick={() => navigate("/team")}
-           className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+           className="bg-[#d87028] hover:bg-[#c35f22] text-white cursor-pointer font-semibold px-8 py-3 rounded-md transition">
             See Team Directory
           </button>
         </div>
@@ -143,7 +143,7 @@ const SafariIntroSection = () => {
           </p>
           <button
           onClick={() => navigate("/sustanbility")}
-           className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+           className="bg-[#d87028] hover:bg-[#c35f22] cursor-pointer text-white font-semibold px-8 py-3 rounded-md transition">
             See Sustainability Directory
           </button>
         </div>
@@ -178,7 +178,7 @@ const SafariIntroSection = () => {
           </p>
           <button
           onClick={() => navigate("/safari-fleet")}
-          className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold px-8 py-3 rounded-md transition">
+          className="bg-[#d87028] hover:bg-[#c35f22] cursor-pointer text-white font-semibold px-8 py-3 rounded-md transition">
             See Vehicles Directory
           </button>
         </div>

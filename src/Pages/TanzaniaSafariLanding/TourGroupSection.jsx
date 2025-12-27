@@ -259,7 +259,7 @@ const navigate = useNavigate();
           </div>
 
           <div className="flex justify-center mt-16">
-            <button className="px-8 py-3 rounded-full border-2 border-black text-black font-semibold hover:bg-black hover:text-white transition">
+            <button className="px-8 py-3 cursor-pointer rounded-full border-2 border-black text-black font-semibold hover:bg-black hover:text-white transition">
               FIND OUT MORE
             </button>
           </div>

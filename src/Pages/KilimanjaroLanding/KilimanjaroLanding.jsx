@@ -410,7 +410,7 @@ const monthTabs =
         style={{ backgroundImage: `url('${heroImage}')` }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <h2 className="text-xl md:text-5xl text-white uppercase z-10">
+        <h2 className="text-2xl md:text-5xl text-white text-center uppercase z-10">
           {heroTitle}
         </h2>
       </div>

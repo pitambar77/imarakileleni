@@ -18,7 +18,6 @@ const TripDetailsSection = ({ trip }) => {
 
   const mapIframe = trip?.itinerary?.[0]?.map;
 
-
   return (
     <section className="bg-white py-12 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-[#222]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -29,7 +28,6 @@ const TripDetailsSection = ({ trip }) => {
             {trip.add}
           </div>
 
-
           <img
             src={trip.image}
             alt={trip.title}
@@ -39,7 +37,7 @@ const TripDetailsSection = ({ trip }) => {
           {/* Map Button */}
           <button
             onClick={() => setShowMap(true)}
-            className="absolute flex gap-1 top-4 right-4 bg-[#f9d7b9] text-[#222] text-xs font-semibold px-2 py-2 rounded-full shadow-sm border border-gray-200 hover:bg-gray-100 transition"
+            className="absolute flex gap-1 cursor-pointer top-4 right-4 bg-[#f9d7b9] text-[#222] text-xs font-semibold px-2 py-2 rounded-full shadow-sm border border-gray-200 hover:bg-gray-100 transition"
           >
             <span>
               <TbWorldSearch />
@@ -53,10 +51,18 @@ const TripDetailsSection = ({ trip }) => {
               What makes this trip special...
             </h4>
             <p className="text-[16px] text-[#333] leading-relaxed">
-             Every day brings new sights and quiet surprises from Tanzania’s open spaces.
+              Every day brings new sights and quiet surprises from Tanzania’s
+              open spaces.
             </p>
             <div className=" text-center">
-              <button className="mt-2 text-[14px] font-semibold text-[#222] underline hover:text-[#d87028] transition">
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("itina")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="mt-2 text-[14px] cursor-pointer font-semibold text-[#222] underline hover:text-[#d87028] transition"
+              >
                 GO TO ITINERARY
               </button>
             </div>
@@ -77,9 +83,11 @@ const TripDetailsSection = ({ trip }) => {
                 <p className="uppercase text-sm text-gray-500">From</p>
                 <p className="text-2xl font-bold">{trip.price}</p>
               </div>
-              <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-sm px-6 py-3 rounded-full transition">
+              {/* Price + Button */}
+
+              {/* <button className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-sm px-6 py-3 rounded-full transition">
                 VIEW DATES AND PRICES
-              </button>
+              </button> */}
             </div>
 
             {/* Trip Info Icons */}
@@ -97,44 +105,29 @@ const TripDetailsSection = ({ trip }) => {
 
             {/* Stays */}
             <div className="flex flex-wrap items-center gap-3 mb-6 text-[15px]">
-              <span className="flex items-center gap-1">
+              {/* <span className="flex items-center gap-1">
                 <FaUsers /> {trip.maxpeople}
-              </span>
+              </span> */}
               <span className="flex items-center gap-2 bg-[#f9d7b9] px-3 py-2 rounded-full text-[15px] font-semibold">
                 <FaBed /> {trip.accomoDay}
               </span>
               <span className="flex items-center gap-2 bg-[#f9d7b9] px-3 py-2 rounded-full text-[15px] font-semibold text-[#222]">
-                <FaSuitcase />{trip.accomoNight}
+                <FaSuitcase />
+                {trip.accomoNight}
               </span>
             </div>
 
             {/* Description */}
             <div className="text-[16px] text-[#333] leading-relaxed mb-4">
-              <p>
-                {/* You can reel off the names of the Big 5, you've imagined
-                yourself driving through the Serengeti in an open-top vehicle,
-                and you've dreamed of going on safari since you first learnt how
-                to say 'Hakuna Matata'.
-                {readMore && (
-                  <>
-                    {" "}
-                    How about we throw in some views of the Great Rift Valley, a
-                    visit to an ancient volcano dense with game and predators,
-                    and nights camping under the star-swept skies of the
-                    Serengeti plains? Now this is the Africa trip you've been
-                    waiting for.
-                  </>
-                )} */}
-                {trip.description}
-              </p>
-              <div className="mt-4 text-center">
+              <p>{trip.description}</p>
+              {/* <div className="mt-4 text-center">
                 <button
                   onClick={() => setReadMore(!readMore)}
                   className="mt-2 text-sm font-semibold underline text-[#222] hover:text-[#d87028]"
                 >
                   {readMore ? "Read less" : "Read more"}
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* What's Included */}
@@ -173,7 +166,7 @@ const TripDetailsSection = ({ trip }) => {
               {/* Toggle What’s Not Included */}
               <button
                 onClick={() => setShowNotIncluded(!showNotIncluded)}
-                className="mt-3 text-[15px] font-semibold underline text-[#222] hover:text-[#d87028]"
+                className="mt-3 text-[15px] font-semibold cursor-pointer underline text-[#222] hover:text-[#d87028]"
               >
                 {showNotIncluded
                   ? "Hide what's not included "
@@ -208,11 +201,11 @@ const TripDetailsSection = ({ trip }) => {
           </div>
 
           {/* Bottom Button */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <button className="border border-black text-black font-semibold px-8 py-3 rounded-full hover:bg-black hover:text-white transition">
               FIND OUT MORE
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -242,33 +235,31 @@ const TripDetailsSection = ({ trip }) => {
         </div>
       )} */}
       {/* MAP MODAL */}
-{showMap && (
-  <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
-    <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl shadow-lg relative">
-      
-      {/* Close Button */}
-      <button
-        onClick={() => setShowMap(false)}
-        className="absolute top-3 right-3 text-gray-600 hover:text-black z-10"
-      >
-        <FaTimes size={20} />
-      </button>
+      {showMap && (
+        <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 px-4">
+          <div className="bg-white rounded-lg overflow-hidden w-full max-w-4xl shadow-lg relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowMap(false)}
+              className="absolute top-3 cursor-pointer right-3 text-gray-600 hover:text-black z-10"
+            >
+              <FaTimes size={20} />
+            </button>
 
-      {/* MAP CONTENT */}
-      {mapIframe ? (
-        <div
-          className="w-full h-[500px]"
-          dangerouslySetInnerHTML={{ __html: mapIframe }}
-        />
-      ) : (
-        <div className="h-[300px] flex items-center justify-center text-gray-500">
-          Map not available
+            {/* MAP CONTENT */}
+            {mapIframe ? (
+              <div
+                className="w-full h-[500px]"
+                dangerouslySetInnerHTML={{ __html: mapIframe }}
+              />
+            ) : (
+              <div className="h-[300px] flex items-center justify-center text-gray-500">
+                Map not available
+              </div>
+            )}
+          </div>
         </div>
       )}
-    </div>
-  </div>
-)}
-
     </section>
   );
 };

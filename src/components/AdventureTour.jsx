@@ -67,7 +67,7 @@ const AdventureTour = ({ title, sections }) => {
       className="text-[#111] py-4 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28"
     >
       {title && title.trim() !== "" && (
-        <h2 className="text-center text-3xl md:text-[36px] mb-12 md:mb-16">
+        <h2 className="text-center capitalize text-3xl md:text-[36px] mb-12 md:mb-16">
           {title}
         </h2>
       )}

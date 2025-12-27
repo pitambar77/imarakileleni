@@ -42,7 +42,7 @@ const TanzaniaTabsSection = () => {
       {/* Title + Description */}
       <div className="text-center mb-16 max-w-5xl mx-auto text-[#222]">
         <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
-          PLACES TO VISIT IN TANZANIA
+          Place to vist in tanzania
         </h2>
 
         <p className="text-[16px] md:text-[18px] text-[#555] mb-10">
@@ -125,7 +125,7 @@ const TanzaniaTabsSection = () => {
 
         <button
           onClick={() => setActiveTab("Northern")}
-          className={`px-5 py-2.5 rounded-full font-semibold border ${
+          className={`px-5 py-2.5 rounded-full cursor-pointer font-semibold border ${
             activeTab === "Northern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"
@@ -135,7 +135,7 @@ const TanzaniaTabsSection = () => {
         </button>
         <button
           onClick={() => setActiveTab("Southern")}
-          className={`px-5 py-2.5 rounded-full font-semibold border ${
+          className={`px-5 py-2.5 rounded-full cursor-pointer font-semibold border ${
             activeTab === "Southern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"
@@ -228,7 +228,7 @@ const TanzaniaTabsSection = () => {
                       state: { prefetchedData: trip },
                     })
                   }
-                  className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition"
+                  className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold text-sm px-6 py-2 rounded-full transition"
                 >
                   VIEW TRIP
                 </button>

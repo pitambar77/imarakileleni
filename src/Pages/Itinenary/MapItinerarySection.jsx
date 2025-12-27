@@ -17,7 +17,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
   const mapIframe = itinerary[0]?.map;
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
+    <section id="itina" className="bg-white py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
       <h2 className="text-3xl font-extrabold text-center mb-10">
         Map & Itinerary
       </h2>
@@ -25,7 +25,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
       {/* Toggle */}
       <div className="flex justify-center mb-10">
         <div className="flex border border-gray-400 rounded-full overflow-hidden shadow-sm">
-          <button className="px-6 py-2 bg-[#d87028] text-white">
+          <button className="px-6 py-2 bg-[#d87028] text-white cursor-pointer">
             <span className="flex items-center gap-1">
               <IoLocation />
               <span>Map View</span>
@@ -37,7 +37,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
               setModalMode("full");
               setModalOpen(true);
             }}
-            className="px-6 py-2 bg-white text-gray-700"
+            className="px-6 py- cursor-pointer bg-white text-gray-700"
           >
             ☰ View Full Itinerary
           </button>

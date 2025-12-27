@@ -107,7 +107,7 @@ const OverviewSections = ({
           {/* Responsive Text Columns */}
           <div
             className="
-              text-[15px] md:text-[16px] text-[#333] space-y-4 leading-[1.8]
+              text-[15px] text-[#333] space-y-4 leading-[1.8]
               md:[column-count:2] md:[column-gap:3rem]
             "
           >

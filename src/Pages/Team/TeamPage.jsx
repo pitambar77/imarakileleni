@@ -91,6 +91,7 @@ const TeamPage = () => {
     page.adventure?.flatMap((block) =>
       block.adventure.map((item) => ({
         image: item.image,
+        subheading:item.subtitle,
         description: item.description,
       }))
     ) || [];

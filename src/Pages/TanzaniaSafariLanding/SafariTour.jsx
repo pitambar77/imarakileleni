@@ -305,7 +305,7 @@ const SafariTour = () => {
       </div>
 
       {/* Quick View Modal */}
-      {selectedTrip && (
+      {/* {selectedTrip && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white w-[90%] md:w-[700px] rounded-xl shadow-lg overflow-hidden relative">
             <button
@@ -318,7 +318,7 @@ const SafariTour = () => {
             <img
               src={selectedTrip.image}
               alt={selectedTrip.title}
-              className="w-full h-64 object-cover"
+              className="w-full h-96 object-cover"
             />
 
             <div className="p-6">
@@ -327,19 +327,66 @@ const SafariTour = () => {
               <p className="text-gray-700 mb-4">{selectedTrip.description}</p>
 
               <button
-                onClick={() =>
+                onClick={() => {
+                  closeModal();
                   navigate(
-                    `/package/${slugify(selectedTrip.title)}-${selectedTrip.id}`
-                  )
-                }
-                className="bg-[#d87028] text-white px-6 py-2 rounded-full"
+                    `/package/${slugify(selectedTrip.title)}`
+                  );
+                }}
+                className="bg-[#d87028] text-white px-6 py-2 cursor-pointer rounded-full"
               >
                 VIEW TRIP
               </button>
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      {selectedTrip && (
+  <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-3 sm:px-0">
+    <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh] rounded-xl shadow-lg relative flex flex-col overflow-hidden">
+
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+      >
+        <IoClose size={28} />
+      </button>
+
+      {/* Image */}
+      <div className="h-48 sm:h-64 md:h-96 bg-black">
+        <img
+          src={selectedTrip.image}
+          alt={selectedTrip.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content (scrollable on mobile) */}
+      <div className="p-4 sm:p-6 overflow-y-auto flex-1">
+        <h3 className="text-xl sm:text-2xl font-bold mb-2">
+          {selectedTrip.title}
+        </h3>
+
+        <p className="text-gray-700 mb-6 text-sm sm:text-base">
+          {selectedTrip.description}
+        </p>
+
+        <button
+          onClick={() => {
+            closeModal();
+            navigate(`/package/${slugify(selectedTrip.title)}`);
+          }}
+          className="bg-[#d87028] text-white cursor-pointer px-6 py-3 rounded-full w-full sm:w-auto"
+        >
+          VIEW TRIP
+        </button>
+      </div>
+
+    </div>
+  </div>
+)}
+
     </section>
   );
 };

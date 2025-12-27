@@ -195,7 +195,7 @@ const Sustanbility = () => {
       <AdventureTour
         sections={adventure?.map((item) => ({
           image: item.image,
-          subtitle: item.title,
+          subheading: item.title,
           description: item.description,
         }))}
       />

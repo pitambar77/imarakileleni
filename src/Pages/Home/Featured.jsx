@@ -231,7 +231,7 @@ const Featured = () => {
             </h3>
             <button
             onClick={()=>navigate('/contact-us')}
-             className="px-6 py-2 border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition">
+             className="px-6 py-2 cursor-pointer border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition">
               TELL ME MORE
             </button>
           </div>

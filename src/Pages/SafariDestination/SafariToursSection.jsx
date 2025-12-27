@@ -1,14 +1,16 @@
-
 import React, { useEffect, useMemo, useState } from "react";
 import TripCard from "../../components/TripCard";
 import { IoClose } from "react-icons/io5";
-import { FaStar, FaCalendarAlt, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 import API from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "../../utils/slugify.js";
 
 const SafariToursSection = () => {
   const [trips, setTrips] = useState([]);
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTrips = async () => {
@@ -29,8 +31,7 @@ const SafariToursSection = () => {
   const tanzaniaTrips = useMemo(() => {
     return trips.filter(
       (trip) =>
-        trip.destination &&
-        trip.destination.trim().toLowerCase() === "kili"
+        trip.destination && trip.destination.trim().toLowerCase() === "kili"
     );
   }, [trips]);
 
@@ -84,7 +85,7 @@ const SafariToursSection = () => {
       </div>
 
       {/* Quick View Modal */}
-      {selectedTrip && (
+      {/* {selectedTrip && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white w-[90%] md:w-[700px] rounded-xl shadow-lg overflow-hidden relative">
             <button
@@ -110,6 +111,52 @@ const SafariToursSection = () => {
               </p>
 
               <button className="bg-[#d87028] text-white px-6 py-2 rounded-full">
+                VIEW TRIP
+              </button>
+            </div>
+          </div>
+        </div>
+      )} */}
+
+      {selectedTrip && (
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-3 sm:px-0">
+          <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh]  shadow-lg relative flex flex-col">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+            >
+              <IoClose size={28} />
+            </button>
+
+            {/* Image (responsive height) */}
+            <div className="h-48 sm:h-56 md:h-64 bg-black flex items-center justify-center">
+              <img
+                src={selectedTrip.image}
+                alt={selectedTrip.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="p-4 sm:p-6 overflow-y-auto flex-1">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                {selectedTrip.title}
+              </h3>
+
+              <p className="text-gray-700 mb-4 text-sm sm:text-base">
+                {selectedTrip.description}
+              </p>
+
+              <button
+                onClick={() => {
+                  closeModal();
+                  navigate(
+                    `/package/${slugify(selectedTrip.title)}`
+                  );
+                }}
+                className="bg-[#d87028] text-white px-6 py-2 rounded-full w-full cursor-pointer sm:w-auto"
+              >
                 VIEW TRIP
               </button>
             </div>

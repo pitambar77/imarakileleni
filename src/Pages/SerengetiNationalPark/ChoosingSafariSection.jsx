@@ -217,6 +217,7 @@ import TripCard from "../../components/TripCard";
 import { IoClose } from "react-icons/io5";
 import API from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import { slugify } from "../../utils/slugify";
 
 const ChoosingSafariSection = () => {
   const [trips, setTrips] = useState([]);
@@ -320,7 +321,7 @@ const ChoosingSafariSection = () => {
       </div>
 
       {/* ================= QUICK VIEW MODAL (UNCHANGED) ================= */}
-      {selectedTrip && (
+      {/* {selectedTrip && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
           <div className="bg-white w-[90%] md:w-[700px] rounded-xl shadow-lg overflow-hidden relative">
             <button
@@ -373,13 +374,90 @@ const ChoosingSafariSection = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+
+      {selectedTrip && (
+  <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-3 sm:px-0">
+    <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh] rounded-xl shadow-lg relative flex flex-col overflow-hidden">
+
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+      >
+        <IoClose size={28} />
+      </button>
+
+      {/* Image (responsive height) */}
+      <div className="h-48 sm:h-56 md:h-96 bg-black">
+        <img
+          src={selectedTrip.image}
+          alt={selectedTrip.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="p-4 sm:p-6 text-gray-800 overflow-y-auto flex-1">
+        <h3 className="text-xl sm:text-2xl font-bold mb-2">
+          {selectedTrip.title}
+        </h3>
+
+        {/* Rating
+        <div className="flex items-center text-yellow-500 mb-3">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <FaStar key={i} size={14} />
+          ))}
+        </div> */}
+
+        {/* Meta info */}
+        <div className="text-sm flex flex-wrap gap-3 mb-4 text-gray-600">
+          <span className="flex items-center gap-1">
+            <FaCalendarAlt /> {selectedTrip.accomoDay}
+          </span>
+          <span className="flex items-center gap-1">
+            <FaMapMarkerAlt />
+            {selectedTrip.itinerary?.length || "Multiple"} Places
+          </span>
+          <span className="flex items-center gap-1">
+            <FaGlobe /> Tanzania
+          </span>
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-700 mb-6 text-sm sm:text-base">
+          {selectedTrip.description}
+        </p>
+
+        {/* Footer */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+          {/* <p className="font-bold text-black">
+            From{" "}
+            <span className="text-[#d87028]">
+              {selectedTrip.price}
+            </span>
+          </p> */}
+
+          <button
+          onClick={() =>
+                        navigate(`/package/${slugify(selectedTrip.title)}`)
+                      }
+           className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-6 py-3 cursor-pointer rounded-full w-full sm:w-auto">
+            VIEW TRIP
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+)}
+
 
       {/* Footer Button */}
       <div className="mt-10 text-center">
         <button
           onClick={() => navigate("/tanzania-safaris")}
-          className="bg-[#d87028] hover:bg-[#c35f22] text-white font-semibold text-[15px] px-6 py-3 rounded-full transition"
+          className="bg-[#d87028] hover:bg-[#c35f22] cursor-pointer text-white font-semibold text-[15px] px-6 py-3 rounded-full transition"
         >
           SEE ALL TRIPS
         </button>

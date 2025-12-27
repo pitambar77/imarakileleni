@@ -161,7 +161,7 @@ const HeroSlider = () => {
                 </p>
                 <button
                 onClick={()=>navigate('/contact-us')}
-                 className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
+                 className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold px-6 py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
               </div>

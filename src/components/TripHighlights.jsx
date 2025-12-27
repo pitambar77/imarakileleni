@@ -25,14 +25,14 @@ const TripHighlights = ({ title, data }) => {
           <div className=" hidden md:block absolute right-0 flex items-center space-x-3">
             <button
               ref={swiperNavPrevRef}
-              className="swiper-button-prev-custom bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"
+              className="swiper-button-prev- cursor-pointer bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"
             >
               <FaArrowLeftLong />
             </button>
 
             <button
               ref={swiperNavNextRef}
-              className="swiper-button-next-custom bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"
+              className="swiper-button-next-custom cursor-pointer bg-white border border-gray-300 text-gray-800 rounded-full p-3 hover:bg-gray-100 shadow-sm transition"
             >
               <FaArrowRight />
             </button>

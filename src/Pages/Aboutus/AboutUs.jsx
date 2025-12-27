@@ -295,7 +295,7 @@ const [aboutData, setAboutData] = useState(null);
           {/* CTA */}
           <div className="flex justify-center mt-16">
             <button
-              className="px-8 py-3 rounded-full border-2 border-black text-black font-semibold bg-transparent hover:bg-black hover:text-white transition"
+              className="px-8 py-3 cursor-pointer rounded-full border-2 border-black text-black font-semibold bg-transparent hover:bg-black hover:text-white transition"
               aria-label="Find out more"
             >
               FIND OUT MORE

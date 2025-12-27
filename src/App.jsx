@@ -264,6 +264,7 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
       </Route>
+      
     </>
   )
 );

@@ -82,7 +82,7 @@ const ReviewsSection = () => {
 
       {/* View All Button */}
       <div className="mt-14 text-center">
-        <button className="border-2 border-[#111] text-[#111] font-semibold px-8 py-3 rounded-full hover:bg-[#111] hover:text-white transition">
+        <button className="border-2 border-[#111] text-[#111] font-semibold px-8 py-3 cursor-pointer rounded-full hover:bg-[#111] hover:text-white transition">
           VIEW ALL REVIEWS
         </button>
       </div>

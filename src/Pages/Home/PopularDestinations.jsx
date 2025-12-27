@@ -113,7 +113,7 @@ const PopularDestinations = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={() => navigate("/tanzania-destinations")}
-            className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-base px-8 py-3 rounded-full transition shadow"
+            className="bg-[#d87028] hover:bg-orange-700 text-white cursor-pointer font-semibold text-base px-8 py-3 rounded-full transition shadow"
           >
             VIEW ALL
           </button>

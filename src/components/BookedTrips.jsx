@@ -627,7 +627,6 @@
 
 // export default BookedTrips;
 
-
 //corected work
 
 import React, { useState, useRef, useEffect, useMemo } from "react";
@@ -670,8 +669,7 @@ const BookedTrips = () => {
   const tanzaniaTrips = useMemo(() => {
     return trips.filter(
       (trip) =>
-        trip.destination &&
-        trip.destination.toLowerCase() === "tanzania"
+        trip.destination && trip.destination.toLowerCase() === "tanzania"
     );
   }, [trips]);
 
@@ -680,7 +678,6 @@ const BookedTrips = () => {
   return (
     <section className="w-full py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
-
         {/* ================= HEADER ================= */}
         <div className="relative flex items-center justify-center mb-10">
           <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
@@ -690,13 +687,13 @@ const BookedTrips = () => {
           <div className="hidden md:flex absolute right-0 gap-3 ">
             <button
               ref={swiperNavPrevRef}
-              className="bg-white border border-gray-300 rounded-full p-3 shadow-sm"
+              className="bg-white border border-gray-300 rounded-full p-3 shadow-sm cursor-pointer"
             >
               <FaArrowLeftLong />
             </button>
             <button
               ref={swiperNavNextRef}
-              className="bg-white border border-gray-300 rounded-full p-3 shadow-sm"
+              className="bg-white border border-gray-300 rounded-full p-3 shadow-sm cursor-pointer"
             >
               <FaArrowRight />
             </button>
@@ -728,7 +725,6 @@ const BookedTrips = () => {
           {tanzaniaTrips.map((trip) => (
             <SwiperSlide key={trip._id}>
               <div className="h-[460px] mb-4 bg-white shadow-sm hover:shadow-lg transition flex flex-col">
-
                 {/* IMAGE */}
                 <div className="relative">
                   <img
@@ -740,7 +736,7 @@ const BookedTrips = () => {
                     onClick={() => setSelectedTrip(trip)}
                     className="absolute bottom-3 left-3 bg-white text-xs px-2 py-1 rounded shadow-sm"
                   >
-                    <span className="flex items-center font-semibold gap-1">
+                    <span className="flex items-center cursor-pointer font-semibold gap-1">
                       <MdOutlineSavedSearch className="text-lg" />
                       QUICK VIEW
                     </span>
@@ -749,9 +745,7 @@ const BookedTrips = () => {
 
                 {/* CONTENT */}
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-xl mb-6 leading-tight">
-                    {trip.title}
-                  </h3>
+                  <h3 className="text-xl mb-6 leading-tight">{trip.title}</h3>
 
                   <div className="text-sm flex flex-wrap gap-3 mb-3">
                     <span className="flex items-center gap-1">
@@ -781,11 +775,9 @@ const BookedTrips = () => {
 
                     <button
                       onClick={() =>
-                        navigate(
-                          `/package/${slugify(trip.title)}-${trip._id}`
-                        )
+                        navigate(`/package/${slugify(trip.title)}-${trip._id}`)
                       }
-                      className="bg-[#d87028] text-white text-sm px-6 py-2 rounded-full"
+                      className="bg-[#d87028] text-white cursor-pointer text-sm px-6 py-2 rounded-full"
                     >
                       VIEW TRIP
                     </button>
@@ -796,7 +788,7 @@ const BookedTrips = () => {
           ))}
         </Swiper>
 
-                {/* ✅ Pagination Dots */}
+        {/* ✅ Pagination Dots */}
         <div
           className="custom-pagination flex justify-center mt-6"
           style={{
@@ -819,20 +811,20 @@ const BookedTrips = () => {
 `}
         </style>
 
-
         {/* <div className="custom-pagination flex justify-center mt-6" /> */}
 
         <div className="flex justify-center mt-10">
           <button
-          onClick={()=>navigate('/tanzania-safaris')}
-          className="bg-[#d87028] text-white px-8 py-3 rounded-full">
+            onClick={() => navigate("/tanzania-safaris")}
+            className="bg-[#d87028] text-white px-8 py-3 cursor-pointer rounded-full"
+          >
             VIEW ALL TRIPS
           </button>
         </div>
       </div>
 
       {/* ================= QUICK VIEW MODAL ================= */}
-      {selectedTrip && (
+      {/* {selectedTrip && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white w-[90%] md:w-[700px] rounded-xl overflow-hidden relative">
             <button
@@ -845,34 +837,86 @@ const BookedTrips = () => {
             <img
               src={selectedTrip.image}
               alt={selectedTrip.title}
-              className="w-full h-64 object-cover"
+              className="w-full h-96 object-cover bg-black"
             />
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-2">
-                {selectedTrip.title}
-              </h3>
-              <p className="text-gray-700 mb-4">
-                {selectedTrip.description}
-              </p>
+              <h3 className="text-2xl font-bold mb-2">{selectedTrip.title}</h3>
+              <p className="text-gray-700 mb-4">{selectedTrip.description}</p>
 
               <button
                 onClick={() =>
                   navigate(
-                    `/package/${slugify(selectedTrip.title)}-${selectedTrip._id}`
+                    `/package/${slugify(selectedTrip.title)}-${
+                      selectedTrip._id
+                    }`
                   )
                 }
-                className="bg-[#d87028] text-white px-6 py-2 rounded-full"
+                className="bg-[#d87028] text-white px-6 py-2 cursor-pointer rounded-full"
               >
                 VIEW TRIP
               </button>
             </div>
           </div>
         </div>
-      )}
+      )} */}
+     {selectedTrip && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-3">
+    <div
+      className="
+        bg-white 
+        w-full max-w-[700px] 
+        max-h-[84vh] 
+        rounded-xl 
+        overflow-hidden 
+        relative
+        flex flex-col
+      "
+    >
+     
+      <button
+        onClick={() => setSelectedTrip(null)}
+        className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-1"
+      >
+        <IoClose size={28} />
+      </button>
+
+      
+      <div className="w-full h-[250px] sm:h-[300px] md:h-[420px] bg-black">
+        <img
+          src={selectedTrip.image}
+          alt={selectedTrip.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+     
+      <div className="p-6 overflow-y-auto flex-1">
+        <h3 className="text-2xl font-bold mb-2">
+          {selectedTrip.title}
+        </h3>
+
+        <p className="text-gray-700 mb-6 leading-relaxed">
+          {selectedTrip.description}
+        </p>
+
+        <button
+          onClick={() =>
+            navigate(
+              `/package/${slugify(selectedTrip.title)}-${selectedTrip._id}`
+            )
+          }
+          className="bg-[#d87028] text-white px-6 py-2 rounded-full"
+        >
+          VIEW TRIP
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
 
 export default BookedTrips;
-
