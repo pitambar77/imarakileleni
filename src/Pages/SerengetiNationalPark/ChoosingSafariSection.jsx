@@ -263,11 +263,11 @@ const ChoosingSafariSection = () => {
   return (
     <section
       id="packages"
-      className="bg-[#fde6d5] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28"
+      className="bg-[#fde6d5] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28"
     >
       {/* Heading */}
       <div className="mb-12 max-w-5xl mx-auto text-center">
-        <h2 className="text-[28px] md:text-3xl capitalize font-extrabold text-[#111] mb-4">
+        <h2 className="text-2xl md:text-3xl capitalize font-extrabold text-[#111] mb-4">
           Tanzania Safari Packages For Every Style
         </h2>
 
@@ -297,7 +297,7 @@ const ChoosingSafariSection = () => {
       </div>
 
       {/* ================= CARDS GRID (UNCHANGED) ================= */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 md:gap-6">
         {tanzaniaTrips.map((trip) => (
           <TripCard
             key={trip._id}

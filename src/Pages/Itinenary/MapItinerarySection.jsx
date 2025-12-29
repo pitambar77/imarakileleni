@@ -17,7 +17,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
   const mapIframe = itinerary[0]?.map;
 
   return (
-    <section id="itina" className="bg-white py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
+    <section id="itina" className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 2xl:px-28">
       <h2 className="text-3xl font-extrabold text-center mb-10">
         Map & Itinerary
       </h2>
@@ -47,7 +47,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#fedec647] ">
         {/* ================= MAP (STICKY) ================= */}
         <div className="relative">
-          <div className="sticky top-24 h-[500px] overflow-hidden rounded-sm shadow-sm">
+          <div className="sticky top-24 h-[300px] md:h-[500px] overflow-hidden rounded-sm shadow-sm">
             {mapIframe ? (
               <div
                 className="w-full h-full"
@@ -61,9 +61,11 @@ const MapItinerarySection = ({ itinerary = [] }) => {
           </div>
         </div>
 
+        
+
         {/* ================= ITINERARY (SCROLL ONLY HERE) ================= */}
-        <div className="h-[500px] overflow-y-auto p-8">
-          <div className="space-y-6">
+        <div className="h-[500px] overflow-y-auto mt-4 md:mt-0 p-1 md:p-8">
+          <div className=" space-y-3 md:space-y-6">
             {days.map((day, index) => {
               const isActive = index === activeIndex;
 
@@ -78,7 +80,7 @@ const MapItinerarySection = ({ itinerary = [] }) => {
                   }}
                   className="flex cursor-pointer bg-white rounded-sm shadow-sm transition group"
                 >
-                  {/* ===== DAY STRIP ===== */}
+               
                   <div
                     className={`
           w-20 flex flex-col items-center justify-center rounded-l-sm
@@ -96,9 +98,9 @@ const MapItinerarySection = ({ itinerary = [] }) => {
                     </span>
                   </div>
 
-                  {/* ===== CONTENT ===== */}
-                  <div className="p-6 flex-1">
-                    <h3 className="text-xl font-semibold mb-2">{day.title}</h3>
+                 
+                  <div className=" p-4 md:p-6 flex-1">
+                    <h3 className=" text-sm md:text-xl font-semibold mb-2">{day.title}</h3>
 
                     {/* {day.accommodationName?.trim() && (
                       <p className="text-[#d87028] font-semibold flex items-center gap-2">
@@ -109,8 +111,8 @@ const MapItinerarySection = ({ itinerary = [] }) => {
                       </p>
                     )} */}
                     {day.accommodationName?.trim() && (
-                      <p className="text-[#d87028] font-semibold flex items-center gap-2">
-                        <FaHome className=" text-lg relative -top-[2px]" />
+                      <p className="text-[#d87028] text-sm md:text-lg font-semibold flex items-center gap-2">
+                        <FaHome className=" text-sm md:text-lg relative -top-[2px]" />
                         {day.accommodationName}
                       </p>
                     )}

@@ -41,7 +41,7 @@ const destinations = [
 
 const ActiveTravelDestinations = () => {
   return (
-    <section className="py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 bg-white">
+    <section className=" py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 bg-white">
       <h2 className="text-center text-xl md:text-3xl capitalize font-extrabold text-[#111] mb-10">
         Top active travel destinations
       </h2>

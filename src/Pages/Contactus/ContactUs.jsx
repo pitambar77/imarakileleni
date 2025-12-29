@@ -421,6 +421,18 @@ const getWeekday = (year, month, day) =>
     weekday: "long",
   });
 
+const formatDate = (date) =>
+  date?.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+const formatWeekday = (date) =>
+  date?.toLocaleDateString("en-GB", {
+    weekday: "long",
+  });
+
 /* ================= COMPONENT ================= */
 const ContactUs = () => {
   const [year, setYear] = useState(today.getFullYear());
@@ -459,23 +471,57 @@ const ContactUs = () => {
     return d < today;
   };
 
-  const handleDateClick = (day) => {
-    if (isPastDate(day)) return;
+  // const handleDateClick = (day) => {
+  //   if (isPastDate(day)) return;
 
-    if (step === 0) {
-      setArrivalDate(day);
+  //   if (step === 0) {
+  //     setArrivalDate(day);
+  //     setDepartureDate(null);
+  //     setStep(1);
+  //   } else if (day > arrivalDate) {
+  //     setDepartureDate(day);
+  //     setStep(0);
+  //   }
+  // };
+
+  const handleDateClick = (day) => {
+    const clickedDate = new Date(year, month, day);
+    clickedDate.setHours(0, 0, 0, 0);
+
+    if (clickedDate < today) return;
+
+    // First click → Arrival
+    if (!arrivalDate || (arrivalDate && departureDate)) {
+      setArrivalDate(clickedDate);
       setDepartureDate(null);
-      setStep(1);
-    } else if (day > arrivalDate) {
-      setDepartureDate(day);
-      setStep(0);
+      return;
+    }
+
+    // Second click → Departure (must be after arrival)
+    if (clickedDate > arrivalDate) {
+      setDepartureDate(clickedDate);
     }
   };
 
-  const isSelected = (day) => day === arrivalDate || day === departureDate;
+  // const isSelected = (day) => day === arrivalDate || day === departureDate;
 
-  const inRange = (day) =>
-    arrivalDate && departureDate && day > arrivalDate && day < departureDate;
+  const isSelected = (day) => {
+    const d = new Date(year, month, day).setHours(0, 0, 0, 0);
+    return (
+      (arrivalDate && d === arrivalDate.getTime()) ||
+      (departureDate && d === departureDate.getTime())
+    );
+  };
+
+  // const inRange = (day) =>
+  //   arrivalDate && departureDate && day > arrivalDate && day < departureDate;
+
+  const inRange = (day) => {
+    if (!arrivalDate || !departureDate) return false;
+
+    const d = new Date(year, month, day).setHours(0, 0, 0, 0);
+    return d > arrivalDate.getTime() && d < departureDate.getTime();
+  };
 
   const changeMonth = (dir) => {
     if (dir === "prev") {
@@ -491,8 +537,13 @@ const ContactUs = () => {
     }
   };
 
+  // const totalDays =
+  //   arrivalDate && departureDate ? departureDate - arrivalDate + 1 : 0;
+
   const totalDays =
-    arrivalDate && departureDate ? departureDate - arrivalDate + 1 : 0;
+    arrivalDate && departureDate
+      ? Math.round((departureDate - arrivalDate) / (1000 * 60 * 60 * 24)) + 1
+      : 0;
 
   // validation
 
@@ -536,8 +587,19 @@ const ContactUs = () => {
     const payload = {
       ...formData,
       travelType,
-      arrivalDate: formatFullDate(year, month, arrivalDate),
-      departureDate: formatFullDate(year, month, departureDate),
+      // arrivalDate: formatFullDate(year, month, arrivalDate),
+      // departureDate: formatFullDate(year, month, departureDate),
+      arrivalDate: arrivalDate?.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }),
+      departureDate: departureDate?.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }),
+
       totalDays,
     };
 
@@ -621,7 +683,7 @@ const ContactUs = () => {
           </div>
 
           {/* CALENDAR */}
-          <div className="border rounded-xl p-4">
+          {/* <div className="border rounded-xl p-4">
             <div className="flex items-center  gap-2 mb-3">
               <button
                 type="button"
@@ -674,6 +736,75 @@ const ContactUs = () => {
                           ? "bg-[#fde6d5]"
                           : "bg-[#fde6d5]"
                       }`}
+                  >
+                    {day}
+                  </button>
+                );
+              })}
+            </div>
+          </div> */}
+
+          <div className="border rounded-xl p-3 sm:p-4 w-full ">
+            {/* Header */}
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <button
+                type="button"
+                onClick={() => changeMonth("prev")}
+                className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
+                aria-label="Previous month"
+              >
+                <IoIosArrowBack className="text-xl sm:text-2xl text-gray-700" />
+              </button>
+
+              <span className="font-semibold text-sm sm:text-base text-center">
+                {months[month]} {year}
+              </span>
+
+              <button
+                type="button"
+                onClick={() => changeMonth("next")}
+                className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
+                aria-label="Next month"
+              >
+                <IoChevronForward className="text-xl sm:text-2xl text-gray-700" />
+              </button>
+            </div>
+
+            {/* Weekdays */}
+            <div className="grid grid-cols-7 text-center text-[10px] sm:text-sm text-gray-500 mb-2">
+              {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
+                <div key={d}>{d}</div>
+              ))}
+            </div>
+
+            {/* Days */}
+            <div className="grid grid-cols-7 gap-1 sm:gap-2">
+              {Array.from({ length: firstDay }).map((_, i) => (
+                <div key={i} />
+              ))}
+
+              {Array.from({ length: daysInMonth }, (_, i) => {
+                const day = i + 1;
+                return (
+                  <button
+                    key={day}
+                    onClick={() => handleDateClick(day)}
+                    disabled={isPastDate(day)}
+                    className={`
+            h-9 sm:h-12
+            text-xs sm:text-sm
+            rounded-md sm:rounded-lg
+            transition
+            ${
+              isPastDate(day)
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : isSelected(day)
+                ? "bg-[#eda45f] font-semibold"
+                : inRange(day)
+                ? "bg-[#fde6d5]"
+                : "bg-[#fde6d5] hover:bg-[#f6d6b8]"
+            }
+          `}
                   >
                     {day}
                   </button>
@@ -995,12 +1126,18 @@ const ContactUs = () => {
 
         {/* ================= RIGHT ================= */}
         <div className="bg-white rounded-xl p-6 shadow-sm space-y-6">
-          <h3 className="text-xl font-semibold">
+          {/* <h3 className="text-xl font-semibold">
             {arrivalDate ? formatFullDate(year, month, arrivalDate) : "--"}
           </h3>
           <p>
             {departureDate ? formatFullDate(year, month, departureDate) : "--"}
-          </p>
+          </p> */}
+
+          <h3 className="text-xl font-semibold">
+            {arrivalDate ? formatDate(arrivalDate) : "--"}
+          </h3>
+
+          <p>{departureDate ? formatDate(departureDate) : "--"}</p>
 
           <span className="inline-block bg-[#f2c59b] px-3 py-1 rounded-full text-sm mb-4">
             {travelType.toUpperCase()}
@@ -1014,7 +1151,7 @@ const ContactUs = () => {
             </div>
             <div className="space-y-8">
               <div>
-                <h3 className="font-semibold">
+                {/* <h3 className="font-semibold">
                   {arrivalDate
                     ? formatFullDate(year, month, arrivalDate)
                     : "--"}
@@ -1023,11 +1160,16 @@ const ContactUs = () => {
                   {arrivalDate
                     ? `${getWeekday(year, month, arrivalDate)}`
                     : "--"}
-                </p>
+                </p> */}
+
+                <h3 className="font-semibold">
+                  {arrivalDate ? formatDate(arrivalDate) : "--"}
+                </h3>
+                <p>{arrivalDate ? formatWeekday(arrivalDate) : "--"}</p>
               </div>
 
               <div>
-                <h3 className="font-semibold">
+                {/* <h3 className="font-semibold">
                   {departureDate
                     ? formatFullDate(year, month, departureDate)
                     : "--"}
@@ -1036,7 +1178,12 @@ const ContactUs = () => {
                   {departureDate
                     ? `${getWeekday(year, month, departureDate)}`
                     : "--"}
-                </p>
+                </p> */}
+
+                <h3 className="font-semibold">
+                  {departureDate ? formatDate(departureDate) : "--"}
+                </h3>
+                <p>{departureDate ? formatWeekday(departureDate) : "--"}</p>
               </div>
             </div>
           </div>

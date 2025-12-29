@@ -161,7 +161,7 @@ const BestTimeToVisitSection = ({
   return (
     <section
       id="besttime"
-      className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 py-16 text-[#2e2c2d]"
+      className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 py-8 md:py-16 text-[#2e2c2d]"
     >
       {/* TITLE */}
       <h2 className="text-xl md:text-3xl mb-10 capitalize text-center font-bold">
@@ -170,7 +170,7 @@ const BestTimeToVisitSection = ({
       </h2>
 
       {/* LEGEND */}
-      <div className="flex justify-center gap-6 mb-10 flex-wrap">
+      <div className="flex justify-center gap-2 md:gap-6 mb-10 flex-wrap">
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-full bg-[#A5D6A7]"></span>
           High Season

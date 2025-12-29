@@ -112,13 +112,13 @@ const bannerImage = isKilimanjaroCategory ? kabanner : tabanner;
     <div>
       {/* ================= HERO ================= */}
       <div
-        className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <h2 className="text-xl md:text-5xl text-white uppercase z-10">
+        <h2 className="text-2xl md:text-5xl text-white uppercase text-center z-10">
           {category || "All about travel guide"}
         </h2>
       </div>

@@ -8,7 +8,7 @@ import Featured from "../Home/Featured";
 const ThankYouPage = () => {
   return (
     <>
-      <div className=" max-w-4xl mx-auto text-center py-16 px-20">
+      <div className=" max-w-4xl mx-auto text-center py-8 md:py-16 px-4 md:px-20">
         <h2 className=" text-3xl md:text-5xl capitalize mb-4">Thank you for your enquiry</h2>
         <p>
           Your conformation email has been sent to you inbox. Please look out

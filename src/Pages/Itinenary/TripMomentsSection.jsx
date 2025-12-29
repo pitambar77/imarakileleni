@@ -351,11 +351,11 @@ const TripMomentsSection = ({ experience = [] }) => {
   }, []);
 
   return (
-    <section className="bg-[#fafafa] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center">
+    <section className="bg-[#fafafa] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center">
       <h2 className="text-[24px] md:text-3xl font-extrabold mb-1 text-[#111]">
         {heading}
       </h2>
-      <p className="text-[16px] text-[#444] mb-12">
+      <p className="text-[16px] text-[#444] mb-8 md:mb-12">
         {subheading}
       </p>
 

@@ -236,7 +236,7 @@ const TravelGuideDetails = ({ blog }) => {
     <section className="bg-[#F8E6D5] py-16">
       <div className="px-4 max-w-4xl mx-auto">
         {/* ===== MAIN HEADING ===== */}
-        <h2 className="text-[28px] md:text-4xl capitalize text-center font-bold text-[#111] mb-4">
+        <h2 className="text-[24px] md:text-4xl capitalize text-center font-bold text-[#111] mb-4">
           {blog.title}
         </h2>
 
@@ -255,12 +255,12 @@ const TravelGuideDetails = ({ blog }) => {
         {sections.map((s) => (
           <div key={s.id || Math.random()} className="mb-6">
             {s.type === "h1" && (
-              <h3 className="text-[30px] md:text-4xl capitalize font-bold text-[#111] mb-4">
+              <h3 className="text-[24px] md:text-4xl capitalize font-bold text-[#111] mb-4">
                 {s.text}
               </h3>
             )}
             {s.type === "h2" && (
-              <h3 className="text-[26px] md:text-3xl font-bold text-[#111] mb-4">
+              <h3 className="text-[20px] md:text-3xl font-bold text-[#111] mb-4">
                 {s.text}
               </h3>
             )}

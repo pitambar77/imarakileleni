@@ -322,7 +322,7 @@ const SerengetiMigrationTabs = ({ data = [] }) => {
   if (!sections.length) return null;
 
   return (
-    <section id="details" className=" bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="details" className=" bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* HEADER */}
       <div className="text-center mx-auto mb-12 max-w-4xl">
         <h4 className="tracking-widest text-sm text-gray-500 font-semibold mb-4 uppercase">

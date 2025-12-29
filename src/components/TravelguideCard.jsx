@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
   return (
-    <section className="py-16 px-4 md:px-16 lg:px-18  2xl:px-40 bg-white">
+    <section className=" py-8 md:py-16 px-4 md:px-16 lg:px-18  2xl:px-40 bg-white">
 
       {/* Title */}
       {title && (
@@ -48,8 +48,8 @@ const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
             />
 
             {/* Content */}
-            <div className="p-6 text-center flex flex-col flex-1">
-              <h3 className="font-semibold text-[24px] mb-4">{item.title}</h3>
+            <div className=" py-4 md:py-0 px-2 md:p-6 text-center flex flex-col flex-1">
+              <h3 className="font-semibold text-lg md:text-[24px] mb-4">{item.title}</h3>
 
               <p className="text-gray-600 text-[16px] leading-relaxed mb-4">
                 {item.text}

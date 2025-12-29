@@ -272,7 +272,7 @@ const kilimanjaroTrips = useMemo(() => {
         </div>
 
         {/* Quick View Modal */}
-        {selectedTrip && (
+        {/* {selectedTrip && (
           <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
             <div className="bg-white w-[90%] md:w-[700px] rounded-xl shadow-lg overflow-hidden relative">
               <button
@@ -337,7 +337,82 @@ const kilimanjaroTrips = useMemo(() => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
+
+        {selectedTrip && (
+  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3 sm:p-4">
+    <div className="bg-white w-full max-w-[700px] max-h-[90vh] rounded-xl shadow-lg overflow-hidden relative flex flex-col">
+      
+      {/* Close */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+      >
+        <IoClose size={26} />
+      </button>
+
+      {/* Image */}
+      <img
+        src={selectedTrip.image}
+        alt={selectedTrip.title}
+        className="w-full h-40 sm:h-52 md:h-64 object-cover"
+      />
+
+      {/* Content */}
+      <div className="p-4 sm:p-6 overflow-y-auto">
+        <h3 className="text-lg sm:text-2xl font-bold mb-2">
+          {selectedTrip.title}
+        </h3>
+
+        {/* Stars */}
+        <div className="flex items-center text-yellow-500 mb-3">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <FaStar key={i} size={14} className="sm:text-base" />
+          ))}
+        </div>
+
+        {/* Meta */}
+        <div className="text-xs sm:text-sm flex flex-wrap gap-3 sm:gap-4 mb-3 text-gray-600">
+          <span className="flex items-center gap-1">
+            <FaCalendarAlt /> {selectedTrip.accomoDay} Days
+          </span>
+          <span className="flex items-center gap-1">
+            <FaMapMarkerAlt /> Kilimanjaro Routes
+          </span>
+          <span className="flex items-center gap-1">
+            <FaGlobe /> Tanzania
+          </span>
+        </div>
+
+        <p className="text-sm sm:text-base text-gray-700 mb-4">
+          {selectedTrip.description}
+        </p>
+
+        {/* Footer */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+          <p className="font-bold text-sm sm:text-base">
+            From{" "}
+            <span className="text-[#d87028]">
+              ${selectedTrip.price}
+            </span>
+          </p>
+
+          <button
+            onClick={() =>
+              navigate(
+                `/package/${slugify(selectedTrip.title)}-${selectedTrip._id}`
+              )
+            }
+            className="bg-[#d87028] hover:bg-[#e5b230] transition text-white px-5 sm:px-6 py-2 rounded-full text-sm sm:text-base"
+          >
+            VIEW TRIP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
 
       </div>
     </section>

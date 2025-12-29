@@ -73,7 +73,7 @@ const AdventureTour = ({ title, sections }) => {
       )}
 
       {sections.map((item, index) => (
-        <div key={index} className="mb-12">
+        <div key={index} className=" mb-2 md:mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* IMAGE BLOCK */}
             <div

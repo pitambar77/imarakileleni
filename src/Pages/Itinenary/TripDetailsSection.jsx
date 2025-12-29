@@ -31,7 +31,7 @@ const TripDetailsSection = ({ trip }) => {
           <img
             src={trip.image}
             alt={trip.title}
-            className="rounded-md w-full object-cover h-[500px]"
+            className="rounded-md w-full object-cover h-auto md:h-[500px]"
           />
 
           {/* Map Button */}
@@ -73,7 +73,7 @@ const TripDetailsSection = ({ trip }) => {
         <div className="flex flex-col justify-between">
           <div>
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 md:mb-10">
               {trip.title}
             </h2>
 
@@ -131,7 +131,7 @@ const TripDetailsSection = ({ trip }) => {
             </div>
 
             {/* What's Included */}
-            <div className="mt-12">
+            {/* <div className=" mt-8 md:mt-12">
               <h3 className="text-2xl font-bold mb-3">What's included</h3>
 
               <ul className="text-[15px] text-[#333] flex gap-8 mb-2">
@@ -163,7 +163,7 @@ const TripDetailsSection = ({ trip }) => {
                 <FaBed /> ALL ACCOMMODATION
               </li>
 
-              {/* Toggle What’s Not Included */}
+             
               <button
                 onClick={() => setShowNotIncluded(!showNotIncluded)}
                 className="mt-3 text-[15px] font-semibold cursor-pointer underline text-[#222] hover:text-[#d87028]"
@@ -194,6 +194,77 @@ const TripDetailsSection = ({ trip }) => {
                     {" "}
                     <FaGlobe />
                     Tips for guides and drivers
+                  </li>
+                </ul>
+              )}
+            </div> */}
+            <div className="mt-8 md:mt-12">
+              <h3 className="text-xl md:text-2xl font-bold mb-3">
+                What's included
+              </h3>
+
+              {/* Meals */}
+              <ul className="text-[14px] md:text-[15px] text-[#333] grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                <li className="flex items-center gap-2">
+                  <FaUtensils /> 5 BREAKFASTS
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaUtensils /> 5 LUNCHES
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaUtensils /> 5 DINNERS
+                </li>
+              </ul>
+
+              {/* Guides */}
+              <ul className="text-[14px] md:text-[15px] text-[#333] mb-3">
+                <li className="flex items-center gap-2">
+                  <FaGlobe />
+                  EXPERT TRIP MANAGER, DRIVER TEAM, LOCAL GUIDES
+                </li>
+              </ul>
+
+              {/* Transport + Experiences */}
+              <ul className="text-[14px] md:text-[15px] text-[#333] grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                <li className="flex items-center gap-2">
+                  <FaGlobe /> 9 INCLUDED EXPERIENCES
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaBus /> ALL INTERNAL TRANSPORT
+                </li>
+              </ul>
+
+              {/* Accommodation */}
+              <ul className="text-[14px] md:text-[15px] text-[#333] mb-4">
+                <li className="flex items-center gap-2">
+                  <FaBed /> ALL ACCOMMODATION
+                </li>
+              </ul>
+
+              {/* Toggle */}
+              <button
+                onClick={() => setShowNotIncluded(!showNotIncluded)}
+                className="text-[14px] md:text-[15px] font-semibold cursor-pointer underline text-[#222] hover:text-[#d87028]"
+              >
+                {showNotIncluded
+                  ? "Hide what's not included"
+                  : "What's not included"}
+              </button>
+
+              {/* Not Included */}
+              {showNotIncluded && (
+                <ul className="mt-3 text-[14px] md:text-[15px] text-gray-700 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <FaGlobe /> International flights
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaGlobe /> Travel insurance
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaGlobe /> Personal expenses (souvenirs, drinks, etc.)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaGlobe /> Tips for guides and drivers
                   </li>
                 </ul>
               )}

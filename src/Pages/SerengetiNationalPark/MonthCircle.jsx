@@ -32,22 +32,46 @@ const MonthCircle = ({ month, isActive, onHover }) => {
     SEASON_COLOR_MAP[month.seasonType] || SEASON_COLOR_MAP.default;
 
   return (
+    // <div
+    //   onMouseEnter={() => onHover(month)}
+    //   className={`
+    //     w-14 md:w-20 h-14 md:h-20 rounded-full flex items-center justify-center
+    //     font-semibold uppercase cursor-pointer
+    //     transition-all duration-300
+    //     ${bgColor}
+    //     ${
+    //       isActive
+    //         ? "border-b-4 border-[#a89f82] scale-105"
+    //         : "hover:scale-105"
+    //     }
+    //   `}
+    // >
+    //   {month.name}
+    // </div>
     <div
-      onMouseEnter={() => onHover(month)}
-      className={`
-        w-20 h-20 rounded-full flex items-center justify-center
-        font-semibold uppercase cursor-pointer
-        transition-all duration-300
-        ${bgColor}
-        ${
-          isActive
-            ? "border-b-4 border-[#a89f82] scale-105"
-            : "hover:scale-105"
-        }
-      `}
-    >
-      {month.name}
-    </div>
+  onMouseEnter={() => onHover(month)}
+  onClick={() => onHover(month)} // mobile tap support
+  className={`
+    w-12 h-12
+    sm:w-14 sm:h-14
+    md:w-20 md:h-20
+    rounded-full
+    flex items-center justify-center
+    font-semibold uppercase
+    text-[10px] sm:text-[12px] md:text-sm
+    cursor-pointer
+    transition-all duration-300
+    ${bgColor}
+    ${
+      isActive
+        ? "border-b-4 border-[#a89f82] scale-105"
+        : "hover:scale-105 active:scale-95"
+    }
+  `}
+>
+  {month.name}
+</div>
+
   );
 };
 
