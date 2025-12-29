@@ -48,7 +48,7 @@ const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
             />
 
             {/* Content */}
-            <div className=" py-4 md:py-0 px-2 md:p-6 text-center flex flex-col flex-1">
+            <div className=" py-4 px-2 md:p-6 text-center flex flex-col flex-1">
               <h3 className="font-semibold text-lg md:text-[24px] mb-4">{item.title}</h3>
 
               <p className="text-gray-600 text-[16px] leading-relaxed mb-4">
