@@ -101,7 +101,7 @@ const ContactForm = () => {
 
   /* ================= UI ================= */
   return (
-    <section className="py-16 px-4 md:px-12 lg:px-18 2xl:px-28 max-w-4xl mx-auto">
+    <section className=" py-10 md:py-16 px-4 md:px-12 lg:px-18 2xl:px-28 max-w-4xl mx-auto">
       <h2 className="text-center text-3xl capitalize font-semibold mb-10">
         Get in touch
       </h2>

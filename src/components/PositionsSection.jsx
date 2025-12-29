@@ -2,7 +2,7 @@ import React from "react";
 
 const PositionsSection = ({ title, subtitle, positions }) => {
   return (
-    <section className="py-16 bg-white px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+    <section className=" py-8 md:py-16 bg-white px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl capitalize font-bold text-[#111] mb-4">{title}</h2>

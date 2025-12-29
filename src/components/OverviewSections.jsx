@@ -77,7 +77,7 @@ const OverviewSections = ({
   bg = "#fcfcfc",
 }) => {
   return (
-    <section id="overview" style={{ backgroundColor: bg }} className="py-16">
+    <section id="overview" style={{ backgroundColor: bg }} className=" py-8 md:py-16">
       <div
         className={`
           grid grid-cols-1 lg:grid-cols-[62%_38%] 
@@ -100,7 +100,7 @@ const OverviewSections = ({
             </p>
           )}
 
-          <h3 className="text-[26px] md:text-[30px] lg:text-[36px] leading-snug font-bold text-[#111] mb-6 md:mb-8">
+          <h3 className="text-[20px] md:text-[30px] lg:text-[36px] leading-snug font-bold text-[#111] mb-6 md:mb-8">
             {title}
           </h3>
 

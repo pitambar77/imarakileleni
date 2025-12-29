@@ -15,7 +15,7 @@ const SafariDestiLanding = () => {
   return (
     <div>
       <div
-        className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url(${banner})`,
         }}

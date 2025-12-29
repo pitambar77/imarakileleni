@@ -170,7 +170,7 @@ const Featured = () => {
     <section className="w-full bg-white py-8 md:py-16">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto text-center">
 
-        <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-8  capitalize">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8  capitalize">
           As featured in
         </h2>
 

@@ -32,7 +32,7 @@ const TripCard = ({ trip, onQuickView }) => {
         <img
           src={trip.image}
           alt={trip.title}
-          className="w-full h-40 object-cover"
+          className="w-full h-48 md:h-42 object-cover"
         />
         <button
           onClick={() => onQuickView(trip)}

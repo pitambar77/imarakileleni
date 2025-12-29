@@ -3,7 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const WhyJoinSection = () => {
   return (
-    <section className="w-full bg-[#ffffff] py-16 px-4 md:px-10 lg:px-18 2xl:px-28">
+    <section className="w-full bg-[#ffffff] py-8 md:py-16 px-4 md:px-10 lg:px-18 2xl:px-28">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl capitalize text-[#111]">Why Climb with Us</h2>

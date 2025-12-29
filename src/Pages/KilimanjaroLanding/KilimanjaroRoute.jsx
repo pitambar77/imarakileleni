@@ -43,7 +43,7 @@ const KilimanjaroRoute = ({ overview }) => {
   if (!overview || !overview.length) return null;
 
   return (
-    <section className="bg-[#f8d8c3] py-16 px-4 md:px-10 lg:px-18 2xl:px-28">
+    <section className="bg-[#f8d8c3] py-8 md:py-16 px-4 md:px-10 lg:px-18 2xl:px-28">
       {overview.map((item, index) => (
         <div key={item._id || index}>
           {/* HEADING */}

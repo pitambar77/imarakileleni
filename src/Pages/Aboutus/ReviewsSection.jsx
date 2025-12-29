@@ -24,7 +24,7 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Top Orange Bar */}
       <div className="bg-[#d87028] text-white font-semibold text-center py-3 rounded-md mb-16 ">
         RATED 5★ BY OVER 20,000 TRAVELLERS{" "}

@@ -210,9 +210,9 @@ const navigate = useNavigate();
   }
 
   return (
-    <section className="bg-[#fedec8] py-20 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="bg-[#fedec8] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Header */}
-      <h2 className="text-center capitalize text-2xl md:text-3xl font-bold text-[#222] mb-12">
+      <h2 className="text-center capitalize text-2xl md:text-3xl font-bold text-[#222] mb-8 md:mb-12">
         Tours by group type
       </h2>
 
@@ -246,8 +246,8 @@ const navigate = useNavigate();
       {/* ================= BOOK WITH CONFIDENCE (UNCHANGED) ================= */}
 
       <div className="bg-[#fedec7]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 mt-24">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-16 capitalize">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 mt-12 md:mt-24">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-8 md:mb-16 capitalize">
             Book with confidence
           </h2>
 

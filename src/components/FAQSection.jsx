@@ -101,11 +101,11 @@ const FAQSection = ({ title, faqs }) => {
   };
 
   return (
-    <section id="faq" className="bg-white py-4 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section id="faq" className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
 
       {/* Title */}
       {title && (
-        <h2 className="text-[24px] md:text-3xl text-center capitalize font-extrabold text-[#111] mb-12">
+        <h2 className="text-[24px] md:text-3xl text-center capitalize font-extrabold text-[#111] mb-8 md:mb-12">
           {title}
         </h2>
       )}

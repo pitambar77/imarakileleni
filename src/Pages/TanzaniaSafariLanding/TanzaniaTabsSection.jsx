@@ -40,12 +40,12 @@ const TanzaniaTabsSection = () => {
   return (
     <section className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       {/* Title + Description */}
-      <div className="text-center mb-16 max-w-5xl mx-auto text-[#222]">
-        <h2 className="text-[26px] md:text-[32px] lg:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
+      <div className="text-center mb-8 md:mb-16 max-w-5xl mx-auto text-[#222]">
+        <h2 className="text-2xl md:text-[32px] lg:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
           Place to vist in tanzania
         </h2>
 
-        <p className="text-[16px] md:text-[18px] text-[#555] mb-10">
+        <p className="text-[16px] md:text-[18px] text-[#555] mb-6 md:mb-10">
           Tanzania’s seasons shift gently and quietly, influencing every travel
           experience across the country.
         </p>
@@ -120,12 +120,12 @@ const TanzaniaTabsSection = () => {
         </button>
       </div> */}
 
-      <div className="flex justify-center mb-10 space-x-3">
+      <div className="flex justify-center mb-10 space-x-1.5 md:space-x-3 ">
         
 
         <button
           onClick={() => setActiveTab("Northern")}
-          className={`px-5 py-2.5 rounded-full cursor-pointer font-semibold border ${
+          className={` px-3 md:px-5  py-1.5 md:py-2.5 rounded-full text-[17px] cursor-pointer font-semibold border ${
             activeTab === "Northern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"
@@ -135,7 +135,7 @@ const TanzaniaTabsSection = () => {
         </button>
         <button
           onClick={() => setActiveTab("Southern")}
-          className={`px-5 py-2.5 rounded-full cursor-pointer font-semibold border ${
+          className={`px-3 md:px-5 py-1.5 md:py-2.5 rounded-full text-[17px] cursor-pointer font-semibold border ${
             activeTab === "Southern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"
@@ -151,41 +151,7 @@ const TanzaniaTabsSection = () => {
       {/* Cards section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredDestinations.map((trip) => (
-          // <div
-          //   key={trip.id}
-          //   className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300"
-          // >
-          //   <div className="relative">
-          //     <img
-          //       src={trip.image}
-          //       alt={trip.title}
-          //       className="w-full h-44 object-cover"
-          //     />
-
-          //     <button className="absolute bottom-2 left-2 bg-white text-[11px] font-semibold px-2.5 py-1 rounded shadow-sm hover:bg-gray-100 transition">
-          //       🔍 QUICK VIEW
-          //     </button>
-
-          //     {/* <span className="absolute top-2 right-2 bg-[#ff3b30] text-white text-[10px] font-semibold px-2 py-1 rounded">
-          //       EARLY ACCESS DEAL
-          //     </span> */}
-          //   </div>
-
-          //   <div className="p-5">
-          //     <h3 className="font-semibold text-lg md:text-xl mb-4  leading-tight">
-          //       {trip.title}
-          //     </h3>
-          //     <p className="text-[14px] md:text-[15px] mb-6 line-clamp-3">
-          //       {trip.overviewinfo?.[0]?.description?.[0]?.content}
-          //     </p>
-
-          //     <div className="flex justify-end">
-          //       <button className="bg-[#d87028] hover:bg-orange-700 text-white font-semibold text-sm px-6 py-2 rounded-full transition">
-          //         VIEW TRIP
-          //       </button>
-          //     </div>
-          //   </div>
-          // </div>
+        
           <div
             key={trip._id}
             className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-[400px] flex flex-col"

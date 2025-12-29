@@ -43,7 +43,7 @@ const SafariToursSection = () => {
   }
 
   return (
-    <section className="w-full py-16 bg-white relative">
+    <section className="w-full py-8 md:py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 2xl:px-28 mx-auto">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl text-center font-bold mb-4">

@@ -224,7 +224,7 @@ const kilimanjaroTrips = useMemo(() => {
   }
 
   return (
-    <section className="w-full bg-[#fedec7] py-10 md:py-16 relative">
+    <section className="w-full bg-[#fedec7] py-8 md:py-16 relative">
       <div className="mx-auto px-4 md:px-10 lg:px-16 2xl:px-28">
 
         {/* Title */}

@@ -209,7 +209,7 @@ const SafariInfoSection = ({
           )}
 
           {/* Title */}
-          <h3 className="text-[26px] md:text-[30px] lg:text-[36px] leading-snug font-bold text-[#111] mb-6 md:mb-8">
+          <h3 className="text-2xl md:text-[30px] lg:text-[36px] leading-snug font-bold text-[#111] mb-6 md:mb-8">
             {overview.title}
           </h3>
 

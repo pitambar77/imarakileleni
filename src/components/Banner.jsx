@@ -3,7 +3,7 @@ import React from "react";
 const Banner = ({ image, title, buttonText, onButtonClick }) => {
   return (
     <section
-      className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+      className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Dark Overlay */}

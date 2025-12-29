@@ -473,14 +473,14 @@ const WhentoGo = () => {
   if (!monthData) return null;
 
   return (
-    <div className=" bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+    <div className=" bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       {/* ================= HEADER ================= */}
       <div className=" text-center mb-16 px-0 md:px-24 mx-auto text-[#222]">
         <h2 className="text-[30px] md:text-[36px]  text-[#1a1a1a] mb-4 capitalize">
           {bestTime.title}
         </h2>
 
-        <p className="text-[18px] text-[#555] mb-10">
+        <p className="text-[18px] text-[#555] mb-8 md:mb-10">
           {bestTime.subtitle}
         </p>
 

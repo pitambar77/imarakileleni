@@ -3,7 +3,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const GuestReviewSection = () => {
   return (
-    <section className="py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+    <section className=" py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
       <div className="relative">
         {/* 🔶 Orange Background (Half Height Behind the Card) */}
         <div className="absolute top-0 left-0 w-full h-4/5 bg-[#d87028] z-0 rounded-md"></div>

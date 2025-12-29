@@ -130,7 +130,7 @@ const HeroSlider = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full h-[64vh] 2xl:h-[50vh]">
+    <section className="relative w-full h-[40vh] md:h-[64vh] 2xl:h-[50vh]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{
@@ -153,7 +153,7 @@ const HeroSlider = () => {
 
               {/* Text Content */}
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
-                <h2 className="text-4xl md:text-5xl mb-4 font-bold uppercase">
+                <h2 className="text-2xl md:text-5xl mb-4 font-bold uppercase">
                   {slide.title}
                 </h2>
                 <p className="text-lg md:text-xl mb-6 max-w-2xl">
@@ -161,7 +161,7 @@ const HeroSlider = () => {
                 </p>
                 <button
                 onClick={()=>navigate('/contact-us')}
-                 className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold px-6 py-3 rounded-full transition">
+                 className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold px-6 py-2 md:py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
               </div>

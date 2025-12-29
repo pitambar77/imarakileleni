@@ -248,7 +248,7 @@ const TripHighlights = () => {
   if (!highlights.length) return null;
 
   return (
-    <section className="w-full py-16 bg-white relative">
+    <section className="w-full py-8 md:py-16 bg-white relative">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* ================= TITLE + NAV ================= */}
         <div className="relative flex items-center justify-center mb-10">

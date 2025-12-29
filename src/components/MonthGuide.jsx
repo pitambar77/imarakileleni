@@ -17,7 +17,7 @@ const MonthGuide = ({ title, tabs }) => {
     : [activeContent.description];
 
   return (
-    <section className=" py-10 md:py-16 px-4 md:px-12 lg:px-18 2xl:px-28">
+    <section className=" py-8 md:py-16 px-4 md:px-12 lg:px-18 2xl:px-28">
       {/* Title */}
       <h2 className="text-center text-2xl md:text-3xl capitalize font-semibold mb-6">
         {title}
