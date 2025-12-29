@@ -775,7 +775,7 @@ const BookedTrips = () => {
 
                     <button
                       onClick={() =>
-                        navigate(`/package/${slugify(trip.title)}-${trip._id}`)
+                        navigate(`/package/${slugify(trip.title)}`)
                       }
                       className="bg-[#d87028] text-white cursor-pointer text-sm px-6 py-2 rounded-full"
                     >
@@ -903,7 +903,7 @@ const BookedTrips = () => {
         <button
           onClick={() =>
             navigate(
-              `/package/${slugify(selectedTrip.title)}-${selectedTrip._id}`
+              `/package/${slugify(selectedTrip.title)}`
             )
           }
           className="bg-[#d87028] text-white px-6 py-2 rounded-full"
