@@ -102,7 +102,7 @@ const AdventureTour = ({ title, sections }) => {
                 {item.subheading}
               </h3>
 
-              <p className="text-gray-700 text-[15px] md:text-[16px] leading-relaxed">
+              <p className="text-gray-700 text-[15px] md:text-[16px] mb-4 leading-relaxed">
                 {item.description}
               </p>
             </div>

@@ -341,20 +341,29 @@ const SafariTour = () => {
           </div>
         </div>
       )} */}
-      {selectedTrip && (
-  <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-3 sm:px-0">
-    <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh] rounded-xl shadow-lg relative flex flex-col overflow-hidden">
-
+    {selectedTrip && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-3">
+    <div
+      className="
+        bg-white
+        w-full max-w-[700px]
+        max-h-[84vh]
+        rounded-xl
+        overflow-hidden
+        relative
+        flex flex-col
+      "
+    >
       {/* Close Button */}
       <button
-        onClick={closeModal}
-        className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+        onClick={() => setSelectedTrip(null)}
+        className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-1"
       >
         <IoClose size={28} />
       </button>
 
       {/* Image */}
-      <div className="h-48 sm:h-64 md:h-96 bg-black">
+      <div className="w-full h-[220px] sm:h-[300px] md:h-[420px] bg-black">
         <img
           src={selectedTrip.image}
           alt={selectedTrip.title}
@@ -362,27 +371,25 @@ const SafariTour = () => {
         />
       </div>
 
-      {/* Content (scrollable on mobile) */}
+      {/* Content */}
       <div className="p-4 sm:p-6 overflow-y-auto flex-1">
         <h3 className="text-xl sm:text-2xl font-bold mb-2">
           {selectedTrip.title}
         </h3>
 
-        <p className="text-gray-700 mb-6 text-sm sm:text-base">
+        <p className="text-gray-700 mb-6 text-sm sm:text-base leading-relaxed">
           {selectedTrip.description}
         </p>
 
         <button
-          onClick={() => {
-            closeModal();
-            navigate(`/package/${slugify(selectedTrip.title)}`);
-          }}
-          className="bg-[#d87028] text-white cursor-pointer px-6 py-3 rounded-full w-full sm:w-auto"
+          onClick={() =>
+            navigate(`/package/${slugify(selectedTrip.title)}`)
+          }
+          className="bg-[#d87028] hover:bg-orange-700 transition text-white px-6 py-2 rounded-full w-full sm:w-auto"
         >
           VIEW TRIP
         </button>
       </div>
-
     </div>
   </div>
 )}

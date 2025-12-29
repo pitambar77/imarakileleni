@@ -298,13 +298,17 @@ import React, { useState } from "react";
 import { FiChevronDown, FiMessageCircle, FiMenu, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import imaralogo from "../assets/imaralogo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   const menuItems = [
     {
@@ -367,13 +371,34 @@ const Navbar = () => {
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 ">
       {/* Top Bar */}
       <div className="hidden md:flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
-        <Link to={"/contact-us"} className="hover:underline">
+        <Link
+          to={"/contact-us"}
+          className={`hover:underline ${
+            isActive("/contact-us")
+              ? "text-[#d87028] font-semibold"
+              : "text-gray-600"
+          }`}
+        >
           Contact us
         </Link>
-        <Link className="hover:underline" to={"/tanzania-travel-guide"}>
+        <Link
+          className={`hover:underline ${
+            isActive("/tanzania-travel-guide")
+              ? "text-[#d87028] font-semibold"
+              : "text-gray-600"
+          }`}
+          to={"/tanzania-travel-guide"}
+        >
           Tanzania Travel Guide
         </Link>
-        <Link className="hover:underline" to={"/kilimanjaro-travel-guide"}>
+        <Link
+          className={`hover:underline ${
+            isActive("/kilimanjaro-travel-guide")
+              ? "text-[#d87028] font-semibold"
+              : "text-gray-600"
+          }`}
+          to={"/kilimanjaro-travel-guide"}
+        >
           Kilimanjaro Guide
         </Link>
       </div>
@@ -400,7 +425,14 @@ const Navbar = () => {
               onMouseEnter={() => item.links && setOpenMenu(index)}
               onMouseLeave={() => setOpenMenu(null)}
             >
-              <div className="flex items-center uppercase">
+              {/* <div className="flex items-center uppercase"> */}
+              <div
+                className={`flex items-center uppercase ${
+                  item.path && isActive(item.path)
+                    ? "text-[#d87028]"
+                    : "hover:text-orange-600"
+                }`}
+              >
                 {item.path ? (
                   <Link to={item.path} className=" uppercase">
                     {item.title}
@@ -415,9 +447,17 @@ const Navbar = () => {
               {item.links && openMenu === index && (
                 <ul className="absolute top-5 left-0 bg-white shadow-lg  rounded-md py-2 w-56 text-gray-700 animate-fade-in">
                   {item.links.map((link, idx) => (
+                    // <li
+                    //   key={idx}
+                    //   className="px-4 py-2 hover:bg-orange-50 hover:text-orange-600 text-[13px]"
+                    // >
                     <li
                       key={idx}
-                      className="px-4 py-2 hover:bg-orange-50 hover:text-orange-600 text-[13px]"
+                      className={`px-4 py-2 text-[13px] uppercase ${
+                        isActive(link.path)
+                          ? "text-[#d87028] font-bold"
+                          : "hover:bg-orange-50 hover:text-orange-600"
+                      }`}
                     >
                       {typeof link === "string" ? (
                         link
@@ -519,9 +559,11 @@ const Navbar = () => {
           ))}
 
           <button
-            onClick={() => navigate("/tanzania-safaris")
-              
-            }
+            onClick={() => {
+              navigate("/tanzania-safaris");
+              setMobileOpen(false); // ✅ CLOSE MENU
+              setOpenMenu(null);
+            }}
             className="w-full bg-[#d87028] text-white py-3 rounded-full mt-4 font-semibold cursor-pointer"
           >
             VIEW TRIPS

@@ -179,6 +179,10 @@ const HeroSlider = () => {
         <FaArrowRight />
       </div>
     </section>
+
+
+
+
   );
 };
 
