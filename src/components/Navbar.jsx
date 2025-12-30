@@ -231,7 +231,7 @@ const Navbar = () => {
                       isActive(item.path) ? "text-[#d87028]" : "text-gray-800"
                     }`}
                   >
-                    {item.title}
+                   <span className=" uppercase font-semibold"> {item.title} </span>
                   </Link>
                 )}
               </div>
