@@ -297,7 +297,7 @@ const Navbar = () => {
                   : "text-gray-800"
               }`}
             >
-              Tanzania Travel Guide
+              <span className="uppercase font-semibold">Tanzania Travel Guide</span>
             </Link>
 
             <Link
@@ -309,7 +309,7 @@ const Navbar = () => {
                   : "text-gray-800"
               }`}
             >
-              Kilimanjaro Travel Guide
+              <span className=" uppercase font-semibold">Kilimanjaro Travel Guide</span>
             </Link>
 
             <Link
@@ -319,7 +319,7 @@ const Navbar = () => {
                 isActive("/contact-us") ? "text-[#d87028]" : "text-gray-800"
               }`}
             >
-              Contact Us
+              <span className=" uppercase font-semibold">Contact Us</span>
             </Link>
           </div>
           <button
