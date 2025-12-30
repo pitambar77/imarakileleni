@@ -205,10 +205,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
 
       {mobileOpen && (
-        <div className="md:hidden bg-white w-full uppercase px-4 py-4 shadow-lg animate-slide-down">
+        <div className="md:hidden bg-white w-full uppercase font-semibold px-4 py-4 shadow-lg animate-slide-down">
           {menuItems.map((item, index) => (
             <div key={index} className="border-b border-gray-200 py-3">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center uppercase font-semibold">
                 {item.links ? (
                   <button
                     onClick={() =>
