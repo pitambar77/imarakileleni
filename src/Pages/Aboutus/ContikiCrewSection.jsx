@@ -2,7 +2,7 @@ import React from "react";
 
 const ContikiCrewSection = () => {
   return (
-    <section className="bg-[#d76e28] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-white">
+    <section className="bg-[#d76e28] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-white">
       <div className=" flex flex-col md:flex-row items-center justify-between gap-10">
         
         {/* Left Image */}

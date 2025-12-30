@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutAfricaSection = () => {
   return (
-    <section className="bg-[#f4d4b8] py-16 px-4 md:px-10 lg:px-16 xl:px-20 2xl:px-28">
+    <section className="bg-[#f4d4b8] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-20 2xl:px-28">
       
       {/* TOP HEADING */}
       <div className="text-center max-w-4xl mx-auto mb-10">
-        <h2 className="text-[28px] md:text-3xl font-extrabold text-[#111] leading-snug">
+        <h2 className="text-[24px] md:text-3xl font-extrabold text-[#111] leading-snug">
           Being in Africa makes me feel more alive – the people, the
           landscapes, the wildlife: it’s all very real and immediate.
         </h2>

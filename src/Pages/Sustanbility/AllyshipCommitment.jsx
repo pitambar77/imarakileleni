@@ -91,10 +91,10 @@ const AllyshipCommitment = ({ data = [] }) => {
   const sectionHeading = data[0]?.heading;
 
   return (
-    <section className="bg-[#f8d8c3] py-16 px-6 md:px-12 lg:px-18 2xl:px-28">
+    <section className="bg-[#f8d8c3] py-8 md:py-16 px-6 md:px-12 lg:px-18 2xl:px-28">
       {/* TITLE */}
       <h2 className="text-center text-xl md:text-3xl capitalize font-extrabold text-[#111] mb-10">
-        {sectionHeading} 🤝🌍
+        {sectionHeading} 
       </h2>
 
       {/* CARD GRID */}

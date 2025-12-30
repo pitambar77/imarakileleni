@@ -24,7 +24,7 @@ const MonthGuide = ({ title, tabs }) => {
       </h2>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-3 mb-10 flex-wrap">
+      {/* <div className="flex justify-center gap-3 mb-10 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -37,7 +37,38 @@ const MonthGuide = ({ title, tabs }) => {
             <h3 className="">{tab.label}</h3>
           </button>
         ))}
-      </div>
+      </div> */}
+
+      {/* Tabs */}
+{/* Tabs */}
+{/* Tabs */}
+<div className="flex justify-center gap-3 mb-10 flex-wrap">
+  {tabs.map((tab) => (
+    <button
+      key={tab.id}
+      onClick={() => setActiveTab(tab.id)}
+      className={`
+        px-5 py-3
+        rounded-md
+        cursor-pointer
+        text-sm
+        uppercase
+        transition
+        w-[48%] sm:w-auto
+        ${
+          activeTab === tab.id
+            ? ""
+            : "bg-[#d87028] text-white"
+        }
+      `}
+    >
+      <h3>{tab.label}</h3>
+    </button>
+  ))}
+</div>
+
+
+
 
       {/* CONTENT SECTION */}
       <div className="bg-[#f7d8c1] p-6 md:p-8 rounded-md flex flex-col lg:flex-row gap-6 lg:gap-10 items-start justify-between">

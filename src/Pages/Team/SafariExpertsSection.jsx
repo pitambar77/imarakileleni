@@ -47,7 +47,7 @@ const experts = [
 
 const SafariExpertsSection = () => {
   return (
-    <section className="bg-white py-20 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="bg-white py-10 md:py-20 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-xl md:text-3xl font-extrabold text-black">

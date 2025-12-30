@@ -3,9 +3,9 @@ import { FaClock, FaPhoneAlt } from "react-icons/fa";
 
 const OffTheRoadSection = () => {
   return (
-    <section className="bg-[#fedec7] py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center relative">
+    <section className="bg-[#fedec7] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-center relative">
       {/* === Title Label === */}
-        <div className="flex justify-center mb-12  ">
+        <div className="flex justify-center mb-8 md:mb-12  ">
         <div className=" w-56">
          <img src="https://www.contiki.com/media/j12hroo1/off-the-road.svg?width=282&height=75&mode=max" alt="" />
 
@@ -13,7 +13,7 @@ const OffTheRoadSection = () => {
       </div>
 
       {/* === Content Grid === */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto mt-20">
         {/* === Left Column - 24/7 Support Teams === */}
         <div className="flex flex-col items-center text-center">
           <FaClock className="text-[#5466c0] text-6xl mb-6" />

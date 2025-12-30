@@ -165,18 +165,18 @@ const Sustanbility = () => {
     <>
       {/* ================= HERO SECTION ================= */}
       <div
-        className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <h2 className="text-xl md:text-5xl text-white uppercase z-10">
+        <h2 className="text-2xl md:text-5xl text-center text-white uppercase z-10">
           {title}
         </h2>
       </div>
 
       {/* ================= OVERVIEW ================= */}
       {overviewinfo?.map((item) => (
-        <div key={item._id} className="py-16 bg-[#fedec7] px-4">
+        <div key={item._id} className="py-8 md:py-16 bg-[#fedec7] px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl mb-4">{item.title}</h3>
             {item.description?.map((desc) => (

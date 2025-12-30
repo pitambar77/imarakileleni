@@ -9,18 +9,18 @@ const VehicleAndCabinSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
+    <section className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28">
       {/* Top Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <img
           src={left}
           alt="Safari Vehicle 1"
-          className="w-full h-[420px] object-cover rounded-lg shadow-sm"
+          className="w-full h-auto md:h-[420px] object-cover rounded-lg shadow-sm"
         />
         <img
           src={right}
           alt="Safari Vehicle 2"
-          className="w-full h-[420px] object-cover rounded-lg shadow-sm"
+          className="w-full h-auto md:h-[420px] object-cover rounded-lg shadow-sm"
         />
       </div>
 

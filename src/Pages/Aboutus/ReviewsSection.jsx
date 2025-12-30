@@ -41,7 +41,7 @@ const ReviewsSection = () => {
       </div>
 
       {/* Section Title */}
-      <h2 className="text-[28px] md:text-3xl capitalize font-extrabold text-[#111] text-center mb-12">
+      <h2 className="text-[24px] md:text-3xl capitalize font-extrabold text-[#111] text-center mb-12">
         Africa & Middle East tour reviews
       </h2>
 

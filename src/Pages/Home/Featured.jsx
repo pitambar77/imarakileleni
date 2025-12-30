@@ -41,7 +41,7 @@
 //         <h2 className="text-xl md:text-3xl font-bold mb-8 capitalize">
 //           As featured in
 //         </h2>
-//         {/* 
+//         {/*
 //         <div className="flex justify-center items-center gap-2 mb-16 max-h-[50px]">
 //           {brands.map((brand) => (
 //             <img
@@ -122,7 +122,6 @@
 
 // export default Featured;
 
-
 import React from "react";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -159,7 +158,6 @@ const brands = [
 ];
 
 const Featured = () => {
-
   const navigate = useNavigate();
 
   const scrollToTop = () => {
@@ -169,20 +167,54 @@ const Featured = () => {
   return (
     <section className="w-full bg-white py-8 md:py-16">
       <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto text-center">
-
         <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8  capitalize">
           As featured in
         </h2>
 
-     {/* Mobile Slider */}
-<div className="md:hidden mb-4">
+        {/* <div className="md:hidden mb-4">
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2000 }}
+            loop={true}
+            slidesPerView={1}
+            centeredSlides={true}
+            centerInsufficientSlides={true}
+            className="w-full"
+          >
+            {brands.map((brand) => (
+              <SwiperSlide
+                key={brand.id}
+                className="flex justify-center items-center"
+              >
+                <img
+                  src={brand.img}
+                  alt={brand.name}
+                  className="h-30 w-40 object-contain mx-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className="hidden md:flex h-30 p-4 items-center justify-between mb-16">
+          {brands.map((brand) => (
+            <img
+              key={brand.id}
+              src={brand.img}
+              alt={brand.name}
+              className="h-32 w-60 object-contain"
+            />
+          ))}
+        </div> */}
+
+        {/* Mobile & Tablet Slider */}
+<div className="block lg:hidden mb-6">
   <Swiper
     modules={[Autoplay]}
-    autoplay={{ delay: 2000 }}
-    loop={true}
+    autoplay={{ delay: 2000, disableOnInteraction: false }}
+    loop
     slidesPerView={1}
-    centeredSlides={true}
-    centerInsufficientSlides={true}
+    centeredSlides
     className="w-full"
   >
     {brands.map((brand) => (
@@ -193,22 +225,21 @@ const Featured = () => {
         <img
           src={brand.img}
           alt={brand.name}
-          className="h-30 w-40 object-contain mx-auto"
+          className="h-20 sm:h-24 w-40 sm:w-48 object-contain mx-auto"
         />
       </SwiperSlide>
     ))}
   </Swiper>
 </div>
 
-
-{/* Desktop Static Layout */}
-<div className="hidden md:flex h-30 p-4 items-center justify-between mb-16">
+{/* Desktop & Large Screen Static Layout */}
+<div className="hidden lg:flex items-center justify-between gap-6 xl:gap-10 px-4 xl:px-8 mb-16">
   {brands.map((brand) => (
     <img
       key={brand.id}
       src={brand.img}
       alt={brand.name}
-      className="h-32 w-60 object-contain"
+      className="h-24 xl:h-28 w-auto max-w-[220px] object-contain"
     />
   ))}
 </div>
@@ -230,8 +261,9 @@ const Featured = () => {
               Our Promise to our Esteemed Clients<sup>®</sup>
             </h3>
             <button
-            onClick={()=>navigate('/contact-us')}
-             className="px-6 py-2 cursor-pointer border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition">
+              onClick={() => navigate("/contact-us")}
+              className="px-6 py-2 cursor-pointer border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition"
+            >
               TELL ME MORE
             </button>
           </div>
@@ -253,4 +285,3 @@ const Featured = () => {
 };
 
 export default Featured;
-

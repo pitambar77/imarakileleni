@@ -99,7 +99,7 @@ const SafariIntroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-white py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 space-y-8">
+    <section className="bg-white py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 space-y-8">
       <div className=" bg-[#fde6d5] rounded-md overflow-hidden shadow-sm flex flex-col md:flex-row items-center p-4">
         
         {/* Left Image */}
@@ -112,9 +112,9 @@ const SafariIntroSection = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left">
+        <div className="w-full md:w-1/2 px-1 md:px-12 py-5 md:py-10 text-left">
           <p className="text-sm text-gray-700 mb-2">Meet the Team</p>
-          <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
+          <h3 className="text-[24px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
             Experts Who Guide Your Adventures
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
@@ -133,9 +133,9 @@ const SafariIntroSection = () => {
         
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left order-2 md:order-1">
+        <div className="w-full md:w-1/2 px-1 md:px-12 py-5 md:py-10 text-left order-2 md:order-1">
           <p className="text-sm text-gray-700 mb-2">Our Sustainability Commitment</p>
-          <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
+          <h3 className="text-[24px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
            Tourism That Supports Local Communities
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
@@ -168,9 +168,9 @@ const SafariIntroSection = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 px-8 md:px-12 py-10 text-left">
+        <div className="w-full md:w-1/2 px-1 md:px-12 py-5 md:py-10 text-left">
           <p className="text-sm text-gray-700 mb-2">Safari Vehicles</p>
-          <h3 className="text-[32px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
+          <h3 className="text-[24px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
             Comfortable Rides Built For Exploration
           </h3>
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">

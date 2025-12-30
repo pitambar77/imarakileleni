@@ -144,7 +144,7 @@ const [aboutData, setAboutData] = useState(null);
    
     
       <div
-        className="relative w-full h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url(${image})`,
         }}
@@ -170,7 +170,7 @@ const [aboutData, setAboutData] = useState(null);
           </span>
         </div>
       </div>
-      <div className=" w-full bg-[#fedec7] py-16 px-4 ">
+      <div className=" w-full bg-[#fedec7] py-8 md:py-16 px-4 ">
         <div className=" text-center max-w-3xl mx-auto  space-y-3 ">
           <h2 className=" text-xl md:text-3xl capitalize text-center">
             About Us
@@ -235,7 +235,7 @@ const [aboutData, setAboutData] = useState(null);
         {/* soft peach background */}
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14">
           {/* Heading centered */}
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-16 capitalize">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-black mb-8 md:mb-16 capitalize">
             Book with confidence
           </h2>
 

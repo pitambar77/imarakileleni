@@ -6,7 +6,7 @@ const WhyVisitSection = ({ title, cards }) => {
 
      
       {title && (
-        <h2 className="text-[28px] md:text-3xl capitalize font-bold text-center text-[#111] mb-12">
+        <h2 className="text-[24px] md:text-3xl capitalize font-bold text-center text-[#111] mb-12">
           {title}
         </h2>
       )}

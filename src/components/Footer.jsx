@@ -94,7 +94,7 @@ const Footer = () => {
               {/* List */}
               {/* List */}
               <ul
-                className={`space-y-2 text-gray-700 ${
+                className={`space-y-2 mb-4 text-gray-700 ${
                   open.help ? "block" : "hidden md:block"
                 }`}
               >
@@ -173,7 +173,7 @@ const Footer = () => {
               </h3>
 
               <ul
-                className={`space-y-2 text-gray-700 ${
+                className={`space-y-2 text-gray-700 mb-4 ${
                   open.plan1 ? "block" : "hidden md:block"
                 }`}
               >
@@ -252,7 +252,7 @@ const Footer = () => {
               </h3>
 
               <ul
-                className={`space-y-2 text-gray-700 capitalize ${
+                className={`space-y-2 text-gray-700 mb-4 capitalize ${
                   open.plan2 ? "block" : "hidden md:block"
                 }`}
               >
