@@ -283,22 +283,22 @@
 //             <FaChevronRight size={16} />
 //           </button>
 
-//           {/* Thumbnails */}
-//           <div className="flex items-center justify-center gap-3 mt-6 overflow-x-auto w-full px-6 pb-3">
-//             {moments.map((thumb, i) => (
-//               <img
-//                 key={thumb.id}
-//                 src={thumb.image}
-//                 alt="Thumbnail"
-//                 onClick={() => setActiveIndex(i)}
-//                 className={`w-20 h-20 object-cover rounded-lg cursor-pointer transition-all ${
-//                   i === activeIndex
-//                     ? "ring-2 ring-[#d87028] scale-105"
-//                     : "opacity-70 hover:opacity-100"
-//                 }`}
-//               />
-//             ))}
-//           </div>
+// {/* Thumbnails */}
+// <div className="flex items-center justify-center gap-3 mt-6 overflow-x-auto w-full px-6 pb-3">
+//   {moments.map((thumb, i) => (
+//     <img
+//       key={thumb.id}
+//       src={thumb.image}
+//       alt="Thumbnail"
+//       onClick={() => setActiveIndex(i)}
+//       className={`w-20 h-20 object-cover rounded-lg cursor-pointer transition-all ${
+//         i === activeIndex
+//           ? "ring-2 ring-[#d87028] scale-105"
+//           : "opacity-70 hover:opacity-100"
+//       }`}
+//     />
+//   ))}
+// </div>
 //         </div>
 //       )}
 //     </section>
@@ -306,7 +306,6 @@
 // };
 
 // export default TripMomentsSection;
-
 
 import React, { useState, useEffect } from "react";
 import {
@@ -319,8 +318,7 @@ import {
 const TripMomentsSection = ({ experience = [] }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-
-   const { heading, subheading } = experience[0];
+  const { heading, subheading } = experience[0];
 
   /* ================= BUILD MOMENTS FROM API ================= */
   const moments = experience.flatMap((exp) =>
@@ -328,7 +326,7 @@ const TripMomentsSection = ({ experience = [] }) => {
       id: `${exp._id}-${index}`,
       image: sec.image,
       caption: sec.description,
-      title:sec.title,
+      title: sec.title,
     }))
   );
 
@@ -337,8 +335,7 @@ const TripMomentsSection = ({ experience = [] }) => {
   const openModal = (index) => setActiveIndex(index);
   const closeModal = () => setActiveIndex(null);
 
-  const nextImage = () =>
-    setActiveIndex((prev) => (prev + 1) % moments.length);
+  const nextImage = () => setActiveIndex((prev) => (prev + 1) % moments.length);
 
   const prevImage = () =>
     setActiveIndex((prev) => (prev === 0 ? moments.length - 1 : prev - 1));
@@ -355,9 +352,7 @@ const TripMomentsSection = ({ experience = [] }) => {
       <h2 className="text-[24px] md:text-3xl font-extrabold mb-1 text-[#111]">
         {heading}
       </h2>
-      <p className="text-[16px] text-[#444] mb-8 md:mb-12">
-        {subheading}
-      </p>
+      <p className="text-[16px] text-[#444] mb-8 md:mb-12">{subheading}</p>
 
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -380,16 +375,14 @@ const TripMomentsSection = ({ experience = [] }) => {
             </div>
 
             <div className="absolute  bottom-0 w-full bg-gradient-to-t from-black/100 to-transparent text-white px-4 py-3 text-[14px]">
-              <p className=" text-lg pb-4">
-                {moment.title}
-                </p>
+              <p className=" text-lg pb-4">{moment.title}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* MODAL */}
-      {activeIndex !== null && (
+      {/* {activeIndex !== null && (
         <div className="fixed inset-0 bg-black/80 flex flex-col justify-center items-center z-50">
           <div className="bg-[#fee3cc] rounded-lg max-w-6xl w-[95%] p-6 relative flex flex-col md:flex-row">
             <button
@@ -410,7 +403,7 @@ const TripMomentsSection = ({ experience = [] }) => {
             </div>
           </div>
 
-          {/* NAV */}
+         
           <button
             onClick={prevImage}
             className="absolute left-20 top-1/2 bg-white p-2 rounded-full"
@@ -425,7 +418,7 @@ const TripMomentsSection = ({ experience = [] }) => {
             <FaChevronRight />
           </button>
 
-          {/* THUMBNAILS */}
+          
           <div className="flex gap-3 mt-6 overflow-x-auto px-6">
             {moments.map((m, i) => (
               <img
@@ -438,6 +431,112 @@ const TripMomentsSection = ({ experience = [] }) => {
               />
             ))}
           </div>
+        </div>
+      )} */}
+      {activeIndex !== null && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex flex-col p-6 justify-center items-center">
+          {/* MODAL */}
+          <div
+            className="
+        relative bg-[#fee3cc] rounded-lg
+        w-full max-w-6xl
+        p-4 md:p-6
+        flex flex-col md:flex-row
+        max-h-[90vh] md:max-h-none
+        overflow-hidden
+      "
+          >
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={closeModal}
+              className="
+          absolute top-3 right-3
+          text-gray-700
+          md:bg-transparent
+          bg-white p-2 rounded-full cursor-pointer shadow md:shadow-none
+          z-20
+        "
+            >
+              <FaTimes size={20} />
+            </button>
+
+            {/* IMAGE */}
+            <div className="flex justify-center items-center bg-black md:bg-transparent p-0 md:p-4">
+              <img
+                src={moments[activeIndex].image}
+                alt={moments[activeIndex].title}
+                className="
+            w-full
+            h-[400px]
+            md:h-[480px]
+            md:w-[420px]
+            object-cover rounded
+          "
+              />
+            </div>
+
+            {/* TEXT */}
+            <div className="flex-1 p-4 md:p-6 text-left overflow-y-auto">
+              <h3 className="text-xl md:text-2xl mb-3 md:mb-4">
+                {moments[activeIndex].title}
+              </h3>
+              <p className="text-sm md:text-[15px] leading-relaxed">
+                {moments[activeIndex].caption}
+              </p>
+            </div>
+          </div>
+          {/* THUMBNAILS */}
+          <div
+            className="
+        hidden md:flex
+    absolute bottom-4 md:static
+    gap-3
+    mt-2 md:mt-6
+    px-3 md:px-6
+    overflow-x-auto
+      "
+          >
+            {moments.map((m, i) => (
+              <img
+                key={m.id}
+                src={m.image}
+                onClick={() => setActiveIndex(i)}
+                className={`
+            w-16 h-16 md:w-20 md:h-20 
+            object-cover rounded cursor-pointer
+            transition
+            ${
+              i === activeIndex
+                ? "ring-2 ring-[#d87028]"
+                : "opacity-70 hover:opacity-100"
+            }
+          `}
+              />
+            ))}
+          </div>
+
+          {/* DESKTOP NAV BUTTONS (UNCHANGED) */}
+          <button
+            onClick={prevImage}
+            className="
+        hidden md:block
+        absolute left-20 top-1/2
+        bg-white p-2 cursor-pointer rounded-full
+      "
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            onClick={nextImage}
+            className="
+        hidden md:block
+        absolute right-20 top-1/2
+        bg-white p-2 cursor-pointer rounded-full
+      "
+          >
+            <FaChevronRight />
+          </button>
         </div>
       )}
     </section>

@@ -79,7 +79,7 @@ const Navbar = () => {
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 ">
       {/* Top Bar */}
-      <div className="hidden md:flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
+      <div className="hidden xl:flex justify-end items-center text-[12px] text-gray-600 py-2 pt-4 px-8 space-x-4 border-b-[0.5px] border-gray-100">
         <Link
           to={"/contact-us"}
           className={`hover:underline ${
@@ -124,7 +124,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 font-semibold text-sm text-gray-800 relative">
+        <ul className="hidden xl:flex space-x-6 font-semibold text-sm text-gray-800 relative">
           {menuItems.map((item, index) => (
             <li
               key={index}
@@ -180,7 +180,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Right */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden xl:flex items-center space-x-4">
           <button className="border rounded-full p-2">
             <FaWhatsapp size={22} />
           </button>
@@ -195,7 +195,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-2xl"
+          className="xl:hidden text-2xl"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <FiX /> : <FiMenu />}
@@ -205,7 +205,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
 
       {mobileOpen && (
-        <div className="md:hidden bg-white w-full uppercase font-semibold px-4 py-4 shadow-lg animate-slide-down">
+        <div className="xl:hidden bg-white w-full uppercase font-semibold px-4 py-4 shadow-lg animate-slide-down">
           {menuItems.map((item, index) => (
             <div key={index} className="border-b border-gray-200 py-3">
               <div className="flex justify-between items-center uppercase font-semibold">
@@ -334,8 +334,8 @@ const Navbar = () => {
           </button>
           {/* ===== Mobile Social Icons ===== */}
 
-          <div className="text-sm text-gray-700 space-y-3 text-center md:text-right py-10">
-            <div className="flex justify-center md:justify-end gap-4 text-xl">
+          <div className="text-sm text-gray-700 space-y-3 text-center py-10">
+            <div className="flex justify-center gap-4 text-xl">
               {/* Facebook */}
               <a
                 href="https://www.facebook.com/imarakileleni/?_rdc=1&_rdr#"

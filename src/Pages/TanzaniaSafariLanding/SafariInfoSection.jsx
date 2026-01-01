@@ -251,7 +251,7 @@ const SafariInfoSection = ({
               alt={overview.title}
               className="
                 rounded-md w-full max-w-[420px]
-                h-auto md:h-[420px] lg:h-[560px]
+                h-auto  lg:h-[560px]
                 object-cover shadow-sm
               "
             />

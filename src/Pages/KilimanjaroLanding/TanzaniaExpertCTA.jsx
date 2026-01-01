@@ -37,7 +37,7 @@ const TanzaniaExpertCTA = () => {
               <p className="text-[18px] sm:text-[22px] font-semibold text-[#0b1a2b]">
                 Call{" "}
                 <span className="text-[#0b4fff] hover:underline cursor-pointer block sm:inline">
-                  0203 111 1315
+                  +255 748 002 696
                 </span>
               </p>
 

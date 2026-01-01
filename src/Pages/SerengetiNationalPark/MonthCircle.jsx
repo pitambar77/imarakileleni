@@ -52,7 +52,7 @@ const MonthCircle = ({ month, isActive, onHover }) => {
   onMouseEnter={() => onHover(month)}
   onClick={() => onHover(month)} // mobile tap support
   className={`
-    w-12 h-12
+    w-10 h-10
     sm:w-14 sm:h-14
     md:w-20 md:h-20
     rounded-full
@@ -69,7 +69,7 @@ const MonthCircle = ({ month, isActive, onHover }) => {
     }
   `}
 >
-  {month.name}
+  <p>{month.name}</p>
 </div>
 
   );

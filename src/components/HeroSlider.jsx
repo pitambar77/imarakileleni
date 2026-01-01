@@ -152,16 +152,16 @@ const HeroSlider = () => {
               <div className="absolute inset-0 bg-black/30" />
 
               {/* Text Content */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white ">
                 <h2 className="text-2xl md:text-5xl mb-4 font-bold uppercase">
                   {slide.title}
                 </h2>
-                <p className="text-lg md:text-xl mb-6 max-w-2xl">
+                <p className="text-lg md:text-xl mb-4 md:mb-6 max-w-2xl">
                   {slide.description}
                 </p>
                 <button
                 onClick={()=>navigate('/contact-us')}
-                 className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold px-6 py-2 md:py-3 rounded-full transition">
+                 className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-sm md:[text-17px] text-white font-semibold px-6 py-2 md:py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
               </div>

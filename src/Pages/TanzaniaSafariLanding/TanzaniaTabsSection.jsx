@@ -125,7 +125,7 @@ const TanzaniaTabsSection = () => {
 
         <button
           onClick={() => setActiveTab("Northern")}
-          className={` px-3 md:px-5  py-1.5 md:py-2.5 rounded-full text-[17px] cursor-pointer font-semibold border ${
+          className={` px-3 md:px-5  py-1.5 md:py-2.5 rounded-full text-sm md:text-[17px] cursor-pointer font-semibold border ${
             activeTab === "Northern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"
@@ -135,7 +135,7 @@ const TanzaniaTabsSection = () => {
         </button>
         <button
           onClick={() => setActiveTab("Southern")}
-          className={`px-3 md:px-5 py-1.5 md:py-2.5 rounded-full text-[17px] cursor-pointer font-semibold border ${
+          className={`px-3 md:px-5 py-1.5 md:py-2.5 rounded-full text-sm md:text-[17px] cursor-pointer font-semibold border ${
             activeTab === "Southern"
               ? "bg-[#d87028] text-white border-[#d87028] active"
               : "border-black text-black"

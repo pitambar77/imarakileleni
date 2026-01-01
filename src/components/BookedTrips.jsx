@@ -677,7 +677,7 @@ const BookedTrips = () => {
 
   return (
     <section className="w-full py-16 bg-white relative">
-      <div className="px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
+      <div className="px-4  md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         {/* ================= HEADER ================= */}
         <div className="relative flex items-center justify-center mb-10">
           <h2 className="text-2xl md:text-3xl text-center font-bold w-full capitalize">
@@ -709,7 +709,9 @@ const BookedTrips = () => {
           breakpoints={{
             640: { slidesPerView: 1.5 },
             768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 3 },
+            1280:{slidesPerView: 4 }
+
           }}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = swiperNavPrevRef.current;

@@ -208,7 +208,7 @@ const Featured = () => {
         </div> */}
 
         {/* Mobile & Tablet Slider */}
-<div className="block lg:hidden mb-6">
+{/* <div className="block lg:hidden mb-6">
   <Swiper
     modules={[Autoplay]}
     autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -230,10 +230,39 @@ const Featured = () => {
       </SwiperSlide>
     ))}
   </Swiper>
+</div> */}
+{/* Mobile & Tablet Slider */}
+<div className="block lg:hidden mb-6 px-4 sm:px-6">
+  <Swiper
+    modules={[Autoplay]}
+    autoplay={{ delay: 2000, disableOnInteraction: false }}
+    loop
+    slidesPerView={1}
+    breakpoints={{
+      480: { slidesPerView: 2 },
+      640: { slidesPerView: 3 },
+    }}
+    centeredSlides
+    className="w-full"
+  >
+    {brands.map((brand) => (
+      <SwiperSlide
+        key={brand.id}
+        className="flex justify-center items-center"
+      >
+        <img
+          src={brand.img}
+          alt={brand.name}
+          className="h-16 sm:h-20 md:h-24 w-auto max-w-[160px] sm:max-w-[180px] object-contain"
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
 </div>
 
+
 {/* Desktop & Large Screen Static Layout */}
-<div className="hidden lg:flex items-center justify-between gap-6 xl:gap-10 px-4 xl:px-8 mb-16">
+{/* <div className="hidden lg:flex items-center justify-between gap-6 xl:gap-10 px-4 xl:px-8 mb-16">
   {brands.map((brand) => (
     <img
       key={brand.id}
@@ -242,7 +271,19 @@ const Featured = () => {
       className="h-24 xl:h-28 w-auto max-w-[220px] object-contain"
     />
   ))}
+</div> */}
+{/* Desktop & Large Screen Static Layout */}
+<div className="hidden lg:flex items-center justify-center flex-wrap gap-8 xl:gap-12 px-6 xl:px-10 mb-16">
+  {brands.map((brand) => (
+    <img
+      key={brand.id}
+      src={brand.img}
+      alt={brand.name}
+      className="h-20 lg:h-24 xl:h-28 w-auto max-w-[220px] object-contain"
+    />
+  ))}
 </div>
+
 
 
         {/* Promise Banner */}

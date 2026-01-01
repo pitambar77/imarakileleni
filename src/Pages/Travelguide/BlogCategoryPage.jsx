@@ -89,10 +89,14 @@ const BlogCategoryPage = ({ category }) => {
           image: blog.thumbnail,
           title: blog.title,
           subtitle:blog.subtitle,
+          description:
+            blog.sections?.find((s) => s.type === "paragraph")?.text ||
+            "Read our detailed travel guide.",
           text:
             blog.sections?.[0]?.text ||
             blog.sections?.[0]?.content ||
             "Read our detailed travel guide.",
+            
           link: `/travel-guide/${blog.slug}`,
         }));
 

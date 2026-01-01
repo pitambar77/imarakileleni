@@ -32,44 +32,6 @@ const Footer = () => {
       {/* Top section */}
       <div className="bg-white pt-8 md:pt-16  px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
         <div className=" grid grid-cols-1 md:grid-cols-2">
-          {/* <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-           
-            <div>
-              <h3 className="font-bold text-lg mb-4">Help & Info</h3>
-              <ul className="space-y-2 text-gray-700 ">
-                <li>Who We Are</li>
-                <li>WE MAKE TRAVEL MATTER®</li>
-                <li>Become an Affiliate</li>
-                <li>Frequently Asked Questions</li>
-                <li>Travel Updates</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-
-            
-            <div>
-              <h3 className="font-bold text-lg mb-4">Travel Planning</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>Get Your Free Brochure</li>
-                <li>Travel Insurance</li>
-                <li>Booking Conditions</li>
-                <li>Trip Deposit Level</li>
-                <li>Recommendations</li>
-              </ul>
-            </div>
-
-            
-            <div>
-              <h3 className="font-bold text-lg mb-4">Travel Planning</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>Get Your Free Brochure</li>
-                <li>Travel Insurance</li>
-                <li>Booking Conditions</li>
-                <li>Trip Deposit Level</li>
-                <li>Recommendations</li>
-              </ul>
-            </div>
-          </div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 ">
             {/* Column 1 */}
             <div>

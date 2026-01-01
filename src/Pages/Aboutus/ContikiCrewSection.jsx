@@ -3,7 +3,7 @@ import React from "react";
 const ContikiCrewSection = () => {
   return (
     <section className="bg-[#d76e28] py-8 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 text-white">
-      <div className=" flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className=" flex flex-col md:flex-row items-center justify-between gap-2 md:gap-10">
         
         {/* Left Image */}
         <div className="w-full md:w-1/2">
@@ -15,7 +15,7 @@ const ContikiCrewSection = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 text-center px-4 md:px-16  text-black">
+        <div className="w-full md:w-1/2 text-center px-4 xl:px-16  text-black">
           <h2 className="text-[24px] md:text-[28px] font-extrabold mb-4">
             Plan Your Tanzania Adventure with Confidence
           </h2>

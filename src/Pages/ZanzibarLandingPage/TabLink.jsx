@@ -5,9 +5,9 @@ const TabLink = () => {
 
   const tabs = [
     { id: "overview", label: "Overview" },
-    { id: "safaris", label: "Safaris" },
-    { id: "thingstodo", label: "Things To Do" },
-    { id: "beach", label: "Beach" },
+    { id: "packages", label: "Safaris" },
+    { id: "details", label: "Things To Do" },
+    { id: "highlight", label: "Beach" },
     { id: "besttime", label: "Best Time" },
     { id: "adventure", label: "Adventure" },
     { id: "faq", label: "FAQ" },

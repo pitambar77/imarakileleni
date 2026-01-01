@@ -71,6 +71,172 @@
 
 
 
+// import React, { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import axios from "axios";
+
+// import TravelGuideDetails from "../TravelGuideDetails/TravelGuideDetails";
+// import TripHighlights from "../../components/TripHighlights";
+// import ActiveTravelDestinations from "../TravelGuideDetails/ActiveTravelDestinations";
+// import BookWithConfidence from "../Home/BookWithConfidence";
+// import Featured from "../Home/Featured";
+
+// const API_BASE =
+//   import.meta.env.VITE_API_BASE ||
+//   "https://imarabackend.imarakilelenisafaris.com";
+
+
+//   const trips = [
+//   {
+//     id: 1,
+//     image:
+//       "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
+//     title: "Tanzania Safari Adventure With Enjoy",
+
+//     description:
+//       "The one that sees you swish through the scenic south island kicking off in Christchurch The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+//   {
+//     id: 2,
+//     image:
+//       "https://kilimanjarofairdeal.com/wp-content/uploads/2023/12/family-3.jpg",
+//     title: "Tanzania Family Safaris",
+
+//     description:
+//       "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+//   {
+//     id: 3,
+//     image:
+//       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+//     title: "Big Drop. Low Prices.",
+//     description:
+//       "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+//   {
+//     id: 4,
+//     image:
+//       "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
+//     title: "Wildlife Budget Cultural Fly  ",
+
+//     description:
+//       "The one that gives you the ultimate Greek Island experience exploring Mykonos, Paros, Santorini and Ios This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+//   {
+//     id: 5,
+//     image:
+//       "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
+//     title: "Tanzania Safari Adventure",
+
+//     description:
+//       "The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+//   {
+//     id: 6,
+//     image:
+//       "https://ntandusafaris.com/wp-content/uploads/2024/12/Lion-Banner.webp",
+//     title: "Tanzania Family Safaris",
+
+//     description:
+//       "This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
+//   },
+// ];
+
+// const BlogDetail = ({category}) => {
+//   const { slug } = useParams();
+
+//   const [blog, setBlog] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//    const [relatedBlogs, setRelatedBlogs] = useState([]);
+
+//   /* ================= FETCH BLOG DETAILS ================= */
+//   useEffect(() => {
+//     axios
+//       .get(`${API_BASE}/api/blog/slug/${slug}`)
+//       .then((res) => {
+//         setBlog(res.data);
+//       })
+//       .catch((err) => console.error("Blog detail error:", err))
+//       .finally(() => setLoading(false));
+//   }, [slug]);
+
+//    /* ================= FETCH RELATED BLOGS ================= */
+//  useEffect(() => {
+//     if (!category) return;
+
+//     axios
+//       .get(
+//         `${API_BASE}/api/blog/category/${encodeURIComponent(category)}`
+//       )
+//       .then((res) => {
+//         const blogs = Array.isArray(res.data) ? res.data : [];
+
+//         // 🔁 Convert category blogs → TravelguideCard format
+//         const mappedItems = blogs.map((blog, index) => ({
+//           id: blog._id || index,
+//           image: blog.thumbnail,
+//           title: blog.title,
+//           subtitle:blog.subtitle,
+//           text:
+//             blog.sections?.[0]?.text ||
+//             blog.sections?.[0]?.content ||
+//             "Read our detailed travel guide.",
+//           link: `/travel-guide/${blog.slug}`,
+//         }));
+
+//         setAsSeenItems(mappedItems);
+//       })
+//       .catch((err) => console.error("Category API error:", err))
+//       .finally(() => setLoading(false));
+//   }, [category]);
+
+
+//   if (loading) return <p className="p-6">Loading...</p>;
+//   if (!blog) return <p className="p-6">No blog found</p>;
+
+ 
+//   /* ================= MAP TRIP HIGHLIGHTS ================= */
+//   // const trips =
+//   //   blog.sections
+//   //     ?.filter((s) => s.type === "image")
+//   //     .map((s, index) => ({
+//   //       id: index + 1,
+//   //       image: s.imageUrl,
+//   //       title: blog.title,
+//   //       description:
+//   //         blog.sections?.find((p) => p.type === "paragraph")?.text ||
+//   //         "Explore this amazing travel experience.",
+//   //     })) || [];
+
+//   return (
+//     <div>
+//       {/* ✅ SAME STRUCTURE */}
+//       <TravelGuideDetails blog={blog} />
+
+
+
+//       {/* <TripHighlights
+//         title="Highlights of our "
+//         data={trips}
+//       /> */}
+
+//       {/* RELATED BLOGS (HIGHLIGHTS) */}
+//       {relatedBlogs.length > 0 && (
+//         <TripHighlights
+//           title={`Related ${blog.category}`}
+//           data={relatedBlogs}
+//         />
+//       )}
+
+//       <ActiveTravelDestinations />
+//       <BookWithConfidence />
+//       <Featured />
+//     </div>
+//   );
+// };
+
+// export default BlogDetail;
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -85,105 +251,74 @@ const API_BASE =
   import.meta.env.VITE_API_BASE ||
   "https://imarabackend.imarakilelenisafaris.com";
 
-
-  const trips = [
-  {
-    id: 1,
-    image:
-      "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
-    title: "Tanzania Safari Adventure With Enjoy",
-
-    description:
-      "The one that sees you swish through the scenic south island kicking off in Christchurch The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-  {
-    id: 2,
-    image:
-      "https://kilimanjarofairdeal.com/wp-content/uploads/2023/12/family-3.jpg",
-    title: "Tanzania Family Safaris",
-
-    description:
-      "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    title: "Big Drop. Low Prices.",
-    description:
-      "The one that takes you to west Thailand for a tour of Phuket, Koh Phi Phi, Krabi & other faves This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-  {
-    id: 4,
-    image:
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
-    title: "Wildlife Budget Cultural Fly  ",
-
-    description:
-      "The one that gives you the ultimate Greek Island experience exploring Mykonos, Paros, Santorini and Ios This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-  {
-    id: 5,
-    image:
-      "https://africanscenicsafaris.com/assests/images/tanzania-safari-tours-banner.webp",
-    title: "Tanzania Safari Adventure",
-
-    description:
-      "The one that sees you swish through the scenic south island kicking off in Christchurch This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-  {
-    id: 6,
-    image:
-      "https://ntandusafaris.com/wp-content/uploads/2024/12/Lion-Banner.webp",
-    title: "Tanzania Family Safaris",
-
-    description:
-      "This epic 23 day trail through Europe balances all the sightseeing icons with unexpected marvels and underrated destinations. From walking the cobbled streets of Michelangelo's Florence and seeing Paris lit up at night, to being blown away by the",
-  },
-];
-
 const BlogDetail = () => {
   const { slug } = useParams();
 
   const [blog, setBlog] = useState(null);
+  const [relatedBlogs, setRelatedBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   /* ================= FETCH BLOG DETAILS ================= */
   useEffect(() => {
+    setLoading(true);
+
     axios
       .get(`${API_BASE}/api/blog/slug/${slug}`)
-      .then((res) => {
-        setBlog(res.data);
-      })
+      .then((res) => setBlog(res.data))
       .catch((err) => console.error("Blog detail error:", err))
       .finally(() => setLoading(false));
   }, [slug]);
 
+  /* ================= FETCH RELATED BLOGS ================= */
+  useEffect(() => {
+    if (!blog?.category) return;
+
+    axios
+      .get(
+        `${API_BASE}/api/blog/category/${encodeURIComponent(
+          blog.category
+        )}`
+      )
+      .then((res) => {
+        const blogs = Array.isArray(res.data) ? res.data : [];
+
+        // ❌ remove current blog
+        const filtered = blogs.filter(
+          (item) => item.slug !== blog.slug
+        );
+
+        // ✅ map into TripHighlights format
+        const mapped = filtered.map((item) => ({
+          id: item._id,
+          image: item.thumbnail,
+          title: item.title,
+          subtitle: item.subtitle,
+          description:
+            item.sections?.find((s) => s.type === "paragraph")?.text ||
+            "Read our detailed travel guide.",
+          link: `/travel-guide/${item.slug}`,
+        }));
+
+        setRelatedBlogs(mapped);
+      })
+      .catch((err) => console.error("Related blog error:", err));
+  }, [blog]);
+
   if (loading) return <p className="p-6">Loading...</p>;
   if (!blog) return <p className="p-6">No blog found</p>;
 
-  /* ================= MAP TRIP HIGHLIGHTS ================= */
-  // const trips =
-  //   blog.sections
-  //     ?.filter((s) => s.type === "image")
-  //     .map((s, index) => ({
-  //       id: index + 1,
-  //       image: s.imageUrl,
-  //       title: blog.title,
-  //       description:
-  //         blog.sections?.find((p) => p.type === "paragraph")?.text ||
-  //         "Explore this amazing travel experience.",
-  //     })) || [];
-
   return (
     <div>
-      {/* ✅ SAME STRUCTURE */}
+      {/* BLOG CONTENT */}
       <TravelGuideDetails blog={blog} />
 
-      <TripHighlights
-        title="Highlights of our africa safari tour"
-        data={trips}
-      />
+      {/* RELATED BLOGS */}
+      {relatedBlogs.length > 0 && (
+        <TripHighlights
+          title={`Related ${blog.category}`}
+          data={relatedBlogs}
+        />
+      )}
 
       <ActiveTravelDestinations />
       <BookWithConfidence />
@@ -193,4 +328,3 @@ const BlogDetail = () => {
 };
 
 export default BlogDetail;
-

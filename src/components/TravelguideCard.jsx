@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
+const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items,description }) => {
   return (
     <section className=" py-8 md:py-16 px-4 md:px-16 lg:px-18  2xl:px-40 bg-white">
 
@@ -34,7 +34,7 @@ const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
       )}
 
       {/* GRID */}
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
         {items?.map((item) => (
           <div
             key={item.id}
@@ -51,8 +51,8 @@ const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
             <div className=" py-4 px-2 md:p-6 text-center flex flex-col flex-1">
               <h3 className="font-semibold text-lg md:text-[24px] mb-4">{item.title}</h3>
 
-              <p className="text-gray-600 text-[16px] leading-relaxed mb-4">
-                {item.text}
+              <p className="text-gray-600 text-[16px] leading-relaxed line-clamp-4 mb-4">
+                {item.description}
               </p>
 
               {/* Button stays at bottom always
@@ -68,7 +68,7 @@ const TravelguideCard = ({ title, subtitle, subtitle1, subtitle2, items }) => {
                   to={item.link}
                   className="font-semibold underline mt-auto pb-1"
                 >
-                  Find out more →
+                 <p>Find out more →</p> 
                 </Link>
               )}
             </div>

@@ -186,7 +186,7 @@ const BestTimeToVisitSection = ({
       </div>
 
       {/* MONTH CIRCLES */}
-      <div className="flex flex-wrap justify-between gap-4">
+      <div className=" grid grid-cols-6 md:grid-cols-6 xl:grid-cols-12 gap-4 place-items-center ">
         {staticMonths.map((month) => (
           <MonthCircle
             key={month.name}

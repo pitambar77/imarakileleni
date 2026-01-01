@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 // Swiper Styles
 import "swiper/css";
@@ -62,7 +63,8 @@ const TripHighlights = ({ title, data }) => {
           breakpoints={{
             640: { slidesPerView: 1.5 },
             768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
           }}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = swiperNavPrevRef.current;
@@ -77,6 +79,10 @@ const TripHighlights = ({ title, data }) => {
         >
           {data.map((trip) => (
             <SwiperSlide key={trip.id}>
+               <Link
+                to={trip.link}
+                className="block h-full cursor-pointer"
+              >
               <div className="trip-card rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-lg transition duration-300 mb-4">
                 <div className="relative">
                   <img
@@ -98,6 +104,7 @@ const TripHighlights = ({ title, data }) => {
                   </div>
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

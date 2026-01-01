@@ -15,7 +15,7 @@ const ContactDetailsSection = () => {
             Contact Details
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 text-white">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10 text-white">
             {/* Office Location */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#3c2313] flex items-center justify-center shrink-0">

@@ -112,7 +112,7 @@ const SafariIntroSection = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 px-1 md:px-12 py-5 md:py-10 text-left">
+        <div className="w-full md:w-1/2 px-4 xl:px-12 py-5 md:py-10 text-center xl:text-left">
           <p className="text-sm text-gray-700 mb-2">Meet the Team</p>
           <h3 className="text-[24px] md:text-[36px] font-semibold text-[#222] leading-snug mb-4">
             Experts Who Guide Your Adventures

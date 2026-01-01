@@ -17,7 +17,7 @@ const Banner = ({ image, title, buttonText, onButtonClick }) => {
 
         <button
           onClick={onButtonClick}
-          className="bg-[#d87028] cursor-pointer hover:bg-orange-700 text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full shadow-lg text-lg transition-all duration-300"
+          className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-sm md:[text-17px] text-white font-semibold px-6 py-2 md:py-3 rounded-full shadow-lg  transition-all duration-300"
         >
           {buttonText}
         </button>

@@ -47,21 +47,21 @@ const SafariToursSection = () => {
       <div className="px-4 md:px-10 lg:px-16 2xl:px-28 mx-auto">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl text-center font-bold mb-4">
-          Top Tanzania Safari & Tours
+          Top Kilimanjaro Packages
         </h2>
         <p className="text-center mb-10">
-          Handpicked safari experiences across Tanzania
+          Handpicked Kilimanjaro Climbing Experiences
         </p>
 
         {/* Empty State */}
         {tanzaniaTrips.length === 0 && (
           <p className="text-center text-gray-500">
-            No Tanzania trips available
+            No Kilimanjaro available
           </p>
         )}
 
         {/* Trips Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tanzaniaTrips.map((trip) => (
             <TripCard
               key={trip._id}

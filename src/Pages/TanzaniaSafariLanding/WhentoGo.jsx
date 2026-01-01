@@ -494,7 +494,7 @@ const WhentoGo = () => {
       {/* ================= MONTH CARD ================= */}
       <div className="border border-gray-200 rounded-md shadow-sm bg-white">
         {/* --- Month Tabs --- */}
-        <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-12 text-center border-b border-gray-200">
+        <div className="grid grid-cols-6 sm:grid-cols-6 lg:grid-cols-12 text-center border-b border-gray-200">
           {monthsData.map((m) => (
             <button
               key={m.month}

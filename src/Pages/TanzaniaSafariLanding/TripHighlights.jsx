@@ -296,7 +296,8 @@ const TripHighlights = () => {
           breakpoints={{
             640: { slidesPerView: 2 },
             768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 3 },
+            1280:{slidesPerView: 4 }
           }}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = swiperNavPrevRef.current;

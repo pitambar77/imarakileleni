@@ -297,7 +297,7 @@ const ChoosingSafariSection = () => {
       </div>
 
       {/* ================= CARDS GRID (UNCHANGED) ================= */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
         {tanzaniaTrips.map((trip) => (
           <TripCard
             key={trip._id}
