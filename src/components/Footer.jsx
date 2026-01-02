@@ -14,6 +14,8 @@ import { FiChevronDown } from "react-icons/fi";
 import { FaFlagUsa } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import FooterForm from "./FooterForm";
+
 
 const Footer = () => {
   const [open, setOpen] = useState({
@@ -272,21 +274,10 @@ const Footer = () => {
           <div className=" flex md:justify-end justify-center mt-4 md:mt-0">
             {/* Column 4 - Newsletter */}
             <div className=" w-full md:w-2/3 ">
-              <h3 className="font-bold text-lg mb-2">Save up to $2,034*!</h3>
-              <p className="text-gray-700  mb-2">
-                Plus receive latest offers, travel inspiration, and discover how
-                your travels will make a positive impact. Together, WE MAKE
-                TRAVEL MATTER®.
-              </p>
-              <a
-                href="#"
-                className="text-sm text-[#d87028] font-semibold underline block mb-4"
-              >
-                Offer Terms
-              </a>
+        
 
               {/* Form */}
-              <form className="space-y-4">
+              {/* <form className="space-y-4">
                 <div className="flex gap-2">
                   <input
                     type="text"
@@ -325,7 +316,8 @@ const Footer = () => {
                     Submit
                   </button>
                 </div>
-              </form>
+              </form> */}
+             <FooterForm/>
             </div>
           </div>
         </div>
