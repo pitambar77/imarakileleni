@@ -181,16 +181,16 @@ const Navbar = () => {
 
         {/* Desktop Right */}
         <div className="hidden xl:flex items-center space-x-4">
-          <button className="border rounded-full p-2">
+          <Link className="border rounded-full p-2">
             <FaWhatsapp size={22} />
-          </button>
+          </Link>
 
-          <button
-            onClick={() => navigate("/tanzania-safaris")}
+          <Link to={"/tanzania-safaris"}
+            // onClick={() => navigate("/tanzania-safaris")}
             className="bg-[#d87028] text-white px-[21px] py-3 rounded-full font-semibold hover:bg-orange-700 cursor-pointer"
           >
             VIEW TRIPS
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}

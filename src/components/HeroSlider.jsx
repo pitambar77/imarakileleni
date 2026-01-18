@@ -96,10 +96,10 @@ import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import banner1 from "../assets/imara-home-banner-1.webp"
-import banner2 from "../assets/kilimanjaro-imara-home.webp"
-import banner3 from "../assets/zanzibar-imara-home.webp"
-import { useNavigate } from "react-router-dom";
+import banner1 from "../assets/tanzania-banner-5.webp"
+import banner2 from "../assets/kilimanjaro-new-banner.webp"
+import banner3 from "../assets/zanzibar-banne-newr.webp"
+import { Link, useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -127,10 +127,10 @@ const slides = [
 
 const HeroSlider = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
-    <section className="relative w-full h-[40vh] md:h-[64vh] 2xl:h-[50vh]">
+    <section className="relative w-full h-[350px] md:h-[450px]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{
@@ -145,9 +145,10 @@ const HeroSlider = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="relative w-full h-full bg-cover bg-center"
+              className="relative w-full h-full bg-cover bg-center md:bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
+            
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/30" />
 
@@ -159,11 +160,13 @@ const HeroSlider = () => {
                 <p className="text-lg md:text-xl mb-4 md:mb-6 max-w-2xl">
                   {slide.description}
                 </p>
+                <Link to={'/contact-us'}>
                 <button
-                onClick={()=>navigate('/contact-us')}
+                // onClick={()=>navigate('/contact-us')}
                  className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-sm md:[text-17px] text-white font-semibold px-6 py-2 md:py-3 rounded-full transition">
                   SEND AN INQUIRY
                 </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

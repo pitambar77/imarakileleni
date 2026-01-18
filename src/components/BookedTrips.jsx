@@ -638,7 +638,7 @@ import { MdOutlineSavedSearch } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import API from "../api/axios.js";
 import { slugify } from "../utils/slugify.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -710,8 +710,7 @@ const BookedTrips = () => {
             640: { slidesPerView: 1.5 },
             768: { slidesPerView: 2.5 },
             1024: { slidesPerView: 3 },
-            1280:{slidesPerView: 4 }
-
+            1280: { slidesPerView: 4 },
           }}
           onBeforeInit={(swiper) => {
             swiper.params.navigation.prevEl = swiperNavPrevRef.current;
@@ -732,7 +731,7 @@ const BookedTrips = () => {
                   <img
                     src={trip.image}
                     alt={trip.title}
-                    className="w-full h-40 object-cover"
+                    className="w-full h-40 object-cover "
                   />
                   <button
                     onClick={() => setSelectedTrip(trip)}
@@ -774,15 +773,19 @@ const BookedTrips = () => {
                     <h3 className="font-bold text-sm text-black">
                       {trip.price}
                     </h3>
-
+                    
+                    <Link to={`/package/${slugify(trip.title)}`}  >
+                    
+                    
                     <button
-                      onClick={() =>
-                        navigate(`/package/${slugify(trip.title)}`)
-                      }
+                      // onClick={() =>
+                      //   navigate(`/package/${slugify(trip.title)}`)
+                      // }
                       className="bg-[#d87028] text-white cursor-pointer text-sm px-6 py-2 rounded-full"
                     >
                       VIEW TRIP
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -816,56 +819,21 @@ const BookedTrips = () => {
         {/* <div className="custom-pagination flex justify-center mt-6" /> */}
 
         <div className="flex justify-center mt-10">
-          <button
-            onClick={() => navigate("/tanzania-safaris")}
+          <Link
+          to={"/tanzania-safaris"}
             className="bg-[#d87028] text-white px-8 py-3 cursor-pointer rounded-full"
           >
             VIEW ALL TRIPS
-          </button>
+          </Link>
         </div>
       </div>
 
       {/* ================= QUICK VIEW MODAL ================= */}
-      {/* {selectedTrip && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white w-[90%] md:w-[700px] rounded-xl overflow-hidden relative">
-            <button
-              onClick={() => setSelectedTrip(null)}
-              className="absolute top-3 right-3"
-            >
-              <IoClose size={28} />
-            </button>
 
-            <img
-              src={selectedTrip.image}
-              alt={selectedTrip.title}
-              className="w-full h-96 object-cover bg-black"
-            />
-
-            <div className="p-6">
-              <h3 className="text-2xl font-bold mb-2">{selectedTrip.title}</h3>
-              <p className="text-gray-700 mb-4">{selectedTrip.description}</p>
-
-              <button
-                onClick={() =>
-                  navigate(
-                    `/package/${slugify(selectedTrip.title)}-${
-                      selectedTrip._id
-                    }`
-                  )
-                }
-                className="bg-[#d87028] text-white px-6 py-2 cursor-pointer rounded-full"
-              >
-                VIEW TRIP
-              </button>
-            </div>
-          </div>
-        </div>
-      )} */}
-     {selectedTrip && (
-  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-3">
-    <div
-      className="
+      {selectedTrip && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-3">
+          <div
+            className="
         bg-white 
         w-full max-w-[700px] 
         max-h-[84vh] 
@@ -874,49 +842,38 @@ const BookedTrips = () => {
         relative
         flex flex-col
       "
-    >
-     
-      <button
-        onClick={() => setSelectedTrip(null)}
-        className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-1"
-      >
-        <IoClose size={28} />
-      </button>
+          >
+            <button
+              onClick={() => setSelectedTrip(null)}
+              className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-1"
+            >
+              <IoClose size={28} />
+            </button>
 
-      
-      <div className="w-full h-[250px] sm:h-[300px] md:h-[420px] bg-black">
-        <img
-          src={selectedTrip.image}
-          alt={selectedTrip.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+            <div className="w-full h-[250px] sm:h-[300px] md:h-[420px] bg-black">
+              <img
+                src={selectedTrip.image}
+                alt={selectedTrip.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-     
-      <div className="p-6 overflow-y-auto flex-1">
-        <h3 className="text-2xl font-bold mb-2">
-          {selectedTrip.title}
-        </h3>
+            <div className="p-6 overflow-y-auto flex-1">
+              <h3 className="text-2xl font-bold mb-2">{selectedTrip.title}</h3>
 
-        <p className="text-gray-700 mb-6 leading-relaxed">
-          {selectedTrip.description}
-        </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                {selectedTrip.description}
+              </p>
 
-        <button
-          onClick={() =>
-            navigate(
-              `/package/${slugify(selectedTrip.title)}`
-            )
-          }
-          className="bg-[#d87028] text-white px-6 py-2 rounded-full"
-        >
-          VIEW TRIP
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
+              <Link to={`/package/${slugify(selectedTrip.title)}`}
+                className="bg-[#d87028] text-white px-6 py-2 rounded-full"
+              >
+                VIEW TRIP
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

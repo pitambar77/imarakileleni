@@ -90,7 +90,7 @@
 
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import sustanabilityImg from "../../assets/sustanability-about.webp"
 import safariVchilceImage from "../../assets/safari-vechile.webp"
 
@@ -120,11 +120,11 @@ const SafariIntroSection = () => {
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
            Our team blends local insight, field experience, and genuine warmth to create safe and memorable journeys across Tanzania’s parks, mountains, and cultural landscapes.
           </p>
-          <button
-          onClick={() => navigate("/team")}
+          <Link to={"/team"}
+          // onClick={() => navigate("/team")}
            className="bg-[#d87028] hover:bg-[#c35f22] text-white cursor-pointer font-semibold px-8 py-3 rounded-md transition">
             See Team Directory
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -141,11 +141,11 @@ const SafariIntroSection = () => {
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
            We prioritise responsible practices, partner with local communities, and ensure every journey respects wildlife, protects ecosystems, and contributes positively to Tanzania’s long-term wellbeing.
           </p>
-          <button
-          onClick={() => navigate("/sustanbility")}
+          <Link to={"/sustanbility"}
+          // onClick={() => navigate("/sustanbility")}
            className="bg-[#d87028] hover:bg-[#c35f22] cursor-pointer text-white font-semibold px-8 py-3 rounded-md transition">
             See Sustainability Directory
-          </button>
+          </Link>
         </div>
         {/* Left Image */}
         <div className="w-full md:w-3/5 order-1 md:order-2">
@@ -176,11 +176,11 @@ const SafariIntroSection = () => {
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
             Our customised 4x4 vehicles offer comfort, reliability, and excellent wildlife viewing, ensuring smooth travel across varied terrain throughout your safari experience.
           </p>
-          <button
-          onClick={() => navigate("/safari-fleet")}
+          <Link to={"/safari-fleet"}
+          // onClick={() => navigate("/safari-fleet")}
           className="bg-[#d87028] hover:bg-[#c35f22] cursor-pointer text-white font-semibold px-8 py-3 rounded-md transition">
             See Vehicles Directory
-          </button>
+          </Link>
         </div>
       </div>
     </section>

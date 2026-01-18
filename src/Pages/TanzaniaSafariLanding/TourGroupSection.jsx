@@ -177,7 +177,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const TourGroupSection = () => {
@@ -221,8 +221,7 @@ const navigate = useNavigate();
         {tourGroups.map((item) => (
           <div key={item._id} className="flex flex-col">
             {/* Image with overlay */}
-            <div 
-            onClick={() => navigate(`/travelgroup/${item.slug}`)}
+            <Link to={`/travelgroup/${item.slug}`}
             className="relative rounded-md overflow-hidden group cursor-pointer h-56">
               <img
                 src={item.image}
@@ -233,7 +232,7 @@ const navigate = useNavigate();
               <h3 className="absolute uppercase inset-0 flex justify-center items-center text-white text-[22px] md:text-[28px] font-bold text-center px-8">
                 {item.title}
               </h3>
-            </div>
+            </Link>
 
             {/* Description */}
             <p className="text-[#222] text-[16px] mt-3 leading-relaxed">

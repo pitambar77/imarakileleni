@@ -6,6 +6,8 @@ import API from "../../api/axios.js";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE || "https://imarabackend.imarakilelenisafaris.com";
+  // import.meta.env.VITE_API_BASE || "http://localhost:8000";
+
 
 const getImageUrl = (url) => {
   if (!url) return null;
@@ -24,6 +26,10 @@ const DestinationDetailsForm = ({ editData, onSuccess }) => {
 
   const [mainImage, setMainImage] = useState(null);
   const [mainImagePreview, setMainImagePreview] = useState(null);
+
+  const [landingImage, setLandingImage] = useState(null);
+const [landingImagePreview, setLandingImagePreview] = useState(null);
+
 
   // =============== Dynamic sections ===================
   // // const [overviewinfo, setOverviewinfo] = useState([{ title: "", subtitle: "", description:[], image: null, imagePreview: null }]);
@@ -152,6 +158,10 @@ setOverviewinfo(
       setBesttime(editData.besttime ?? []);
       setQa(editData.aboutBooking ?? []);
       setMainImagePreview(editData.image);
+      setLandingImagePreview(
+  editData.landingImage ? getImageUrl(editData.landingImage) : null
+);
+
 }, [editData]);
 
 
@@ -164,6 +174,15 @@ setOverviewinfo(
     setMainImage(file);
     setMainImagePreview(URL.createObjectURL(file));
   };
+
+  const handleLandingImageChange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  setLandingImage(file);
+  setLandingImagePreview(URL.createObjectURL(file));
+};
+
 
   // =================================================================
   // ------------------ OVERVIEW INFO SECTION ------------------------
@@ -519,6 +538,8 @@ const handleBesttimeSectionChange = (i, j, e) => {
 
     data.append("formData", JSON.stringify(formData));
     if (mainImage) data.append("mainImage", mainImage);
+    if (landingImage) data.append("landingImage", landingImage);
+
 
 //   const cleanOverview = overviewinfo.map((o) => ({
 //   title: o.title,
@@ -660,6 +681,25 @@ const handleBesttimeSectionChange = (i, j, e) => {
           <img src={mainImagePreview} className="w-40 rounded mt-2" />
         )}
       </div>
+
+      {/* Landing Image */}
+<div className="col-span-2">
+  <label>Landing Image</label>
+  <input
+    type="file"
+    className="border p-2 w-full"
+    onChange={handleLandingImageChange}
+  />
+
+  {landingImagePreview && (
+    <img
+      src={landingImagePreview}
+      className="w-40 rounded mt-2"
+      alt="Landing Preview"
+    />
+  )}
+</div>
+
 
       {/* =============================================================== */}
       {/* ================= OVERVIEW INFO UI ============================ */}

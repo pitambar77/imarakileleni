@@ -223,7 +223,7 @@ import { IoClose } from "react-icons/io5";
 import { FaStar, FaCalendarAlt, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 import API from "../../api/axios";
 import { slugify } from "../../utils/slugify.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SafariTour = () => {
   const [trips, setTrips] = useState([]);
@@ -381,14 +381,12 @@ const SafariTour = () => {
           {selectedTrip.description}
         </p>
 
-        <button
-          onClick={() =>
-            navigate(`/package/${slugify(selectedTrip.title)}`)
-          }
+        <Link to={`/package/${slugify(selectedTrip.title)}`}
+        
           className="bg-[#d87028] hover:bg-orange-700 transition text-white px-6 py-2 rounded-full w-full sm:w-auto"
         >
           VIEW TRIP
-        </button>
+        </Link>
       </div>
     </div>
   </div>

@@ -459,7 +459,7 @@ const WhentoGo = () => {
     return {
       month: m.month,
       icon: <WiCloudy />, // 🔁 can be dynamic later
-      rating: highlights.length >= 4 ? 4 : 3,
+      rating: highlights.length >= 4 ? 5 : 3,
       weatherIcon: <WiCloudy />,
       view: "Good time to visit",
       description1: paragraphs[0]?.content || "",

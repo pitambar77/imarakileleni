@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import API from "../../api/axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { slugify } from "../../utils/slugify.js";
 
 const TanzaniaTabsSection = () => {
@@ -159,7 +159,7 @@ const TanzaniaTabsSection = () => {
             {/* IMAGE */}
             <div className="relative">
               <img
-                src={trip.image}
+                src={trip.landingImage}
                 alt={trip.title}
                 className="w-full h-44 object-cover"
               />
@@ -188,7 +188,7 @@ const TanzaniaTabsSection = () => {
 
               {/* Button (FIXED BOTTOM) */}
               <div className="flex justify-end pt-4">
-                <button
+                <Link to={`/tanzania-destinations/${slugify(trip.title)}`}
                   onClick={() =>
                     navigate(`/tanzania-destinations/${slugify(trip.title)}`, {
                       state: { prefetchedData: trip },
@@ -197,7 +197,7 @@ const TanzaniaTabsSection = () => {
                   className="bg-[#d87028] hover:bg-orange-700 cursor-pointer text-white font-semibold text-sm px-6 py-2 rounded-full transition"
                 >
                   VIEW TRIP
-                </button>
+                </Link>
               </div>
             </div>
           </div>

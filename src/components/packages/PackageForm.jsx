@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import API from "../../api/axios.js";
 import { useEffect } from "react";
@@ -6,7 +5,7 @@ import { useEffect } from "react";
 const PackageForm = ({ editData }) => {
   /* ================= BASIC FIELDS ================= */
   const [formData, setFormData] = useState({
-    destination:"",
+    destination: "",
     title: "",
     subtitle: "",
     startLocation: "",
@@ -108,6 +107,7 @@ const PackageForm = ({ editData }) => {
             description: [],
             image: null,
             imagePreview: null,
+           
           },
         ],
       },
@@ -133,6 +133,17 @@ const PackageForm = ({ editData }) => {
     updated[i].imagePreview = URL.createObjectURL(file);
     setItinerary(updated);
   };
+
+//   const handleDayLandingImage = (i, j, e) => {
+//   const file = e.target.files[0];
+//   if (!file) return;
+
+//   const updated = [...itinerary];
+//   updated[i].section[j].landingImage = file;
+//   updated[i].section[j].landingImagePreview = URL.createObjectURL(file);
+//   setItinerary(updated);
+// };
+
 
   const addDay = (i) => {
     const updated = [...itinerary];
@@ -325,87 +336,85 @@ const PackageForm = ({ editData }) => {
   //   }
   // }, [editData]);
 
-
   useEffect(() => {
-  if (!editData) return;
+    if (!editData) return;
 
-  setFormData({
-    destination: editData.destination || "",
-    title: editData.title || "",
-    subtitle: editData.subtitle || "",
-    startLocation: editData.startLocation || "",
-    endLocation: editData.endLocation || "",
-    duration: editData.duration || "",
-    price: editData.price || "",
-    maxpeople: editData.maxpeople || "",
-    description: editData.description || "",
-    typeStyle: editData.typeStyle || "",
-    accomoType: editData.accomoType || "",
-    transport: editData.transport || "",
-    accomoDay: editData.accomoDay || "",
-    accomoNight: editData.accomoNight || "",
-    add: editData.add || "",
-  });
+    setFormData({
+      destination: editData.destination || "",
+      title: editData.title || "",
+      subtitle: editData.subtitle || "",
+      startLocation: editData.startLocation || "",
+      endLocation: editData.endLocation || "",
+      duration: editData.duration || "",
+      price: editData.price || "",
+      maxpeople: editData.maxpeople || "",
+      description: editData.description || "",
+      typeStyle: editData.typeStyle || "",
+      accomoType: editData.accomoType || "",
+      transport: editData.transport || "",
+      accomoDay: editData.accomoDay || "",
+      accomoNight: editData.accomoNight || "",
+      add: editData.add || "",
+    });
 
-  /* Main image */
-  if (editData.image) {
-    setMainPreview(editData.image);
-    setMainImage(null);
-  }
+    /* Main image */
+    if (editData.image) {
+      setMainPreview(editData.image);
+      setMainImage(null);
+    }
 
-  /* Itinerary */
-  if (editData.itinerary?.length) {
-    setItinerary(
-      editData.itinerary.map((it) => ({
-        ...it,
-        image: null,
-        imagePreview: it.image || null,
-        section: it.section.map((s) => ({
-          ...s,
+    /* Itinerary */
+    if (editData.itinerary?.length) {
+      setItinerary(
+        editData.itinerary.map((it) => ({
+          ...it,
           image: null,
-          imagePreview: s.image || null,
-        })),
-      }))
-    );
-  }
+          imagePreview: it.image || null,
+          section: it.section.map((s) => ({
+            ...s,
+            image: null,
+            imagePreview: s.image || null,
+          })),
+        }))
+      );
+    }
 
-  /* Experience */
-  if (editData.experience?.length) {
-    setExperience(
-      editData.experience.map((ex) => ({
-        ...ex,
-        section: ex.section.map((s) => ({
-          ...s,
+    /* Experience */
+    if (editData.experience?.length) {
+      setExperience(
+        editData.experience.map((ex) => ({
+          ...ex,
+          section: ex.section.map((s) => ({
+            ...s,
+            image: null,
+            imagePreview: s.image || null,
+          })),
+        }))
+      );
+    }
+
+    /* Include */
+    if (editData.include?.length) {
+      setInclude(
+        editData.include.map((i) => ({
+          ...i,
           image: null,
-          imagePreview: s.image || null,
-        })),
-      }))
-    );
-  }
+          imagePreview: i.image || null,
+        }))
+      );
+    }
 
-  /* Include */
-  if (editData.include?.length) {
-    setInclude(
-      editData.include.map((i) => ({
-        ...i,
-        image: null,
-        imagePreview: i.image || null,
-      }))
-    );
-  }
-
-  /* Exclude */
-  if (editData.exclude?.length) {
-    setExclude(
-      editData.exclude.map((i) => ({
-        ...i,
-        image: null,
-        imagePreview: i.image || null,
-      }))
-    );
-  }
-}, [editData]);
-
+    /* Exclude */
+    if (editData.exclude?.length) {
+      setExclude(
+        editData.exclude.map((i) => ({
+          ...i,
+          image: null,
+          imagePreview: i.image || null,
+        }))
+      );
+    }
+  }, [editData]);
 
   /* ================= SUBMIT ================= */
 
@@ -433,26 +442,27 @@ const PackageForm = ({ editData }) => {
     // );
 
     data.append(
-  "itinerary",
-  JSON.stringify(
-    itinerary.map((it) => ({
-      ...it,
-      image: it.imagePreview || it.image || null, // ✅ KEEP OLD IMAGE
-      section: it.section.map((sec) => ({
-        ...sec,
-        image: sec.imagePreview || sec.image || null, // ✅ KEEP OLD IMAGE
-      })),
-    }))
-  )
-);
+      "itinerary",
+      JSON.stringify(
+        itinerary.map((it) => ({
+          ...it,
+          image: it.imagePreview || it.image || null, // ✅ KEEP OLD IMAGE
+          section: it.section.map((sec) => ({
+            ...sec,
+            image: sec.imagePreview || sec.image || null, // ✅ KEEP OLD IMAGE
+          })),
+        }))
+      )
+    );
+
+
 
 
     itinerary.forEach((item) => {
-  if (item.image) {
-    data.append("itineraryImages", item.image);
-  }
-});
-
+      if (item.image) {
+        data.append("itineraryImages", item.image);
+      }
+    });
 
     itinerary.forEach((item) =>
       item.section.forEach((sec) => {
@@ -474,18 +484,17 @@ const PackageForm = ({ editData }) => {
     // );
 
     data.append(
-  "experience",
-  JSON.stringify(
-    experience.map((ex) => ({
-      ...ex,
-      section: ex.section.map((sec) => ({
-        ...sec,
-        image: sec.imagePreview || sec.image || null,
-      })),
-    }))
-  )
-);
-
+      "experience",
+      JSON.stringify(
+        experience.map((ex) => ({
+          ...ex,
+          section: ex.section.map((sec) => ({
+            ...sec,
+            image: sec.imagePreview || sec.image || null,
+          })),
+        }))
+      )
+    );
 
     experience.forEach((exp) =>
       exp.section.forEach((sec) => {
@@ -502,15 +511,14 @@ const PackageForm = ({ editData }) => {
     // );
 
     data.append(
-  "include",
-  JSON.stringify(
-    include.map((i) => ({
-      ...i,
-      image: i.imagePreview || i.image || null,
-    }))
-  )
-);
-
+      "include",
+      JSON.stringify(
+        include.map((i) => ({
+          ...i,
+          image: i.imagePreview || i.image || null,
+        }))
+      )
+    );
 
     include.forEach((item) => {
       if (item.image) {
@@ -525,15 +533,14 @@ const PackageForm = ({ editData }) => {
     // );
 
     data.append(
-  "exclude",
-  JSON.stringify(
-    exclude.map((i) => ({
-      ...i,
-      image: i.imagePreview || i.image || null,
-    }))
-  )
-);
-
+      "exclude",
+      JSON.stringify(
+        exclude.map((i) => ({
+          ...i,
+          image: i.imagePreview || i.image || null,
+        }))
+      )
+    );
 
     exclude.forEach((item) => {
       if (item.image) {
@@ -553,8 +560,11 @@ const PackageForm = ({ editData }) => {
         });
       }
 
-      alert(editData ? "✅ Package updated successfully" : "✅ Package created successfully");
-
+      alert(
+        editData
+          ? "✅ Package updated successfully"
+          : "✅ Package created successfully"
+      );
     } catch (err) {
       console.error("❌ Package create error:", err);
       alert("❌ Error creating package");
@@ -590,7 +600,7 @@ const PackageForm = ({ editData }) => {
           value={formData.subtitle}
           onChange={handleChange}
         />
- <input
+        <input
           className="border p-2"
           name="price"
           placeholder="Price"
@@ -621,7 +631,7 @@ const PackageForm = ({ editData }) => {
           onChange={handleChange}
         />
 
-         <input
+        <input
           className="border p-2"
           name="maxpeople"
           placeholder="Max People"
@@ -629,7 +639,7 @@ const PackageForm = ({ editData }) => {
           onChange={handleChange}
         />
 
- <input
+        <input
           className="border p-2"
           name="accomoDay"
           placeholder="Accommodation Days"
@@ -645,7 +655,7 @@ const PackageForm = ({ editData }) => {
           onChange={handleChange}
         />
 
-         <textarea
+        <textarea
           className="border p-2 col-span-2"
           name="description"
           placeholder="Description"
@@ -669,9 +679,6 @@ const PackageForm = ({ editData }) => {
           onChange={handleChange}
         />
 
-       
-
-       
         <input
           className="border p-2"
           name="typeStyle"
@@ -687,7 +694,6 @@ const PackageForm = ({ editData }) => {
           value={formData.accomoType}
           onChange={handleChange}
         />
-
       </section>
 
       <section className="col-span-2 mt-6">
@@ -707,9 +713,11 @@ const PackageForm = ({ editData }) => {
             alt="Main Preview"
           />
         )}
+
       </section>
 
-            {/* Include section  */}
+
+      {/* Include section  */}
 
       <section className="col-span-2 mt-8">
         <div className="flex justify-between items-center">
@@ -1056,8 +1064,6 @@ const PackageForm = ({ editData }) => {
           </div>
         ))}
       </section>
-
-
 
       {/* SUBMIT */}
       <button className="col-span-2 bg-blue-600 text-white py-2 rounded mt-4">

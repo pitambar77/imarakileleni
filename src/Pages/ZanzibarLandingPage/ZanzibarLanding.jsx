@@ -392,7 +392,7 @@ const ZanzibarLanding = () => {
     <div>
       {/* HERO */}
       <div
-        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[350px] md:h-[450px] bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
@@ -445,7 +445,7 @@ const ZanzibarLanding = () => {
         />
       )}
 
-      <ActiveTravelDestinations />
+      {/* <ActiveTravelDestinations /> */}
       <BookWithConfidence />
       <Featured />
     </div>

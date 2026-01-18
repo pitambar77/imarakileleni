@@ -127,7 +127,8 @@ import { IoIosArrowDropupCircle } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import FeaturedBanner from '../../assets/featured-banner.webp'
 
 const brands = [
   {
@@ -291,7 +292,7 @@ const Featured = () => {
           className="relative rounded-md overflow-hidden w-full h-[300px] md:h-[400px] flex items-center justify-center"
           style={{
             backgroundImage:
-              "url('https://www.andbeyond.com/wp-content/uploads/sites/5/Serengeti-Balloon-Safari-andBeyond-Experience.jpg')",
+              `url(${FeaturedBanner})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -301,12 +302,12 @@ const Featured = () => {
             <h3 className="text-xl md:text-3xl  font-bold mb-16">
               Our Promise to our Esteemed Clients<sup>®</sup>
             </h3>
-            <button
-              onClick={() => navigate("/contact-us")}
+            <Link to={"/contact-us"}
+              // onClick={() => navigate("/contact-us")}
               className="px-6 py-2 cursor-pointer border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition"
             >
               TELL ME MORE
-            </button>
+            </Link>
           </div>
         </div>
 

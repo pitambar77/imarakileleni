@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TanzaniaExpertCTA = () => {
   const navigate = useNavigate();
@@ -45,12 +45,12 @@ const TanzaniaExpertCTA = () => {
                 OR
               </span>
 
-              <button
-                onClick={() => navigate("/contact-us")}
+              <Link to={'/contact-us'}
+                // onClick={() => navigate("/contact-us")}
                 className="bg-[#d87028] hover:bg-[#e5b230] transition-colors cursor-pointer text-white font-semibold px-6 py-2 rounded-full shadow"
               >
                 Enquire Now
-              </button>
+              </Link>
             </div>
           </div>
 

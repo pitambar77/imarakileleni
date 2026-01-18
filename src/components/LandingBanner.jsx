@@ -3,7 +3,7 @@ import React from 'react'
 const LandingBanner = ({bannerImg,title}) => {
   return (
     <div
-        className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
+        className="relative w-full h-[350px] md:h-[450px] bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImg})`,
         }}

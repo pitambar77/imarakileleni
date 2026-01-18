@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import TripCard from "../../components/TripCard";
 import { IoClose } from "react-icons/io5";
 import API from "../../api/axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { slugify } from "../../utils/slugify.js";
 
 const SafariToursSection = () => {
@@ -119,22 +119,22 @@ const SafariToursSection = () => {
       )} */}
 
       {selectedTrip && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-3 sm:px-0">
-          <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh]  shadow-lg relative flex flex-col">
+        <div className="fixed inset-0 bg-black/50  flex justify-center items-center z-50 px-3 sm:px-0 ">
+          <div className="bg-white w-full sm:w-[90%] md:w-[700px] max-h-[90vh] rounded-md  shadow-lg relative flex flex-col">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-3 right-3 z-10 text-gray-600 hover:text-black"
+              className="absolute top-3 right-3 z-10 cursor-pointer text-gray-600 hover:text-black"
             >
               <IoClose size={28} />
             </button>
 
             {/* Image (responsive height) */}
-            <div className="h-48 sm:h-56 md:h-64 bg-black flex items-center justify-center">
+            <div className="h-48 sm:h-56 md:h-64 rounded-t-md bg-black flex items-center justify-center">
               <img
                 src={selectedTrip.image}
                 alt={selectedTrip.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-t-md object-cover"
               />
             </div>
 
@@ -148,7 +148,7 @@ const SafariToursSection = () => {
                 {selectedTrip.description}
               </p>
 
-              <button
+              <Link to={`/package/${slugify(selectedTrip.title)}`}
                 onClick={() => {
                   closeModal();
                   navigate(
@@ -158,7 +158,7 @@ const SafariToursSection = () => {
                 className="bg-[#d87028] text-white px-6 py-2 rounded-full w-full cursor-pointer sm:w-auto"
               >
                 VIEW TRIP
-              </button>
+              </Link>
             </div>
           </div>
         </div>

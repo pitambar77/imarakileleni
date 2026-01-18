@@ -98,7 +98,7 @@ const KilimanjaroRoute = ({ overview }) => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full max-w-4xl h-auto md:h-[600px] object-cover rounded-md shadow-sm"
+                className="w-full max-w-4xl h-auto md:h-[600px] object-cover rounded-md "
               />
             </div>
           )}

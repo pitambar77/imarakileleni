@@ -7,18 +7,18 @@ const AboutAfricaSection = () => {
       {/* TOP HEADING */}
       <div className="text-center max-w-4xl mx-auto mb-10">
         <h2 className="text-[24px] md:text-3xl font-extrabold text-[#111] leading-snug">
-          Being in Africa makes me feel more alive – the people, the
-          landscapes, the wildlife: it’s all very real and immediate.
+          A team influenced by Tanzania’s landscapes, guiding travellers with grounded experience, local insight, and steady care across Tanzania Safaris and Kilimanjaro Climbs.
+
         </h2>
 
         <p className="text-[16px] text-[#333] mt-4 leading-relaxed">
-          Because for us, inclusivity isn’t a season or a slogan. It’s the engine that keeps every journey 
-          moving forward: today, tomorrow and for generations to come.
+          Our team is a group of local guides, mountain leaders, and travel specialists who’ve spent years navigating Tanzania’s parks, peaks, and cultural routes. They know the land through lived experience, not theory. 
+
         </p>
 
         <p className="text-[16px] text-[#333] mt-4 leading-relaxed">
-          Out, proud and wanna celebrate with us? Check out our Pride trips below. Wanna learn more 
-          about our work to support the LGBTQIA+ community worldwide? Just keep readin’.
+          Their warmth, clarity, and steady guidance help travellers feel supported from the first briefing to the final farewell, making every journey feel personal and reassuring.
+
         </p>
       </div>
 

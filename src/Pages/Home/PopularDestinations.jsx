@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import arusha from "../../assets/Arusha.webp";
 import Serengeti from "../../assets/Serengeti.webp";
 import Tarangire from "../../assets/tarangire.webp";
 import Ngorongoro from "../../assets/Ngorongoro.webp";
 import Manyara from "../../assets/Manayara.webp";
-import Kilimanjaro from "../../assets/kili.webp";
+import Kilimanjaro from "../../assets/kili-new.webp";
 import Udzungwa from "../../assets/udzunga.webp";
 import mikumi from "../../assets/mikumi.webp";
 import Ruaha from "../../assets/ruaha.webp";
@@ -89,9 +89,10 @@ const PopularDestinations = () => {
         {/* Destination Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {destinations.map((dest) => (
-            <div
+            <Link 
               key={dest.id}
-              onClick={() => navigate(dest.link)}
+              to={dest.link}
+              // onClick={() => navigate(dest.link)}
               className="relative w-full h-56 md:h-64 rounded-md overflow-hidden group cursor-pointer"
             >
               <img
@@ -105,18 +106,17 @@ const PopularDestinations = () => {
                   {dest.name}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* View All Trips Button */}
         <div className="flex justify-center mt-12">
-          <button
-            onClick={() => navigate("/tanzania-destinations")}
+          <Link to={"/tanzania-destinations"}
             className="bg-[#d87028] hover:bg-orange-700 text-white cursor-pointer font-semibold text-base px-8 py-3 rounded-full transition shadow"
           >
             VIEW ALL
-          </button>
+          </Link>
         </div>
       </div>
     </section>

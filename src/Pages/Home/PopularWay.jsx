@@ -68,7 +68,7 @@
 
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import besttime from "../../assets/best-time.webp"
 import cost from "../../assets/cost.webp"
 import food from "../../assets/food.webp"
@@ -131,9 +131,10 @@ const PopularWay = () => {
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {destinations.map((dest) => (
-            <div
+            <Link
               key={dest.id}
-              onClick={() => navigate(dest.link)}
+              to={dest.link}
+              // onClick={() => navigate(dest.link)}
               className="relative w-full h-56 rounded-md overflow-hidden group cursor-pointer"
             >
               {/* Image */}
@@ -152,18 +153,18 @@ const PopularWay = () => {
                   {dest.name}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* View All */}
         <div className="flex justify-center mt-12">
-          <button
-            onClick={() => navigate("/tanzania-travel-guide")}
+          <Link to={"/tanzania-travel-guide"}
+            
             className="bg-[#d87028] cursor-pointer hover:bg-orange-700 text-white font-semibold text-base px-8 py-3 rounded-full transition shadow"
           >
             VIEW ALL
-          </button>
+          </Link>
         </div>
       </div>
     </section>
