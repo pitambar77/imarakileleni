@@ -303,7 +303,7 @@ const ChoosingSafariSection = () => {
             key={trip._id}
             trip={{
               id: trip._id,
-              image: trip.image,
+              image: trip.landingImage,
               title: trip.title,
               rating: trip.rating || 5,
               days: trip.accomoDay,

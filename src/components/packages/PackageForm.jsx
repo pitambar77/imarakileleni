@@ -25,6 +25,10 @@ const PackageForm = ({ editData }) => {
   const [mainImage, setMainImage] = useState(null);
   const [mainPreview, setMainPreview] = useState(null);
 
+  const [landingImage, setLandingImage] = useState(null);
+const [landingPreview, setLandingPreview] = useState(null);
+
+
   /* ================= ITINERARY ================= */
   const [itinerary, setItinerary] = useState([
     {
@@ -86,6 +90,15 @@ const PackageForm = ({ editData }) => {
     setMainImage(file);
     setMainPreview(URL.createObjectURL(file));
   };
+
+  const handleLandingImage = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  setLandingImage(file);
+  setLandingPreview(URL.createObjectURL(file));
+};
+
 
   /* ================= Itinary HANDLERS ================= */
 
@@ -363,6 +376,13 @@ const PackageForm = ({ editData }) => {
       setMainImage(null);
     }
 
+    /* Landing image */
+if (editData.landingImage) {
+  setLandingPreview(editData.landingImage);
+  setLandingImage(null);
+}
+
+
     /* Itinerary */
     if (editData.itinerary?.length) {
       setItinerary(
@@ -429,6 +449,11 @@ const PackageForm = ({ editData }) => {
     if (mainImage) {
       data.append("mainImage", mainImage);
     }
+
+    if (landingImage) {
+  data.append("landingImage", landingImage);
+}
+
 
     /* ================= ITINERARY ================= */
     // data.append(
@@ -715,6 +740,25 @@ const PackageForm = ({ editData }) => {
         )}
 
       </section>
+
+<section className="col-span-2 mt-6">
+  <label className="font-semibold block mb-2">Landing Image</label>
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleLandingImage}
+    className="border p-2 w-full"
+  />
+
+  {landingPreview && (
+    <img
+      src={landingPreview}
+      className="w-40 mt-3 rounded shadow"
+      alt="Landing Preview"
+    />
+  )}
+</section>
 
 
       {/* Include section  */}

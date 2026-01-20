@@ -287,7 +287,7 @@ const SafariTour = () => {
               key={trip._id}
               trip={{
                 id: trip._id,
-                image: trip.image,
+                image: trip.landingImage,
                 title: trip.title,
                 days: trip.accomoDay,
                 places: trip.itinerary?.length

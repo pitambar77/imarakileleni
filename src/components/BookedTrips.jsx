@@ -729,7 +729,7 @@ const BookedTrips = () => {
                 {/* IMAGE */}
                 <div className="relative">
                   <img
-                    src={trip.image}
+                    src={trip.landingImage}
                     alt={trip.title}
                     className="w-full h-40 object-cover "
                   />
