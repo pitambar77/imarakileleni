@@ -494,15 +494,15 @@ const Footer = () => {
             </div> */}
 
             <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-              <a href="#">Accessibility</a>
-              <a href="#">Cookie Policy</a>
-              <a href="#">Sitemap</a>
+              <a href="#" className=" hover:text-[#d87028]">Accessibility</a>
+              <a href="#" className=" hover:text-[#d87028]">Cookie Policy</a>
+              <a href="#" className=" hover:text-[#d87028]">Sitemap</a>
             </div>
 
-            <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-              <a href="#">Terms and Conditions</a>
-              <a href="#">Booking Conditions</a>
-              <a href="#">Privacy Policy</a>
+            <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold ">
+              <a href="#" className=" hover:text-[#d87028]">Terms and Conditions</a>
+              <a href="#" className=" hover:text-[#d87028]">Booking Conditions</a>
+              <a href="privacy-policy" className=" hover:text-[#d87028]">Privacy Policy</a>
             </div>
           </div>
         </div>

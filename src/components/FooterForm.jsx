@@ -59,6 +59,7 @@
 
 import React, { useState } from "react";
 import API from "../api/axios.js"; // your axios instance
+import { Link } from "react-router-dom";
 
 const FooterForm = () => {
   const [formData, setFormData] = useState({
@@ -149,9 +150,9 @@ const FooterForm = () => {
           />
           <p>
            *By checking this box, you accept the Trafalgar{" "}
-            <a href="#" className="text-[#d87028] underline">
+            <Link to='privacy-policy' className="text-[#d87028] underline">
               privacy policy
-              </a>
+              </Link>
           </p>
         </div>
 

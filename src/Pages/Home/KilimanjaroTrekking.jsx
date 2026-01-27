@@ -234,13 +234,13 @@ const kilimanjaroTrips = useMemo(() => {
 
         {/* Empty State */}
         {kilimanjaroTrips.length === 0 && (
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-600 ">
             No Kilimanjaro trekking packages available
           </p>
         )}
 
         {/* Trips Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 sm:gap-4 md:gap-6">
+        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 sm:gap-4 md:gap-6">
           {kilimanjaroTrips.map((trip) => (
             <TripCard
               key={trip._id}
