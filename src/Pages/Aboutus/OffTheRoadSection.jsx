@@ -1,5 +1,7 @@
 import React from "react";
-import { FaClock, FaPhoneAlt } from "react-icons/fa";
+import { FaClock, FaAward } from "react-icons/fa";
+
+import imara from '../../assets/imarasafari-1.png'
 
 const OffTheRoadSection = () => {
   return (
@@ -7,7 +9,7 @@ const OffTheRoadSection = () => {
       {/* === Title Label === */}
         <div className="flex justify-center mb-8 md:mb-12  ">
         <div className=" w-56">
-         <img src="https://www.contiki.com/media/j12hroo1/off-the-road.svg?width=282&height=75&mode=max" alt="" />
+         <img src={imara} alt="" />
 
         </div>
       </div>
@@ -16,7 +18,7 @@ const OffTheRoadSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto mt-20">
         {/* === Left Column - 24/7 Support Teams === */}
         <div className="flex flex-col items-center text-center">
-          <FaClock className="text-[#5466c0] text-6xl mb-6" />
+          <FaClock className="text-[#d76e28] text-5xl mb-6" />
           <h3 className="text-[20px] md:text-3xl font-extrabold text-[#111] mb-4">
             24/7 Assistance
 
@@ -30,8 +32,8 @@ const OffTheRoadSection = () => {
         {/* === Right Column - Welfare Officers === */}
         <div className="flex flex-col items-center text-center">
           <div className="relative">
-            <FaPhoneAlt className="text-[#42a7ff] text-5xl mb-6" />
-            <span className="absolute top-[-8px] right-[-14px] text-[#e63946] text-xl">❤</span>
+            <FaAward className="text-[#d76e28] text-5xl mb-6" />
+            {/* <span className="absolute top-[-8px] right-[-14px] text-[#e63946] text-xl">❤</span> */}
           </div>
           <h3 className="text-[20px] md:text-3xl font-extrabold text-[#111] mb-4">
             Trusted Reliability

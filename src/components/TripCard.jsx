@@ -45,7 +45,6 @@ const TripCard = ({ trip, onQuickView }) => {
         </button>
       </div>
 
-      {/* Content */}
       <div className="p-5 flex flex-col flex-1">
         {/* Rating */}
         {/* <div className="flex items-center text-yellow-500 mb-1">

@@ -156,7 +156,7 @@ const TanzaniaTabsSection = () => {
             key={trip._id}
             className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-[400px] flex flex-col"
           >
-            {/* IMAGE */}
+          
             <div className="relative">
               <img
                 src={trip.landingImage}

@@ -5,21 +5,21 @@ const ReviewsSection = () => {
   const reviews = [
     {
       id: 1,
-      name: "Paul",
-      trip: "Cape, Safari and Falls",
-      text: "An unforgettable journey, thanks to the exceptional planning and dedication of our safari director. From the moment we arrived, it was clear that this was going to be a trip of a lifetime.",
+      name: "Daniel M",
+      trip: "United Kingdom",
+      text: "Everything felt well planned from start to finish. Communication was clear, guides were patient, and wildlife sightings exceeded expectations. It felt calm, professional, and genuinely cared for throughout the journey.",
     },
     {
       id: 2,
-      name: "Victoria",
-      trip: "Kenya Safari",
-      text: "This trip was incredible. We saw the big 5 plus loads more animals. Our Trip Manager was excellent, always professional, taking care of our group – and so knowledgeable!",
+      name: "Sarah L",
+      trip: "Australia",
+      text: "From arrival to departure, the Tanzania safari ran effortlessly. Communication stayed clear, sightings were well paced, and guides handled logistics quietly, allowing us to focus on wildlife, landscapes, and relaxed moments together daily.",
     },
     {
       id: 3,
-      name: "Katie",
-      trip: "Moroccan Adventure",
-      text: "A great group of people and our guide was so kind and helpful. The desert was an amazing experience and I really feel like I got a local Moroccan experience.",
+      name: "Markus H",
+      trip: "Germany",
+      text: "Our Tanzania safari felt personal, not rushed. Requests were remembered, guides shared knowledge naturally, and each day unfolded smoothly. It never felt scripted, just thoughtfully managed with care and experience.",
     },
   ];
 
@@ -42,7 +42,7 @@ const ReviewsSection = () => {
 
       {/* Section Title */}
       <h2 className="text-[24px] md:text-3xl capitalize font-extrabold text-[#111] text-center mb-12">
-        Africa & Middle East tour reviews
+        Real Stories From Our Travellers
       </h2>
 
       {/* Reviews Grid */}

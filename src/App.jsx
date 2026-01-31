@@ -68,6 +68,8 @@ import AboutEdit from "./Pages/Aboutus/AboutEdit";
 import ContactUs from "./Pages/Contactus/ContactUs";
 import ContactusPage from "./Pages/Contactus/ContactusPage";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import PlanSafari from "./Pages/LandingPage/PlanSafari";
+import KilimanjaroPage from "./Pages/LandingPage/KilimanjaroPage";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -82,6 +84,8 @@ const router = createBrowserRouter(
         <Route path="about-us" element={<AboutUs />} />
         <Route path="contact-us" element={<ContactusPage/>} />
         <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="plansafari" element={<PlanSafari/>}/>
+        {/* <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/> */}
 
         <Route path="tanzania-safaris" element={<SafariDestiLanding />} />
         <Route path="safari-fleet" element={<SafariFleet />} />
@@ -266,6 +270,7 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
       </Route>
+      <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/>
       
     </>
   )

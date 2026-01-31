@@ -120,11 +120,11 @@ const SafariIntroSection = () => {
           <p className="text-[17px] text-[#333] leading-relaxed mb-8 ">
            Our team blends local insight, field experience, and genuine warmth to create safe and memorable journeys across Tanzania’s parks, mountains, and cultural landscapes.
           </p>
-          <Link to={"/team"}
+          {/* <Link to={"/team"}
           // onClick={() => navigate("/team")}
            className="bg-[#d87028] hover:bg-[#c35f22] text-white cursor-pointer font-semibold px-8 py-3 rounded-md transition">
             See Team Directory
-          </Link>
+          </Link> */}
         </div>
       </div>
 

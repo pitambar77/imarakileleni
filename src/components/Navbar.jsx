@@ -69,7 +69,7 @@ const Navbar = () => {
       title: "ABOUT IMARA",
       links: [
         { label: "About us", path: "/about-us" },
-        { label: "Team", path: "/team" },
+        // { label: "Team", path: "/team" },
         { label: "Safari Fleet", path: "/safari-fleet" },
         { label: "Sustanbility", path: "/sustanbility" },
       ],

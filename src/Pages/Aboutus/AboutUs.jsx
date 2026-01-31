@@ -21,6 +21,11 @@ import WhyVisitSection from "../../components/WhyVisitSection";
 import FAQSection from "../../components/FAQSection";
 import OverviewSections from "../../components/OverviewSections";
 
+import Communication from "../../assets/Communication.webp"
+import Knowledge from "../../assets/Knowledge.webp"
+import Service from "../../assets/Service.webp"
+
+
 
 
 const AboutUs = () => {
@@ -30,23 +35,23 @@ const AboutUs = () => {
     {
       id: 1,
       image:
-        "https://tanzania-specialist.com/wp-content/uploads/2025/06/Tanzania-vacation-scaled.jpg",
-      title: "Go further than you’d go alone",
-      text: "On these Africa & the Middle East trips for 18–35s, you’ll travel with friendly people, plus an expert Trip Manager and local guides. Perfect for giving you confidence and bringing the fun vibes!",
+        Communication,
+      title: "Clear Open Communication",
+      text: "Travellers share preferences, needs, and expectations, and we listen carefully, communicate openly, and coordinate with lodges and guides so every detail, dietary request, and wildlife wish list is understood, planned, and delivered without confusion.",
     },
     {
       id: 2,
       image:
-        "https://www.nkuringosafaris.com/wp-content/uploads/2024/05/African_safari_woman_sunset__-jpg.webp",
-      title: "Seriously special stays",
-      text: "Camping under the stars in Kruger. Luxury cruising on the Nile. Waterfront stays in Zambia. Our Africa & the Middle East trips are studded with stays that’ll make you wanna stay forever.",
+       Knowledge,
+      title: "Strong Local Knowledge",
+      text: "Our team understands Tanzania’s landscapes, wildlife, and people, sharing that insight from first inquiry onward, helping travellers plan confidently while guides adapt routes and sightings to create meaningful safari and climbing experiences.",
     },
     {
       id: 3,
       image:
-        "https://www.serengetiheroes.com/wp-content/uploads/2024/03/women-safari-1290x737.webp",
-      title: "Experiences that count",
-      text: "Support rescued elephants, meet Maasai people, and even visit a Women’s Collective in Morocco’s Dades Valley. These experiences aren’t just good for you – they’re good for people, planet & wildlife too!",
+       Service,
+      title: "Honest Experienced Service",
+      text: "Integrity, fairness, and transparency guide every interaction, with clear explanations, realistic planning, and experienced teams delivering what is promised while handling challenges smoothly to maintain consistent service throughout each journey.",
     },
   ];
 
@@ -176,11 +181,10 @@ const [aboutData, setAboutData] = useState(null);
             About Us
           </h2>
           <h3 className=" font-extrabold">
-            Local experts crafting Tanzania adventures with clarity, care, and honest guidance.
+            Customer focused journeys across Tanzania Safaris and Kilimanjaro Climbs with purpose
           </h3>
           <p>
-            We design personalised Tanzania Safaris and Kilimanjaro Climbs that balance excitement with thoughtful planning. Our team listens, adjusts, and builds trips around your comfort, interests, and expectations, making travel feel simple, flexible, and genuinely rewarding.
-          </p>
+         Imara Kileleni Safaris creates and operates customer-oriented tours, safaris, and climbs, designing detailed itineraries with selected accommodation and activities, delivering well planned Tanzania Safaris and professionally guided Kilimanjaro Climbs built around clarity, comfort, and experience. </p>
         </div>
       </div>
 
@@ -248,8 +252,8 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                  Lock in your spot with a{" "}
-                  <span className="font-bold">$200 deposit</span>
+                  	Book early to secure preferred tour dates
+                  
                 </p>
               </div>
             </div>
@@ -261,7 +265,7 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                  <u className="font-bold">Pay monthly</u> or bi-weekly
+                 Share accurate nationality birth dates passport details
                 </p>
               </div>
             </div>
@@ -273,8 +277,7 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                  Amend your booking up to{" "}
-                  <span className="font-bold">60 days</span> pre-trip
+                  Review price inclusions clearly before confirming booking
                 </p>
               </div>
             </div>
@@ -286,7 +289,7 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                  Plans changed? Your payments are protected
+                  Confirmed itineraries remain fixed and non-transferable
                 </p>
               </div>
             </div>
