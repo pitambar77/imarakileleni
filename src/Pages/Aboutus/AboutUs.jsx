@@ -9,8 +9,8 @@ import {
   FaWallet,
 } from "react-icons/fa";
 import AboutInfoSection from "./AboutInfoSection";
-import OnTheRoadSection from "./OnTheRoadSection";
-import OffTheRoadSection from "./OffTheRoadSection";
+// import OnTheRoadSection from "./OnTheRoadSection";
+// import OffTheRoadSection from "./OffTheRoadSection";
 import SafariFeatureSection from "./SafariFeatureSection";
 import ContikiCrewSection from "./ContikiCrewSection";
 
@@ -307,8 +307,8 @@ const [aboutData, setAboutData] = useState(null);
         </div>
       </div>
 
-      <OnTheRoadSection adventure={adventure}/>
-      <OffTheRoadSection/>
+      {/* <OnTheRoadSection adventure={adventure}/>
+      <OffTheRoadSection/> */}
       <ContikiCrewSection/>
       <SafariFeatureSection/>
       {/* <WhyVisitTanzania/> */}
