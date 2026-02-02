@@ -271,6 +271,7 @@ const router = createBrowserRouter(
         />
       </Route>
       <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/>
+      <Route path="tanzania-special-offers"/>
       
     </>
   )
