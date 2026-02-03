@@ -2,12 +2,12 @@ import Reviews from "./Reviews";
 
 import TravellersBenefit from "./TravellersBenefit";
 import Footer from "../../components/LandingPage/Footer";
-// import LandingForm from "./LandingForm";
+import LandingForm from "./LandingForm";
 
 const KilimanjaroPage = () => {
   return (
     <>
-      {/* <LandingForm /> */}
+      <LandingForm />
       <Reviews />
       <TravellersBenefit />
       <Footer />
