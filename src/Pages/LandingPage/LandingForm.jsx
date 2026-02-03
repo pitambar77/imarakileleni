@@ -30,58 +30,6 @@ const LandingForm = () => {
     setFormData((prev) => ({ ...prev, [key]: value }));
   };
 
-//   const validateForm = () => {
-//   if (!formData.route) {
-//     routeRef.current?.scrollIntoView({ behavior: "smooth" });
-//     return "Please select a Kilimanjaro route.";
-//   }
-
-//   if (!formData.people) {
-//     peopleRef.current?.scrollIntoView({ behavior: "smooth" });
-//     return "Please select how many people are climbing.";
-//   }
-
-//   if (!formData.travelDate) {
-//     dateRef.current?.scrollIntoView({ behavior: "smooth" });
-//     return "Please select your climbing date.";
-//   }
-
-//   if (!contactData.countryCode) {
-//   contactRef.current?.scrollIntoView({ behavior: "smooth" });
-//   return "Please select your country code.";
-// }
-
-
-//   return null;
-// };
-
- 
-//   const handleFinalSubmit = async (contactData) => {
-//   try {
-//     const finalPayload = {
-//       ...formData,
-//       contact: contactData,
-//     };
-
-//     // const res = await fetch("https://imarabackend.imarakilelenisafaris.com/api/kiliform", {
-//     const res = await fetch("http://localhost:8000/api/kiliform", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(finalPayload),
-//     });
-
-//     const data = await res.json();
-
-//     if (!res.ok) throw new Error(data.message);
-
-//     toast.success("Your request has been sent successfully!");
-//     setTimeout(() => navigate("/thank-you"), 2500);
-//   } catch (err) {
-//     toast.error(err.message || "Something went wrong");
-//   }
-// };
 
 const validateForm = (contactData) => {
   if (!formData.route) {
@@ -117,38 +65,6 @@ const validateForm = (contactData) => {
   return null;
 };
 
-// const handleFinalSubmit = async (contactData) => {
-//   const validationError = validateForm();
-
-//   if (validationError) {
-//     setSubmitError(validationError);
-//     return;
-//   }
-
-//   setSubmitError("");
-
-//   try {
-//     const finalPayload = {
-//       ...formData,
-//       contact: contactData,
-//     };
-
-//     const res = await fetch("http://localhost:8000/api/kiliform", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(finalPayload),
-//     });
-
-//     const data = await res.json();
-
-//     if (!res.ok) throw new Error(data.message);
-
-//     toast.success("Your request has been sent successfully!");
-//     setTimeout(() => navigate("/thank-you"), 2500);
-//   } catch (err) {
-//     toast.error(err.message || "Something went wrong");
-//   }
-// };
 
 const handleFinalSubmit = async (contactData) => {
   const validationError = validateForm(contactData); // ✅ FIX

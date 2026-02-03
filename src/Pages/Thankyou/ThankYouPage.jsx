@@ -17,8 +17,8 @@ const ThankYouPage = () => {
         </p>
       </div>
       <WhatHappensNext/>
-      <SafariExpert/>
-      <GuestReviewSection/>
+      {/* <SafariExpert/>
+      <GuestReviewSection/> */}
       <BookWithConfidence/>
       <Featured/>
     </>
