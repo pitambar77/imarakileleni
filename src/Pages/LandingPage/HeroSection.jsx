@@ -1,10 +1,7 @@
-import bannerImage from '../../assets/images/banner.jpeg'
+import bannerImage from '../../assets/images/kili-banner.webp'
 import logo from '../../assets/images/imaralogo.png'
 
-
-
-
-const HeroSection = () => {
+const HeroSection = ({ scrollToForm }) => {
   return (
     <section className="relative h-screen max-h-screen w-full overflow-hidden">
       {/* Background Image */}
@@ -40,7 +37,7 @@ const HeroSection = () => {
           </h3>
 
           {/* <button className="inline-flex items-center justify-center rounded-xl bg-[#d87028] px-8 py-3 hover:bg-[#ef6d0f] transition cursor-pointer lg:text-xl"> */}
-          <button className="inline-flex items-center justify-center bg-[#d87028] px-6 py-3 rounded hover:bg-[#ef6d0f] transition cursor-pointer lg:text-xl">
+          <button onClick={scrollToForm} className="inline-flex items-center justify-center bg-[#d87028] px-6 py-3 rounded hover:bg-[#ef6d0f] transition cursor-pointer lg:text-xl">
             ▼
           </button>
         </div>
@@ -50,3 +47,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

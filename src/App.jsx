@@ -270,8 +270,8 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
       </Route>
-      <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/>
-      <Route path="tanzania-special-offers"/>
+      <Route path="kilimanjaro-tailormade-tour" element={<KilimanjaroPage/>}/>
+      
       
     </>
   )

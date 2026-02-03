@@ -14,20 +14,29 @@ const ClimbingDate = forwardRef(
 
     const months = [
       "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
     ];
 
+    /* ================= YEAR NAV ================= */
     const handleYearChange = (increment) => {
       const newYear = currentYear + increment;
-      if (newYear >= currentYearToday) setCurrentYear(newYear);
+      if (newYear >= currentYearToday) {
+        setCurrentYear(newYear);
+      }
     };
 
+    /* ================= MONTH SELECT ================= */
     const handleMonthClick = (monthIndex) => {
-      if (currentYear === currentYearToday && monthIndex < currentMonth) return;
+      if (
+        currentYear === currentYearToday &&
+        monthIndex < currentMonth
+      ) return;
+
       setSelectedMonth(monthIndex);
       setView("month");
     };
 
+    /* ================= DATE SELECT ================= */
     const handleDateClick = (day) => {
       if (
         currentYear === currentYearToday &&
@@ -40,8 +49,8 @@ const ClimbingDate = forwardRef(
       ).padStart(2, "0")}-${currentYear}`;
 
       setSelectedDate(new Date(currentYear, selectedMonth, day));
-      onChange(formattedDate);
-      scrollToContactInformation();
+      onChange?.(formattedDate);
+      scrollToContactInformation?.();
     };
 
     const getDaysInMonth = (year, month) =>
@@ -50,6 +59,7 @@ const ClimbingDate = forwardRef(
     const getFirstDayOfMonth = (year, month) =>
       new Date(year, month, 1).getDay();
 
+    /* ================= CALENDAR ================= */
     const renderCalendar = () => {
       const daysInMonth = getDaysInMonth(currentYear, selectedMonth);
       const firstDay = getFirstDayOfMonth(currentYear, selectedMonth);
@@ -88,11 +98,11 @@ const ClimbingDate = forwardRef(
 
         days.push(
           <div
-            key={`current-${day}`}
+            key={`day-${day}`}
             onClick={() => !isPast && handleDateClick(day)}
             className={`py-2 text-center rounded cursor-pointer
               ${isPast ? "text-gray-300 cursor-not-allowed" : ""}
-              ${isSelected || isToday ? "bg-orange-500 text-white font-semibold" : ""}
+              ${isSelected || isToday ? "bg-[#d87028] text-white font-semibold" : ""}
             `}
           >
             {day}
@@ -115,8 +125,12 @@ const ClimbingDate = forwardRef(
     const isMonthDisabled = (monthIndex) =>
       currentYear === currentYearToday && monthIndex < currentMonth;
 
+    /* ================= ARROW NAV ================= */
     const handleArrowClick = (direction) => {
-      if (view === "year") return handleYearChange(direction);
+      if (view === "year") {
+        handleYearChange(direction);
+        return;
+      }
 
       let newMonth = selectedMonth + direction;
       let newYear = currentYear;
@@ -125,6 +139,7 @@ const ClimbingDate = forwardRef(
         newMonth = 0;
         newYear++;
       }
+
       if (newMonth < 0) {
         newMonth = 11;
         newYear--;
@@ -133,117 +148,107 @@ const ClimbingDate = forwardRef(
       if (
         newYear < currentYearToday ||
         (newYear === currentYearToday && newMonth < currentMonth)
-      )
-        return;
+      ) return;
 
       setCurrentYear(newYear);
       setSelectedMonth(newMonth);
     };
 
     return (
-    //   <section ref={ref} className="py-12 px-4">
-    //     <div className="max-w-5xl mx-auto">
-    //       <h3 className="text-2xl font-semibold mb-3">
-    //         4. When would you like to travel?
-    //       </h3>
-    //       <p className="text-gray-600 mb-8">
-    //         Your travel dates help us understand wildlife movement, park
-    //         conditions, crowd levels, and lodge availability.
-    //       </p>
-
-    <section className="py-8 md:py-10 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto">
-      <div className="">
+      <section
+        ref={ref}
+        className="py-8 md:py-10 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 mx-auto"
+      >
         {/* Heading */}
         <div className="mb-10 sm:mb-14 text-center sm:text-left">
           <h2 className="text-2xl md:text-[32px] lg:text-[36px] font-bold text-[#1a1a1a] mb-4 capitalize">
             3. When do you want to climb?
           </h2>
-
           <p className="text-[16px] md:text-[18px] text-[#555] mb-6 md:mb-10">
-           Tell us when you plan to climb Mount Kilimanjaro. Exact dates are optional; rough timeframes help us guide planning.
+            Tell us when you plan to climb Mount Kilimanjaro. Exact dates are optional.
           </p>
         </div>
 
-          <div className=" ">
-            <div className="w-[320px]">
-              {/* Header */}
-              <div className="flex items-center justify-center mb-6 gap-6">
-                <button
-                  onClick={() => handleArrowClick(-1)}
-                  className="text-xl"
-                >
-                  «
-                </button>
+        <div className="w-[320px] mx-auto sm:mx-0">
+          {/* Header */}
+          <div className="flex items-center justify-center mb-6 gap-6">
+            <button
+              onClick={() => handleArrowClick(-1)}
+              className="text-xl"
+              style={{
+                visibility:
+                  view === "year" && currentYear === currentYearToday
+                    ? "hidden"
+                    : "visible",
+              }}
+            >
+              «
+            </button>
 
-                <h4 className="font-semibold min-w-[150px] text-center">
-                  {view === "year"
-                    ? currentYear
-                    : `${months[selectedMonth]} ${currentYear}`}
-                </h4>
+            <h4 className="font-semibold min-w-[150px] text-center">
+              {view === "year"
+                ? currentYear
+                : `${months[selectedMonth]} ${currentYear}`}
+            </h4>
 
+            <button onClick={() => handleArrowClick(1)} className="text-xl">
+              »
+            </button>
+          </div>
+
+          {/* Views */}
+          {view === "year" ? (
+            <div className="grid grid-cols-4 gap-3">
+              {months.map((month, index) => (
                 <button
-                  onClick={() => handleArrowClick(1)}
-                  className="text-xl"
+                  key={month}
+                  onClick={() => handleMonthClick(index)}
+                  disabled={isMonthDisabled(index)}
+                  className={`py-3 rounded border border-gray-200 text-sm font-medium cursor-pointer
+                    ${
+                      index === currentMonth &&
+                      currentYear === currentYearToday
+                        ? "bg-[#d87028] text-white"
+                        : "bg-white "
+                    }
+                    ${
+                      isMonthDisabled(index)
+                        ? "text-gray-300 cursor-not-allowed"
+                        : "hover:border-[#d87028]"
+                    }
+                  `}
                 >
-                  »
+                  {month}
                 </button>
+              ))}
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-7 gap-2 mb-2">
+                {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d) => (
+                  <div
+                    key={d}
+                    className="text-center text-sm font-semibold text-gray-500"
+                  >
+                    {d}
+                  </div>
+                ))}
               </div>
 
-              {/* Year View */}
-              {view === "year" ? (
-                <div className="grid grid-cols-4 gap-3">
-                  {months.map((month, index) => (
-                    <button
-                      key={month}
-                      onClick={() => handleMonthClick(index)}
-                      disabled={isMonthDisabled(index)}
-                      className={`py-3 rounded border border-gray-200 text-sm font-medium
-                        ${
-                          index === currentMonth &&
-                          currentYear === currentYearToday
-                            ? "bg-[#d87028] text-white"
-                            : "bg-white"
-                        }
-                        ${
-                          isMonthDisabled(index)
-                            ? "text-gray-300 cursor-not-allowed"
-                            : "hover:border-[#d87028]"
-                        }
-                      `}
-                    >
-                      {month}
-                    </button>
-                  ))}
-                </div>
-              ) : (
-                <>
-                  <div className="grid grid-cols-7 gap-2 mb-2">
-                    {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d) => (
-                      <div
-                        key={d}
-                        className="text-center text-sm font-semibold text-gray-500"
-                      >
-                        {d}
-                      </div>
-                    ))}
-                  </div>
+              <div className="grid grid-cols-7 gap-2">
+                {renderCalendar()}
+              </div>
 
-                  <div className="grid grid-cols-7 gap-2">
-                    {renderCalendar()}
-                  </div>
-
-                  <div className="mt-6 text-center">
-                    <button
-                      onClick={() => setView("year")}
-                      className="px-6 py-2 rounded bg-orange-500 text-white"
-                    >
-                      Back to Months
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setView("year")}
+                  className="px-6 py-2 rounded bg-[#d87028] text-white"
+                >
+                  Back to Months
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </section>
     );
