@@ -1,7 +1,7 @@
 import React from "react";
 import { FaClock, FaAward } from "react-icons/fa";
 
-import imara from '../../assets/imarasafari-1.png'
+import imara from '../../assets/offroad.png'
 
 const OffTheRoadSection = () => {
   return (
@@ -9,7 +9,7 @@ const OffTheRoadSection = () => {
       {/* === Title Label === */}
         <div className="flex justify-center mb-8 md:mb-12  ">
         <div className=" w-56">
-         <img src={imara} alt="" />
+         <img src={`${imara}`} alt="bannerimage" />
 
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMapMarkedAlt, FaUserFriends, FaBookOpen } from "react-icons/fa";
-import imaraour from '../../assets/imarasafari-2.png'
+import imaraour from '../../assets/onroad.png'
 
 const iconMap = [FaMapMarkedAlt, FaUserFriends, FaBookOpen];
 
@@ -16,7 +16,7 @@ const OnTheRoadSection = ({ adventure = [] }) => {
   {/* Title Banner */}
   <div className="flex justify-center mb-10 sm:mb-16">
     <img
-      src={imaraour}
+      src={`${imaraour}`}
       alt="On the Road"
       className="w-40 sm:w-48 md:w-56"
     />
