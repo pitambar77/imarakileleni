@@ -72,6 +72,7 @@ const Navbar = () => {
         // { label: "Team", path: "/team" },
         { label: "Safari Fleet", path: "/safari-fleet" },
         { label: "Sustanbility", path: "/sustanbility" },
+         { label: "Core Values", path: "/core-values" },
       ],
     },
   ];

@@ -494,8 +494,8 @@ const Footer = () => {
             </div> */}
 
             <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-              <Link to="#" className=" hover:text-[#d87028]">Accessibility</Link>
-              <Link to="#" className=" hover:text-[#d87028]">Cookie Policy</Link>
+              <Link to="sustanbility" className=" hover:text-[#d87028]">Sustanbility</Link>
+              <Link to="core-values" className=" hover:text-[#d87028]">Core Values</Link>
               <Link to="#" className=" hover:text-[#d87028]">Sitemap</Link>
             </div>
 
