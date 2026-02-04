@@ -25,7 +25,9 @@ const ContactDetailsSection = () => {
                 <h4 className="text-base sm:text-lg font-bold uppercase tracking-wide">
                   Office Location
                 </h4>
-                <p className="text-sm opacity-90">CCM Mkoa Moshi Kilimanjaro</p>
+                <p className="text-sm opacity-90">
+                  KIUSA LINE STREET,MOSHI,KILIMANJARO <br/>P.O. BOX 623
+                </p>
               </div>
             </div>
 

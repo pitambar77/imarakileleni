@@ -332,7 +332,7 @@ const Footer = () => {
             portfolio of brands.
             <br /># Imara Kileleni Safaris
             <br />
-            CCM Mkoa Moshi Kilimanjaro
+           Kiusa Line Street, Moshi, Kilimanjaro, P.O. Box 623
           </p>
         </div>
       </div>
@@ -407,7 +407,7 @@ const Footer = () => {
             <IoLocationSharp className="text-3xl" />
             <div className="text-center md:text-left">
               <p className="text-xs text-gray-600">Selected Region</p>
-              <p className="font-semibold text-black">Tanzania</p>
+              <p className="font-semibold text-black">Mochi,Tanzania</p>
             </div>
           </div>
 
@@ -494,15 +494,15 @@ const Footer = () => {
             </div> */}
 
             <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold">
-              <a href="#" className=" hover:text-[#d87028]">Accessibility</a>
-              <a href="#" className=" hover:text-[#d87028]">Cookie Policy</a>
-              <a href="#" className=" hover:text-[#d87028]">Sitemap</a>
+              <Link to="#" className=" hover:text-[#d87028]">Accessibility</Link>
+              <Link to="#" className=" hover:text-[#d87028]">Cookie Policy</Link>
+              <Link to="#" className=" hover:text-[#d87028]">Sitemap</Link>
             </div>
 
             <div className="flex flex-wrap justify-center md:justify-end gap-2 text-sm mt-4 font-semibold ">
-              <a href="#" className=" hover:text-[#d87028]">Terms and Conditions</a>
-              <a href="#" className=" hover:text-[#d87028]">Booking Conditions</a>
-              <a href="privacy-policy" className=" hover:text-[#d87028]">Privacy Policy</a>
+              <Link to="terms-and-conditions" className=" hover:text-[#d87028]">Terms and Conditions</Link>
+              {/* <a href="#" className=" hover:text-[#d87028]">Booking Conditions</a> */}
+               <Link to="privacy-policy" className=" hover:text-[#d87028]">Privacy Policy</Link>
             </div>
           </div>
         </div>

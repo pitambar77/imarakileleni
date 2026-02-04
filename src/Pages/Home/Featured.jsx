@@ -129,32 +129,37 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { Link, useNavigate } from "react-router-dom";
 import FeaturedBanner from '../../assets/featured-banner.webp'
+import atta from '../../assets/atta.webp'
+import safaribooking from '../../assets/safaribooking.webp'
+import Tato from '../../assets/Tato.webp'
+import trip from '../../assets/trip.webp'
+import kpap from '../../assets/kpap.webp'
 
 const brands = [
   {
     id: 1,
     name: "Lonely Planet",
-    img: "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
+    img: atta,
   },
   {
     id: 2,
     name: "Pedestrian",
-    img: "https://www.contiki.com/media/dyjfzf1m/pedesrianlogo.webp?&quality=80",
+    img:safaribooking,
   },
   {
     id: 3,
     name: "Cosmopolitan",
-    img: "https://www.contiki.com/media/rjhjd3ej/cosmopolitan-emblem.png?&quality=80",
+    img: Tato,
   },
   {
     id: 4,
     name: "UNILAD",
-    img: "https://www.contiki.com/media/l5on2onh/unilad_logo-svg_.webp?&quality=80",
+    img: trip,
   },
   {
     id: 5,
     name: "Mashable",
-    img: "https://www.contiki.com/media/1jbikr05/mashable-600x300.webp?&quality=80",
+    img:kpap,
   },
 ];
 
@@ -172,66 +177,7 @@ const Featured = () => {
           As featured in
         </h2>
 
-        {/* <div className="md:hidden mb-4">
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 2000 }}
-            loop={true}
-            slidesPerView={1}
-            centeredSlides={true}
-            centerInsufficientSlides={true}
-            className="w-full"
-          >
-            {brands.map((brand) => (
-              <SwiperSlide
-                key={brand.id}
-                className="flex justify-center items-center"
-              >
-                <img
-                  src={brand.img}
-                  alt={brand.name}
-                  className="h-30 w-40 object-contain mx-auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <div className="hidden md:flex h-30 p-4 items-center justify-between mb-16">
-          {brands.map((brand) => (
-            <img
-              key={brand.id}
-              src={brand.img}
-              alt={brand.name}
-              className="h-32 w-60 object-contain"
-            />
-          ))}
-        </div> */}
-
-        {/* Mobile & Tablet Slider */}
-{/* <div className="block lg:hidden mb-6">
-  <Swiper
-    modules={[Autoplay]}
-    autoplay={{ delay: 2000, disableOnInteraction: false }}
-    loop
-    slidesPerView={1}
-    centeredSlides
-    className="w-full"
-  >
-    {brands.map((brand) => (
-      <SwiperSlide
-        key={brand.id}
-        className="flex justify-center items-center"
-      >
-        <img
-          src={brand.img}
-          alt={brand.name}
-          className="h-20 sm:h-24 w-40 sm:w-48 object-contain mx-auto"
-        />
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</div> */}
+        
 {/* Mobile & Tablet Slider */}
 <div className="block lg:hidden mb-6 px-4 sm:px-6">
   <Swiper
@@ -274,7 +220,7 @@ const Featured = () => {
   ))}
 </div> */}
 {/* Desktop & Large Screen Static Layout */}
-<div className="hidden lg:flex items-center justify-center flex-wrap gap-8 xl:gap-12 px-6 xl:px-10 mb-16">
+{/* <div className="hidden lg:flex items-center justify-center flex-wrap gap-8 xl:gap-12 px-6 xl:px-10 mb-16">
   {brands.map((brand) => (
     <img
       key={brand.id}
@@ -283,7 +229,19 @@ const Featured = () => {
       className="h-20 lg:h-24 xl:h-28 w-auto max-w-[220px] object-contain"
     />
   ))}
+</div> */}
+
+<div className="hidden lg:flex items-center justify-center gap-6 xl:gap-14 px-6 xl:px-12 mb-16">
+  {brands.map((brand) => (
+    <img
+      key={brand.id}
+      src={brand.img}
+      alt={brand.name}
+      className="h-20 lg:h-24 xl:h-28 w-auto max-w-[220px] object-contain flex-shrink-0"
+    />
+  ))}
 </div>
+
 
 
 
