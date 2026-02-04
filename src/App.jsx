@@ -71,6 +71,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import PlanSafari from "./Pages/LandingPage/PlanSafari";
 import KilimanjaroPage from "./Pages/LandingPage/KilimanjaroPage";
 import TermCondition from "./Pages/PrivacyPolicy/TermCondition";
+import CoreValue from "./Pages/PrivacyPolicy/CoreValue";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -86,6 +87,8 @@ const router = createBrowserRouter(
         <Route path="contact-us" element={<ContactusPage/>} />
         <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="terms-and-conditions" element={<TermCondition/>}/>
+        <Route path="core-values" element={<CoreValue/>}/>
+
 
         <Route path="plansafari" element={<PlanSafari/>}/>
         {/* <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/> */}

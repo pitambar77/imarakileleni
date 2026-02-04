@@ -407,7 +407,7 @@ const Footer = () => {
             <IoLocationSharp className="text-3xl" />
             <div className="text-center md:text-left">
               <p className="text-xs text-gray-600">Selected Region</p>
-              <p className="font-semibold text-black">Mochi,Tanzania</p>
+              <p className="font-semibold text-black">Moshi,Tanzania</p>
             </div>
           </div>
 
