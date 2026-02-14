@@ -57,6 +57,18 @@ const PackageList = () => {
                 >
                   Edit
                 </button>
+
+                   {/* 🔥 NEW SEO BUTTON */}
+
+                <button
+                  onClick={() =>
+                    navigate(`/admin/seo/package/${pkg._id}`)
+                  }
+                  className="bg-purple-600 text-white px-3 py-1 rounded"
+                >
+                  SEO
+                </button>
+
                 <button
                   onClick={() => handleDelete(pkg._id)}
                   className="bg-red-600 text-white px-3 py-1 rounded"

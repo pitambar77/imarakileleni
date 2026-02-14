@@ -70,6 +70,17 @@ export default function BlogList() {
                 Edit
               </Link>
 
+              {/* SEO Buttom*/}
+
+              <button
+                  onClick={() =>
+                    navigate(`/admin/seo/blog/${blog._id}`)
+                  }
+                  className="bg-purple-600 text-white px-3 py-1 rounded"
+                >
+                  SEO
+                </button>
+
               {/* DELETE */}
               <button
                 onClick={() => handleDelete(blog._id)}

@@ -91,18 +91,81 @@ import AdventureTour from "../../components/AdventureTour";
 import FAQSection from "../../components/FAQSection";
 import BookWithConfidence from "../Home/BookWithConfidence";
 import Featured from "../Home/Featured";
+import useSEO from "../../hooks/useSEO";
 
 const TravelgroupDetails = () => {
   const { slug } = useParams();
   const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+
+  // useEffect(() => {
+  //   API.get(`/travelgroup/slug/${slug}`)
+  //     .then((res) => setItem(res.data))
+  //     .catch((err) => console.error(err));
+  // }, [slug]);
 
   useEffect(() => {
-    API.get(`/travelgroup/slug/${slug}`)
-      .then((res) => setItem(res.data))
-      .catch((err) => console.error(err));
+    const fetchTravelGroup = async () => {
+      try {
+        // 1️⃣ Get travelgroup by slug
+        const res = await API.get(`/travelgroup/slug/${slug}`);
+
+        if (!res.data) {
+          setItem(null);
+          return;
+        }
+
+        const group = res.data;
+
+        // 2️⃣ Fetch SEO by ID
+        const seoRes = await API.get(
+          `/seo?referenceId=${group._id}&referenceType=travelgroup`
+        );
+
+        // 3️⃣ Attach SEO
+        setItem({
+          ...group,
+          seo: seoRes.data || null,
+        });
+
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTravelGroup();
   }, [slug]);
 
-  if (!item) return <p className="p-6">Loading...</p>;
+  /* ================= DYNAMIC SEO ================= */
+
+  useSEO({
+    title:
+      item?.seo?.metaTitle ||
+      `${item?.title} `,
+
+    description:
+      item?.seo?.metaDescription ||
+      item?.subtitle,
+
+    keywords:
+      item?.seo?.keywords ||
+      `Tanzania safari, ${item?.title}`,
+
+    image:
+      item?.seo?.ogImage ||
+      item?.image,
+
+    url:
+      item?.seo?.canonicalUrl ||
+      `https://imarakilelenisafaris.com/travelgroup/${slug}`,
+  });
+
+  if (loading) return <p className="p-6">Loading...</p>;
+  if (!item) return <p className="p-6">Not found</p>;
+
 
   /* ================= MAP ADVENTURE ================= */
   const adventureSections = item.adventure.map((a) => ({

@@ -8,13 +8,10 @@ import KilimanjaroTrekking from './KilimanjaroTrekking'
 import PopularWay from './PopularWay'
 import useSEO from '../../hooks/useSEO'
 
-
-
-
 const Home = () => {
 
   useSEO({
-    title: "Imaraki Leleni Safaris - Local Tanzania Safari & Kilimanjaro Specialists",
+    title: "Imara kileleni Safaris - Local Tanzania Safari & Kilimanjaro Specialists",
     description: "Local experts creating personalised Tanzania safaris and Kilimanjaro climbs with honest guidance.",
     keywords: "Tanzania safari, Kilimanjaro climb, local safari experts",
     image: "https://imarakilelenisafaris.com/src/assets/tanzania-banner-5.webp",
@@ -24,10 +21,6 @@ const Home = () => {
   
   return (
     <div>
-
-
-
-
 <HeroSlider/>
 <BookedTrips/>
 <PopularDestinations/>

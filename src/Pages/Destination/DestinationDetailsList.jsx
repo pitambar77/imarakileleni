@@ -20,7 +20,8 @@ const DestinationDetailsList = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this destination?")) return;
+    if (!window.confirm("Are you sure you want to delete this destination?"))
+      return;
 
     try {
       await API.delete(`/destinationdetails/${id}`);
@@ -73,6 +74,17 @@ const DestinationDetailsList = () => {
                 >
                   View
                 </Link>
+
+                {/* 🔥 NEW SEO BUTTON */}
+
+                <button
+                  onClick={() =>
+                    navigate(`/dashboard/seo/destination/${item._id}`)
+                  }
+                  className="bg-purple-600 text-white px-3 py-1 rounded"
+                >
+                  SEO
+                </button>
 
                 <button
                   onClick={() => handleDelete(item._id)}

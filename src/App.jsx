@@ -72,6 +72,11 @@ import PlanSafari from "./Pages/LandingPage/PlanSafari";
 import KilimanjaroPage from "./Pages/LandingPage/KilimanjaroPage";
 import TermCondition from "./Pages/PrivacyPolicy/TermCondition";
 import CoreValue from "./Pages/PrivacyPolicy/CoreValue";
+import SeoForm from "./components/SeoForm";
+import DestinationSeo from "./Pages/Seo/DestinationSeo";
+import PackageSeo from "./Pages/Seo/PackageSeo";
+import TravelgroupSeo from "./Pages/Seo/TravelgroupSeo";
+import TravelguideSeo from "./Pages/Seo/TravelguideSeo";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -84,13 +89,13 @@ const router = createBrowserRouter(
         <Route path="tanzania-destinations" element={<SafariLandingPage />} />
         <Route path="itinenary" element={<Itinenary />} />
         <Route path="about-us" element={<AboutUs />} />
-        <Route path="contact-us" element={<ContactusPage/>} />
-        <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
-        <Route path="terms-and-conditions" element={<TermCondition/>}/>
-        <Route path="core-values" element={<CoreValue/>}/>
+        <Route path="contact-us" element={<ContactusPage />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="terms-and-conditions" element={<TermCondition />} />
+        <Route path="core-values" element={<CoreValue />} />
+        <Route path="seo" element={<SeoForm />} />
 
-
-        <Route path="plansafari" element={<PlanSafari/>}/>
+        <Route path="plansafari" element={<PlanSafari />} />
         {/* <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/> */}
 
         <Route path="tanzania-safaris" element={<SafariDestiLanding />} />
@@ -123,6 +128,8 @@ const router = createBrowserRouter(
         <Route path="/blog/create" element={<BlogForm />} />
         <Route path="/blog/edit/:id" element={<BlogForm />} />
 
+         <Route path="/admin/seo/blog/:id" element={<TravelguideSeo />} />
+
         <Route path="create-package" element={<CreatePackage />} />
         <Route
           path="create-destination-details"
@@ -144,16 +151,19 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
 
-        {/* <Route path="/travelgroup" element={<TravelgroupList />} /> */}
-        <Route path="/travelgroup/:slug" element={<TravelgroupDetails />} />
+        <Route path="travelgroup/edit/:id" element={<EditTravelgroup />} />
 
         {/* Category filter page */}
         <Route
-          path="/travelgroup/category/:category"
+          path="travelgroup/category/:category"
           element={<TravelgroupCategoryList />}
         />
 
-        <Route path="/travelgroup/edit/:id" element={<EditTravelgroup />} />
+        {/* <Route path="/travelgroup" element={<TravelgroupList />} /> */}
+        <Route path="travelgroup/:slug" element={<TravelgroupDetails />} />
+        <Route path="travelgroup" element={<TravelgroupList />} />
+
+        <Route path="/admin/seo/travelgroup/:id" element={<TravelgroupSeo />} />
 
         <Route
           path="/kilimanjaro-travel-guide"
@@ -172,6 +182,8 @@ const router = createBrowserRouter(
 
         <Route path="/package/:slug" element={<ItinaryDetails />} />
 
+        <Route path="/admin/seo/package/:id" element={<PackageSeo />} />
+
         <Route
           path="/dashboard/destination-details"
           element={<DestinationDetailsList />}
@@ -183,6 +195,10 @@ const router = createBrowserRouter(
         <Route
           path="/dashboard/edit-destination-details/:id"
           element={<EditDestinationDetails />}
+        />
+        <Route
+          path="/dashboard/seo/destination/:id"
+          element={<DestinationSeo />}
         />
         <Route
           path="/tanzania-destinations/:slug"
@@ -219,7 +235,10 @@ const router = createBrowserRouter(
           element={<ZanzibarDetailsList />}
         />
         <Route path="/dashboard/create-zanzibar" element={<CreateZanzibar />} />
-        <Route path="/dashboard/edit-zanzibar-details/:id" element={<EditZanzibar />} />
+        <Route
+          path="/dashboard/edit-zanzibar-details/:id"
+          element={<EditZanzibar />}
+        />
         <Route path="/zanzibar-details/:id" element={<ZanzibarDetailsPage />} />
 
         <Route
@@ -245,7 +264,7 @@ const router = createBrowserRouter(
 
         {/* <Route path="itinenay-details" element={<ItinenayDetails />} /> */}
 
-        <Route path="contact" element={<ContactUs/>}/>
+        <Route path="contact" element={<ContactUs />} />
 
         {/* Blog Detail Page */}
         <Route path="/travel-guide/:slug" element={<BlogDetail />} />
@@ -276,11 +295,9 @@ const router = createBrowserRouter(
           element={<CreateKilimanjaroLanding />}
         />
       </Route>
-      <Route path="kilimanjaro-tailormade-tour" element={<KilimanjaroPage/>}/>
-      
-      
-    </>
-  )
+      <Route path="kilimanjaro-tailormade-tour" element={<KilimanjaroPage />} />
+    </>,
+  ),
 );
 
 const App = () => (
