@@ -468,7 +468,7 @@ const Footer = () => {
 
               {/* YouTube */}
               <a
-                href="#"
+                href="https://www.youtube.com/@imarakilelenisafaris-d3t"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-[#d87028] hover:bg-[#c35f22] transition"

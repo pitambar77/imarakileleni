@@ -1,15 +1,44 @@
 
 
+// import { defineConfig } from 'vite'
+// import tailwindcss from '@tailwindcss/vite'
+// import react from '@vitejs/plugin-react'
+
+// export default defineConfig({
+//   plugins: [react(),tailwindcss(),],
+//   server: {
+//     host: true, // important for domain / subdomain access
+//     allowedHosts: [
+//       'imarakilelenisafaris.com'
+//     ]
+    
+//   }
+// })
+
+
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [react(),tailwindcss(),],
+  plugins: [react(), tailwindcss()],
   server: {
-    host: true, // important for domain / subdomain access
+    host: true,
     allowedHosts: [
       'imarakilelenisafaris.com'
-    ]
+    ],
+    proxy: {
+      // Proxy sitemap to backend
+      '/sitemap.xml': {
+        target: 'https://imarabackend.imarakilelenisafaris.com',
+        changeOrigin: true,
+      },
+
+      // (Optional) proxy all API routes
+      '/api': {
+        target: 'https://imarabackend.imarakilelenisafaris.com',
+        changeOrigin: true,
+      }
+    }
   }
 })
