@@ -73,9 +73,9 @@ const TripDetailsSection = ({ trip }) => {
         <div className="flex flex-col justify-between">
           <div>
             {/* Title */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 md:mb-10">
+            <h1 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 md:mb-10">
               {trip.title}
-            </h2>
+            </h1>
 
             {/* Price + Button */}
             <div className="flex items-center mb-8 gap-x-24">

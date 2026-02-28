@@ -10,9 +10,9 @@ const TermCondition = () => {
         style={{ backgroundImage: `url(${bannerImage})` }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <h2 className="text-3xl md:text-5xl text-white uppercase z-10">
+        <h1 className="text-3xl md:text-5xl text-white uppercase z-10">
           Terms & Conditions
-        </h2>
+        </h1>
       </div>
 
       {/* Content */}

@@ -152,9 +152,9 @@ const SerengetiNationalPark = () => {
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <h2 className="text-xl md:text-5xl text-white uppercase z-10 text-center px-4">
+        <h1 className="text-xl md:text-5xl text-white uppercase z-10 text-center px-4">
           {title}
-        </h2>
+        </h1>
       </div>
 
       <TabLink />

@@ -109,7 +109,7 @@ button:focus-visible {
   animation: fadeIn 0.3s ease-out;
 }
 
-h2 {
+h1,h2 {
   font-family: "AcuminPro";
   
 }

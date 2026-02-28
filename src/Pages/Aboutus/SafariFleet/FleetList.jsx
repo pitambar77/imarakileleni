@@ -55,7 +55,7 @@ const FleetList = () => {
     <div className="p-6">
       {/* HEADER */}
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">Safari Fleet</h2>
+        <h1 className="text-2xl font-bold">Safari Fleet</h1>
         <button
           onClick={handleCreate}
           className="bg-green-600 text-white px-4 py-2 rounded"

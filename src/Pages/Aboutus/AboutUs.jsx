@@ -156,9 +156,9 @@ const [aboutData, setAboutData] = useState(null);
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
-       <h2 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
+       <h1 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
           {title}
-        </h2>
+        </h1>
       </div>
       <div className="w-full bg-[#d76e28]">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-white text-xs md:text-sm font-semibold">

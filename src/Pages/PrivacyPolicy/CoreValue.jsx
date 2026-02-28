@@ -14,9 +14,9 @@ const CoreValue = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
 
-        <h2 className="text-3xl md:text-5xl text-white uppercase z-10">
+        <h1 className="text-3xl md:text-5xl text-white uppercase z-10">
          CORE VALUES
-        </h2>
+        </h1>
       </div>
 
       <div className="py-8 sm:py-12 md:py-16 px-4 md:px-10 lg:px-16 xl:px-18 2xl:px-28 space-y-8 ">

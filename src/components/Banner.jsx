@@ -12,9 +12,9 @@ const Banner = ({ image, title, buttonText, onButtonClick }) => {
 
      
       <div className="relative text-center z-10">
-        <h2 className="text-2xl md:text-5xl font-extrabold text-white mb-6 tracking-wide drop-shadow-lg">
+        <h1 className="text-2xl md:text-5xl font-extrabold text-white mb-6 tracking-wide drop-shadow-lg">
           {title}
-        </h2>
+        </h1>
 
         <Link to={onButtonClick}
           

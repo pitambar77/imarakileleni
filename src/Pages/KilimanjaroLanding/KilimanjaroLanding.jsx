@@ -410,9 +410,9 @@ const monthTabs =
         style={{ backgroundImage: `url('${heroImage}')` }}
       >
         <div className="absolute inset-0 bg-black/30"></div>
-        <h2 className="text-2xl md:text-5xl text-white text-center uppercase z-10">
+        <h1 className="text-2xl md:text-5xl text-white text-center uppercase z-10">
           {heroTitle}
-        </h2>
+        </h1>
       </div>
 
       <SafariToursSection />

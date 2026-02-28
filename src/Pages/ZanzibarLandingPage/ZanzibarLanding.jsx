@@ -396,9 +396,9 @@ const ZanzibarLanding = () => {
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <h2 className="text-2xl md:text-5xl text-center text-white uppercase z-10">
+        <h1 className="text-2xl md:text-5xl text-center text-white uppercase z-10">
           {title}
-        </h2>
+        </h1>
       </div>
 
       <TabLink />
