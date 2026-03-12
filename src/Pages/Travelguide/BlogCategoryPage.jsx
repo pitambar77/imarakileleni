@@ -72,6 +72,9 @@ const BlogCategoryPage = ({ category }) => {
   const [asSeenItems, setAsSeenItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+
+
   // 🔹 Fetch blogs BY CATEGORY (same logic as your old BlogCategoryPage)
   useEffect(() => {
     if (!category) return;

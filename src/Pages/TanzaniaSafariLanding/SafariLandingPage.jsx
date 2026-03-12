@@ -32,27 +32,37 @@
 
 // export default SafariLandingPage
 
-
-import React from 'react'
-import Banner from '../../components/Banner'
-import SafariInfoSection from './SafariInfoSection'
-import TanzaniaTabsSection from './TanzaniaTabsSection'
-import GuestReviewSection from './GuestReviewSection'
-import SafariTour from './SafariTour'
-import TourGroupSection from './TourGroupSection'
-import WhentoGo from './WhentoGo'
-import TripHighlights from './TripHighlights'
-import Featured from '../Home/Featured'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import React from "react";
+import Banner from "../../components/Banner";
+import SafariInfoSection from "./SafariInfoSection";
+import TanzaniaTabsSection from "./TanzaniaTabsSection";
+import GuestReviewSection from "./GuestReviewSection";
+import SafariTour from "./SafariTour";
+import TourGroupSection from "./TourGroupSection";
+import WhentoGo from "./WhentoGo";
+import TripHighlights from "./TripHighlights";
+import Featured from "../Home/Featured";
+import { useState } from "react";
+import { useEffect } from "react";
 
 import API from "../../api/axios";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import useSEO from "../../hooks/useSEO";
 
 const SafariLandingPage = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
+
+  useSEO({
+    title: "Tanzania Safari Destinations - National Parks & Attractions",
+    description:
+      "Discover top Tanzania safari destinations, including Serengeti, Ngorongoro, Kilimanjaro, and hidden gems guided by local experts.",
+    keywords:
+      "Tanzania Safari Destinations, Tanzania National Parks, Tanzania Travel Destinations, Wildlife Destinations Tanzania, Northern Circuit Tanzania, Best Places To Visit In Tanzania, Safari Parks Tanzania",
+    image:
+      "https://res.cloudinary.com/dq0ug85oe/image/upload/v1766472384/imarakileleni_uploads/vkkwdqmiuf9yhcmqcrur.webp",
+    url: "https://imarakilelenisafaris.com/tanzania-destinations",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,27 +79,24 @@ const navigate = useNavigate();
 
   if (!data) return null; // or loader
 
-
-
-
   return (
     <div>
-        <Banner
+      <Banner
         image={data.image}
         title={data.title}
         buttonText="VIEW TRIPS"
-        onButtonClick={()=>navigate('/tanzania-safaris')}
+        onButtonClick={() => navigate("/tanzania-safaris")}
       />
-      <SafariInfoSection overview={data.overviewinfo?.[0]}/>
+      <SafariInfoSection overview={data.overviewinfo?.[0]} />
       <TanzaniaTabsSection />
-      <GuestReviewSection/>
-      <SafariTour/>
-      <TourGroupSection/>
-      <WhentoGo/>
-      <TripHighlights/>
-       <Featured/>
+      <GuestReviewSection />
+      <SafariTour />
+      <TourGroupSection />
+      <WhentoGo />
+      <TripHighlights />
+      <Featured />
     </div>
-  )
-}
+  );
+};
 
-export default SafariLandingPage
+export default SafariLandingPage;

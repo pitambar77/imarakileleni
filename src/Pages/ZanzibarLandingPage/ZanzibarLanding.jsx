@@ -322,10 +322,22 @@ import AdventureTour from "../../components/AdventureTour";
 import FAQSection from "../../components/FAQSection";
 import OverviewSections from "../../components/OverviewSections";
 import TabLink from "./TabLink";
+import useSEO from "../../hooks/useSEO";
 
 const ZanzibarLanding = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title: "Zanzibar Beach Holidays - Dive into Adventure & Luxury",
+    description:
+      "Experience Zanzibar beach holidays with luxury resorts, turquoise waters, snorkeling, diving, and unforgettable Indian Ocean adventures.",
+    keywords:
+      "Zanzibar Beach Holidays, Zanzibar Travel Packages, Beach Resorts Zanzibar, Zanzibar Honeymoon, Zanzibar Island Tours",
+    image:
+      "https://res.cloudinary.com/dq0ug85oe/image/upload/v1766564311/imarakileleni_uploads/dirltdpynygugs7evtjv.webp",
+    url: "https://imarakilelenisafaris.com/zanzibar-beach",
+  });
 
   useEffect(() => {
     API.get("/zanzibardetails")
@@ -367,7 +379,7 @@ const ZanzibarLanding = () => {
       season: bt.title, // ✅ group title
       rating: "Excellent", // optional (UI only)
       description: [m.content], // ✅ must be ARRAY
-    }))
+    })),
   );
 
   /* ================= TRIP HIGHLIGHTS ================= */
@@ -377,7 +389,7 @@ const ZanzibarLanding = () => {
       image: item.image,
       title: item.title,
       description: item.description,
-    }))
+    })),
   );
 
   /* ================= ADVENTURE ================= */

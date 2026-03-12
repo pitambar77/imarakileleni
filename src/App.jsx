@@ -77,6 +77,8 @@ import DestinationSeo from "./Pages/Seo/DestinationSeo";
 import PackageSeo from "./Pages/Seo/PackageSeo";
 import TravelgroupSeo from "./Pages/Seo/TravelgroupSeo";
 import TravelguideSeo from "./Pages/Seo/TravelguideSeo";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./Pages/Login";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -128,7 +130,7 @@ const router = createBrowserRouter(
         <Route path="/blog/create" element={<BlogForm />} />
         <Route path="/blog/edit/:id" element={<BlogForm />} />
 
-         <Route path="/admin/seo/blog/:id" element={<TravelguideSeo />} />
+        <Route path="/admin/seo/blog/:id" element={<TravelguideSeo />} />
 
         <Route path="create-package" element={<CreatePackage />} />
         <Route
@@ -268,9 +270,19 @@ const router = createBrowserRouter(
 
         {/* Blog Detail Page */}
         <Route path="/travel-guide/:slug" element={<BlogDetail />} />
+
+        {/* ===== LOGIN ROUTE ===== */}
+        <Route path="/login" element={<Login />} />
       </Route>
       {/* 🧭 Admin Dashboard Routes */}
-      <Route path="/dashboard" element={<DashboardLayout />}>
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout />
+          </ProtectedRoute>
+        }
+      >
         {/* <Route index element={<Navigate to="/dashboard/create-travelguide" />} /> */}
         <Route path="create-travelguide" element={<BlogForm />} />
         <Route path="create-package" element={<CreatePackage />} />

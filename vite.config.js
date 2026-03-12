@@ -24,6 +24,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: true,
+    port: 5174, // choose fixed port
+    strictPort: true, // prevent auto port change
     allowedHosts: [
       'imarakilelenisafaris.com'
     ],

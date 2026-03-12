@@ -21,96 +21,101 @@ import WhyVisitSection from "../../components/WhyVisitSection";
 import FAQSection from "../../components/FAQSection";
 import OverviewSections from "../../components/OverviewSections";
 
-import Communication from "../../assets/Communication.webp"
-import Knowledge from "../../assets/Knowledge.webp"
-import Service from "../../assets/Service.webp"
-
-
-
+import Communication from "../../assets/Communication.webp";
+import Knowledge from "../../assets/Knowledge.webp";
+import Service from "../../assets/Service.webp";
+import useSEO from "../../hooks/useSEO";
 
 const AboutUs = () => {
-
-
-    const data = [
+  const data = [
     {
       id: 1,
-      image:
-        Communication,
+      image: Communication,
       title: "Clear Open Communication",
       text: "Travellers share preferences, needs, and expectations, and we listen carefully, communicate openly, and coordinate with lodges and guides so every detail, dietary request, and wildlife wish list is understood, planned, and delivered without confusion.",
     },
     {
       id: 2,
-      image:
-       Knowledge,
+      image: Knowledge,
       title: "Strong Local Knowledge",
       text: "Our team understands Tanzania’s landscapes, wildlife, and people, sharing that insight from first inquiry onward, helping travellers plan confidently while guides adapt routes and sightings to create meaningful safari and climbing experiences.",
     },
     {
       id: 3,
-      image:
-       Service,
+      image: Service,
       title: "Honest Experienced Service",
       text: "Integrity, fairness, and transparency guide every interaction, with clear explanations, realistic planning, and experienced teams delivering what is promised while handling challenges smoothly to maintain consistent service throughout each journey.",
     },
   ];
 
-//   const safariFaqs = [
-//   {
-//     question: "How long does an African safari take?",
-//     answerBlocks: [
-//       {
-//         type: "paragraph",
-//         text: [
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "For a deeper experience, 2 weeks is ideal.",
-//         ],
-//       },
-//       {
-//         type: "heading",
-//         text: "Recommended Duration:",
-//       },
-//       {
-//         type: "list",
-//         items: [
-//           "Short Safaris: 3–5 days",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "Full Safari Experience: 12–14 days",
-//           "Extended Adventure: 21+ days",
-//         ],
-//       },
-//       {
-//         type: "paragraph",
-//         text: "If you want the full wildlife experience, 2 weeks is ideal.",
-//       },
-//     ],
-//   },
+  //   const safariFaqs = [
+  //   {
+  //     question: "How long does an African safari take?",
+  //     answerBlocks: [
+  //       {
+  //         type: "paragraph",
+  //         text: [
+  //           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+  //           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+  //           "For a deeper experience, 2 weeks is ideal.",
+  //         ],
+  //       },
+  //       {
+  //         type: "heading",
+  //         text: "Recommended Duration:",
+  //       },
+  //       {
+  //         type: "list",
+  //         items: [
+  //           "Short Safaris: 3–5 days",
+  //           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+  //           "Full Safari Experience: 12–14 days",
+  //           "Extended Adventure: 21+ days",
+  //         ],
+  //       },
+  //       {
+  //         type: "paragraph",
+  //         text: "If you want the full wildlife experience, 2 weeks is ideal.",
+  //       },
+  //     ],
+  //   },
 
-//   {
-//     question: "What is the best month to go on safari?",
-//     answerBlocks: [
-//       {
-//         type: "paragraph",
-//         text: [
-//           "June to October is considered the dry season.",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//         ],
-//       },
-//       {
-//         type: "heading",
-//         text: "Why Dry Season?",
-//       },
-//       {
-//         type: "paragraph",
-//         text: "Animals gather around water sources, making sightings easier.",
-//       },
-//     ],
-//   },
-// ];
+  //   {
+  //     question: "What is the best month to go on safari?",
+  //     answerBlocks: [
+  //       {
+  //         type: "paragraph",
+  //         text: [
+  //           "June to October is considered the dry season.",
+  //           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
+  //         ],
+  //       },
+  //       {
+  //         type: "heading",
+  //         text: "Why Dry Season?",
+  //       },
+  //       {
+  //         type: "paragraph",
+  //         text: "Animals gather around water sources, making sightings easier.",
+  //       },
+  //     ],
+  //   },
+  // ];
 
-const [aboutData, setAboutData] = useState(null);
+  const [aboutData, setAboutData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title:
+      "About Imaraki Leleni Safaris - Tanzania Safari & Kilimanjaro Experts",
+    description:
+      "Discover Imara kileleni Safaris, local specialists designing custom Tanzania safaris and Kilimanjaro climbs focused on comfort, safety, and authentic travel.",
+    keywords:
+      "Local Tanzania safari experts, Kilimanjaro climbing specialists, Tanzania tour operator, Tanzania safari planners",
+    image:
+      "https://res.cloudinary.com/dq0ug85oe/image/upload/v1766556872/imarakileleni_uploads/g1p80nepxxro2kmql7uq.webp",
+    url: "https://imarakilelenisafaris.com/about-us",
+  });
 
   useEffect(() => {
     axios
@@ -126,17 +131,17 @@ const [aboutData, setAboutData] = useState(null);
   if (loading) return <p className="p-6">Loading...</p>;
   if (!aboutData) return <p className="p-6">No data found</p>;
 
-    const {
+  const {
     title,
     subtitle,
     image,
     overview,
     overviewinfo,
     adventure,
-    faq=[],
+    faq = [],
   } = aboutData;
 
-    const safariFaqs = faq.map((item) => ({
+  const safariFaqs = faq.map((item) => ({
     question: item.question,
     answerBlocks: item.answer.map((a) => ({
       type: a.type,
@@ -146,8 +151,6 @@ const [aboutData, setAboutData] = useState(null);
 
   return (
     <>
-   
-    
       <div
         className="relative w-full h-[40vh] md:h-[64vh] bg-center bg-cover flex items-center justify-center"
         style={{
@@ -156,7 +159,7 @@ const [aboutData, setAboutData] = useState(null);
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
-       <h1 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
+        <h1 className=" text-3xl md:text-5xl text-white uppercase z-10 ">
           {title}
         </h1>
       </div>
@@ -181,10 +184,16 @@ const [aboutData, setAboutData] = useState(null);
             About Us
           </h2>
           <h3 className=" font-extrabold">
-            Customer focused journeys across Tanzania Safaris and Kilimanjaro Climbs with purpose
+            Customer focused journeys across Tanzania Safaris and Kilimanjaro
+            Climbs with purpose
           </h3>
           <p>
-         Imara Kileleni Safaris creates and operates customer-oriented tours, safaris, and climbs, designing detailed itineraries with selected accommodation and activities, delivering well planned Tanzania Safaris and professionally guided Kilimanjaro Climbs built around clarity, comfort, and experience. </p>
+            Imara Kileleni Safaris creates and operates customer-oriented tours,
+            safaris, and climbs, designing detailed itineraries with selected
+            accommodation and activities, delivering well planned Tanzania
+            Safaris and professionally guided Kilimanjaro Climbs built around
+            clarity, comfort, and experience.{" "}
+          </p>
         </div>
       </div>
 
@@ -217,8 +226,7 @@ const [aboutData, setAboutData] = useState(null);
       ]}
       /> */}
 
-
-{overviewinfo.map((item, index) => (
+      {overviewinfo.map((item, index) => (
         <OverviewSections
           key={index}
           label={item.subtitle}
@@ -231,8 +239,6 @@ const [aboutData, setAboutData] = useState(null);
           }))}
         />
       ))}
-
-
 
       <div className="bg-[#fedec7]">
         {" "}
@@ -252,8 +258,7 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                  	Book early to secure preferred tour dates
-                  
+                  Book early to secure preferred tour dates
                 </p>
               </div>
             </div>
@@ -265,7 +270,7 @@ const [aboutData, setAboutData] = useState(null);
               </div>
               <div>
                 <p className="font-semibold text-black">
-                 Share accurate nationality birth dates passport details
+                  Share accurate nationality birth dates passport details
                 </p>
               </div>
             </div>
@@ -307,23 +312,22 @@ const [aboutData, setAboutData] = useState(null);
         </div>
       </div>
 
-      <OnTheRoadSection adventure={adventure}/>
-      <OffTheRoadSection/>
-      <ContikiCrewSection/>
-      <SafariFeatureSection/>
+      <OnTheRoadSection adventure={adventure} />
+      <OffTheRoadSection />
+      <ContikiCrewSection />
+      <SafariFeatureSection />
       {/* <WhyVisitTanzania/> */}
-      <WhyVisitSection 
-      title={" Why visit Tanzania with Imara Kileleni Safaris?"}
-      cards={data}
+      <WhyVisitSection
+        title={" Why visit Tanzania with Imara Kileleni Safaris?"}
+        cards={data}
       />
-      <ReviewsSection/>
-      
-      <FAQSection 
-      title=" What do travellers ask about our Tanzania safari tours?" faqs={safariFaqs}
+      <ReviewsSection />
+
+      <FAQSection
+        title=" What do travellers ask about our Tanzania safari tours?"
+        faqs={safariFaqs}
       />
-      <Featured/>
-      
-      
+      <Featured />
     </>
   );
 };

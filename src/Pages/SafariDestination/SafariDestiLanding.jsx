@@ -7,10 +7,22 @@ import TourGroupSection from "../TanzaniaSafariLanding/TourGroupSection";
 import TripHighlights from "../TanzaniaSafariLanding/TripHighlights";
 import Featured from "../Home/Featured";
 import SafariTour from "../TanzaniaSafariLanding/SafariTour";
-import banner from "../../assets/imara-home-banner-3.webp"
+import banner from "../../assets/imara-home-banner-3.webp";
+import useSEO from "../../hooks/useSEO";
 
 const SafariDestiLanding = () => {
-
+  
+  
+  useSEO({
+    title: "Tanzania Safari 2026 - Luxury & Private Packages",
+    description:
+      "Tanzania Safari 2026 featuring luxury and private safari packages, expert guides, and unforgettable wildlife experiences across top parks.",
+    keywords:
+      "Tanzania Safari Packages, Tanzania Safari, Tanzania Safari Tours, Tanzania Tour Safari, African Safari Tanzania, Tanzania Safaris, Safari Tanzania, Safari In Tanzania, Tour Safari Tanzania, Tanzania Safari Tour, Tanzania Safaris And Tours, Safari Tours Tanzania, Tanzania Safari Trip,",
+    image:
+      "https://imarakilelenisafaris.com/src/assets/imara-home-banner-3.webp",
+    url: "https://imarakilelenisafaris.com/tanzania-safaris",
+  });
 
   return (
     <div>
@@ -23,21 +35,21 @@ const SafariDestiLanding = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
         <h1 className=" text-2xl md:text-5xl text-white uppercase z-10 ">
-          TANZANIA SAFARI 
+          TANZANIA SAFARI
         </h1>
       </div>
-      <SafariTour/>
+      <SafariTour />
       {/* <SafariToursSection /> */}
       {/* <TripSection
         title="Europe Backpacking"
         buttonLabel="EXPLORE EUROPE"
         trips={trips}
       /> */}
-      <WhyVisitTanzania/>
-      <ReviewsSection/>
-      <TourGroupSection/>
-      <TripHighlights/>
-      <Featured/>
+      <WhyVisitTanzania />
+      <ReviewsSection />
+      <TourGroupSection />
+      <TripHighlights />
+      <Featured />
     </div>
   );
 };

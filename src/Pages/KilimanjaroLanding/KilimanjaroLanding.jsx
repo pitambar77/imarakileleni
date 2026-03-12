@@ -18,180 +18,26 @@ import GuestReviewSection from "../TanzaniaSafariLanding/GuestReviewSection";
 import ReviewsSection from "../Aboutus/ReviewsSection";
 import Featured from "../Home/Featured";
 import BookAssurance from "./BookAssurance.jsx";
-
-// const data = [
-//   {
-//     image: "https://www.contiki.com/media/wcxfjs4s/south-america-peru.jpg",
-//     heading:"adventure tour will totally ",
-//     subheading:
-//       "Whether it’s backpacking, camping or sailing, a Contiki adventure tour will totally redefine your idea of broadening your mind.",
-//     description:
-//       "You’ll traverse Norway in search of Arctic whales and the Northern Lights. You’ll kayak along Vietnam’s majestic Nho Que River. You’ll ride a horse on the jawdropping plains of Patagonia. Adventure travel is all about unleashing a new side of yourself and discovering what you’re capable of, and that’s exactly what you’ll do on these trips - whether you’re trekking Peru’s Inca Trail or swimming in the Great Barrier Reef.",
-//   },
-//   {
-//     image:
-//       "https://www.contiki.com/media/jqah4mlo/bungy-jumping-in-new-zealand.jpg",
-//       heading:"adventure tour will totally ",
-//     subheading:
-//       "Adventure travel is all about the unbelievable people you meet, the new foods you try and the activities you embark on.",
-//     description:
-//       "What comes to mind when you hear the word ‘adventure’? Exploring cultural hotspots in historical cities, jumping out of planes over the gobsmacking landscapes of New Zealand or exploring the plains of Africa on a wildlife safari? Whatever you’re looking for on your adventure tour, it’s ready and waiting with Contiki.",
-//   },
-//   {
-//     image: "https://www.contiki.com/media/wcxfjs4s/south-america-peru.jpg",
-//     heading:"adventure tour will totally ",
-//     subheading:
-//       "Whether it’s backpacking, camping or sailing, a Contiki adventure tour will totally redefine your idea of broadening your mind.",
-//     description:
-//       "You’ll traverse Norway in search of Arctic whales and the Northern Lights. You’ll kayak along Vietnam’s majestic Nho Que River. You’ll ride a horse on the jawdropping plains of Patagonia. Adventure travel is all about unleashing a new side of yourself and discovering what you’re capable of, and that’s exactly what you’ll do on these trips - whether you’re trekking Peru’s Inca Trail or swimming in the Great Barrier Reef.",
-//   },
-//   {
-//     image:
-//       "https://www.contiki.com/media/jqah4mlo/bungy-jumping-in-new-zealand.jpg",
-//       heading:"adventure tour will totally ",
-//     subheading:
-//       "Adventure travel is all about the unbelievable people you meet, the new foods you try and the activities you embark on.",
-//     description:
-//       "What comes to mind when you hear the word ‘adventure’? Exploring cultural hotspots in historical cities, jumping out of planes over the gobsmacking landscapes of New Zealand or exploring the plains of Africa on a wildlife safari? Whatever you’re looking for on your adventure tour, it’s ready and waiting with Contiki.",
-//   },
-// ];
-
-// const tripsData = [
-//   {
-//     id: 1,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-//     description:
-//       "The one that sees you swish through the scenic south island. The one that sees you swish through the scenic south island.....",
-//   },
-//   {
-//     id: 2,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-
-//     description:
-//       "The one that takes you to west Thailand..The one that sees you swish through the scenic south island. you to west Thailand....",
-//   },
-//   {
-//     id: 3,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-
-//     description:
-//       "The one that sees you swish through the scenic south island.. The one that sees you swish through the scenic south island....",
-//   },
-//   {
-//     id: 4,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-
-//     description:
-//       "The one that takes you to west Thailand.. The one that sees you swish through the scenic south island... you to west Thailand..",
-//   },
-//   {
-//     id: 5,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-
-//     description:
-//       "The one that sees you swish through the scenic south island..The one that sees you swish through the scenic south island....",
-//   },
-//   {
-//     id: 6,
-//     image:
-//       "https://www.contiki.com/media/5l1p24yg/contiki-lonely-planet-600x300.webp?&quality=80",
-
-//     description:
-//       "The one that takes you to west Thailand. The one that sees you swish through the scenic south island... you to west Thailand...",
-//   },
-// ];
+import useSEO from "../../hooks/useSEO.js";
 
 const jobData = [
   {
     position: "Climbing Routes",
     location: "6 official routes",
-    
   },
   {
     position: "Climbers",
     location: "1000+ climbers",
-    
   },
   {
     position: "Success Rates",
     location: "More than 95 %",
-   
   },
   {
     position: "Local Experts",
     location: "More than 30+ seasoned crew",
-    
   },
 ];
-
-// const monthData = [
-//   {
-//     id: 1,
-//     label: "JAN - MAR",
-//     contentTitle: "Visiting Australia in January - March",
-//     description: [
-//       "Mount Kilimanjaro National Park  ( Kilimanjaro national park) is a true definition of East African beauty. This park shelters Africa’s highest point – Mount Kilimanjaro, a very popular creation that holds quite a strong profile. Mount Kilimanjaro, along with its three volcanic cones “Mawenzi”, “Kibo” and “Shira” is a dormant volcanic mountain in Tanzania. It is one of the seven summits and also turns out to be the highest freestanding mountain in the whole world. It is hiked by so many tourists who travel to Tanzania annually and is one of those daring places every adventurous traveler should visit at all costs. ",
-//       "Tanzania’s Kilimanjaro National Park is situated near a town called Moshi and can easily be accessed by plane or road via Arusha town. It spans up to approximately 650 square kilometers and is currently under the administration of Tanzania National Parks Authority (TANAPA). Besides the daring climbing adventures that take place in the park each year, Mount Kilimanjaro National Park turns out to be a great wildlife viewing destination too and boasts in various species of fauna.",
-//     ],
-//     events: [
-//       "Firework displays and lively celebrations around Sydney Harbour.",
-//       "Outdoor cinema screenings throughout summer.",
-//     ],
-//     image:
-//       "https://worldadventuretours.com/wp-content/uploads/2019/11/product-lemosho-kili-top.jpg",
-//   },
-
-//   {
-//     id: 2,
-//     label: "April - May",
-//     contentTitle: "Visiting Australia in April - May",
-//     description: [
-//       "Hot and humid conditions and storms bring tropical rain bursts in northern Australia...",
-//       "Tanzania’s Kilimanjaro National Park is situated near a town called Moshi and can easily be accessed by plane or road via Arusha town. It spans up to approximately 650 square kilometers and is currently under the administration of Tanzania National Parks Authority (TANAPA). Besides the daring climbing adventures that take place in the park each year, Mount Kilimanjaro National Park turns out to be a great wildlife viewing destination too and boasts in various species of fauna.",
-//     ],
-//     events: [
-//       "Firework displays and lively celebrations around Sydney Harbour.",
-//       "Outdoor cinema screenings throughout summer.",
-//     ],
-//     image:
-//       "https://www.climbing-kilimanjaro.com/wp-content/uploads/2020/11/Mount-Kilimanjaro-Meaning.jpg",
-//   },
-//   {
-//     id: 3,
-//     label: "Jun-sep",
-//     contentTitle: "Visiting Australia in Jun-sep",
-//     description: [
-//       "Hot and humid conditions and storms bring tropical rain bursts in northern Australia...",
-//       "Tanzania’s Kilimanjaro National Park is situated near a town called Moshi and can easily be accessed by plane or road via Arusha town. It spans up to approximately 650 square kilometers and is currently under the administration of Tanzania National Parks Authority (TANAPA). Besides the daring climbing adventures that take place in the park each year, Mount Kilimanjaro National Park turns out to be a great wildlife viewing destination too and boasts in various species of fauna.",
-//     ],
-//     events: [
-//       "Firework displays and lively celebrations around Sydney Harbour.",
-//       "Outdoor cinema screenings throughout summer.",
-//     ],
-//     image:
-//       "https://www.climbing-kilimanjaro.com/wp-content/uploads/2020/11/Mount-Kilimanjaro-Meaning.jpg",
-//   },
-//   {
-//     id: 4,
-//     label: "oct - dec",
-//     contentTitle: "Visiting Australia in oct - dec",
-//     description: [
-//       "Hot and humid conditions and storms bring tropical rain bursts in northern Australia...",
-//       "Tanzania’s Kilimanjaro National Park is situated near a town called Moshi and can easily be accessed by plane or road via Arusha town. It spans up to approximately 650 square kilometers and is currently under the administration of Tanzania National Parks Authority (TANAPA). Besides the daring climbing adventures that take place in the park each year, Mount Kilimanjaro National Park turns out to be a great wildlife viewing destination too and boasts in various species of fauna.",
-//     ],
-//     events: [
-//       "Firework displays and lively celebrations around Sydney Harbour.",
-//       "Outdoor cinema screenings throughout summer.",
-//     ],
-//     image:
-//       "https://www.climbing-kilimanjaro.com/wp-content/uploads/2020/11/Mount-Kilimanjaro-Meaning.jpg",
-//   },
-// ];
 
 const weatherData = [
   { month: "JAN", temp: "25°C", rain: "35mm" },
@@ -207,60 +53,6 @@ const weatherData = [
   { month: "NOV", temp: "25°C", rain: "63mm" },
   { month: "DEC", temp: "24°C", rain: "53mm" },
 ];
-
-// const safariFaqs = [
-//   {
-//     question: "How long does an African safari take?",
-//     answerBlocks: [
-//       {
-//         type: "paragraph",
-//         text: [
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "For a deeper experience, 2 weeks is ideal.",
-//         ],
-//       },
-//       {
-//         type: "heading",
-//         text: "Recommended Duration:",
-//       },
-//       {
-//         type: "list",
-//         items: [
-//           "Short Safaris: 3–5 days",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//           "Full Safari Experience: 12–14 days",
-//           "Extended Adventure: 21+ days",
-//         ],
-//       },
-//       {
-//         type: "paragraph",
-//         text: "If you want the full wildlife experience, 2 weeks is ideal.",
-//       },
-//     ],
-//   },
-
-//   {
-//     question: "What is the best month to go on safari?",
-//     answerBlocks: [
-//       {
-//         type: "paragraph",
-//         text: [
-//           "June to October is considered the dry season.",
-//           "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m above sea level and 4,900 m above its plateau base.",
-//         ],
-//       },
-//       {
-//         type: "heading",
-//         text: "Why Dry Season?",
-//       },
-//       {
-//         type: "paragraph",
-//         text: "Animals gather around water sources, making sightings easier.",
-//       },
-//     ],
-//   },
-// ];
 
 const cards = [
   {
@@ -280,16 +72,24 @@ const cards = [
   {
     id: 3,
     image:
-      "https://www.serengetiheroes.com/wp-content/uploads/2024/03/women-safari-1290x737.webp",
+      "../where-to-visit.webp",
     title: "Experiences that count",
     text: "Adventure with Contiki is about more than hiking and scenery. Whether you’re learning to be a safari guide in Kruger or chatting to the Warrior Women of Jasper, you’ll exercise your brain as well as your body!",
   },
 ];
 
 const KilimanjaroLanding = () => {
-
-const [page, setPage] = useState(null);
+  const [page, setPage] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title: "Kilimanjaro Travel Guide 2026 – Training, Packing & Climb Tips",
+    description:
+      "Complete Kilimanjaro travel guide with advice on climbing prep, gear, food, insurance, costs, and the best time to summit Africa’s highest peak.",
+    keywords: "Mount Kilimanjaro Guided Tours, Mount Kilimanjaro Guide, Mount Kilimanjaro Guided Climb, Kilimanjaro Guide Cost, Kilimanjaro Travel Guide",
+    image: "https://res.cloudinary.com/dq0ug85oe/image/upload/v1766667138/imarakileleni_uploads/tjhizexpcvxliw2xappg.webp",
+    url: "https://imarakilelenisafaris.com/mount-kilimanjaro",
+  });
 
   /* ================= FETCH DATA ================= */
   useEffect(() => {
@@ -325,9 +125,9 @@ const [page, setPage] = useState(null);
         image: s.image,
         title: block.heading,
         heading: s.title,
-        subheading:s.subtitle,
+        subheading: s.subtitle,
         description: s.description,
-      }))
+      })),
     ) || [];
 
   const highlightTrips =
@@ -366,18 +166,17 @@ const [page, setPage] = useState(null);
   //   ) || [];
 
   /* MONTH GUIDE */
-const monthTabs =
-  page.whenvisit?.flatMap((w, wi) =>
-    w.months.map((m, mi) => ({
-      id: `${wi}-${mi}`,
-      label: m.monthname || `Month ${mi + 1}`,
-      contentTitle: m.title || "",
-      description: m.description || [],   // ✅ KEEP FULL OBJECT
-      image: m.image || "",
-      events: [], // optional
-    }))
-  ) || [];
-
+  const monthTabs =
+    page.whenvisit?.flatMap((w, wi) =>
+      w.months.map((m, mi) => ({
+        id: `${wi}-${mi}`,
+        label: m.monthname || `Month ${mi + 1}`,
+        contentTitle: m.title || "",
+        description: m.description || [], // ✅ KEEP FULL OBJECT
+        image: m.image || "",
+        events: [], // optional
+      })),
+    ) || [];
 
   /* WHY VISIT */
   const whyVisitCards =
@@ -387,7 +186,6 @@ const monthTabs =
       title: o.title,
       text: o.description?.[0]?.content || "",
     })) || [];
-
 
   return (
     <>
@@ -404,7 +202,7 @@ const monthTabs =
         </h2>
       </div> */}
 
- {/* ================= HERO ================= */}
+      {/* ================= HERO ================= */}
       <div
         className="relative w-full h-[350px] md:h-[450px] bg-center bg-cover flex items-center justify-center"
         style={{ backgroundImage: `url('${heroImage}')` }}
@@ -417,7 +215,7 @@ const monthTabs =
 
       <SafariToursSection />
       <KilimanjaroRoute overview={page.overviewinfo} />
-      <AdventureTour  sections={adventureSections}/>
+      <AdventureTour sections={adventureSections} />
       <TanzaniaExpertCTA />
       <WhyJoin />
       <Highlights title="Kilimanjaro Climbing Routes" trips={highlightTrips} />
@@ -427,7 +225,7 @@ const monthTabs =
 "
         positions={jobData}
       />
-       <MonthGuide
+      <MonthGuide
         title="Month-by-Month Guide for Climbing Kilimanjaro"
         tabs={monthTabs}
       />
@@ -436,14 +234,14 @@ const monthTabs =
       <AsSeenIn />
       <FAQSection title="Frequently Asked Questions" faqs={faqs} />
       {/* <BookWithConfidence/> */}
-      <BookAssurance/>
-      <ContactForm/>
-         <WhyVisitSection
+      <BookAssurance />
+      <ContactForm />
+      <WhyVisitSection
         title="Why visit Tanzania with Imara Kileleni Safaris?"
         cards={cards}
       />
-      <ReviewsSection/>
-      <Featured/>
+      <ReviewsSection />
+      <Featured />
     </>
   );
 };
