@@ -1,0 +1,115 @@
+/* calendar container */
+.rdrCalendarWrapper {
+  font-size: 12px;
+}
+
+/* day cell size */
+.rdrDay {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+/* remove rounded style */
+.rdrDayNumber span {
+  border-radius: 4px !important;
+}
+
+/* selected color */
+.rdrStartEdge,
+.rdrEndEdge,
+.rdrInRange {
+  background: #8ea10b !important;
+}
+
+/* hover */
+.rdrDay:hover .rdrDayNumber span {
+  background: #e5e7eb;
+}
+
+/* month spacing */
+.rdrMonths {
+  gap: 20px;
+}
+
+/* weekday row */
+.rdrWeekDays {
+  font-size: 12px;
+}
+
+/* Calendar wrapper */
+.rdrCalendarWrapper {
+  font-family: inherit;
+}
+
+/* month spacing */
+.rdrMonths {
+  gap: 40px;
+}
+
+/* day cell size */
+.rdrDay {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* remove round style */
+.rdrDayNumber span {
+  border-radius: 2px !important;
+}
+
+/* selected color */
+.rdrStartEdge,
+.rdrEndEdge,
+.rdrInRange {
+  background: #e39869 !important;
+}
+
+/* weekday */
+.rdrWeekDays {
+  font-size: 13px;
+  color: #666;
+}
+
+/* month title */
+.rdrMonthName {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* arrows */
+.rdrNextPrevButton {
+  background: transparent;
+}
+
+/* day hover */
+.rdrDay:hover .rdrDayNumber span {
+  background: #eee;
+}
+
+/* Weekday row alignment */
+.rdrWeekDays {
+  display: grid !important;
+  grid-template-columns: repeat(7, 40px);
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+/* Each weekday label */
+.rdrWeekDay {
+  width: 40px;
+  text-align: center;
+}
+
+/* Days grid */
+.rdrDays {
+  display: grid !important;
+  grid-template-columns: repeat(7, 40px);
+  justify-content: center;
+}
+
+/* Individual day */
+.rdrDay {
+  width: 40px !important;
+  height: 40px !important;
+}
