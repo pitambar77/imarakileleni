@@ -19,6 +19,7 @@ import ReviewsSection from "../Aboutus/ReviewsSection";
 import Featured from "../Home/Featured";
 import BookAssurance from "./BookAssurance.jsx";
 import useSEO from "../../hooks/useSEO.js";
+import EnquiryForm from "../../components/EnquiryForm.jsx";
 
 const jobData = [
   {
@@ -235,7 +236,8 @@ const KilimanjaroLanding = () => {
       <FAQSection title="Frequently Asked Questions" faqs={faqs} />
       {/* <BookWithConfidence/> */}
       <BookAssurance />
-      <ContactForm />
+      {/* <ContactForm /> */}
+      <EnquiryForm formType="Kilimanjaro form" formheading="Plan Your Kilimanjaro Climb" formsubheading="Our team is always here to help you plan your climb."/>
       <WhyVisitSection
         title="Why visit Tanzania with Imara Kileleni Safaris?"
         cards={cards}

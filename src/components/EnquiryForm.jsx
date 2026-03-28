@@ -6,9 +6,11 @@ import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import { FaChevronDown } from "react-icons/fa";
 import axios from "axios";
+import { FaCheck } from "react-icons/fa";
 
-export default function EnquiryForm() {
+export default function EnquiryForm({ formType = "enquiry", formheading = "Planning a Trip to Tanzania?", formsubheading="Our team is always here to help" }) {
   const [formData, setFormData] = useState({
+    formType, // 👈 dynamic form source
     name: "",
     phone: "",
     countryCode: "",
@@ -26,6 +28,9 @@ export default function EnquiryForm() {
 
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [tripCategory, setTripCategory] = useState(
+    formType === "Kilimanjaro form" ? "kilimanjaro" : "safari",
+  );
 
   const handleChange = (e) => {
     setFormData({
@@ -80,58 +85,48 @@ export default function EnquiryForm() {
     }
   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log(formData);
-//   };
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log(formData);
+  //   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const res = await axios.post(
-      "https://imarabackend.imarakilelenisafaris.com/api/enquiry",
-      formData
-    );
+    try {
+      const res = await axios.post(
+        "https://imarabackend.imarakilelenisafaris.com/api/enquiry",
+        formData,
+      );
 
-    alert(res.data.message);
+      alert(res.data.message);
+    } catch (error) {
+      console.error(error);
+      alert("Submission failed");
+    }
+  };
 
-  } catch (error) {
-    console.error(error);
-    alert("Submission failed");
-  }
-};
+  const safariDestinations = ["Tanzania", "Kenya", "Uganda", "Rwanda"];
+
+  const kilimanjaroDestinations = [
+    "Marangu Route",
+    "Machame Route",
+    "Lemosho Route",
+    "Rongai Route",
+  ];
 
   return (
     <div className="max-w-4xl mx-auto py-16">
       <div className=" mb-4">
         <h2 className="text-3xl font-semibold mb-2 text-center ">
-          Planning a Trip to Tanzania?
+          {formheading}
         </h2>
         <p className="text-gray-600 mb-6 text-center">
-         Our team is always here to help
+          {formsubheading}
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6 ">
-        {/* PERSONAL DETAILS */}
-        <div className="bg-gray-100 p-6 rounded ">
-          <h3 className="text-xl font-semibold mb-4">Travel Dates</h3>
-
-          <div>
-            <TravelDatePicker
-              onChange={(data) =>
-                setFormData({
-                  ...formData,
-                  travelDate: data.startDate,
-                  departureDate: data.endDate,
-                  days: data.days,
-                })
-              }
-            />
-          </div>
-        </div>
-
         {/* PERSONAL DETAILS */}
         <div className="bg-gray-100 p-6 rounded">
           <h3 className="text-xl font-semibold mb-4">Personal Details</h3>
@@ -143,7 +138,7 @@ const handleSubmit = async (e) => {
                 type="text"
                 name="name"
                 onChange={handleChange}
-                className="w-full border border-[#e5e7eb] bg-white outline-0 p-3 rounded"
+                className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded"
               />
             </div>
 
@@ -175,14 +170,32 @@ const handleSubmit = async (e) => {
             </div>
 
             <div className="md:col-span-2">
-              <label className="block mb-1 font-medium">Email *</label>
+              <label className=" mb-1">Email *</label>
               <input
                 type="email"
                 name="email"
                 onChange={handleChange}
-                className="w-full border border-[#e5e7eb] bg-white outline-0 p-3 rounded"
+                className="w-full border  border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Travel details */}
+        <div className="bg-gray-100 p-6 rounded ">
+          <h3 className="text-xl font-semibold mb-4">Travel Dates</h3>
+
+          <div>
+            <TravelDatePicker
+              onChange={(data) =>
+                setFormData({
+                  ...formData,
+                  travelDate: data.startDate,
+                  departureDate: data.endDate,
+                  days: data.days,
+                })
+              }
+            />
           </div>
         </div>
 
@@ -197,7 +210,7 @@ const handleSubmit = async (e) => {
                 <select
                   name="adults"
                   onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] bg-white outline-0 p-3 appearance-none rounded"
+                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >
                   {[1, 2, 3, 4, 5, 6].map((n) => (
                     <option key={n}>{n}</option>
@@ -215,7 +228,7 @@ const handleSubmit = async (e) => {
                 <select
                   name="children"
                   onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] bg-white outline-0 p-3 rounded appearance-none pr-10"
+                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded appearance-none pr-10"
                 >
                   {[0, 1, 2, 3, 4].map((n) => (
                     <option key={n}>{n}</option>
@@ -227,13 +240,13 @@ const handleSubmit = async (e) => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label className="block mb-1 font-medium">Destinations</label>
               <div className="relative">
                 <select
                   name="destination"
                   onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] bg-white outline-0 appearance-none p-3 rounded"
+                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 appearance-none p-3 rounded"
                 >
                   <option value="">All Destinations</option>
                   <option>Tanzania</option>
@@ -241,7 +254,93 @@ const handleSubmit = async (e) => {
                   <option>Uganda</option>
                   <option>Rwanda</option>
                 </select>
-                {/* Custom Icon */}
+                
+                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
+              </div>
+            </div> */}
+            {formType !== "Kilimanjaro form" && (
+              <div className="md:col-span-2">
+                <label className="block mb-2 font-medium">Trip Type</label>
+
+                <div className="flex gap-6 text-sm text-gray-600">
+                  {formType !== "Kilimanjaro form" && (
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name="tripCategory"
+                        value="safari"
+                        checked={tripCategory === "safari"}
+                        onChange={(e) => {
+                          setTripCategory(e.target.value);
+                          setFormData({ ...formData, destination: "" });
+                        }}
+                      />
+                      Only Safari
+                    </label>
+                  )}
+
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="tripCategory"
+                      value="kilimanjaro"
+                      checked={tripCategory === "kilimanjaro"}
+                      onChange={(e) => {
+                        setTripCategory(e.target.value);
+                        setFormData({ ...formData, destination: "" });
+                      }}
+                    />
+                    Only Kilimanjaro
+                  </label>
+                </div>
+
+                {/* <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="tripCategory"
+                    value="both"
+                    checked={tripCategory === "both"}
+                    onChange={(e) => setTripCategory(e.target.value)}
+                  />
+                  Both
+                </label> */}
+              </div>
+            )}
+            <div>
+              {/* <label className="block mb-1 font-medium">Destinations</label> */}
+              <label className="block mb-1 font-medium">
+                {tripCategory === "safari"
+                  ? "Safari Destination"
+                  : "Kilimanjaro Route"}
+              </label>
+
+              <div className="relative">
+                <select
+                  name="destination"
+                  value={formData.destination}
+                  onChange={handleChange}
+                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 appearance-none p-3 rounded"
+                >
+                  <option value="">
+                    {tripCategory === "safari"
+                      ? "Select Safari Destination"
+                      : "Select Kilimanjaro Route"}
+                  </option>
+
+                  {tripCategory === "safari" &&
+                    safariDestinations.map((d) => <option key={d}>{d}</option>)}
+
+                  {tripCategory === "kilimanjaro" &&
+                    kilimanjaroDestinations.map((d) => (
+                      <option key={d}>{d}</option>
+                    ))}
+
+                  {/* {tripCategory === "both" &&
+                    [...safariDestinations, ...kilimanjaroDestinations].map(
+                      (d) => <option key={d}>{d}</option>,
+                    )} */}
+                </select>
+
                 <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
               </div>
             </div>
@@ -252,7 +351,7 @@ const handleSubmit = async (e) => {
                 <select
                   name="tourType"
                   onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] bg-white outline-0 p-3 appearance-none rounded"
+                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >
                   <option>Midrange</option>
                   <option>Luxury</option>
@@ -276,7 +375,23 @@ const handleSubmit = async (e) => {
             </div>
           </div>
         </div>
+        {/* <p className=" py-4">By clicking 'Send', you agree to our <a className=" text-[#da7228]" target="blanck" href="https://imarakilelenisafaris.com/privacy-policy"> Privacy Policy.</a> </p> */}
+        <p className="py-4 flex items-start gap-2">
+          <FaCheck className="text-green-500 mt-1" />
 
+          <span>
+            By clicking 'Enquire', you agree to our{" "}
+            <a
+              className="text-[#da7228]"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://imarakilelenisafaris.com/privacy-policy"
+            >
+              Privacy Policy
+            </a>
+            .
+          </span>
+        </p>
         {/* SUBMIT */}
         <button
           type="submit"

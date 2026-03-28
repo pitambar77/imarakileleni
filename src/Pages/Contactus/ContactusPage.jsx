@@ -2,6 +2,7 @@ import React from 'react'
 import bannerImg from '../../assets/contact-us.webp'
 import ContactUs from './ContactUs'
 import ContactDetailsSection from './ContactDetailsSection'
+import EnquiryForm from '../../components/EnquiryForm'
 
 const ContactusPage = () => {
   return (
@@ -19,7 +20,8 @@ const ContactusPage = () => {
         </h1>
       </div>
       <ContactDetailsSection/>
-      <ContactUs/>
+      {/* <ContactUs/> */}
+      <EnquiryForm formType='Contact us'/>
     </div>
   )
 }

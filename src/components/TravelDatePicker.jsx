@@ -78,9 +78,9 @@ export default function TravelDatePicker({ value, onChange }) {
       {/* INPUT DISPLAY */}
       <div
         onClick={handleOpen}
-        className="border border-gray-100 p-3 rounded cursor-pointer bg-white flex items-center gap-3 text-gray-700"
+        className="border border-gray-100 p-3 text-sm text-gray-600  rounded cursor-pointer bg-white flex items-center gap-3 text-gray-700"
       >
-        <FaCalendarDays className="text-gray-500 text-lg" />
+        <FaCalendarDays className="text-sm text-gray-600" />
 
         <span>
           {format(range[0].startDate, "EEE dd MMM yyyy")} -{" "}
@@ -113,7 +113,7 @@ export default function TravelDatePicker({ value, onChange }) {
           />
 
           <div className="flex justify-between items-center px-4 py-3 border-t border-t-gray-200 bg-white">
-            <p className="text-gray-700">
+            <p className="text-sm text-gray-600">
               Number of Travel days : <b>{days} </b>
             </p>
 
