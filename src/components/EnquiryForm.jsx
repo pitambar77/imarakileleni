@@ -212,13 +212,28 @@ export default function EnquiryForm({
     }
   };
 
-  const safariDestinations = ["Tanzania", "Kenya", "Uganda", "Rwanda"];
+  const safariDestinations = [
+    "Kilimanjaro National Park",
+    "Serengeti National Park",
+    "Ngorongoro Crater", 
+    "Tarangire National Park",
+    "Lake Natron",
+    "Mkomazi National Park",
+    "Lake Manyara National Park",
+    "Arusha National Park",
+    "Udzungwa Mountains National Park",
+    "Mikumi National Park",
+    "Ruaha National Park",
+    "Nyerere National Park"
+];
 
   const kilimanjaroDestinations = [
-    "Marangu Route",
     "Machame Route",
-    "Lemosho Route",
     "Rongai Route",
+    "Umbwe Route",
+    "Marangu Route",
+    "Lemosho Route",
+    "Northern Circuit Route",
   ];
 
   return (
