@@ -65,7 +65,7 @@ export default function TravelDatePicker({ value, onChange }) {
   const handleChange = (date) => {
     setSelectedDate(date);
 
-    const formattedDate = format(date, "dd MMMM yyyy");
+    const formattedDate = format(date, "yyyy-MM-dd");
 
     onChange({
       startDate: formattedDate,
