@@ -215,7 +215,7 @@ export default function EnquiryForm({
   const safariDestinations = [
     "Kilimanjaro National Park",
     "Serengeti National Park",
-    "Ngorongoro Crater", 
+    "Ngorongoro Crater",
     "Tarangire National Park",
     "Lake Natron",
     "Mkomazi National Park",
@@ -224,8 +224,8 @@ export default function EnquiryForm({
     "Udzungwa Mountains National Park",
     "Mikumi National Park",
     "Ruaha National Park",
-    "Nyerere National Park"
-];
+    "Nyerere National Park",
+  ];
 
   const kilimanjaroDestinations = [
     "Machame Route",
@@ -291,7 +291,7 @@ export default function EnquiryForm({
                 <p className="text-red-500 text-sm mt-1">{phoneError}</p>
               )} */}
 
-               {errors.phone && (
+              {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
               )}
 
@@ -359,8 +359,10 @@ export default function EnquiryForm({
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
-                    <option key={n}>{n}</option>
+                  {[...Array(50)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
                   ))}
                 </select>
                 {/* Custom Icon */}
@@ -377,8 +379,10 @@ export default function EnquiryForm({
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded appearance-none pr-10"
                 >
-                  {[0, 1, 2, 3, 4].map((n) => (
-                    <option key={n}>{n}</option>
+                  {[...Array(50)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
                   ))}
                 </select>
 
@@ -504,7 +508,7 @@ export default function EnquiryForm({
                 <select
                   ref={fieldRefs.tourType}
                   name="tourType"
-                   value={formData.tourType}
+                  value={formData.tourType}
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >

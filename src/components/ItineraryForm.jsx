@@ -1,4 +1,4 @@
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import TravelDatePicker from "./TravelDatePicker";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -350,8 +350,10 @@ export default function ItineraryForm({
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
-                    <option key={n}>{n}</option>
+                  {[...Array(50)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
                   ))}
                 </select>
                 {/* Custom Icon */}
@@ -368,8 +370,10 @@ export default function ItineraryForm({
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded appearance-none pr-10"
                 >
-                  {[0, 1, 2, 3, 4].map((n) => (
-                    <option key={n}>{n}</option>
+                  {[...Array(50)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
                   ))}
                 </select>
 
