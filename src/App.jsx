@@ -80,6 +80,7 @@ import TravelguideSeo from "./Pages/Seo/TravelguideSeo";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./Pages/Login";
 import EnquiryForm from "./components/EnquiryForm";
+import ItineraryForm from "./components/ItineraryForm";
 
 // import ItinenayDetails from "./Pages/Itinenary/itinenayDetails";
 
@@ -98,6 +99,7 @@ const router = createBrowserRouter(
         <Route path="core-values" element={<CoreValue />} />
         <Route path="seo" element={<SeoForm />} />
         <Route path="enquiry-form" element={<EnquiryForm/>}/>
+        <Route path="itinerary-form" element={<ItineraryForm/>}/>
 
         <Route path="plansafari" element={<PlanSafari />} />
         {/* <Route path="kilimanjaro-landing" element={<KilimanjaroPage/>}/> */}

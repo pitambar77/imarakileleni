@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { DateRange } from "react-date-range";
+// import { DateRange } from "react-date-range";
+import { Calendar } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -17,13 +18,15 @@ export default function TravelDatePicker({ value, onChange }) {
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
 
-  const [range, setRange] = useState([
-    {
-      startDate: today,
-      endDate: tomorrow,
-      key: "selection",
-    },
-  ]);
+  //   const [range, setRange] = useState([
+  //     {
+  //       startDate: today,
+  //       endDate: tomorrow,
+  //       key: "selection",
+  //     },
+  //   ]);
+
+  const [selectedDate, setSelectedDate] = useState(today);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -39,39 +42,52 @@ export default function TravelDatePicker({ value, onChange }) {
     };
   }, []);
 
-  const nights =
-    Math.round(
-      (range[0].endDate - range[0].startDate) / (1000 * 60 * 60 * 24),
-    ) || 0;
+  //   const nights =
+  //     Math.round(
+  //       (range[0].endDate - range[0].startDate) / (1000 * 60 * 60 * 24),
+  //     ) || 0;
 
-  const days = nights + 1;
+  //   const days = nights + 1;
 
   const handleOpen = () => {
     setShowPicker(true);
     setShowDeparturePlaceholder(true);
   };
 
-  const handleChange = (item) => {
-    setRange([item.selection]);
+  //   const handleChange = (item) => {
+  //     setRange([item.selection]);
 
-    if (item.selection.startDate && item.selection.endDate) {
-      setShowDeparturePlaceholder(false);
-    }
-  };
+  //     if (item.selection.startDate && item.selection.endDate) {
+  //       setShowDeparturePlaceholder(false);
+  //     }
+  //   };
 
-  const handleConfirm = () => {
-    const formattedStart = format(range[0].startDate, "dd MMMM yyyy");
-    const formattedEnd = format(range[0].endDate, "dd MMMM yyyy");
+  const handleChange = (date) => {
+    setSelectedDate(date);
 
-    const data = {
-      startDate: formattedStart,
-      endDate: formattedEnd,
-      days: days,
-    };
+    const formattedDate = format(date, "dd MMMM yyyy");
 
-    onChange(data);
+    onChange({
+      startDate: formattedDate,
+    });
+
     setShowPicker(false);
   };
+  //   const handleConfirm = () => {
+  //     const formattedStart = format(range[0].startDate, "dd MMMM yyyy");
+  //     const formattedEnd = format(range[0].endDate, "dd MMMM yyyy");
+
+  //     const data = {
+  //       startDate: formattedStart,
+  //       endDate: formattedEnd,
+  //       days: days,
+  //     };
+
+  //     onChange(data);
+  //     setShowPicker(false);
+  //   };
+
+
 
   return (
     <div className="relative">
@@ -82,12 +98,13 @@ export default function TravelDatePicker({ value, onChange }) {
       >
         <FaCalendarDays className="text-sm text-gray-600" />
 
-        <span>
+        {/* <span>
           {format(range[0].startDate, "EEE dd MMM yyyy")} -{" "}
           {showDeparturePlaceholder
             ? "Departure"
             : format(range[0].endDate, "EEE dd MMM yyyy")}
-        </span>
+        </span> */}
+        {format(selectedDate, "EEE dd MMM yyyy")}
       </div>
 
       {/* CALENDAR POPUP */}
@@ -102,7 +119,7 @@ export default function TravelDatePicker({ value, onChange }) {
           >
             ✕
           </button>
-          <DateRange
+          {/* <DateRange
             editableDateInputs={true}
             onChange={handleChange}
             moveRangeOnFirstSelection={false}
@@ -110,13 +127,15 @@ export default function TravelDatePicker({ value, onChange }) {
             months={2}
             minDate={new Date()}
             direction="horizontal"
+          /> */}
+
+          <Calendar
+            date={selectedDate}
+            onChange={handleChange}
+            minDate={new Date()}
           />
 
-          <div className="flex justify-between items-center px-4 py-3 border-t border-t-gray-200 bg-white">
-            <p className="text-sm text-gray-600">
-              Number of Travel days : <b>{days} </b>
-            </p>
-
+          {/* <div className="flex justify-between items-center px-4 py-3 border-t border-t-gray-200 bg-white">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setShowPicker(false)}
@@ -133,7 +152,7 @@ export default function TravelDatePicker({ value, onChange }) {
                 CONFIRM
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
     </div>

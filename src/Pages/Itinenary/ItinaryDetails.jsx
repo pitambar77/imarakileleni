@@ -11,6 +11,7 @@ import ReviewBanner from "./ReviewBanner";
 import ContactUs from "../Contactus/ContactUs";
 import Featured from "../Home/Featured";
 import useSEO from "../../hooks/useSEO";
+import ItineraryForm from "../../components/ItineraryForm";
 
 const ItinaryDetails = () => {
   const { slug } = useParams();
@@ -23,18 +24,18 @@ const ItinaryDetails = () => {
         const res = await API.get("/packages");
 
         const matchedTrip = res.data.find(
-          (item) => slugify(item.title) === slug
+          (item) => slugify(item.title) === slug,
         );
-
+        
         // setTrip(matchedTrip || null);
-            if (!matchedTrip) {
+        if (!matchedTrip) {
           setTrip(null);
           return;
         }
 
         // 3️⃣ Fetch SEO by ID
         const seoRes = await API.get(
-          `/seo?referenceId=${matchedTrip._id}&referenceType=package`
+          `/seo?referenceId=${matchedTrip._id}&referenceType=package`,
         );
 
         // 4️⃣ Attach SEO to trip manually
@@ -42,7 +43,6 @@ const ItinaryDetails = () => {
           ...matchedTrip,
           seo: seoRes.data || null,
         });
-
       } catch (error) {
         console.error("Trip fetch error:", error);
       } finally {
@@ -65,31 +65,23 @@ const ItinaryDetails = () => {
 
   // 🔥 Use SEO dynamically
   useSEO({
-    title:
-      trip?.seo?.metaTitle ||
-      `${trip?.title}`,
+    title: trip?.seo?.metaTitle || `${trip?.title}`,
 
-    description:
-      trip?.seo?.metaDescription ||
-      trip?.subtitle,
+    description: trip?.seo?.metaDescription || trip?.subtitle,
 
-    keywords:
-      trip?.seo?.keywords ||
-      `Tanzania safari, ${trip?.title}`,
+    keywords: trip?.seo?.keywords || `Tanzania safari, ${trip?.title}`,
 
-    image:
-      trip?.seo?.ogImage ||
-      trip?.landingImage ||
-      trip?.image,
+    image: trip?.seo?.ogImage || trip?.landingImage || trip?.image,
 
     url:
       trip?.seo?.canonicalUrl ||
       `https://imarakilelenisafaris.com/package/${slug}`,
   });
-  
 
   if (loading) return <p className="p-6">Loading...</p>;
   if (!trip) return <p className="p-6">Trip not found</p>;
+
+  const days = trip?.title?.match(/\d+/)?.[0] || "";
 
   return (
     <>
@@ -98,7 +90,8 @@ const ItinaryDetails = () => {
       <TripMomentsSection experience={trip.experience} />
       <MapItinerarySection itinerary={trip.itinerary} />
       <BookWithConfidence />
-      <ContactUs />
+      {/* <ContactUs /> */}
+      <ItineraryForm packageName={trip.title} days={days} formheading={`Planning Your ${trip.title} `}/>
       <Featured />
     </>
   );

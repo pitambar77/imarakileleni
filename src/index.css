@@ -109,18 +109,30 @@ button:focus-visible {
   animation: fadeIn 0.3s ease-out;
 }
 
-h1,h2 {
+h1,
+h2 {
   font-family: "AcuminPro";
-  
 }
 
-h3{
+h3 {
   font-family: "fonnts.com-AcuminPro-Bold";
 }
 
-ul,p,button,span{
+ul,
+p,
+button,
+span {
   font-family: "Soleil";
-  
 }
 
+/* Remove arrows in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Remove arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

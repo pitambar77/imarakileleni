@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState,useRef } from "react";
 import TravelDatePicker from "./TravelDatePicker";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -8,10 +8,12 @@ import { FaChevronDown } from "react-icons/fa";
 import axios from "axios";
 import { FaCheck } from "react-icons/fa";
 
-export default function EnquiryForm({
-  formType = "enquiry",
+export default function ItineraryForm({
+  formType = "Itinerary",
   formheading = "Planning a Trip to Tanzania?",
   formsubheading = "Our team is always here to help",
+  packageName = "",
+  days = "",
 }) {
   const [formData, setFormData] = useState({
     formType, // 👈 dynamic form source
@@ -22,30 +24,27 @@ export default function EnquiryForm({
     email: "",
     adults: 1,
     children: 0,
-    destination: "",
+    packageName: packageName,
     tourType: "",
     travelDate: "",
     departureDate: "",
-    days: "",
+    days: days,
     message: "",
   });
 
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
-  const [tripCategory, setTripCategory] = useState(
-    formType === "Kilimanjaro form" ? "kilimanjaro" : "safari",
-  );
-
   const [loading, setLoading] = useState(false);
+
   const [errors, setErrors] = useState({});
 
   const fieldRefs = {
     name: useRef(null),
     phone: useRef(null),
     email: useRef(null),
-    destination: useRef(null),
+
     travelDate: useRef(null),
-    days: useRef(null),
+
     tourType: useRef(null),
   };
 
@@ -62,15 +61,10 @@ export default function EnquiryForm({
       newErrors.email = "Invalid email";
     }
 
-    if (!formData.destination)
-      newErrors.destination = "Please select a destination";
-
     if (!formData.travelDate)
       newErrors.travelDate = "Please select a travel date";
 
-    if (!formData.days || formData.days < 1)
-      newErrors.days = "Please enter number of days";
-    if (!formData.tourType) newErrors.tourType = "Please select a travel date";
+    if (!formData.tourType) newErrors.tourType = "Please select a travel type";
 
     setErrors(newErrors);
 
@@ -86,6 +80,7 @@ export default function EnquiryForm({
 
     return Object.keys(newErrors).length === 0;
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -100,28 +95,11 @@ export default function EnquiryForm({
     }));
   };
 
-  //   const handlePhoneChange = (value, data) => {
-  //     const formattedPhone = "+" + value;
-
-  //     setPhone(value);
-
-  //     setFormData((prev) => ({
-  //       ...prev,
-  //       phone: formattedPhone,
-  //       countryCode: "+" + data.dialCode,
-  //       country: data.countryCode.toUpperCase(), // tz, in, us
-  //     }));
-
-  //     if (!value) {
-  //       setPhoneError("Phone number is required");
-  //       return;
-  //     }
-
-  //     if (!isValidPhoneNumber(formattedPhone)) {
-  //       setPhoneError("Invalid phone number");
-  //     } else {
-  //       setPhoneError("");
-  //     }
+  //   const handleChange = (e) => {
+  //     setFormData({
+  //       ...formData,
+  //       [e.target.name]: e.target.value,
+  //     });
   //   };
 
   const handlePhoneChange = (value, data) => {
@@ -163,20 +141,47 @@ export default function EnquiryForm({
     }
   };
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log(formData);
+  //   const handlePhoneChange = (value, data) => {
+  //     const formattedPhone = "+" + value;
+
+  //     setPhone(value);
+
+  //     setFormData((prev) => ({
+  //       ...prev,
+  //       phone: formattedPhone,
+  //       countryCode: "+" + data.dialCode,
+  //       country: data.countryCode.toUpperCase(), // tz, in, us
+  //     }));
+
+  //     if (!value) {
+  //       setPhoneError("Phone number is required");
+  //       return;
+  //     }
+
+  //     if (!isValidPhoneNumber(formattedPhone)) {
+  //       setPhoneError("Invalid phone number");
+  //     } else {
+  //       setPhoneError("");
+  //     }
   //   };
+
+  useEffect(() => {
+    if (packageName) {
+      setFormData((prev) => ({
+        ...prev,
+        package: packageName,
+        days: days,
+      }));
+    }
+  }, [packageName, days]);
 
   //   const handleSubmit = async (e) => {
   //     e.preventDefault();
 
-  //     if (loading) return; // prevent double click
-  //     setLoading(true);
   //     try {
   //       const res = await axios.post(
-  //         // "https://imarabackend.imarakilelenisafaris.com/api/enquiry",
-  //         "http://localhost:8000/api/enquiry",
+  //         // "https://imarabackend.imarakilelenisafaris.com/api/itinerary",
+  //         "http://localhost:8000/api/itinerary",
   //         formData,
   //       );
 
@@ -184,8 +189,6 @@ export default function EnquiryForm({
   //     } catch (error) {
   //       console.error(error);
   //       alert("Submission failed");
-  //     } finally {
-  //       setLoading(false);
   //     }
   //   };
 
@@ -200,7 +203,7 @@ export default function EnquiryForm({
 
     try {
       const res = await axios.post(
-        "https://imarabackend.imarakilelenisafaris.com/api/enquiry",
+        "https://imarabackend.imarakilelenisafaris.com/api/itinerary",
         formData,
       );
 
@@ -212,22 +215,36 @@ export default function EnquiryForm({
     }
   };
 
-  const safariDestinations = ["Tanzania", "Kenya", "Uganda", "Rwanda"];
+  //   const handleSubmit = async (e) => {
+  //     e.preventDefault();
 
-  const kilimanjaroDestinations = [
-    "Marangu Route",
-    "Machame Route",
-    "Lemosho Route",
-    "Rongai Route",
-  ];
+  //     if (loading) return; // prevent double click
+
+  //     setLoading(true);
+
+  //     try {
+  //       const res = await axios.post(
+  //         "http://localhost:8000/api/itinerary",
+  //         formData,
+  //       );
+
+  //       alert(res.data.message);
+  //     } catch (error) {
+  //       console.error(error);
+  //       alert("Submission failed");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
   return (
     <div className="max-w-4xl mx-auto py-16">
-      <div className=" mb-4">
-        <h2 className="text-3xl font-semibold mb-2 text-center ">
+      <div className="mb-6 text-center max-w-2xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-2 leading-snug">
           {formheading}
         </h2>
-        <p className="text-gray-600 mb-6 text-center">{formsubheading}</p>
+
+        <p className="text-gray-600 text-sm md:text-base">{formsubheading}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6 ">
@@ -275,12 +292,9 @@ export default function EnquiryForm({
               {/* {phoneError && (
                 <p className="text-red-500 text-sm mt-1">{phoneError}</p>
               )} */}
-
-               {errors.phone && (
+              {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
               )}
-
-              {/* <PhoneInputField value={phone} setValue={setPhone} /> */}
             </div>
 
             <div className="md:col-span-2">
@@ -304,14 +318,6 @@ export default function EnquiryForm({
           <h3 className="text-xl font-semibold mb-4">Travel Dates</h3>
 
           <div>
-            {/* <TravelDatePicker
-              onChange={(data) =>
-                setFormData({
-                  ...formData,
-                  travelDate: data.startDate,
-                })
-              }
-            /> */}
             <TravelDatePicker
               onChange={(data) => {
                 setFormData((prev) => ({
@@ -372,115 +378,16 @@ export default function EnquiryForm({
               </div>
             </div>
 
-            {/* <div>
-              <label className="block mb-1 font-medium">Destinations</label>
-              <div className="relative">
-                <select
-                  name="destination"
-                  onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 appearance-none p-3 rounded"
-                >
-                  <option value="">All Destinations</option>
-                  <option>Tanzania</option>
-                  <option>Kenya</option>
-                  <option>Uganda</option>
-                  <option>Rwanda</option>
-                </select>
-                
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
-              </div>
-            </div> */}
-            {formType !== "Kilimanjaro form" && (
-              <div className="md:col-span-2">
-                <label className="block mb-2 font-medium">Trip Type</label>
-
-                <div className="flex gap-6 text-sm text-gray-600">
-                  {formType !== "Kilimanjaro form" && (
-                    <label className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="tripCategory"
-                        value="safari"
-                        checked={tripCategory === "safari"}
-                        onChange={(e) => {
-                          setTripCategory(e.target.value);
-                          setFormData({ ...formData, destination: "" });
-                        }}
-                      />
-                      Only Safari
-                    </label>
-                  )}
-
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="tripCategory"
-                      value="kilimanjaro"
-                      checked={tripCategory === "kilimanjaro"}
-                      onChange={(e) => {
-                        setTripCategory(e.target.value);
-                        setFormData({ ...formData, destination: "" });
-                      }}
-                    />
-                    Only Kilimanjaro
-                  </label>
-                </div>
-
-                {/* <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="tripCategory"
-                    value="both"
-                    checked={tripCategory === "both"}
-                    onChange={(e) => setTripCategory(e.target.value)}
-                  />
-                  Both
-                </label> */}
-              </div>
-            )}
             <div>
-              {/* <label className="block mb-1 font-medium">Destinations</label> */}
-              <label className="block mb-1 font-medium">
-                {tripCategory === "safari"
-                  ? "Safari Destination"
-                  : "Kilimanjaro Route"}
-              </label>
-
-              <div className="relative">
-                <select
-                  ref={fieldRefs.destination}
-                  name="destination"
-                  value={formData.destination}
-                  onChange={handleChange}
-                  className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 appearance-none p-3 rounded"
-                >
-                  <option value="">
-                    {tripCategory === "safari"
-                      ? "Select Safari Destination"
-                      : "Select Kilimanjaro Route"}
-                  </option>
-
-                  {tripCategory === "safari" &&
-                    safariDestinations.map((d) => <option key={d}>{d}</option>)}
-
-                  {tripCategory === "kilimanjaro" &&
-                    kilimanjaroDestinations.map((d) => (
-                      <option key={d}>{d}</option>
-                    ))}
-
-                  {/* {tripCategory === "both" &&
-                    [...safariDestinations, ...kilimanjaroDestinations].map(
-                      (d) => <option key={d}>{d}</option>,
-                    )} */}
-                </select>
-                {errors.destination && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.destination}
-                  </p>
-                )}
-
-                <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
-              </div>
+              <label className="block mb-1 font-medium">Package</label>
+              <input
+                type="text"
+                name="packageName"
+                value={formData.packageName}
+                onChange={handleChange}
+                readOnly
+                className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded"
+              />
             </div>
 
             <div>
@@ -489,7 +396,7 @@ export default function EnquiryForm({
                 <select
                   ref={fieldRefs.tourType}
                   name="tourType"
-                   value={formData.tourType}
+                  value={formData.tourType}
                   onChange={handleChange}
                   className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 appearance-none rounded"
                 >
@@ -504,22 +411,6 @@ export default function EnquiryForm({
                 {/* Custom Icon */}
                 <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
               </div>
-            </div>
-
-            <div>
-              <label className="block mb-1 font-medium">Number of Days</label>
-
-              <input
-                ref={fieldRefs.days}
-                type="number"
-                name="days"
-                min="1"
-                onChange={handleChange}
-                className="w-full border border-[#e5e7eb] text-sm text-gray-600 bg-white outline-0 p-3 rounded"
-              />
-              {errors.days && (
-                <p className="text-red-500 text-sm mt-1">{errors.days}</p>
-              )}
             </div>
 
             <div className="md:col-span-2">
